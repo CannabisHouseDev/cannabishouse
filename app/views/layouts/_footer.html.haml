@@ -1,0 +1,26 @@
+%hr/
+/ Footer
+%footer
+  .container
+    .row
+      .text-center
+        %ul.list-inline.text-center
+          %li
+            = link_to "https://www.youtube.com/channel/UCYXfUdG5CjG8C2Pjl7CNXdg", :target => "_blank" do
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-youtube.fa-stack-1x.fa-inverse
+          %li
+            = link_to "https://www.facebook.com/c.house.lodz", :target => "_blank" do
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-facebook.fa-stack-1x.fa-inverse
+          %li
+            = link_to "https://instagram.com/cannabis.house", :target => "_blank" do
+              %span.fa-stack.fa-lg
+                %i.fa.fa-circle.fa-stack-2x
+                %i.fa.fa-instagram.fa-stack-1x.fa-inverse
+        %p
+          Copyright © Cannabis House
+          = Time.now.year
+
