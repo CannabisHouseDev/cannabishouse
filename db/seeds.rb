@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+pages = Page.create([{title: "testowa strona", body: "<h1> TEST<br><p>Testowy paragraph", slug: "testowa-strona", show_in_menu: true}, 
+                     {title: "Stowarzyszenie", body: "Losowa treść testowa", slug: "stowarzyszenie", show_in_menu: true}
+                    ])

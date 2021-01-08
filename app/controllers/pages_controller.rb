@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def show
     @page = Page.friendly.find_by(slug: params[:id]) if params[:id]
