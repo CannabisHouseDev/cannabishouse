@@ -50,3 +50,4 @@ gem 'haml-rails'
 gem 'html2haml'
 gem 'friendly_id', '~> 5.4.0'
 gem 'meta-tags'
+gem "stimulus_reflex", "~> 3.4"
