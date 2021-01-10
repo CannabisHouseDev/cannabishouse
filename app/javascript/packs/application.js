@@ -12,7 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "tailwindcss/tailwind.css"
+
 require("stylesheets/application.scss")
 
 require("trix")

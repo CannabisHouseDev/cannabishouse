@@ -5,6 +5,8 @@ class CreatePages < ActiveRecord::Migration[6.1]
       t.text :body
       t.boolean :show_in_menu, default: false
       t.string :slug
+      t.integer :position
+      t.boolean :inner, default: false
 
       t.timestamps
     end

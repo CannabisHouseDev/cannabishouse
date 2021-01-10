@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :pages
+  get ':id', to: 'pages#show', as: :page
   get 'home/index'
   root 'home#index'
   get 'under_construction', to: 'home#under_construction', as: :under_construction

@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-pages = Page.create([{title: "testowa strona", body: "<h1> TEST<br><p>Testowy paragraph", slug: "testowa-strona", show_in_menu: true}, 
-                     {title: "Stowarzyszenie", body: "Losowa treść testowa", slug: "stowarzyszenie", show_in_menu: true}
+pages = Page.create([{title: "testowa strona", body: "<h1> TEST<br><p>Testowy paragraph", slug: "testowa-strona", show_in_menu: true, position: 1}, 
+                     {title: "Stowarzyszenie", body: "Losowa treść testowa", slug: "stowarzyszenie", show_in_menu: true, position: 2},
+                     {title: "Badania", body: "Losowa treść testowa", slug: "badania", show_in_menu: true, position: 102},
+                     {title: "O Nas", body: "Losowa treść testowa", slug: "o_nas", show_in_menu: true, position: 105},
                     ])

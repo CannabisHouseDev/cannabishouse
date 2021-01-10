@@ -10,6 +10,9 @@
     = csp_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.bg-gray-50
+    %link{:href => "https://rsms.me/inter/inter.css", :rel => "stylesheet", :type => "text/css"}/
+  %body.relative.bg-white
+    .max-w-7xl.mx-auto.px-4.sm:px-6
+      = render 'layouts/navigation'
     = yield
     = render 'layouts/footer'

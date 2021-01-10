@@ -69,6 +69,8 @@ ActiveRecord::Schema.define(version: 2021_01_07_194636) do
     t.text "body"
     t.boolean "show_in_menu", default: false
     t.string "slug"
+    t.integer "position"
+    t.boolean "inner", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slug"], name: "index_pages_on_slug", unique: true
