@@ -18,25 +18,4 @@
 @import "./actiontext.scss";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-.dropbtn {
-  @apply bg-green-400 text-white p-4 text-lg border-0 cursor-pointer;
-}
-.dropdown {
-  @apply relative inline-block;
-}
-.dropdown-content {
-  @apply absolute hidden bg-gray-400 max-w-2xl shadow-lg z-10;
-}
-.dropdown-content a {
-  @apply text-gray-900 block no-underline px-3 py-4;
-}
-.dropdown-content a:hover { 
-  @apply bg-gray-200;
-}
-.dropdown:hover .dropdown-content {
-  @apply block;
-}
-.dropdown:hover .dropbtn {
-  @apply text-green-800;
-}
 @import "tailwindcss/utilities";
