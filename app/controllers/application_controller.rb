@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       description: description,
       keywords: %w[cannabishouse eksperyment społeczny badania naukowe cannabis house reglamentacja regla-permis nauka konopie],
       twitter: { site_name: site_name,
-                 site: '@thecookieshq',
+                 site: '@CannabisHouseEU',
                  card: 'summary',
                  description: description,
                  image: image },
