@@ -1,0 +1,18 @@
+%p
+  Witaj #{@email}!
+%p Serdecznie dziękujemy za wstąpienie w szeregi Stowarzyszenia Cannabis House. Aby zweryfikować autentyczność tego konta i ukończyć proces rejestracji na platformie internetowej kliknij link poniżej:
+%p= link_to 'Potwierdź swoje konto', confirmation_url(@resource, confirmation_token: @token)
+%p
+  Zachęcamy do zapoznania się treścią portalu
+  = link_to 'Cannabis House', 'https://www.cannabishouse.eu'
+  , a zwłaszcza ze statutem Stowarzyszenia, instrukcją personalizacji oraz opisem programu badawczego. W razie dodatkowych pytań i wątpliwości zapraszamy do kontaktu pod adresem e­mail (info@cannabishouse.eu) lub poprzez infolinię czynną w godzinach 10­-16 (732 755 100). Przypominamy, że chronimy twoją prywatność oraz dane osobowe. Powierzone nam informacje
+  %b nigdy
+  nie zostaną przekazane osobom i instytucjom trzecim lub użyte w celach komercyjnych.
+%p
+  Cannabis House możesz znaleźć także na
+  = link_to 'FACEBOOKU', 'https://www.facebook.com/lodzCH'
+  ,
+  = link_to 'TWITTERZE', 'https://twitter.com/cannabishouseeu'
+  oraz
+  = link_to 'INSTAGRAMIE', 'https://www.instagram.com/cannabis.house'
+%p Życzymy miłego dnia!

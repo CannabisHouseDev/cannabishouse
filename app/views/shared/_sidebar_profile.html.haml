@@ -1,0 +1,13 @@
+.profile-userpic
+  - if current_user.try(:profile).try(:avatar)
+    = image_tag(current_user.profile.avatar.large_avatar)
+  - else
+    = gravatar_image_tag(current_user.email, :alt => current_user.email)
+.profile-usertitle
+  .profile-usertitle-name
+    //TODO: = user_fullname(current_user) 
+    = current_user.email
+  .profile-usertitle-job
+    //TODO: = current_user.role
+.profile-userbuttons
+//TO DO płatności lekarz prawnik etc.
