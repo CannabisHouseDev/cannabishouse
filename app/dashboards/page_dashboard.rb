@@ -11,7 +11,7 @@ class PageDashboard < Administrate::BaseDashboard
     body: Field::HasOne,
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: RichTextField,
     show_in_menu: Field::Boolean,
     slug: Field::String,
     position: Field::Number,
@@ -29,13 +29,11 @@ class PageDashboard < Administrate::BaseDashboard
   body
   id
   title
-  body
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  body
   id
   title
   body
@@ -53,7 +51,6 @@ class PageDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   body
   title
-  body
   show_in_menu
   slug
   position

@@ -12,7 +12,7 @@ class PostDashboard < Administrate::BaseDashboard
     body: Field::HasOne,
     id: Field::Number,
     title: Field::String,
-    body: Field::Text,
+    body: RichTextField,
     status: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     post_date: Field::DateTime,
     image: Field::String,
@@ -38,7 +38,6 @@ class PostDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   user
-  body
   id
   title
   body
@@ -56,7 +55,6 @@ class PostDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   user
-  body
   title
   body
   status
