@@ -1,0 +1,42 @@
+.max-w-7xl.mx-auto.px-4.sm:px-6
+  .px-20.mt-10.mb-20
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      .mt-8.max-w-md.mx-auto
+        %h2
+          Edit #{resource_name.to_s.humanize}
+        .grid.grid-cols-1.gap-6
+          = render "users/shared/error_messages", resource: resource
+          .label.block.text-center
+            %span.text-gray-700
+              = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0"
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+          .label.block.text-center
+            %span.text-gray-700
+              = f.label :password,  'Hasło'
+              %i (leave blank if you don't want to change it)
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+            - if @minimum_password_length
+              %br/
+              %em
+                = @minimum_password_length
+                characters minimum
+          .field
+            = f.label :password_confirmation, 'Potwierdzenie hasła'
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+          .field
+            = f.label :current_password, 'Obecne hasło'
+            %i (we need your current password to confirm your changes)
+            %br/
+            = f.password_field :current_password, autocomplete: "current-password", class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+
+          = f.submit 'Uaktualnij', :class => 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
+
+        %p Unhappy?
+        = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700'
+        = link_to "Back", :back

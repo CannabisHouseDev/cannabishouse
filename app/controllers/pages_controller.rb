@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def show
     @page = Page.friendly.find_by(slug: params[:id]) if params[:id]
     raise ActionController::RoutingError.new('Not Found') unless @page
-  	set_meta_tags(title: @page.title)
+    set_meta_tags(title: @page.title)
   end
   
   private

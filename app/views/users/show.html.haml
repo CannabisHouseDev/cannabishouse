@@ -1,0 +1,29 @@
+.container
+  .row.profile
+    .col-md-3.col-sm-4
+      .profile-sidebar
+        = render '/shared/sidebar_profile'
+        = render '/shared/sidebar_menu', active_link: :user_show
+    .col-md-9.col-sm-8
+      .row.user-info
+        .col-md-6.col-sm12
+          .user-avatar
+            = gravatar_image_tag(@user.email, :alt => @user.email, :gravatar => { :size => 280 } )
+        .col-md-6.col-sm12  
+          .user-name
+            %h1 
+              = t('.bro') #mordo nie wiem jak tu dwukropek wstawić :(
+            %h3= t('.full_name') #i tu
+            %section.bg-info
+              %p.user-name
+                %strong= current_user.email
+            %h3= t('.city') #i tu też
+            %section.bg-info
+              %p.user-name
+                %strong Your Name
+      .row.user-info
+        .col-md-12.col-sm12
+          .thredded-feed
+            %h1 TU może być twój feed
+            %p
+              Tu powstaje najnowsza platforma CHouse
