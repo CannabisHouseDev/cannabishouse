@@ -7,8 +7,8 @@ module DevisePermittedParameters
 
   protected
 
-	def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:agreement_1, :agreement_2, :agreement_3, :agreement_4])
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:agreement_1, :agreement_2])
   end
 end
 
