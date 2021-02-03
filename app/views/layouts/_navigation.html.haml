@@ -157,24 +157,16 @@
                   %p.mt-1.text-sm.text-gray-500
                     Understand how we take your privacy seriously.
             // To Do: Feed from Posts
-            -# .px-5.py-5.bg-gray-50.sm:px-8.sm:py-8
-            -#   %div
-            -#     %h3.text-sm.tracking-wide.font-medium.text-gray-500.uppercase
-            -#       Recent Posts
-            -#     %ul.mt-4.space-y-4
-            -#       %li.text-base.truncate
-            -#         %a.font-medium.text-gray-900.hover:text-gray-700{:href => "#"}
-            -#           Boost your conversion rate
-            -#       %li.text-base.truncate
-            -#         %a.font-medium.text-gray-900.hover:text-gray-700{:href => "#"}
-            -#           How to use search engine optimization to drive traffic to your site
-            -#       %li.text-base.truncate
-            -#         %a.font-medium.text-gray-900.hover:text-gray-700{:href => "#"}
-            -#           Improve your customer experience
-            -#   .mt-5.text-sm
-            -#     %a.font-medium.text-indigo-600.hover:text-indigo-500{:href => "#"}
-            -#       View all posts
-            -#       %span{"aria-hidden" => "true"} →
+            .px-5.py-5.bg-gray-50.sm:px-8.sm:py-8
+              %div
+                %h3.text-sm.tracking-wide.font-medium.text-gray-500.uppercase
+                  Ostatnie Newsy
+                - Post.all.each do |post|
+                  %ul.mt-4.space-y-4
+                    %li.text-base.truncate
+                      = link_to "#{post.title}", post_path(post), class: "font-medium text-gray-900 hover:text-gray-700"
+              .mt-5.text-sm
+                = link_to 'View all posts <span aria-hidden="true">&rarr;</span>'.html_safe, posts_path, class: "font-medium text-indigo-600 hover:text-indigo-500"
       = render 'layouts/navlinks_for_auth'
   /
     Mobile menu, show/hide based on mobile menu state.
