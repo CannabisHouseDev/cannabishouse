@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
 
-  attr_accessor :agreement_1, :agreement_2, :agreement_3, :agreement_4
+  attr_accessor :agreement_1, :agreement_2
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
