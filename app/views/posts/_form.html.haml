@@ -14,7 +14,7 @@
     = f.rich_text_area :body
   .field
     = f.label :status
-    = f.select :status
+    = f.select :status, [:draft, :published, :blog, :archived]
   .field
     = f.label :user
     = f.text_field :user
