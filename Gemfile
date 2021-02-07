@@ -31,7 +31,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot'
   gem 'rspec-rails'
+  gem 'rubocop'
 end
 
 group :development do
@@ -41,6 +43,9 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'letter_opener'
+  gem 'better_errors'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -54,3 +59,4 @@ gem "stimulus_reflex", "~> 3.4"
 
 gem 'devise'
 gem 'gravatar_image_tag'
+gem "administrate"
