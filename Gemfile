@@ -34,6 +34,7 @@ group :development, :test do
   gem 'factory_bot'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'faker'
 end
 
 group :development do
@@ -45,7 +46,6 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'letter_opener'
   gem 'better_errors'
-  gem 'faker'
 end
 
 group :test do
