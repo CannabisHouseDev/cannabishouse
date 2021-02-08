@@ -48,6 +48,15 @@ group :development do
   gem 'faker'
 end
 
+group :test do
+  gem "i18n-tasks"
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'selenium-webdriver'
+  gem 'email_spec'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
