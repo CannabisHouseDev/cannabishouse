@@ -10,7 +10,7 @@
               - if index.even?
                 .mb-8.flex.justify-between.items-center.w-full.right-timeline
                   .order-1{:class => "w-5/12"}
-                  .z-20.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
+                  .z-9.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
                     %h1.mx-auto.font-semibold.text-lg.text-white=index
                   .order-1.bg-gray-400.rounded-lg.shadow-xl.px-6.py-4{:class => "w-5/12"}
                     %h3.mb-3.font-bold.text-gray-800.text-xl= post.title
@@ -19,13 +19,13 @@
               - else
                 .mb-8.flex.justify-between.flex-row-reverse.items-center.w-full.left-timeline
                   .order-1{:class => "w-5/12"}
-                  .z-20.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
+                  .z-9.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
                     %h1.mx-auto.text-white.font-semibold.text-lg=index
                   .order-1.bg-yellow-400.rounded-lg.shadow-xl.px-6.py-4{:class => "w-5/12"}
                     %h3.mb-3.font-bold.text-white.text-xl= post.title
                     %p.text-sm.font-medium.leading-snug.tracking-wide.text-white.text-opacity-100= truncate(strip_tags(post.body.body.html_safe), omision: "...", length: 250)
                     = link_to 'więcej', post, class: 'text-right ml-8 mt-2 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
-            .row
-              .col-lg-12
-                .text-center
-                  = paginate @posts
+            .w-full
+              .div
+                .text-center.font-bold.text-grey-800
+                  = paginate @posts 
