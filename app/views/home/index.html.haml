@@ -1,6 +1,31 @@
-.font-sans.bg-white.h-screen.flex.flex-col.w-full
-  .h-screen.bg-gradient-to-r.from-green-400.to-blue-500
-    .px-4.py-48
+.font-sans.bg-white.flex.flex-col.w-full
+  .bg-gradient-to-r.from-green-400.to-blue-500
+    .px-4.py-4
       .relative.w-full.text-center
-        %h1.animate-pulse.font-bold.text-gray-200.text-2xl.mb-6
-          Your TailwindCSS setup is working if this pulses...
+        .container.bg-gray-200.mx-auto.w-full.h-full
+          .relative.wrap.overflow-hidden.p-10.h-full
+            .border-2-2.absolute.border-opacity-20.border-gray-700.h-full.border{:style => "left: 50%"}
+            - @posts.each_with_index do |post, index|
+              / right timeline
+              - if index.even?
+                .mb-8.flex.justify-between.items-center.w-full.right-timeline
+                  .order-1{:class => "w-5/12"}
+                  .z-9.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
+                    %h1.mx-auto.font-semibold.text-lg.text-white=index
+                  .order-1.bg-gray-400.rounded-lg.shadow-xl.px-6.py-4{:class => "w-5/12"}
+                    %h3.mb-3.font-bold.text-gray-800.text-xl= post.title
+                    %p.text-sm.leading-snug.tracking-wide.text-gray-900.text-opacity-100= truncate(strip_tags(post.body.body.html_safe), omision: "...", length: 250)
+                    = link_to 'więcej', post, class: 'ml-8 mt-2 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
+              - else
+                .mb-8.flex.justify-between.flex-row-reverse.items-center.w-full.left-timeline
+                  .order-1{:class => "w-5/12"}
+                  .z-9.flex.items-center.order-1.bg-gray-800.shadow-xl.w-8.h-8.rounded-full
+                    %h1.mx-auto.text-white.font-semibold.text-lg=index
+                  .order-1.bg-yellow-400.rounded-lg.shadow-xl.px-6.py-4{:class => "w-5/12"}
+                    %h3.mb-3.font-bold.text-white.text-xl= post.title
+                    %p.text-sm.font-medium.leading-snug.tracking-wide.text-white.text-opacity-100= truncate(strip_tags(post.body.body.html_safe), omision: "...", length: 250)
+                    = link_to 'więcej', post, class: 'text-right ml-8 mt-2 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
+            .w-full
+              .div
+                .text-center.font-bold.text-grey-800
+                  = paginate @posts 
