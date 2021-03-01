@@ -13,7 +13,6 @@
         .pb-6
           %label.font-semibold.text-gray-700.block.pb-1{:for => "name"} Name
           .flex
-            //Tuformularz
             %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "Jane Name"}/
         .pb-4
           %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
@@ -25,4 +24,27 @@
       Address
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
-        %h2 Add address
+        = form_with model: @user do |form|
+          = form.text_field :email
+          - @user.addresses.each do |address|
+            = form.fields_for address do |address_form|
+              .field
+              = address_form.label :street_address1
+              = address_form.text_field :street_address1, placeholder: "Gandzia street"
+              .field
+              = address_form.label :street_address2
+              = address_form.text_field :street_address2, placeholder: "4/20"
+              .field
+              = address_form.label :city
+              = address_form.text_field :city, placeholder: 'JoinTown'
+              .field
+              = address_form.label :zip_code
+              = address_form.text_field :zip_code, placeholder: "00-420"
+              .field
+              = address_form.label :province
+              = address_form.select :province, Profile.provinces.keys.to_a , prompt: true
+              .field
+              = address_form.label :country
+              = address_form.text_field :country, placeholder: "Polska"
+          .actions
+          = form.submit 'Save'

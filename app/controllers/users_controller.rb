@@ -27,4 +27,8 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
+
+  def secure_params
+    params.require(:user).permit!(:email, :password, :password_confirmation, address_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :type])
+  end
 end
