@@ -25,4 +25,13 @@
       Address
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
-        %h2 Add address
+        %h2 address
+        - @user.addresses.each do |address|
+          %ul
+            %li=address.street1
+            %li=address.street2
+            %li=address.province
+            %li=address.zip_code
+            %li=address.country
+            %li=address.city
+            %li=address.type

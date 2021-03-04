@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(permitted_params)
+    if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
     else
       redirect_to users_path, :alert => "Unable to update user."
@@ -29,6 +29,6 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit!(:email, :password, :password_confirmation, address_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :type])
+    params.require(:user).permit!(:email, :password, :password_confirmation, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category])
   end
 end

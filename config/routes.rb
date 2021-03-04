@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     sessions:      'users/sessions'
   }
   
-  resources :users, only: [:show, :index, :edit] do
+  resources :users, only: [:show, :index, :edit, :update, :destroy] do
     resources :addresses
   end
   resource :user, only: [:update]

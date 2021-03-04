@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :posts
-  has_many :addresses, inverse_of: :user
+  has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
   
   attr_accessor :agreement_1, :agreement_2
