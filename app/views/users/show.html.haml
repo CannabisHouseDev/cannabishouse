@@ -23,15 +23,12 @@
   .border-b-2.block.md:flex
     .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
       Address
+      %br
+      %h2 Add an address
+      -# = render 'addresses/form', address: @user.addresses.build
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
-        %h2 address
-        - @user.addresses.each do |address|
-          %ul
-            %li=address.street1
-            %li=address.street2
-            %li=address.province
-            %li=address.zip_code
-            %li=address.country
-            %li=address.city
-            %li=address.type
+        %h2 addresses
+        - if @user.addresses.any?
+          %hr
+          = render @user.addresses

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :new, :edit, :update, :destroy]
+
+  def new
+    @addresses = @user.addresses.build
+  end
 
   def edit
   end

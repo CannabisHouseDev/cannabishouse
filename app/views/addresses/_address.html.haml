@@ -1,0 +1,8 @@
+%p 
+  Zoba na to:
+  = address.id |
+  = link_to address.city, user_address_path(@user, address) 
+%p Edit this address:
+= render 'addresses/form', address: address
+%p= link_to 'Delete address', user_address_path(@user,address), method: :delete
+%hr

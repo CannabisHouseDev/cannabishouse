@@ -26,28 +26,6 @@
       .rounded.shadow.p-6
         = form_with model: @user do |form|
           = form.text_field :email
-          - @user.addresses.each do |address|
-            = form.fields_for address do |address_form|
-              .field
-              = address_form.label :street1
-              = address_form.text_field :street1, placeholder: "Gandzia street"
-              .field
-              = address_form.label :street2
-              = address_form.text_field :street2, placeholder: "4/20"
-              .field
-              = address_form.label :city
-              = address_form.text_field :city, placeholder: 'JoinTown'
-              .field
-              = address_form.label :zip_code
-              = address_form.text_field :zip_code, placeholder: "00-420"
-              .field
-              = address_form.label :province
-              = address_form.select :province, Address.provinces.keys.to_a, prompt: true
-              .field
-              = address_form.label :country
-              = address_form.text_field :country, placeholder: "Polska"
-              .field
-              = address_form.label :category
-              = address_form.select :category, Address.categories.to_a, prompt: true
+
           .actions
           = form.submit 'Save'
