@@ -76,6 +76,10 @@ Similar Projects
 Contributing
 ------------
 
+You're more then welcome to join our dev team. Send message to info@cannabishouse.eu or 
+
+join our slack channel https://join.slack.com/t/cannabishouse/shared_invite/enQtNzAzODY0NjkxMjY4LTI1YTEwMDk0YjkwNGNkMjMzODdmY2I3OWEwYTE1YmQwZjA5ZDc5ZDQ4YzYyOTkwZTc0NDQzZjcwOTA0YWM0ZWM
+
 Credits
 -------
 
