@@ -22,13 +22,12 @@
 .h-full
   .border-b-2.block.md:flex
     .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
-      Address
+      %h2 Address
       %br
-      %h2 Add an address
-      -# = render 'addresses/form', address: @user.addresses.build
+      - if @user.addresses.any?
+        %hr
+        = render @user.addresses
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
-        %h2 addresses
-        - if @user.addresses.any?
-          %hr
-          = render @user.addresses
+        %h2 Add an address
+        = render 'addresses/form', address: @user.addresses.build

@@ -21,7 +21,7 @@ class AddressesController < ApplicationController
         format.html { redirect_to user_path(@user), notice: 'Address was successfully created.' }
         format.json { render :show, status: :created, location: @address }
       else
-        format.html { render :new }
+        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -43,9 +43,9 @@ class AddressesController < ApplicationController
   end
 
   def destroy
-    @post.destroy
+    @address.destroy
      respond_to do |format|
-      format.html { redirect_to user_addresses_path(@user), notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to user_path(@user), notice: 'Address was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
