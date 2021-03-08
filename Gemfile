@@ -67,5 +67,4 @@ gem 'meta-tags'
 gem "stimulus_reflex", "~> 3.4"
 
 gem 'devise'
-gem 'gravatar_image_tag'
 gem "administrate"

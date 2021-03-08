@@ -7,7 +7,7 @@
         = link_to "Edit", edit_user_path(current_user), class: "-mt-2 text-md font-bold text-white bg-gray-700 rounded-full px-5 py-2 hover:bg-gray-800"
       %span.text-gray-600 This information is secret so be careful
       .w-full.p-8.mx-2.flex.justify-center
-        gravatar nie działa bo zmieniła sie biblioteka URI
+        = image_tag(gravatar_url_for(current_user.email, size: 280), class: "max-w-xs w-64 items-center border")
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
         .pb-6
