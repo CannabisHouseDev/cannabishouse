@@ -11,13 +11,38 @@
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
         .pb-6
-          %label.font-semibold.text-gray-700.block.pb-1{:for => "name"} Name
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "first_name"} First Name
           .flex
             //Tuformularz
-            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "Jane Name"}/
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "#{@user.first_name}"}/
+        .pb-6
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "last_name"} Last Name
+          .flex
+            //Tuformularz
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "#{@user.last_name}"}/
+        .pb-6
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "birth_date"} Data Urodzenia
+          .flex
+            //Tuformularz
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "date", :value => "#{@user.birth_date}"}/
+        .pb-6
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "pesel"} PESEL
+          .flex
+            //Tuformularz
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "#{@user.pesel}"}/
+        .pb-6
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "contact_number"} Nr Kontaktowy
+          .flex
+            //Tuformularz
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "#{@user.contact_number}"}/
+        .pb-6
+          %label.font-semibold.text-gray-700.block.pb-1{:for => "gender"} Płeć
+          .flex
+            //Tuformularz
+            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "#{@user.gender}"}/
         .pb-4
           %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
-          %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{current_user.email}"}/
+          %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{@user.email}"}/
           %span.text-gray-600.pt-4.block.opacity-70 Personal login information of your account
 .h-full
   .border-b-2.block.md:flex

@@ -9,15 +9,37 @@
       .w-full.p-8.mx-2.flex.justify-center
         = image_tag(gravatar_url_for(current_user.email, size: 280), class: "max-w-xs w-64 items-center border")
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
-      .rounded.shadow.p-6
-        .pb-6
-          %label.font-semibold.text-gray-700.block.pb-1{:for => "name"} Name
-          .flex
-            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "Jane Name"}/
-        .pb-4
-          %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
-          %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{current_user.email}"}/
-          %span.text-gray-600.pt-4.block.opacity-70 Personal login information of your account
+      =form_with(model: @user, method: "patch") do |form|
+        .rounded.shadow.p-6
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "first_name"} First Name
+            .flex
+              = form.text_field :first_name, autofocus: true, class: "border-1 rounded-r px-4 py-2 w-full"
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "last_name"} Last Name
+            .flex
+              = form.text_field :last_name, class: "border-1 rounded-r px-4 py-2 w-full"
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "birth_date"} Data Urodzenia
+            .flex
+              = form.date_field :birth_date, class: "border-1 rounded-r px-4 py-2 w-full"
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "pesel"} PESEL
+            .flex
+              = form.text_field :pesel, class: "border-1 rounded-r px-4 py-2 w-full", placeholder: "89122193828"
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "contact_number"} Nr Kontaktowy
+            .flex
+              = form.telephone_field :contact_number, class: "border-1 rounded-r px-4 py-2 w-full"
+          .pb-6
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "gender"} Płeć
+            .flex
+              = form.select :is_male, [["Mężczyzna", true], ["Kobieta", false]], class: 'border-1 rounded-r px-4 py-2 w-full'
+          .pb-4
+            %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
+            %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{@user.email}"}/
+            %span.text-gray-600.pt-4.block.opacity-70 Personal login information of your account
+          = form.submit 'Zapisz', class: 'form-submit bg-yellow-600 hover:bg-yellow-700 ml-auto mr-0 flex -mt-4'
 .h-full
   .border-b-2.block.md:flex
     .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}

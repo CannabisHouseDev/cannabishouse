@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_190107) do
+ActiveRecord::Schema.define(version: 2021_03_13_225636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_190107) do
     t.integer "province"
     t.string "zip_code"
     t.string "country"
-    t.integer "type"
+    t.integer "category"
     t.string "addressable_type"
     t.bigint "addressable_id"
     t.datetime "created_at", precision: 6, null: false
@@ -117,6 +117,21 @@ ActiveRecord::Schema.define(version: 2021_02_14_190107) do
     t.string "unconfirmed_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "contact_number"
+    t.string "pesel"
+    t.boolean "is_men"
+    t.text "skills"
+    t.text "illness"
+    t.string "nickname"
+    t.string "avatar"
+    t.date "birth_date"
+    t.integer "account_balance"
+    t.integer "role"
+    t.text "admin_log"
+    t.boolean "lawyer_paid", default: false
+    t.boolean "doctor_paid", default: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

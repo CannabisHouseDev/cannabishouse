@@ -17,8 +17,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :edit, :update, :destroy] do
     resources :addresses
   end
-  resource :user, only: [:update]
-  
   get 'home/index'
   root 'home#index'
   get 'under_construction', to: 'home#under_construction'
