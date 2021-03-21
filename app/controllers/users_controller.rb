@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :new, :edit, :update, :destroy]
+
+  def new
+    @addresses = @user.addresses.build
+  end
 
   def edit
   end
@@ -10,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(permitted_params)
+    if @user.update_attributes(secure_params)
       redirect_to users_path, :notice => "User updated."
     else
       redirect_to users_path, :alert => "Unable to update user."
@@ -26,5 +30,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def secure_params
+    params.require(:user).permit!(:email, :password, :password_confirmation, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category])
   end
 end
