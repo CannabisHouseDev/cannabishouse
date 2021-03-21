@@ -1,24 +1,24 @@
 = form_with(model: [ @user, address ], local: true) do |address_form|
   .col-span-6.sm:col-span-3
-  = address_form.label 'Address', class: 'form-label'
-  = address_form.text_field :street1, placeholder: 'Gandzia street', class: 'form-input'
+  = address_form.label 'Address', class: 'Form-label'
+  = address_form.text_field :street1, placeholder: 'Gandzia street', class: 'Form-input'
   .col-span-6.sm:col-span-3
-  = address_form.label 'Address 2', class: 'form-label'
-  = address_form.text_field :street2, placeholder: "4/20", class: 'form-input'
+  = address_form.label 'Address 2', class: 'Form-label'
+  = address_form.text_field :street2, placeholder: "4/20", class: 'Form-input'
   .col-span-6.sm:col-span-3
-  = address_form.label :city, class: 'form-label'
-  = address_form.text_field :city, placeholder: 'JoinTown', class: 'form-input'
+  = address_form.label :city, class: 'Form-label'
+  = address_form.text_field :city, placeholder: 'JoinTown', class: 'Form-input'
   .col-span-6.sm:col-span-3
-  = address_form.label :zip_code, class: 'form-label'
-  = address_form.text_field :zip_code, placeholder: "00-420", class: 'form-input'
+  = address_form.label :zip_code, class: 'Form-label'
+  = address_form.text_field :zip_code, placeholder: "00-420", class: 'Form-input'
   .col-span-6.sm:col-span-3
-  = address_form.label :province, class: 'form-label'
+  = address_form.label :province, class: 'Form-label'
   = address_form.select :province, Address.provinces.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
   .col-span-6.sm:col-span-3
-  = address_form.label :country, class: 'form-label'
-  = address_form.text_field :country, placeholder: "Polska", class: 'form-input'
+  = address_form.label :country, class: 'Form-label'
+  = address_form.text_field :country, placeholder: "Polska", class: 'Form-input'
   .col-span-6.sm:col-span-3
-  = address_form.label :category, class: 'form-label'
+  = address_form.label :category, class: 'Form-label'
   = address_form.select :category, Address.categories.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
   .col-span-6.sm:col-span-3
-  = address_form.submit 'zapisz', class: 'form-submit'
+  = address_form.submit 'zapisz', class: 'Form-submit'

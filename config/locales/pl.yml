@@ -1,0 +1,7 @@
+en:
+  hello: "Hello world"
+  active_record:
+    attributes:
+      user:
+      address:
+        zip_code: "Twój kod pocztowy ma format 00-000"
