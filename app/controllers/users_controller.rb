@@ -34,14 +34,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # def user_params
-  #   params.require(:user).permit!(:email, :password, :password_confirmation, :role, :first_name, :last_name, :pesel, :is_men, :skills, :illness, :contact_number, :avatar, :birth_date, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category])
-  # end
+  def secure_params
+    params.require(:user).permit!(:email, :password, :password_confirmation, :role, :first_name, :last_name, :pesel, :is_men, :skills, :illness, :contact_number, :avatar, :birth_date, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category])
+  end
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :role, :first_name, :last_name, :pesel, :is_men, :skills, :illness, :contact_number, :avatar, :birth_date, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category]])
-  end
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:email, :password, :password_confirmation, :role, :first_name, :last_name, :pesel, :is_men, :skills, :illness, :contact_number, :avatar, :birth_date, addresses_attributes: [:id, :street1, :street2, :city, :province, :zip_code, :country, :category]])
+  # end
   
 end

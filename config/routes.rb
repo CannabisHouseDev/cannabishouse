@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resources :users
     resources :pages
     resources :posts
+    resources :addresses
 
     root to: "users#index"
   end

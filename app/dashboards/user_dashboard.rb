@@ -9,6 +9,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     posts: Field::HasMany,
+    addresses: Field::HasMany,
     id: Field::Number,
     email: Field::String,
     encrypted_password: Field::String,
@@ -21,6 +22,21 @@ class UserDashboard < Administrate::BaseDashboard
     unconfirmed_email: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    first_name: Field::String,
+    last_name: Field::String,
+    contact_number: Field::String,
+    pesel: Field::String,
+    is_men: Field::Boolean,
+    skills: Field::Text,
+    illness: Field::Text,
+    nickname: Field::String,
+    avatar: Field::String,
+    birth_date: Field::Date,
+    account_balance: Field::Number,
+    role: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    admin_log: Field::Text,
+    lawyer_paid: Field::Boolean,
+    doctor_paid: Field::Boolean,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,6 +55,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
   posts
+  addresses
   id
   email
   encrypted_password
@@ -51,6 +68,21 @@ class UserDashboard < Administrate::BaseDashboard
   unconfirmed_email
   created_at
   updated_at
+  first_name
+  last_name
+  contact_number
+  pesel
+  is_men
+  skills
+  illness
+  nickname
+  avatar
+  birth_date
+  account_balance
+  role
+  admin_log
+  lawyer_paid
+  doctor_paid
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -58,6 +90,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
   posts
+  addresses
   email
   encrypted_password
   reset_password_token
@@ -67,6 +100,21 @@ class UserDashboard < Administrate::BaseDashboard
   confirmed_at
   confirmation_sent_at
   unconfirmed_email
+  first_name
+  last_name
+  contact_number
+  pesel
+  is_men
+  skills
+  illness
+  nickname
+  avatar
+  birth_date
+  account_balance
+  role
+  admin_log
+  lawyer_paid
+  doctor_paid
   ].freeze
 
   # COLLECTION_FILTERS

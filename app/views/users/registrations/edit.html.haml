@@ -34,9 +34,36 @@
             %i (we need your current password to confirm your changes)
             %br/
             = f.password_field :current_password, autocomplete: "current-password", class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
-
+          .rounded.shadow.p-6
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "first_name"} First Name 
+              .flex
+                = f.text_field :first_name, autofocus: true, class: "border-1 rounded-r px-4 py-2 w-full"
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "last_name"} Last Name
+              .flex
+                = f.text_field :last_name, class: "border-1 rounded-r px-4 py-2 w-full"
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "birth_date"} Data Urodzenia
+              .flex
+                = f.date_field :birth_date, class: "border-1 rounded-r px-4 py-2 w-full"
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "pesel"} PESEL
+              .flex
+                = f.text_field :pesel, class: "border-1 rounded-r px-4 py-2 w-full", placeholder: "89122193828"
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "contact_number"} Nr Kontaktowy
+              .flex
+                = f.telephone_field :contact_number, class: "border-1 rounded-r px-4 py-2 w-full"
+            .pb-6
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "gender"} Płeć
+              .flex
+                = f.select :is_men, [["Mężczyzna", true], ["Kobieta", false]], class: 'border-1 rounded-r px-4 py-2 w-full'
+            .pb-4
+              %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
+              %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{@user.email}"}/
+              %span.text-gray-600.pt-4.block.opacity-70 Personal login information of your account
           = f.submit 'Uaktualnij', :class => 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
-
         %p Unhappy?
         = button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700'
         = link_to "Back", :back
