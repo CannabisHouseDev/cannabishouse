@@ -1,5 +1,14 @@
 class User < ApplicationRecord
   has_many :posts
+  
+  has_one :profile
+  accepts_nested_attributes_for :profile, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
+  
+  after_create :create_user_profile
+  def create_user_profile
+    self.create_profile
+  end
+  
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
   

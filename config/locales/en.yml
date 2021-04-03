@@ -33,7 +33,8 @@ en:
   hello: "Hello world"
   active_record:
     attributes:
-      user:
       address:
         zip_code: "Your zip code should be 00-000"
-
+      profile:
+        pesel_11_digit: "Pesel should have 11 digits"
+      user:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_190107) do
+ActiveRecord::Schema.define(version: 2021_03_30_202531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_190107) do
     t.integer "province"
     t.string "zip_code"
     t.string "country"
-    t.integer "type"
+    t.integer "category"
     t.string "addressable_type"
     t.bigint "addressable_id"
     t.datetime "created_at", precision: 6, null: false
@@ -105,6 +105,24 @@ ActiveRecord::Schema.define(version: 2021_02_14_190107) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer "role"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nick_name"
+    t.string "pesel"
+    t.integer "gender"
+    t.string "skills"
+    t.string "illness"
+    t.string "contact_number"
+    t.string "avatar"
+    t.date "birth_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -125,4 +143,5 @@ ActiveRecord::Schema.define(version: 2021_02_14_190107) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "posts", "users"
+  add_foreign_key "profiles", "users"
 end

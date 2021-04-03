@@ -15,11 +15,54 @@ users_list = [
     agreement_1: 'true',
     agreement_2: 'true',},
 ]
+puts 'create users list'
+(1..47).each do
+  users_list << {
+    email: Faker::Internet.email,
+    password: 'wierd123321_16charsmin',
+    password_confirmation: 'wierd123321_16charsmin',
+    agreement_1: 'true',
+    agreement_2: 'true',  
+  }
+end
+puts 'create profiles'
+profiles_list = []
+(1..50).each do
+  profiles_list << {
+    role: rand(0..5),
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    nick_name: Faker::Games::LeagueOfLegends.champion,
+    pesel: 1,
+    gender: rand(0..1),
+    skills:  Faker::Lorem.words(number: 4),
+    illness: Faker::Lorem.words(number: 4),
+    contact_number: Faker::PhoneNumber.phone_number,
+    avatar: Faker::Games::LeagueOfLegends.champion
+  }
+end
+puts 'addresses build'
+addresses_list = []
+(1..50).each do |x|
+  addresses_list << {
+    street1: Faker::Address.street_name, 
+    street2: "#{rand(1..500)}", 
+    city: Faker::Address.city, 
+    province: rand(0..15), 
+    zip_code: "#{rand(0..9)}#{rand(0..9)}-#{rand(0..9)}#{rand(0..9)}#{rand(0..9)}", 
+    country: "Polska", 
+    category: rand(0..2),
+  }
+end
+
 puts 'create users'
 users_list.each do |hash|
   user = User.new hash
   user.skip_confirmation!
+  user.profile = Profile.new profiles_list.pop
+  user.profile.save!
   user.save!
+  user.addresses.create! addresses_list.pop
 end
 
 
