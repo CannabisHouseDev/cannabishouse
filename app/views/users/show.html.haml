@@ -22,6 +22,19 @@
 .h-full
   .border-b-2.block.md:flex
     .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
+      %h2 Profile
+      %br
+      %hr
+      - if @user.profile.nil?
+        = render 'profiles/form', profile: @user.build_profile
+      - else 
+        = render @user.profile
+    .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
+      .rounded.shadow.p-6
+        %h2 FREE SPACE !!!! 
+.h-full
+  .border-b-2.block.md:flex
+    .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
       %h2 Address
       %br
       - if @user.addresses.any?
