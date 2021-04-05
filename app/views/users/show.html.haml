@@ -11,27 +11,11 @@
     .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
       .rounded.shadow.p-6
         .pb-6
-          %label.font-semibold.text-gray-700.block.pb-1{:for => "name"} Name
-          .flex
-            //Tuformularz
-            %input#username.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "text", :value => "Jane Name"}/
-        .pb-4
-          %label.font-semibold.text-gray-700.block.pb-1{:for => "about"} Email
-          %input#email.border-1.rounded-r.px-4.py-2.w-full{:disabled => "disabled", :type => "email", :value => "#{current_user.email}"}/
-          %span.text-gray-600.pt-4.block.opacity-70 Personal login information of your account
-.h-full
-  .border-b-2.block.md:flex
-    .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
-      %h2 Profile
-      %br
-      %hr
-      - if @user.profile.nil?
-        = render 'profiles/form', profile: @user.build_profile
-      - else 
-        = render @user.profile
-    .w-full.p-8.bg-white.lg:ml-4.shadow-md{:class => "md:w-3/5"}
-      .rounded.shadow.p-6
-        %h2 FREE SPACE !!!! 
+          .block
+            - if @user.profile.nil?
+              = render 'profiles/form', profile: @user.build_profile
+            - else 
+              = render @user.profile
 .h-full
   .border-b-2.block.md:flex
     .w-full.p-4.sm:p-6.lg:p-8.bg-white.shadow-md{:class => "md:w-2/5"}
