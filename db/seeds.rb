@@ -29,11 +29,11 @@ puts 'create profiles'
 profiles_list = []
 (1..50).each do
   profiles_list << {
-    role: rand(0..5),
+    role: rand(0..8),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nick_name: Faker::Games::LeagueOfLegends.champion,
-    pesel: 1,
+    pesel: "19293012949",
     gender: rand(0..1),
     skills:  Faker::Lorem.words(number: 4),
     illness: Faker::Lorem.words(number: 4),
