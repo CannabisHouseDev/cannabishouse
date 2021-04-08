@@ -36,4 +36,8 @@ en:
       user:
       address:
         zip_code: "Your zip code should be 00-000"
+  views:
+    user:
+      session:
+        sign_in: "Sign In"
 

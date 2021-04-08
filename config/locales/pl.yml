@@ -1,7 +1,12 @@
-en:
+pl:
   hello: "Hello world"
   active_record:
     attributes:
       user:
       address:
         zip_code: "Twój kod pocztowy ma format 00-000"
+  views:
+    user:
+      session:
+        email: "E-mail"
+        sign_in: "Zaloguj się"
