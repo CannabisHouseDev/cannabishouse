@@ -37,8 +37,7 @@ profiles_list = []
     gender: rand(0..1),
     skills:  Faker::Lorem.words(number: 4),
     illness: Faker::Lorem.words(number: 4),
-    contact_number: Faker::PhoneNumber.phone_number,
-    avatar: Faker::Games::LeagueOfLegends.champion
+    contact_number: Faker::PhoneNumber.phone_number
   }
 end
 puts 'addresses build'
@@ -59,9 +58,9 @@ puts 'create users'
 users_list.each do |hash|
   user = User.new hash
   user.skip_confirmation!
-  user.profile = Profile.new profiles_list.pop
-  user.profile.save!
   user.save!
+  user.profile.update profiles_list.pop
+  user.profile.save!
   user.addresses.create! addresses_list.pop
 end
 
