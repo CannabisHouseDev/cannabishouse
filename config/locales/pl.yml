@@ -1,7 +1,9 @@
-en:
+pl:
   hello: "Hello world"
   active_record:
     attributes:
-      user:
       address:
         zip_code: "Twój kod pocztowy ma format 00-000"
+      profile: 
+        pesel_11_digit: "Podaj 11 cyfr numeru pesel"
+      user:
