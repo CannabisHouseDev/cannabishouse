@@ -1,0 +1,37 @@
+= form_for @dispensary do |f|
+  - if @dispensary.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dispensary.errors.count, "error")} prohibited this dispensary from being saved:"
+      %ul
+        - @dispensary.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :avatar
+    = f.file_field :avatar
+  .field
+    = f.label :category
+    = f.select :category, Dispensary.categories.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
+  .field
+    = f.label :documents
+    = f.file_field :documents
+  .field
+    = f.label :verified
+    = f.check_box :verified
+  .field
+    = f.label :open
+    = f.check_box :open
+  .field
+    = f.label :lat
+    = f.number_field(:lat, in: -180.0000000..180.0000000, step: 0.0000001)
+  .field
+    = f.label :lng
+    = f.number_field(:lng, in: -180.0000000..180.0000000, step: 0.0000001)
+  .actions
+    = f.submit 'Save'

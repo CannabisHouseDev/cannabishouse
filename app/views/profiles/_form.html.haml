@@ -16,7 +16,7 @@
     = profile_form.text_field :nick_name, placeholder: "Nick na forum", class: 'Form-input'
   .field
     = profile_form.label :pesel, class: 'Form-label'
-    = profile_form.text_field :pesel, placeholder: I18n.t('active_record.attributes.profile.pesel_11_digit'), class: 'Form-input'
+    = profile_form.text_field :pesel, placeholder: I18n.t('activerecord.attributes.profile.pesel_11_digit'), class: 'Form-input'
   .field
     = profile_form.label :gender, class: 'Form-label'
     = profile_form.select :gender, Profile.genders.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
