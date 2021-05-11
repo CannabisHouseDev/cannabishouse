@@ -4,7 +4,7 @@ class CreateDispensaries < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.string :avatar
-      t.string :category
+      t.integer :category
       t.string :documents
       t.boolean :verified
       t.boolean :open

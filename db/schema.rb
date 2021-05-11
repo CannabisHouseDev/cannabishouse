@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2021_04_16_235355) do
     t.string "name"
     t.string "description"
     t.string "avatar"
-    t.string "category"
+    t.integer "category"
     t.string "documents"
     t.boolean "verified"
     t.boolean "open"
