@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class PostDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -13,13 +15,15 @@ class PostDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     body: RichTextField,
-    status: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
+    status: Field::Select.with_options(searchable: false, collection: lambda { |field|
+                                                                        field.resource.class.send(field.attribute.to_s.pluralize).keys
+                                                                      }),
     post_date: Field::DateTime,
     image: Field::String,
     slug: Field::String,
     inner: Field::Boolean,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -28,40 +32,40 @@ class PostDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  user
-  body
-  id
-  title
+    user
+    body
+    id
+    title
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  user
-  id
-  title
-  body
-  status
-  post_date
-  image
-  slug
-  inner
-  created_at
-  updated_at
+    user
+    id
+    title
+    body
+    status
+    post_date
+    image
+    slug
+    inner
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  user
-  title
-  body
-  status
-  post_date
-  image
-  slug
-  inner
+    user
+    title
+    body
+    status
+    post_date
+    image
+    slug
+    inner
   ].freeze
 
   # COLLECTION_FILTERS

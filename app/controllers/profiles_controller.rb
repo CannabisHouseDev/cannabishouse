@@ -1,25 +1,23 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: %i[show edit update destroy]
 
   # GET /profiles
   # GET /profiles.json
-  def index
-  end
+  def index; end
 
   # GET /profiles/1
   # GET /profiles/1.json
-  def show
-  end
+  def show; end
 
   # GET /profiles/new
-  def new
-  end
+  def new; end
 
   # GET /profiles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /profiles
   # POST /profiles.json
@@ -63,16 +61,18 @@ class ProfilesController < ApplicationController
 
   private
 
-    def set_user
-      @user = User.find(params[:user_id])
-    end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = @user.profile
-    end
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def profile_params
-      params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills, :illness, :contact_number, :avatar, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = @user.profile
+  end
+
+  # Only allow a list of trusted parameters through.
+  def profile_params
+    params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills, :illness,
+                                    :contact_number, :avatar, :user_id)
+  end
 end

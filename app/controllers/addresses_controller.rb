@@ -1,21 +1,21 @@
+# frozen_string_literal: true
+
 class AddressesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: %i[show edit update destroy]
 
   def index
     @addresses = @user.addresses
   end
 
-  def show
-  end
+  def show; end
 
-  def new
-  end
+  def new; end
 
   def create
     @address = @user.addresses.create(address_params)
-  
+
     respond_to do |format|
       if @address.save
         format.html { redirect_to user_path(@user), notice: 'Address was successfully created.' }
@@ -27,8 +27,7 @@ class AddressesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     respond_to do |format|
@@ -44,7 +43,7 @@ class AddressesController < ApplicationController
 
   def destroy
     @address.destroy
-     respond_to do |format|
+    respond_to do |format|
       format.html { redirect_to user_path(@user), notice: 'Address was successfully destroyed.' }
       format.json { head :no_content }
     end
@@ -55,7 +54,7 @@ class AddressesController < ApplicationController
   def set_user
     @user = User.find(params[:user_id])
   end
-  
+
   def set_address
     @address = @user.addresses.find(params[:id])
   end

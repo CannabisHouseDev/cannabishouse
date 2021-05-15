@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :pages
     resources :posts
 
-    root to: "users#index"
+    root to: 'users#index'
   end
 
-    devise_for :users, controllers: {
-      registrations: 'users/registrations',
-      sessions:      'users/sessions'
-    }
+  devise_for :users, controllers: {
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 
   scope '(:locale)', locale: /en/ do
-    root 'pages/landing'
+    root 'pages#landing'
 
     resources :posts
     resource :user, only: [:update]
-    resources :users, only: [:show, :index, :edit, :update, :destroy] do
+    resources :users, only: %i[show index edit update destroy] do
       resources :addresses
       resources :profiles
     end
