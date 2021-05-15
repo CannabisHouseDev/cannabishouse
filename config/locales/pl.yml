@@ -1,9 +1,40 @@
 pl:
-  hello: "Hello world"
-  active_record:
-    attributes:
-      address:
-        zip_code: "Twój kod pocztowy ma format 00-000"
-      profile: 
-        pesel_11_digit: "Podaj 11 cyfr numeru pesel"
-      user:
+  company:
+    name: "Cannabis House"
+    email: ""
+    city: "90-029 Łódź"
+    street: "ul. Nawrot 114, 2 p. lok. 205"
+    phone: "+48 422 784 420"
+  navbar:
+    about: "O"
+    media: "Głoska bezdźwięczna"
+    account: "Konto"
+  devise:
+    login: "Zaloguj sie"
+    singup: "Zapisać się"
+    logout: "Wyloguj"
+  footer:
+    copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
+  pages:
+    landing:
+      hero:
+        title: "Pomóż ratować życie"
+        content: "Cannabis House daje każdemu szansę przyczynienia się do postępu w dziedzinie medycyny i udziału w badaniach z pogranicza dyscypliny naukowej."
+      description:
+        title: "Jesteśmy fascynatorami badań naukowych"
+        contnet: "Nasza platforma zapewnia bezpieczną przestrzeń dla lekarzy, badaczy i uczestników badań do współpracy nad badaniem skutków i korzyści płynących ze stosowania ziół leczniczych."
+      instructions:
+        title: "jak to działa"
+        subheading: "Miesięczny proces, jako uczestnik badania"
+        firstStep:
+          title: "Wypełnij swój profil"
+          content: "Podaj swoje podstawowe informacje i wszelkie informacje wymagane przez naszych lekarzy"
+        secondStep:
+          title: "zaplanowana wizyta"
+          content: "Skorzystaj z naszej platformy, aby umówić się na wizytę u lekarza, który zatwierdzi Twój profil"
+        thirdStep:
+          title: "Odwiedź ambulatorium"
+          content: "Korzystając z konta CH, możesz odwiedzić wyznaczoną lokalną przychodnię, aby odebrać materiał do nauki"
+        fourthStep:
+          title: "Wypełniaj anonimowe ankiety"
+          content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
