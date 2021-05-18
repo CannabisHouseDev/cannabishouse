@@ -1,4 +1,6 @@
-require "administrate/base_dashboard"
+# frozen_string_literal: true
+
+require 'administrate/base_dashboard'
 
 class PageDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -17,7 +19,7 @@ class PageDashboard < Administrate::BaseDashboard
     position: Field::Number,
     inner: Field::Boolean,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,35 +28,35 @@ class PageDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  body
-  id
-  title
+    body
+    id
+    title
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
-  title
-  body
-  show_in_menu
-  slug
-  position
-  inner
-  created_at
-  updated_at
+    id
+    title
+    body
+    show_in_menu
+    slug
+    position
+    inner
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  body
-  title
-  show_in_menu
-  slug
-  position
-  inner
+    body
+    title
+    show_in_menu
+    slug
+    position
+    inner
   ].freeze
 
   # COLLECTION_FILTERS

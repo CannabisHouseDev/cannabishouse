@@ -1,14 +1,19 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-  before_action :prepare_meta_tags
+  before_action :prepare_meta_tags, :set_locale
+
+  def default_url_options
+    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+  end
 
   protected
 
-  def prepare_meta_tags(options={})
-
-    site = "Cannabis House"
+  def prepare_meta_tags(options = {})
+    site = 'Cannabis House'
     site_name = 'cannabishouse.eu'
-    title = [controller_name, action_name].join(" ")
-    description = "Stowarzyszenie Cannabis House"
+    title = [controller_name, action_name].join(' ')
+    description = 'Stowarzyszenie Cannabis House'
     icon = '/favicon.png'
     image = '/logo-ch.jpg'
     current_url = request.url
@@ -21,7 +26,8 @@ class ApplicationController < ActionController::Base
       title: title,
       icon: icon,
       description: description,
-      keywords: %w[cannabishouse eksperyment społeczny badania naukowe cannabis house reglamentacja regla-permis nauka konopie],
+      keywords: %w[cannabishouse eksperyment społeczny badania naukowe cannabis house reglamentacja regla-permis nauka
+                   konopie],
       twitter: { site_name: site_name,
                  site: '@CannabisHouseEU',
                  card: 'summary',
@@ -35,9 +41,14 @@ class ApplicationController < ActionController::Base
             type: 'website' }
     }
 
-
     options.reverse_merge!(defaults)
 
     set_meta_tags options
+  end
+
+  private
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end
