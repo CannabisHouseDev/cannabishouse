@@ -32,6 +32,7 @@
 en:
   company:
     name: "Cannabis House"
+    description: "Cannabis House Association"
     email: "info@cannabishouse.eu"
     city: "90-029 Łódź"
     street: "ul. Nawrot 114, 2 p. lok. 205"
@@ -69,3 +70,38 @@ en:
         fourthStep:
           title: "Fill Anonymous Surveys"
           content: "Help researchers by filling out private anonymous Surveys"
+  controllers:
+      addresses:
+        create:
+          success: "Address was successfully created."
+          error: "Errors encountered, try again."
+        update:
+          success: "Address was successfully updated."
+        destroy:
+          success: "Address was successfully destroyed."
+      profiles:
+        create:
+          success: "Profile was successfully created."
+          error: "Errors encountered, try again."
+        update:
+          success: "Profile was successfully updated."
+          error: "Errors encountered, try again."
+        destroy:
+          success: "Profile was successfully destroyed."
+      users:
+        update:
+          success: "User updated."
+          error: "Unable to update user."
+        destroy:
+          success: "User deleted."
+      registrations:
+        edit:
+          title: "Edit user"
+  views:
+    user:
+      session:
+        sign_in: "Sign in to your CH account"
+        email: "E-mail"
+  models:
+    user:
+      agreements_checked: "Please accept the statements."

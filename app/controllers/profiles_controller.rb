@@ -26,10 +26,10 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to user_path(@user), notice: 'Profile was successfully created.' }
+        format.html { redirect_to user_path(@user), notice: t('.create.success') }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
+        format.html { redirect_to user_path(@user), notice: t('.create.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -40,10 +40,10 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to user_path(@user), notice: 'Profile was successfully updated.' }
+        format.html { redirect_to user_path(@user), notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
+        format.html { redirect_to user_path(@user), notice: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +54,7 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(@user), notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to user_path(@user), notice: t('.destroy.success') }
       format.json { head :no_content }
     end
   end
