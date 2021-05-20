@@ -14,7 +14,8 @@
  *= require_tree .
  *= require_self
  */
- 
+
+@import "app/assets/stylesheets/application.scss";
 @import "./actiontext.scss";
 @import "tailwindcss/base";
 @import "tailwindcss/components";

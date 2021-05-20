@@ -51,9 +51,10 @@ en:
       hero:
         title: "Help Save Lives"
         content: "Cannabis House gives everyone the chance to help advance the field of medicine and participate in studies at the edge of the scientific field."
+        cta: "Learn more"
       description:
         title: "We are scientific study fascillitators"
-        contnet: "Our platform provides a safe space for doctors, researchers, and research participants to collaborate on studying the effects and benefits of medicinal herbs."
+        content: "Our platform provides a safe space for doctors, researchers, and research participants to collaborate on studying the effects and benefits of medicinal herbs."
       instructions:
         title: "How it works"
         subheading: "The monthly process, as a research participant"
