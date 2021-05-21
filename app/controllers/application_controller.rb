@@ -10,10 +10,10 @@ class ApplicationController < ActionController::Base
   protected
 
   def prepare_meta_tags(options = {})
-    site = 'Cannabis House'
+    site = t('company.name')
     site_name = 'cannabishouse.eu'
     title = [controller_name, action_name].join(' ')
-    description = 'Stowarzyszenie Cannabis House'
+    description = t('company.description')
     icon = '/favicon.png'
     image = '/logo-ch.jpg'
     current_url = request.url
@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
       icon: icon,
       description: description,
       keywords: %w[cannabishouse eksperyment społeczny badania naukowe cannabis house reglamentacja regla-permis nauka
-                   konopie],
+                   konopie social experiments scientific research science weed],
       twitter: { site_name: site_name,
                  site: '@CannabisHouseEU',
                  card: 'summary',

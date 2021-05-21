@@ -18,10 +18,10 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to user_path(@user), notice: 'Address was successfully created.' }
+        format.html { redirect_to user_path(@user), notice: t('.create.success') }
         format.json { render :show, status: :created, location: @address }
       else
-        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
+        format.html { redirect_to user_path(@user), notice: t('.create.error') }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -32,7 +32,7 @@ class AddressesController < ApplicationController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to user_address_path(@user), notice: 'Address was successfully updated.' }
+        format.html { redirect_to user_address_path(@user), notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit }
@@ -44,7 +44,7 @@ class AddressesController < ApplicationController
   def destroy
     @address.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(@user), notice: 'Address was successfully destroyed.' }
+      format.html { redirect_to user_path(@user), notice: t('.destroy.success') }
       format.json { head :no_content }
     end
   end

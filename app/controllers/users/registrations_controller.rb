@@ -14,7 +14,7 @@ module Users
 
     # GET /resource/edit
     def edit
-      set_meta_tags(title: 'Edycja użytkownika')
+      set_meta_tags(title: t('controllers.registrations.edit.title'))
       super
     end
 

@@ -27,7 +27,7 @@ class User < ApplicationRecord
   def agreements_checked
     if !persisted? && !(agreement_1 == 'true' && agreement_2 == 'true')
       errors.add(:base,
-                 'Proszę zaakceptować oświadczenia.')
+                 t('models.user.agreements_checked'))
     end
   end
 end
