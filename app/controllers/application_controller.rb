@@ -46,6 +46,22 @@ class ApplicationController < ActionController::Base
     set_meta_tags options
   end
 
+  def after_sign_in_path_for(resource)
+    onboarding_path if !resource.onboarded?
+    case resource.profile.role
+    when "user"
+      #todo
+    when "participant"
+      #todo
+    when "dispensary"
+      #todo
+    when "doctor"
+      #todo
+    when "researcher"
+    #todo
+    end
+  end
+
   private
 
   def set_locale
