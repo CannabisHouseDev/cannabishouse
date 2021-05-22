@@ -3,6 +3,8 @@
 class PagesController < ApplicationController
   def landing; end
 
+  def onboarding; end
+
   def show
     @page = Page.friendly.find_by(slug: params[:id]) if params[:id]
     raise ActionController::RoutingError, 'Not Found' unless @page

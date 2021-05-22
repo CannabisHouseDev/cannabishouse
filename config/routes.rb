@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   scope '(:locale)', locale: /en/ do
     root 'pages#landing'
 
+    get 'welcome', to: 'pages#onboarding', as: 'onboarding'
+
     resources :posts
     resource :user, only: [:update]
     resources :users, only: %i[show index edit update destroy] do
