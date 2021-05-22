@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
+  before_action :authenticate_user!
+
   def landing; end
 
-  def onboarding; end
+  def onboarding
+    @profile = current_user.profile || Profile.new(current_user)
+  end
 
   def show
     @page = Page.friendly.find_by(slug: params[:id]) if params[:id]
