@@ -46,6 +46,9 @@ en:
     logout: "Logout"
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
+  forms:
+    save: "Save"
+    cancel: "Cancel"
   pages:
     landing:
       hero:
@@ -70,3 +73,23 @@ en:
         fourthStep:
           title: "Fill Anonymous Surveys"
           content: "Help researchers by filling out private anonymous Surveys"
+    onboarding:
+      welcome: "Welcome to Canabis House!"
+      start: "Get Started"
+      placeholder:
+        first_name: "First Name"
+        last_name: "Last Name"
+        nickname: "Nickname"
+        pesel: "PESEL Number"
+        skills: "My Skills"
+      labels:
+        first_name: "First Name"
+        last_name: "Last Name"
+        nickname: "Nickname"
+        pesel: "PESEL"
+        skills: "Skills"
+        number: "Phone Number"
+        avatar: "Avatar"
+        birthday: "Birthday"
+
+

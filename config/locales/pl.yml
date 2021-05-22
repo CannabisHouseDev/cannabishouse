@@ -15,6 +15,9 @@ pl:
     logout: "Wyloguj"
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
+  forms:
+    save: "Zapisać"
+    cancel: "Anuluj"
   pages:
     landing:
       hero:
@@ -39,3 +42,21 @@ pl:
         fourthStep:
           title: "Wypełniaj anonimowe ankiety"
           content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
+    onboarding:
+      welcome: "Witamy w Cannabis House!"
+      start: "Zaczynaj"
+      placeholder:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        nickname: "Przezwisko"
+        pesel: "Numer PESEL"
+        skills: "Moje umiejętności"
+      labels:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        nickname: "Przezwisko"
+        pesel: "PESEL"
+        skills: "Umiejętności"
+        number: "Numer telefonu"
+        avatar: "Zdjęcie profilowe"
+        birthday: "Urodziny"
