@@ -1,6 +1,7 @@
 pl:
   company:
     name: "Cannabis House"
+    description: "Stowarzyszenie Cannabis House"
     email: "info@cannabishouse.eu"
     city: "90-029 Łódź"
     street: "ul. Nawrot 114, 2 p. lok. 205"
@@ -42,6 +43,41 @@ pl:
         fourthStep:
           title: "Wypełniaj anonimowe ankiety"
           content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
+  controllers:
+    addresses:
+      create:
+        success: "Adres został pomyślnie utworzony."
+        error: "Napotkano błędy, spróbuj ponownie."
+      update:
+        success: "Adres został pomyślnie zaktualizowany."
+      destroy:
+        success: "Adres został pomyślnie zniszczony."
+    profiles:
+      create:
+        success: "Profil został pomyślnie utworzony."
+        error: "Napotkano błędy, spróbuj ponownie."
+      update:
+        success: "Profil został pomyślnie zaktualizowany."
+        error: "Napotkano błędy, spróbuj ponownie."
+      destroy:
+        success: "Profil został pomyślnie zniszczony."
+    users:
+        update:
+          success: "Zaktualizowano użytkownika."
+          error: "Nie można zaktualizować użytkownika."
+        destroy:
+          success: "Usunięto użytkownika."
+    registrations:
+        edit:
+          title: "Edycja użytkownika"
+  views:
+    user:
+      session:
+        sign_in: "Zaloguj się na swoje konto CH"
+        email: "E-mail"
+  models:
+    user:
+      agreements_checked: "Proszę zaakceptować oświadczenia."
     onboarding:
       welcome: "Witamy w Cannabis House!"
       start: "Zaczynaj"
