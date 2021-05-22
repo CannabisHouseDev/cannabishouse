@@ -49,6 +49,7 @@ group :development do
   gem 'letter_opener'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'dotenv-rails'
 end
 
 group :test do
