@@ -12,8 +12,4 @@ class Profile < ApplicationRecord
        _default: 0
 
   enum gender: %i[male female]
-
-  def participant?
-    role == 1
-  end
 end
