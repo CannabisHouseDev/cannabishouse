@@ -27,6 +27,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'aws-sdk-s3'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -38,6 +40,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem 'bullet'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -49,7 +52,6 @@ group :development do
   gem 'letter_opener'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
-  gem 'dotenv-rails'
 end
 
 group :test do
