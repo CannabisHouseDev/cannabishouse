@@ -96,3 +96,10 @@ pl:
         number: "Numer telefonu"
         avatar: "Zdjęcie profilowe"
         birthday: "Urodziny"
+      errors:
+        pesel: "Podaj prawidłowy numer PESEL"
+  profiles:
+    update:
+      update:
+        success: "Profil zaktualizowany."
+        error: "Prosimy o wypełnienie wszystkich informacji."

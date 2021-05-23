@@ -127,3 +127,10 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
+      errors:
+        pesel: "Please enter a valid PESEL number"
+  profiles:
+    update:
+      update:
+        success: "Profile updated."
+        error: "Please fill out all the information."
