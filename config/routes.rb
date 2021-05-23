@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
     root to: 'users#index'
   end
-<<<<<<< HEAD
   resources :dispensaries do
     member do
       put :add_member
@@ -17,11 +16,6 @@ Rails.application.routes.draw do
       get :members_list
     end
   end
-  resources :posts
-  
-=======
-
->>>>>>> master
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -46,3 +40,4 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
+
