@@ -1,8 +1,10 @@
-require "rails_helper"
+# frozen_string_literal: true
+
+require 'rails_helper'
 
 feature 'Posts' do
   context 'visit paths' do
-    let!(:post) {create(:post, title: "test post title")}
+    let!(:post) { create(:post, title: 'test post title') }
 
     scenario 'post show path' do
       visit post_path(post.id)

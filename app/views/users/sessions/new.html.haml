@@ -2,12 +2,12 @@
   .px-20.mt-10.mb-20
     =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .mt-8.max-w-md.mx-auto
-        %h3.text-2xl.font-bold.text-center Sign Up
+        %h3.text-2xl.font-bold.text-center=I18n.t('views.user.session.sign_in')
         .grid.grid-cols-1.gap-6
           = render "devise/shared/error_messages", resource: resource
           %label.block.text-center
             %span.text-gray-700
-              = f.label :email, 'email'
+              = f.label :email, I18n.t('views.user.session.email')
             %br/
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0", placeholder: "johndoe@example.com"
           %label.block.text-center

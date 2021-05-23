@@ -1,25 +1,23 @@
+# frozen_string_literal: true
+
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: %i[show edit update destroy]
 
   # GET /profiles
   # GET /profiles.json
-  def index
-  end
+  def index; end
 
   # GET /profiles/1
   # GET /profiles/1.json
-  def show
-  end
+  def show; end
 
   # GET /profiles/new
-  def new
-  end
+  def new; end
 
   # GET /profiles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /profiles
   # POST /profiles.json
@@ -28,10 +26,10 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to user_path(@user), notice: 'Profile was successfully created.' }
+        format.html { redirect_to user_path(@user), notice: t('.create.success') }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
+        format.html { redirect_to user_path(@user), notice: t('.create.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -42,10 +40,10 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to user_path(@user), notice: 'Profile was successfully updated.' }
+        format.html { redirect_to user_path(@user), notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: 'Errors encountered, try again' }
+        format.html { redirect_to user_path(@user), notice: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -56,23 +54,25 @@ class ProfilesController < ApplicationController
   def destroy
     @profile.destroy
     respond_to do |format|
-      format.html { redirect_to user_path(@user), notice: 'Profile was successfully destroyed.' }
+      format.html { redirect_to user_path(@user), notice: t('.destroy.success') }
       format.json { head :no_content }
     end
   end
 
   private
 
-    def set_user
-      @user = User.find(params[:user_id])
-    end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_profile
-      @profile = @user.profile
-    end
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def profile_params
-      params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills, :illness, :contact_number, :avatar, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_profile
+    @profile = @user.profile
+  end
+
+  # Only allow a list of trusted parameters through.
+  def profile_params
+    params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills, :illness,
+                                    :contact_number, :avatar, :user_id)
+  end
 end

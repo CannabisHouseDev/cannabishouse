@@ -1,0 +1,625 @@
+---
+pl:
+  group: Grupy
+  yes: Tak
+  no: Nie
+  groups:
+    edit:
+      groups: Grupy
+    index:
+      groups: Grupy
+      fill_profile: Zanim przejdziesz do zakładki Grupy wypełnij profil.
+      pay_subscription: Musisz opłacić składkę zanim przejdziesz do grup.
+    members_list:
+      group_members: Członkowie Grupy
+    new:
+      new_group: Nowa Grupa
+    show:
+      groups: Grupa
+      thematic: Tematyczna
+      support: Wsparcia
+      medical: Do Lekarza
+    user_groups:
+      my_groups: Moje Grupy
+      fill_profile: Zanim przejdziesz do zakładki Moje Grupy wypełnij profil.
+      pay_subscription: Musisz opłacić składkę zanim przejdziesz do grup.
+    group_item:
+      thematic: Tematyczna
+      support: Wsparcia
+      medical: Do Lekarza
+  payments:
+    index:
+      amount: Ilość
+      date: Data
+      payment_history: Historia płatności
+      status: Status
+      subscription_type: Rodzaj subskrypcji
+      paid: Opłacone
+      details: Szczegóły
+    show:
+      amount: Ilość
+      date: Data
+      description: Opis
+      payment_history: Historia płatności
+      status: Status
+      paid: Opłacone
+  annual: Pakiet roczny
+  monthly: Pakiet miesięczny
+  doctor: Opłata za lekarza
+  lawyer: Opłata za prawnika
+  annual_plan: Pakiet roczny
+  monthly_plan: Pakiet miesięczny
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: Wyświetla %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> z <b>%{total}</b> łącznie
+      one_page:
+        display_entries:
+          few: Wyświetla <b>wszystkie %{count}</b> %{entry_name}
+          one: Wyświetla <b>%{count}</b> %{entry_name}
+          other: Wyświetla <b>wszystkie %{count}</b> %{entry_name}
+          zero: Nie znaleziono %{entry_name}
+  views:
+    pagination:
+      first: "&laquo; Pierwsza"
+      last: Ostatnia &raquo;
+      next: Dalej &rsaquo;
+      previous: "&lsaquo; Wstecz"
+      truncate: "&hellip;"
+  post: Posty
+  page: Strony
+  active_admin:
+    group_owner: Przedstawiciel
+    resource:
+      show:
+        groups: Grupa wsparcia
+    group_users: Użytkownicy w grupie
+    group_users_emails: Emaile użytkowników
+    comments:
+      delete: Usuń
+      delete_confirmation: Czy na pewno chcesz usunąć komentarz?
+    any: Wszystkie
+    dashboard: Panel Administracyjny
+    dashboard_welcome:
+      welcome: Witamy w Panelu Admina
+    powered_by: Copyright SedaSystem © CannabisHouse 2019
+  activerecord:
+    attributes:
+      group:
+        avatar: Avatar
+        name: Nazwa
+        city: Miasto
+        description: Opis
+        weekly_demand: Zapotrzebowanie
+        owner: Przedstawiciel
+        province: Województwo
+        type: Typ Grupy
+        document: Potwierdzenie
+        verified: Zatwierdzona
+        lng: Długość geograficzna
+        lat: Szerokość geograficzna
+        open: Otwarta
+        types:
+          support: Wsparcia
+          thematic: Tematyczna
+      page:
+        body: Zawartość
+        show_in_menu: Pokazuj w menu
+        slug: Slug
+        title: Tytuł
+        position: Pozycja
+        inner: Wewnętrzna
+      payment:
+        status: Status
+        subscription_type: Rodzaj subskrypcji
+        provider_status: Status płatności
+        amount: Kwota
+        created_at: Stworzona
+        updated_at: Zaktualizowana
+      post:
+        body: Zawartość
+        post_date: Data posta
+        slug: Slug
+        status: Status
+        title: Tytuł
+        inner: Wewnętrzny
+        image: Zdjęcie
+      profile:
+        city: Miasto
+        contact_number: Numer kontaktowy
+        created_at: Stworzony
+        illness: Choroby
+        name: Imię
+        province: Województwo
+        role: Rola
+        skills: Umiejętności
+        street: Ulica
+        surname: Nazwisko
+        zip_code: Kod pocztowy
+        avatar: Avatar
+        birth_date: Data urodzenia
+        pesel: PESEL
+        pesel_11_digit: Podaj 11 cyfr numeru pesel
+        pesel_11_digit_without_spaces: 11 cyfr nie rozdzielone spacjami
+      referer:
+        name: Nazwa
+        code: Kod Polecającego
+        users_count: Liczba poleconych
+        balance: Bilans konta
+      subscription:
+        subscription_type: Rodzaj subskrypcji
+        created_at: Utworzono
+        updated_at: Zaktualizowano
+        end_date: Koniec
+      user:
+        admin_log: Logi adminów
+        curator: Opiekun
+        current_password: Aktualne hasło
+        email: Email
+        banned: Zbanowany
+        thredded_moderator: Moderator forum
+        thredded_admin: Admin forum
+        dr_confirmation: Potwierdzenie Lekarza
+        lawyer_confirmation: Potwierdzenie Prawnika
+        access_to_research_confirmation: Skan Zgody
+        password: Hasło
+        doctor_paid: Lekarz opłacony
+        lawyer_paid: Prawnik opłacony
+        password_confirmation: Potwierdzenie hasła
+        referer: Polecający
+        remember_me: Zapamiętaj mnie
+        role: Rola
+        account_balance: Balans konta
+        created_at: Zarejestrowany
+        roles:
+          admin: Admin
+          curator: Opiekun
+          vip: Członek honorowy
+          user: Zwykły użytkownik
+          coordinator: Koordynator
+          consultant: Konsultant
+    models:
+      page: Strona
+      post: Post
+      referer: Polecający
+      user: Użytkownik
+      subscription: Subskrypcje
+      payment: Płatności
+      profile: Profil
+      group: Grupa
+  cancel: Anuluj
+  mailboxer:
+    message_mailer:
+      subject_new: Dostałeś nową wiadomość na portalu cannabishouse.eu
+      subject_reply: Ktoś odpowiedział na Twoją wiadomość
+  date:
+    abbr_day_names:
+    - nie
+    - pon
+    - wto
+    - "śro"
+    - czw
+    - pią
+    - sob
+    abbr_month_names:
+    -
+    - sty
+    - lut
+    - mar
+    - kwi
+    - maj
+    - cze
+    - lip
+    - sie
+    - wrz
+    - paź
+    - lis
+    - gru
+    day_names:
+    - niedziela
+    - poniedziałek
+    - wtorek
+    - "środa"
+    - czwartek
+    - piątek
+    - sobota
+    formats:
+      default: "%d-%m-%Y"
+      long: "%B %d, %Y"
+      short: "%d %b"
+    month_names:
+    -
+    - styczeń
+    - luty
+    - marzec
+    - kwiecień
+    - maj
+    - czerwiec
+    - lipiec
+    - sierpień
+    - wrzesień
+    - październik
+    - listopad
+    - grudzień
+    order:
+    - :dzień
+    - :miesiąc
+    - :rok
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: około %{count} godziny
+        many: około %{count} godzin
+        one: około godziny
+        other: około %{count} godzin
+      about_x_months:
+        few: około %{count} miesiące
+        many: około %{count} miesięcy
+        one: około miesiąca
+        other: około %{count} miesięcy
+      about_x_years:
+        few: około %{count} lata
+        many: około %{count} lat
+        one: około rok
+        other: około %{count} lat
+      almost_x_years:
+        few: prawie %{count} lata
+        many: prawie %{count} lat
+        one: prawie rok
+        other: prawie %{count} lat
+      half_a_minute: pół minuty
+      less_than_x_minutes:
+        few: mniej niż %{count} minuty
+        many: mniej niż %{count} minut
+        one: mniej niż minutę
+        other: mniej niż %{count} minut
+      less_than_x_seconds:
+        few: mniej niż %{count} sekundy
+        many: mniej niż %{count} sekund
+        one: mniej niż sekundę
+        other: mniej niż %{count} sekund
+      over_x_years:
+        few: ponad %{count} lata
+        many: ponad %{count} lat
+        one: ponad rok
+        other: ponad %{count} lat
+      x_days:
+        few: "%{count} dni"
+        many: "%{count} dni"
+        one: 1 dzień
+        other: "%{count} dni"
+      x_minutes:
+        few: "%{count} minuty"
+        many: "%{count} minut"
+        one: 1 minuta
+        other: "%{count} minut"
+      x_months:
+        few: "%{count} miesiące"
+        many: "%{count} miesięcy"
+        one: 1 miesiąc
+        other: "%{count} miesięcy"
+      x_seconds:
+        few: "%{count} sekundy"
+        many: "%{count} sekund"
+        one: 1 sekunda
+        other: "%{count} sekund"
+    prompts:
+      day: Dzień
+      hour: Godzina
+      minute: Minuta
+      month: Miesiąc
+      second: Sekundy
+      year: Rok
+  devise:
+    failure:
+      invited: "Masz oczekujące zaproszenie, zaakceptuj je by dokończyć rejestrację konta."
+    invitations:
+      send_instructions: "Email z zaproszeniem został wysłany do %{email}."
+      invitation_token_invalid: "Token zaproszenia nie jest poprawny!"
+      updated: "Twoje hasło zostało ustawione poprawnie. Zostałeś zalogowany."
+      updated_not_active: "Twoje hasło zostało ustawione poprawnie."
+      no_invitations_remaining: "Brak zaproszeń"
+      invitation_removed: "Twoje zaproszenie zostało usunięte."
+      new:
+        header: "Wysyłanie zaproszeń"
+        submit_button: "Wyślij zaproszenie"
+      edit:
+        header: "Ustawianie hasła"
+        submit_button: "Ustaw hasło"
+    mailer:
+      invitation_instructions:
+        subject: "Instrukcje dotyczące zaproszenia."
+        hello: "Witaj %{email}"
+        someone_invited_you: "Cannabishouse zaprasza Cię na naszą nową stronę %{url}, możesz zaakceptować zaproszenie klikając w link poniżej."
+        accept: "Akceptuj zaproszenie"
+        ignore: "Jeśli nie chcesz do nas dołączyć proszę zignoruj tego maila.<br />Twoje konto nie będzie dostępne do czasu kliknięcia w powyższy link."
+    passwords:
+      edit:
+        change_password: Zmień hasło
+        confirm_new_password: Potwierdź nowe hasło
+        new_password: Nowe hasło
+      new:
+        forgot_password: Zapomniałeś hasła?
+        reset_password: Zresetuj hasło
+        send_password_instructions: Wyślemy Ci instrukcje jak je zresetować.
+    registrations:
+      edit:
+        are_you_sure: Czy jesteś pewny?
+        cancel_account: Usuwanie konta
+        cancel_my_account: Usuń moje konto
+        cancel_text: Niezadowolony? Będzie nam smutno gdy odejdziesz.
+        current_password: Aktualne hasło
+        edit_user: Edycja użytkownika
+        enter_current_password: Musisz wypełnić aktualne hasło, żeby kontynuować jego
+          zmianę.
+        leave_blank: Pozostaw te pola puste jeśli nie chcesz zmieniać hasła.
+        name: Imię
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
+        update: Zapisz zmiany
+        waiting_for_confirmation: 'Oczekujemy na potwierdzenie maila od:'
+      new:
+        name: Imię
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
+        sign_me_up: Dołącz
+        sign_up: Zarejestruj się
+    sessions:
+      new:
+        forgot_password: Zapomniałeś hasła?
+        password: Hasło
+        remember_me: Zapamiętaj mnie
+        sign_in: Logowanie
+        sign_me_in: Zaloguj się
+        sign_up: Zarejestruj się
+    shared:
+      links:
+        didnt_receive_confirmation: Nie dostałeś e-maila potwierdzającego?
+        didnt_receive_unlock: Nie dostałeś instrukcji odblokowania konta?
+        forgot_password: Zapomniałeś hasła?
+        log_in: Zaloguj
+        sign_up: Zarejestruj się
+  email: Email
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: musi zostać zaakceptowane
+      blank: nie może być puste
+      confirmation: nie zgadza się z polem %{attribute}
+      empty: nie może być puste
+      equal_to: musi być równe %{count}
+      even: musi być parzyste
+      exclusion: jest zarezerwowane
+      greater_than: musi być większe od %{count}
+      greater_than_or_equal_to: musi być większe lub równe %{count}
+      inclusion: nie znajduje się na liście dopuszczalnych wartości
+      invalid: jest nieprawidłowe
+      less_than: musi być mniejsze od %{count}
+      less_than_or_equal_to: musi być mniejsze lub równe %{count}
+      not_a_number: nie jest liczbą
+      not_an_integer: musi być liczbą całkowitą
+      odd: musi być nieparzyste
+      other_than: musi być inna niż %{count}
+      present: musi być puste
+      record_invalid: 'Negatywne sprawdzenie poprawności: %{errors}'
+      restrict_dependent_destroy:
+        many: Nie może zostać usunięte, gdyż istnieją zależne od niego %{record}
+        one: Nie może zostać usunięte, gdyż istnieje zależny od niego %{record}
+      taken: zostało już zajęte
+      too_long:
+        few: jest za długie (maksymalnie %{count} znaki)
+        many: jest za długie (maksymalnie %{count} znaków)
+        one: jest za długie (maksymalnie jeden znak)
+        other: jest za długie (maksymalnie %{count} znaków)
+      too_short:
+        few: jest za krótkie (przynajmniej %{count} znaki)
+        many: jest za krótkie (przynajmniej %{count} znaków)
+        one: jest za krótkie (przynajmniej jeden znak)
+        other: jest za krótkie (przynajmniej %{count} znaków)
+      wrong_length:
+        few: ma nieprawidłową długość (powinna wynosić %{count} znaki)
+        many: ma nieprawidłową długość (powinna wynosić %{count} znaków)
+        one: ma nieprawidłową długość (powinna wynosić jeden znak)
+        other: ma nieprawidłową długość (powinna wynosić %{count} znaków)
+    template:
+      body: 'Błędy dotyczą następujących pól:'
+      header:
+        few: "%{model} nie został zachowany z powodu %{count} błędów"
+        many: "%{model} nie został zachowany z powodu %{count} błędów"
+        one: "%{model} nie został zachowany z powodu jednego błędu"
+        other: "%{model} nie został zachowany z powodu %{count} błędów"
+  hello: Witaj świecie
+  helpers:
+    select:
+      prompt: Proszę wybrać
+    submit:
+      create: Utwórz %{model}
+      submit: Zapisz %{model}
+      update: Aktualizuj %{model}
+  home:
+    index:
+      all_posts: Wszystkie posty
+  layouts:
+    nav_links_for_auth:
+      admin: Admin
+      edit_account: Edycja konta
+      profile: Profil
+      sign_in: Zaloguj się
+      sign_out: Wyloguj się
+      sign_up: Zarejestruj się
+      users: Członkowie
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: true
+        unit: zł
+    format:
+      delimiter: " "
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Miliard
+          million: Milion
+          quadrillion: Biliard
+          thousand: Tysiąc
+          trillion: Bilion
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            few: bajty
+            many: bajtów
+            one: bajt
+            other: bajty
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  password: Hasło
+  password_confirmation: Potwierdzenie hasła
+  profiles:
+    curator_show:
+      fill_profile: Zanim przejdziesz do zakładki Opiekun wypełnij profil.
+    edit:
+      edit_profile: Edycja profilu
+    subscription:
+      subscribe: Dołącz do nas!
+    create:
+      success: Twój profil został utworzony. Przejdź do płatności i zostań pełnoprawnym członkiem stowarzyszenia.
+      subscribe: Subskrypcja
+    update:
+      success: Twój profil został zapisany.
+  profiles_controller:
+    fill_profile: Wypełnij profil
+  shared:
+    page_not_found: Strona o takim adresie nie istnieje.
+    permission_denied: Odmowa dostępu.
+    sidebar_menu:
+      account_settings: Ustawienia konta
+      curator: Opiekun
+      overview: Mój profil
+      forum: Forum
+      payments: Płatności
+      groups: Przeglądaj grupy
+      my_groups: Moje Grupy
+      files: Pliki
+      mailbox: Wiadomości
+    subscription:
+      subscribe: Zasubskrybuj
+    subscription_steps_header:
+      choose_subscription_type: Wybierz rodzaj subskrypcji
+      confirmation: Potwierdzenie
+      payment: Płatność
+  sign_in: Zaloguj
+  sign_me_up: Dołącz
+  sign_up: Zarejestruj się
+  subscriptions:
+    payment_description:
+      annual: Pakiet roczny
+      monthly: Pakiet miesięczny
+      doctor: Opłata za lekarza
+      donation: Dobrowolna darowizna
+      lawyer: Opłata za prawnika
+      calculated_contribution: Składka kalkulowana
+    new:
+      choose_annual_plan: Plan roczny
+      choose_monthly_plan: Plan miesięczny
+      choose_subscription_type: Wybierz rodzaj płatności
+      confirmation: Potwierdź płatność
+      header: Płatności
+      payment: Płatność
+    show:
+      fill_profile: Zanim przejdziesz do zakładki Płatności wypełnij profil.
+      payment_history: Historia Płatności
+      payments: Płatności
+    start_subscription:
+      bad_subscription_type: Zły rodzaj subskrypcji
+    step1:
+      annual_plan: Pakiet roczny
+      choose_annual_plan: Wybierz pakiet roczny
+      choose_monthly_plan: Wybierz pakiet miesięczny
+      monthly_plan: Pakiet miesięczny
+  subscriptions_controller:
+    fill_profile: Zanim przejdziesz do zakładki Płatności wypełnij profil.
+  support:
+    array:
+      last_word_connector: " oraz "
+      two_words_connector: " i "
+      words_connector: ", "
+  time:
+    am: przed południem
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: po południu
+  update: Zapisz zmiany
+  user:
+    recruits_count: Liczba podopiecznych
+  users_controller:
+    fill_profile: Wypełnij profil
+  groups_controller:
+    fill_profile: Wypełnij profil zanim przystępisz do grup.
+  payment_history: Historia Płatności
+  mailbox:
+    folders:
+      inbox: Odebrane
+      sent: Wysłane
+      thrash: Kosz
+  users:
+    show:
+      bro: Stowarzyszony # 'associate'
+      full_name: Imię i nazwisko
+      city: Miasto
+  rapidfire:
+    attempts:
+      header: "Proszę odpowiedzieć na następujące pytania"
+      save: "Zapisz"
+    questions:
+      header: "Pytania"
+      new: "Nowe Pytanie"
+      question: "Ankieta"
+      update: "Aktualizuj"
+      create: "Utwórz Pytanie"
+      questions: "Pytania"
+      other_options: "Inne opcje"
+      edit: "Edytuj"
+      delete: "Usuń"
+    surveys:
+      name: "Nazwa"
+      introduction: "Krótki opis"
+      save: "Zapisz"
+      new_survey: "Nowa Ankieta"
+      edit_survey: "Edycja Ankiety"
+      fill_out_survey: "Wypełnij ankietę"
+      results: "Wyniki"
+      delete: "Usuń"
+      new: "Nowa ankieta"
+      surveys: "Ankiety:"
+      name_of_survey: "Nazwa Ankiety:"
+      results: "Rezultaty"
+      options: "Opcje"
+      jointly: "Łącznie"

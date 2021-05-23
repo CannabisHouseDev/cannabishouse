@@ -1,0 +1,15 @@
+// Graphical variables
+@import "config/index";
+
+// Reusable Components
+@import "components/index";
+
+// Pages
+@import "pages/index";
+
+.instruction_img{
+  position: relative;
+  .instruction_blob{
+    position: absolute;
+  }
+}

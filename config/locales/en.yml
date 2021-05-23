@@ -30,11 +30,79 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
-  active_record:
-    attributes:
-      address:
-        zip_code: "Your zip code should be 00-000"
-      profile:
-        pesel_11_digit: "Pesel should have 11 digits"
-      user:
+  company:
+    name: "Cannabis House"
+    description: "Cannabis House Association"
+    email: "info@cannabishouse.eu"
+    city: "90-029 Łódź"
+    street: "ul. Nawrot 114, 2 p. lok. 205"
+    phone: "+48 422 784 420"
+  navbar:
+    about: "About"
+    media: "Media"
+    account: "Account"
+  devise:
+    login: "Login"
+    singup: "Sign Up"
+    logout: "Logout"
+  footer:
+    copyright: "© CannabisHouse™, 2021. All rights reserved."
+  pages:
+    landing:
+      hero:
+        title: "Help Save Lives"
+        content: "Cannabis House gives everyone the chance to help advance the field of medicine and participate in studies at the edge of the scientific field."
+        cta: "Learn more"
+      description:
+        title: "We are scientific study fascillitators"
+        content: "Our platform provides a safe space for doctors, researchers, and research participants to collaborate on studying the effects and benefits of medicinal herbs."
+      instructions:
+        title: "How it works"
+        subheading: "The monthly process, as a research participant"
+        firstStep:
+          title: "Fill Your Profile"
+          content: "Fill out your basic information and any information required by our doctors"
+        secondStep:
+          title: "Schedule Appointment"
+          content: "Use our platform to schedule an appointment with the doctor who will approve your profile"
+        thirdStep:
+          title: "Visit Dispensery"
+          content: "With your CH account, you can visit your assigned local dispensery to pick up the study material"
+        fourthStep:
+          title: "Fill Anonymous Surveys"
+          content: "Help researchers by filling out private anonymous Surveys"
+  controllers:
+      addresses:
+        create:
+          success: "Address was successfully created."
+          error: "Errors encountered, try again."
+        update:
+          success: "Address was successfully updated."
+        destroy:
+          success: "Address was successfully destroyed."
+      profiles:
+        create:
+          success: "Profile was successfully created."
+          error: "Errors encountered, try again."
+        update:
+          success: "Profile was successfully updated."
+          error: "Errors encountered, try again."
+        destroy:
+          success: "Profile was successfully destroyed."
+      users:
+        update:
+          success: "User updated."
+          error: "Unable to update user."
+        destroy:
+          success: "User deleted."
+      registrations:
+        edit:
+          title: "Edit user"
+  views:
+    user:
+      session:
+        sign_in: "Sign in to your CH account"
+        email: "E-mail"
+  models:
+    user:
+      agreements_checked: "Please accept the statements."
