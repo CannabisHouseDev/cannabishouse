@@ -43,7 +43,7 @@ en:
     account: "Account"
   devise:
     login: "Login"
-    singup: "Sign Up"
+    signup: "Sign Up"
     logout: "Logout"
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
