@@ -32,11 +32,11 @@ class PagesController < ApplicationController
     set_meta_tags(title: @page.title)
   end
 
-  def roleRouter
-    redirect_to onboarding_path if !resource.onboarded? and return
+  def role_router
+    redirect_to onboarding_path if !current_user.onboarded? and return
     case current_user.profile.role
     when "user"
-      #todo
+      redirect_to participant_path and return
     when "participant"
       redirect_to participant_path and return
     when "dispensary"
@@ -46,6 +46,7 @@ class PagesController < ApplicationController
     when "researcher"
       redirect_to researcher_path and return
     end
+    head :ok
   end
 
   private
