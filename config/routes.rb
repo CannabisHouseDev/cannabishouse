@@ -15,9 +15,19 @@ Rails.application.routes.draw do
   }
 
   scope '(:locale)', locale: /en/ do
+
+    authenticated :user do
+      root 'pages#roleRouter', as: :authenticated_root
+    end
+
     root 'pages#landing'
 
     get 'welcome', to: 'pages#onboarding', as: 'onboarding'
+
+    get 'participant_portal', to: 'pages#participant', as: 'participant'
+    get 'dispensary_portal', to: 'pages#dispensary', as: 'dispensary'
+    get 'doctor_portal', to: 'pages#doctor', as: 'doctor'
+    get 'researcher_portal', to: 'pages#researcher', as: 'researcher'
 
     resources :posts
     resource :user, only: [:update]
