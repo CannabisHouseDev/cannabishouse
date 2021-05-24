@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 # require 'roo'
-
-User.destroy_all
-Post.destroy_all
-Page.destroy_all
+Profile.delete_all
+Address.delete_all
+Post.delete_all
+Page.delete_all
+User.delete_all
 
 users_list = [
   { email: 'wolak88@gmail.com', password: 'wierd123321_16charsmin', password_confirmation: 'wierd123321_16charsmin', # role: 2,
@@ -31,14 +32,13 @@ puts 'create profiles'
 profiles_list = []
 50.times do
   profiles_list << {
-    role: rand(0..8),
+    role: rand(0..6),
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     nick_name: Faker::Games::LeagueOfLegends.champion,
     pesel: '19293012949',
     gender: rand(0..1),
     skills: Faker::Lorem.words(number: 4),
-    illness: Faker::Lorem.words(number: 4),
     contact_number: Faker::PhoneNumber.phone_number
   }
 end
@@ -71,10 +71,10 @@ puts "Let's create Pages :D"
 pages = Page.create([{ title: Faker::Games::LeagueOfLegends.masteries, body: '<h1> TEST<br><p>Testowy paragraph', slug: 'testowa-strona', show_in_menu: true, position: 1 },
                      { title: 'Stowarzyszenie', body: Faker::Lorem.paragraph(sentence_count: 23),
                        slug: 'stowarzyszenie', show_in_menu: true, position: 2 },
-                     { title: 'Badania', body: Faker::Lorem.paragraph(sentence_count: 25), slug: 'badania',
-                       show_in_menu: true, position: 102 },
-                     { title: 'O Nas', body: Faker::Lorem.paragraph(sentence_count: 44), slug: 'o_nas',
-                       show_in_menu: true, position: 105 }])
+                     { title: 'Media', body: Faker::Lorem.paragraph(sentence_count: 25), slug: 'media',
+                       show_in_menu: true, position: 12 },
+                     { title: 'About', body: Faker::Lorem.paragraph(sentence_count: 44), slug: 'about',
+                       show_in_menu: true, position: 13 }])
 
 puts 'Generating posts ;)'
 posts = 30.times do
