@@ -5,29 +5,29 @@
       %ul
         - current_user.profile.errors.full_messages.each do |message|
           %li= message
-  .field
-    = profile_form.label :avatar, class: 'Form-label'
-    = profile_form.file_field :avatar
-  .field
-    = profile_form.label :first_name, class: 'Form-label'
-    = profile_form.text_field :first_name, placeholder: t("models.onboarding.placeholder.first_name"), class: 'Form-input'
-  .field
-    = profile_form.label :last_name, class: 'Form-label'
-    = profile_form.text_field :last_name, placeholder: t("models.onboarding.placeholder.last_name"), class: 'Form-input'
-  .field
-    = profile_form.label :pesel, class: 'Form-label'
-    = profile_form.text_field :pesel, placeholder: "123 123 123 12", class: 'Form-input'
-  .field
-    = profile_form.label :contact_number, class: 'Form-label'
-    = profile_form.text_field :contact_number, placeholder: '777888999', class: 'Form-input'
-  .field
-    = profile_form.label :gender, class: 'Form-label'
-    = profile_form.select :gender, Profile.genders.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
-  .field
-    = profile_form.label :nick_name, class: 'Form-label'
-    = profile_form.text_field :nick_name, placeholder: t("models.onboarding.placeholder.nickname"), class: 'Form-input'
-  .field
-    = profile_form.label :skills, class: 'Form-label'
-    = profile_form.text_field :skills, placeholder: t("models.onboarding.placeholder.skills"), class: 'Form-input'
-  .actions
-    = profile_form.submit 'Zapisz', class: 'Form-submit'
+    .field
+      = profile_form.label :avatar, class: 'Form-label'
+      = profile_form.file_field :avatar
+    .field
+      = profile_form.label :first_name, class: 'Form-label'
+      = profile_form.text_field :first_name, placeholder: t("models.onboarding.placeholder.first_name"), class: 'Form-input'
+    .field
+      = profile_form.label :last_name, class: 'Form-label'
+      = profile_form.text_field :last_name, placeholder: t("models.onboarding.placeholder.last_name"), class: 'Form-input'
+    .field
+      = profile_form.label :pesel, class: 'Form-label'
+      = profile_form.text_field :pesel, placeholder: "123 123 123 12", class: 'Form-input'
+    .field
+      = profile_form.label :contact_number, class: 'Form-label'
+      = profile_form.text_field :contact_number, placeholder: '777888999', class: 'Form-input'
+    .field
+      = profile_form.label :gender, class: 'Form-label'
+      = profile_form.select :gender, Profile.genders.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
+    .field
+      = profile_form.label :nick_name, class: 'Form-label'
+      = profile_form.text_field :nick_name, placeholder: t("models.onboarding.placeholder.nickname"), class: 'Form-input'
+    .field
+      = profile_form.label :skills, class: 'Form-label'
+      = profile_form.text_field :skills, placeholder: t("models.onboarding.placeholder.skills"), class: 'Form-input'
+    .actions
+      = profile_form.submit t("models.onboarding.labels.save"), class: 'Form-submit'

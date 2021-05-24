@@ -130,6 +130,7 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
+        save: "Save"
   profiles:
     update:
       update:

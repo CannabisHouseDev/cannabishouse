@@ -99,6 +99,7 @@ pl:
         number: "Numer telefonu"
         avatar: "Zdjęcie profilowe"
         birthday: "Urodziny"
+        save: "Zapisać"
       errors:
         pesel: "Podaj prawidłowy numer PESEL"
   profiles:
