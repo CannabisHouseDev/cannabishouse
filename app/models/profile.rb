@@ -5,9 +5,6 @@ class Profile < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :pesel, format: { with: /\A(\d{11})\z/ },
-                    if: :participant?
-
   enum role: %i[user participant admin dispensary researcher doctor warehouse],
        _default: 0
 
@@ -19,7 +16,6 @@ class Profile < ApplicationRecord
   validates :pesel, presence: true, on: :update
   validates :contact_number, presence: true, on: :update
 
-  def checkInfo
+  validates :pesel, format: { with: /\A(\d{11})\z/ }, on: :update
 
-  end
 end
