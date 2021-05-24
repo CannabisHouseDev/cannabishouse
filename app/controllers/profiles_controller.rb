@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
         format.html { redirect_to user_path(@user), notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: t('.update.error') }
+        format.html { redirect_to onboarding_path, notice: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
