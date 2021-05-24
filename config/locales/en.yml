@@ -45,6 +45,9 @@ en:
     login: "Login"
     singup: "Sign Up"
     logout: "Logout"
+    sessions:
+      user:
+        already_signed_out: "You are already signed out."
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
   forms:
@@ -127,10 +130,27 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
-      errors:
-        pesel: "Please enter a valid PESEL number"
   profiles:
     update:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+  activerecord:
+    errors:
+      models:
+        profile:
+          attributes:
+            user:
+              required: "Profile should be associated with a User"
+            pesel:
+              invalid: "Please enter a valid PESEL number"
+              blank: "Please enter a valid PESEL number"
+            first_name:
+              blank: "Please enter your first name"
+            last_name:
+              blank: "Please enter your last name"
+            contact_number:
+              blank: "Please enter your phone number"
+            gender:
+              blank: "Please select your gender"
+

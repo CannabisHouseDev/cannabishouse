@@ -14,6 +14,9 @@ pl:
     login: "Zaloguj sie"
     singup: "Zapisać się"
     logout: "Wyloguj"
+    sessions:
+      user:
+        already_signed_out: "Jesteś już wylogowany."
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
   forms:
@@ -103,3 +106,21 @@ pl:
       update:
         success: "Profil zaktualizowany."
         error: "Prosimy o wypełnienie wszystkich informacji."
+  activerecord:
+    errors:
+      models:
+        profile:
+          attributes:
+            user:
+              required: "Profil powinien być powiązany z użytkownikiem"
+            pesel:
+              invalid: "Podaj prawidłowy numer PESEL"
+              blank: "Podaj prawidłowy numer PESEL"
+            first_name:
+              blank: "Proszę podaj swoje imię"
+            last_name:
+              blank: "Proszę podać swoje nazwisko"
+            contact_number:
+              blank: "Proszę podać swój numer telefonu"
+            gender:
+              blank: "Proszę wybrać swoją płeć"
