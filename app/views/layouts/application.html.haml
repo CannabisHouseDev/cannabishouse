@@ -1,5 +1,5 @@
 !!!
-%html.text-gray-900.leading-tight
+%html.text-gray-900.leading-tight{:translate => "no"}
   %head
     = display_meta_tags
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -15,6 +15,6 @@
   %body.relative.bg-gray-100
     .max-w-7xl.mx-auto.px-4.sm:px-6
       = render 'layouts/navigation'
-      %p#notice=notice
       = yield
+      = toastr_flash
       = render 'layouts/footer'

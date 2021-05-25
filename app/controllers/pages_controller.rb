@@ -1,7 +1,15 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
+  before_action :authenticate_user!, except: 'landing'
+
   def landing; end
+
+  def onboarding
+    redirect_to authenticated_root_path and return if current_user.onboarded?
+
+    @profile = current_user.profile || Profile.new(current_user)
+  end
 
   def show
     @page = Page.friendly.find_by(slug: params[:id]) if params[:id]
