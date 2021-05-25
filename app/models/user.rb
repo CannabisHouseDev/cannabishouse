@@ -23,31 +23,31 @@ class User < ApplicationRecord
   end
 
   def onboarded?
-    self.profile.onboarded || false
+    profile.onboarded || false
   end
 
   def verified?
-    self.profile.verified || false
+    profile.verified || false
   end
 
   def booked?
-    #todo
+    # todo
   end
 
   def approved?
-    #todo
+    # todo
   end
 
   def donated?
-    #todo
+    # todo
   end
 
   def active?
-    #todo
+    # todo
   end
 
   def contributed?
-    #todo
+    # todo
   end
 
   private

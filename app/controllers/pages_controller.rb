@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
   def onboarding
     redirect_to authenticated_root_path and return if current_user.onboarded?
+
     @profile = current_user.profile || Profile.new(current_user)
   end
 

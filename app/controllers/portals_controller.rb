@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 class PortalsController < ApplicationController
   def role_router
-    redirect_to onboarding_path and return if !current_user.onboarded?
+    redirect_to onboarding_path and return unless current_user.onboarded?
+
     case current_user.profile.role
-    when "user"
+    when 'user'
       redirect_to participant_path and return
-    when "participant"
+    when 'participant'
       redirect_to participant_path and return
-    when "dispensary"
+    when 'dispensary'
       redirect_to dispensary_path and return
-    when "doctor"
+    when 'doctor'
       redirect_to doctor_path and return
-    when "researcher"
+    when 'researcher'
       redirect_to researcher_path and return
     end
     head :ok

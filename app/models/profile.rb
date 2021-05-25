@@ -17,5 +17,4 @@ class Profile < ApplicationRecord
   validates :contact_number, presence: true, on: :update
 
   validates :pesel, format: { with: /\A(\d{11})\z/ }, on: :update
-
 end
