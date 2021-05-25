@@ -14,6 +14,9 @@ pl:
     login: "Zaloguj się"
     signup: "Zapisz się"
     logout: "Wyloguj się"
+    sessions:
+      user:
+        already_signed_out: "Jesteś już wylogowany."
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
   pages:
