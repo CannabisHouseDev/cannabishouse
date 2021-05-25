@@ -12,7 +12,7 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-
+global.toastr = require("toastr")
 require("stylesheets/application.scss")
 
 require("trix")

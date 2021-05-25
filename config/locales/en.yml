@@ -45,8 +45,14 @@ en:
     login: "Login"
     singup: "Sign Up"
     logout: "Logout"
+    sessions:
+      user:
+        already_signed_out: "You are already signed out."
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
+  forms:
+    save: "Save"
+    cancel: "Cancel"
   pages:
     landing:
       hero:
@@ -106,3 +112,46 @@ en:
   models:
     user:
       agreements_checked: "Please accept the statements."
+    onboarding:
+      welcome: "Welcome to Canabis House!"
+      start: "Get Started"
+      placeholder:
+        first_name: "First Name"
+        last_name: "Last Name"
+        nickname: "Nickname"
+        pesel: "PESEL Number"
+        skills: "My Skills"
+      labels:
+        first_name: "First Name"
+        last_name: "Last Name"
+        nickname: "Nickname"
+        pesel: "PESEL"
+        skills: "Skills"
+        number: "Phone Number"
+        avatar: "Avatar"
+        birthday: "Birthday"
+        save: "Save"
+  profiles:
+    update:
+      update:
+        success: "Profile updated."
+        error: "Please fill out all the information."
+  activerecord:
+    errors:
+      models:
+        profile:
+          attributes:
+            user:
+              required: "Profile should be associated with a User"
+            pesel:
+              invalid: "Please enter a valid PESEL number"
+              blank: "Please enter a valid PESEL number"
+            first_name:
+              blank: "Please enter your first name"
+            last_name:
+              blank: "Please enter your last name"
+            contact_number:
+              blank: "Please enter your phone number"
+            gender:
+              blank: "Please select your gender"
+

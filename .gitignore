@@ -38,3 +38,5 @@ yarn-debug.log*
 #ignore db creds
 /config/database.yml
 /config/database example.yml
+
+.env
