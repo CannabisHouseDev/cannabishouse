@@ -15,6 +15,6 @@
   %body.relative.bg-white
     .max-w-7xl.mx-auto.px-4.sm:px-6
       = render 'layouts/navigation'
-      %p#notice=notice
       = yield
+      = toastr_flash
       = render 'layouts/footer'
