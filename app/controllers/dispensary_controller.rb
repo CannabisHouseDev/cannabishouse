@@ -1,0 +1,2 @@
+class DispensaryController < ApplicationController
+end

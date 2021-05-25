@@ -6,23 +6,8 @@ class PagesController < ApplicationController
   def landing; end
 
   def onboarding
+    redirect_to authenticated_root_path and return if current_user.onboarded?
     @profile = current_user.profile || Profile.new(current_user)
-  end
-
-  def participant
-    render 'pages/participant/index'
-  end
-
-  def dispensary
-    render 'pages/dispensary/index'
-  end
-
-  def doctor
-    render 'pages/doctor/index'
-  end
-
-  def researcher
-    render 'pages/researcher/index'
   end
 
   def show
@@ -30,23 +15,6 @@ class PagesController < ApplicationController
     raise ActionController::RoutingError, 'Not Found' unless @page
 
     set_meta_tags(title: @page.title)
-  end
-
-  def role_router
-    redirect_to onboarding_path if !current_user.onboarded? and return
-    case current_user.profile.role
-    when "user"
-      redirect_to participant_path and return
-    when "participant"
-      redirect_to participant_path and return
-    when "dispensary"
-      redirect_to dispensary_path and return
-    when "doctor"
-      redirect_to doctor_path and return
-    when "researcher"
-      redirect_to researcher_path and return
-    end
-    head :ok
   end
 
   private
