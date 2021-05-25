@@ -7,13 +7,13 @@ pl:
     street: "ul. Nawrot 114, 2 p. lok. 205"
     phone: "+48 422 784 420"
   navbar:
-    about: "O"
-    media: "Głoska bezdźwięczna"
+    about: "O nas"
+    media: "Media"
     account: "Konto"
   devise:
-    login: "Zaloguj sie"
-    singup: "Zapisać się"
-    logout: "Wyloguj"
+    login: "Zaloguj się"
+    signup: "Zapisz się"
+    logout: "Wyloguj się"
     sessions:
       user:
         already_signed_out: "Jesteś już wylogowany."
