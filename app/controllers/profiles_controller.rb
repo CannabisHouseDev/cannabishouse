@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
         format.html { redirect_to user_path(@user), notice: t('.create.success') }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: t('.create.error') }
+        format.html { redirect_to user_path(@user), alert: t('.create.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -39,11 +39,14 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
+      @profile.avatar.attach(params[:avatar])
       if @profile.update(profile_params)
-        format.html { redirect_to user_path(@user), notice: t('.update.success') }
+        current_user.profile.onboarded = true
+        current_user.profile.save
+        format.html { redirect_to authenticated_root_path, notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to user_path(@user), notice: t('.update.error') }
+        format.html { redirect_to onboarding_path, alert: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -72,7 +75,7 @@ class ProfilesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def profile_params
-    params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills, :illness,
+    params.require(:profile).permit(:role, :first_name, :last_name, :nick_name, :pesel, :gender, :skills,
                                     :contact_number, :avatar, :user_id)
   end
 end

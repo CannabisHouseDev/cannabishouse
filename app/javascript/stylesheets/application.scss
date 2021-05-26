@@ -19,6 +19,7 @@
 @import "./actiontext.scss";
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import "toastr";
 
 .Form-submit {
   @apply flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600;
