@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :material_type do
+    
+  end
+
   factory :user do
     email { 'john@example.com' }
     password { '1234123412341234' }
