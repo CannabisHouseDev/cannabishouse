@@ -8,7 +8,7 @@ class User < ApplicationRecord
 
   has_many :posts
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile, reject_if: ->(attributes) { attributes['name'].blank? }, allow_destroy: true
 
   attr_accessor :agreement_1, :agreement_2
