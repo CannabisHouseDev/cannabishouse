@@ -1,23 +1,4 @@
 pl:
-<<<<<<< HEAD
-  hello: "Hello world"
-  activerecord:
-    attributes:
-      address:
-        zip_code: "Twój kod pocztowy ma format 00-000"
-      profile: 
-        pesel_11_digit: "Podaj 11 cyfr numeru pesel"
-      user:
-    errors:
-      models:
-        dispensary:
-          attributes:
-            name:
-              blank: "Nazwa Dyspenarium nie może być pusta"
-              format: "Nazwa Dyspensarium ma format XXX-Y np. WRO-5"
-            category:
-              blank: "Kategoria nie może być pusta"
-=======
   company:
     name: "Cannabis House"
     description: "Stowarzyszenie Cannabis House"
@@ -94,4 +75,3 @@ pl:
   models:
     user:
       agreements_checked: "Proszę zaakceptować oświadczenia."
->>>>>>> master

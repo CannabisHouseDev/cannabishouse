@@ -25,6 +25,34 @@ class User < ApplicationRecord
     create_profile
   end
 
+  def onboarded?
+    profile.onboarded || false
+  end
+
+  def verified?
+    profile.verified || false
+  end
+
+  def booked?
+    # todo
+  end
+
+  def approved?
+    # todo
+  end
+
+  def donated?
+    # todo
+  end
+
+  def active?
+    # todo
+  end
+
+  def contributed?
+    # todo
+  end
+
   private
 
   def agreements_checked
