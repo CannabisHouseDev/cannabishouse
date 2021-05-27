@@ -33,7 +33,6 @@ FactoryBot.define do
     pesel { '88111132145' }
     gender { 0 }
     skills  { 'chess player, painter, roller' }
-    illness { 'allergy' }
     contact_number { '555565777' }
     avatar { 'dlugiurldoobrazka' }
   end
