@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :transfer do
+    sender_material { nil }
+    reciever_material { nil }
+    sender { nil }
+    reciever { nil }
+    weight { 1 }
+  end
+
   factory :material do
     material_type { nil }
     name { "MyString" }
