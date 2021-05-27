@@ -9,13 +9,7 @@ Rails.application.routes.draw do
 
     root to: 'users#index'
   end
-  resources :dispensaries do
-    member do
-      put :add_member
-      put :remove_member
-      get :members_list
-    end
-  end
+
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
