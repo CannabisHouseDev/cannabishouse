@@ -9,6 +9,7 @@ pl:
   navbar:
     about: "O"
     media: "Głoska bezdźwięczna"
+    map: "Mapa"
     account: "Konto"
   devise:
     login: "Zaloguj sie"
