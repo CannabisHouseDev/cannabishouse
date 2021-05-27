@@ -2,11 +2,9 @@
 %footer.text-gray-600.body-font
   .container.px-5.py-24.mx-auto.flex.md:items-center.lg:items-start.md:flex-row.md:flex-nowrap.flex-wrap.flex-col
     
-    .w-64.flex-shrink-0.md:mx-0.mx-auto.text-center.md:text-left
+    .flex-shrink-0.md:mx-0.mx-auto.text-center.md:text-left{class: "lg:w-1/2 md:w-1/2"}
       %a.flex.title-font.font-medium.items-center.md:justify-start.justify-center.text-gray-900
-        %svg.w-10.h-10.text-white.p-2.bg-indigo-500.rounded-full{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-          %path{:d => "M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"}
-        %span.font-serif.ml-3.text-xl CannabisHouse
+        = image_tag "logo.png"
       %br
         %p.font-medium.mt-2.text-sm.text-gray-500 Warehouse Society, 234
         %p.font-medium.mt-2.text-sm.text-gray-500 Bahagia Ave Street PRBW 29281
@@ -14,23 +12,20 @@
         %p.font-sm.mt-2.text-sm.text-gray-500 info@warehouse.project
         %p.font-sm.mt-2.text-sm.text-gray-500 1-232-3434 (Main)
         
-    .flex-grow.flex.flex-wrap.md:pl-32.-mb-10.md:mt-0.mt-10.md:text-left.text-center
-      .flex-grow.flex.flex-wrap.md:pl-32.-mb-10.md:mt-0.mt-10.md:text-left.text-center
-        .flex-grow.flex.flex-wrap.md:pl-32.-mb-10.md:mt-0.mt-10.md:text-left.text-center
-          .w-full.px-4{:class => "lg:w-1/4 md:w-1/2"}
-            %h2.title-font.font-medium.text-gray-900.tracking-widest.text-sm.mb-3 About
-            %nav.list-none.mb-10.py-7.space-y-3
-              %li
-                %a.text-gray-600.hover:text-gray-800 Profile
-              %li
-                %a.text-gray-600.hover:text-gray-800 Media
-              %li
-                %a.text-gray-600.hover:text-gray-800 How it works
-        
-        .flex-grow.flex.flex-wrap.md:pl-20.-mb-10.md:mt-0.mt-10.md:text-left.text-center
-          .w-full{:class => "lg:w-1/4 md:w-1/2"}
-            = link_to t('.devise.sign up'), new_user_registration_path, class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-12 py-3 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-pink-400"
+    .flex-grow.flex.flex-wrap.mb-10.mt-10.md:mt-24.lg:mt-0.md:text-left.text-center{class: "lg:w-1/4 md:w-1/2"}
+      .w-full.px-4
+        %h2.title-font.font-medium.text-gray-900.tracking-widest.text-sm.mb-3.mt-3 About
+        %nav.list-none.mb-10.py-7.space-y-3
+          %li
+            %a.text-gray-600.hover:text-gray-800 Profile
+          %li
+            %a.text-gray-600.hover:text-gray-800 Media
+          %li
+            %a.text-gray-600.hover:text-gray-800 How it works
     
+    .flex-grow.flex.flex-wrap.justify-center.sm:justify-center.pr-10.flex-shrink-0.md:pl-20.mb-28.mt-0.text-left.text-center{class: "lg:w-1/4 md:w-1/2"}
+      = link_to t('.devise.sign up'), new_user_registration_path, class: "font-serif ml-8 whitespace-nowrap inline-flex items-center justify-center px-12 py-3 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-pink-400"
+  
   .bg-gray-100
     .container.mx-auto.py-4.px-5.flex.flex-wrap.flex-col.sm:flex-row
       %p.text-gray-500.text-sm.text-center.sm:text-left= t('footer.copyright')
