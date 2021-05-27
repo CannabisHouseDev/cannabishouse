@@ -1,6 +1,21 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :material do
+    material_type { nil }
+    name { "MyString" }
+    description { "MyString" }
+    weight { 1 }
+    thc { "9.99" }
+    cbd { "9.99" }
+    terpene { "9.99" }
+    drought { false }
+    oil { false }
+    edible { false }
+    cost { "9.99" }
+    owner { nil }
+  end
+
   factory :material_type do
     
   end
