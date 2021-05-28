@@ -39,7 +39,8 @@ Rails.application.routes.draw do
     get 'under_construction', to: 'home#under_construction'
     get 'blog', to: 'posts#index'
     get 'map', to: 'home#map', as: :map
-    get ':id', to: 'pages#show', as: :page
+    get 'about', to: 'pages#about', as: 'about'
+    get 'media', to: 'pages#media', as: 'media'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
