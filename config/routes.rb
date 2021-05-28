@@ -23,10 +23,10 @@ Rails.application.routes.draw do
 
     get 'welcome', to: 'pages#onboarding', as: 'onboarding'
 
-    get 'participant', to: 'participant#index', as: 'participant'
-    get 'dispensary', to: 'dispensary#index', as: 'dispensary'
-    get 'doctor', to: 'doctor#index', as: 'doctor'
-    get 'researcher', to: 'researcher#index', as: 'researcher'
+    get 'participant', to: 'participant_portal#index', as: 'participant_portal'
+    get 'dispensary', to: 'dispensary_portal#index', as: 'dispensary_portal'
+    get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
+    get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'
 
     resources :posts
     resource :user, only: [:update]
