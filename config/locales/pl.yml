@@ -8,8 +8,10 @@ pl:
     phone: "+48 422 784 420"
   navbar:
     about: "O nas"
-    media: "Media"
     account: "Konto"
+    billing: "Historia Operacji"
+    media: "Media"
+    stock: "Asortyment"
   devise:
     login: "Zaloguj się"
     signup: "Zapisz się"
