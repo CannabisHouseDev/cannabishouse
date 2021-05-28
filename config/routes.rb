@@ -5,7 +5,6 @@ Rails.application.routes.draw do
     resources :users
     resources :pages
     resources :posts
-    resources :dispensaries
 
     root to: 'users#index'
   end

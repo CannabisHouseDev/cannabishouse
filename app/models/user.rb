@@ -6,9 +6,6 @@ class User < ApplicationRecord
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: ->(attributes) { attributes['name'].blank? }, allow_destroy: true
 
-  has_many :memberships
-  has_many :dispensaries, :through => :memberships
-
   has_many :posts
 
   has_one :profile
