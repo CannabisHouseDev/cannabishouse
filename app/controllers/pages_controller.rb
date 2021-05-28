@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: 'landing'
+  before_action :authenticate_user!, except: [:landing, :about, :media]
 
   def landing; end
+  def about; end
+  def media; end
 
   def onboarding
     redirect_to authenticated_root_path and return if current_user.onboarded?
