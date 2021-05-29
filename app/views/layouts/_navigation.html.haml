@@ -4,7 +4,12 @@
       = link_to main_app.root_path, class: 'p-1 mr-4' do
         %span.sr-only= t('.company.name')
         = image_tag 'logo.png', alt: 'Cannabis House Logo', class: "h-8 w-auto sm:h-10"
-      = link_to t('.navbar.about'), about_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900"
-      = link_to t('.navbar.media'), media_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900"
+      - case current_user.profile.role
+      - when 'participant'
+        = link_to t('navbar.about'), about_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+        = link_to t('navbar.media'), media_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+      - when 'dispensary'
+        = link_to t('navbar.billing'), main_app.dispensary_portal_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+        = link_to t('navbar.stock'), main_app.dispensary_portal_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
     %nav.flex.md:flex
       = render 'layouts/navlinks_for_auth'
