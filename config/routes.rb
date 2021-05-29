@@ -41,6 +41,8 @@ Rails.application.routes.draw do
     get 'map', to: 'home#map', as: :map
     get 'about', to: 'pages#about', as: 'about'
     get 'media', to: 'pages#media', as: 'media'
+    get 'billing', to: 'dispensary_portal#billing', as: 'billing'
+    get 'stock', to: 'dispensary_portal#stock', as: 'stock'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

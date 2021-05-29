@@ -39,8 +39,10 @@ en:
     phone: "+48 422 784 420"
   navbar:
     about: "About"
-    media: "Media"
     account: "Account"
+    billing: "Billing"
+    media: "Media"
+    stock: "Stock"
   devise:
     login: "Login"
     signup: "Sign Up"
