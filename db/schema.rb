@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_522_043_104) do
+ActiveRecord::Schema.define(version: 2021_05_29_184037) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +80,8 @@ ActiveRecord::Schema.define(version: 20_210_522_043_104) do
     t.decimal "lng"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "manager_id", null: false
+    t.index ["manager_id"], name: "index_dispensaries_on_manager_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -92,13 +95,29 @@ ActiveRecord::Schema.define(version: 20_210_522_043_104) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "memberships", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "dispensary_id", null: false
+  create_table "material_types", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["dispensary_id"], name: "index_memberships_on_dispensary_id"
-    t.index ["user_id"], name: "index_memberships_on_user_id"
+    t.string "name"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.bigint "material_type_id", null: false
+    t.string "name"
+    t.string "description"
+    t.integer "weight"
+    t.decimal "thc"
+    t.decimal "cbd"
+    t.decimal "terpene"
+    t.boolean "drought", default: false
+    t.boolean "oil", default: false
+    t.boolean "edible", default: false
+    t.decimal "cost"
+    t.bigint "owner_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["material_type_id"], name: "index_materials_on_material_type_id"
+    t.index ["owner_id"], name: "index_materials_on_owner_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -127,23 +146,37 @@ ActiveRecord::Schema.define(version: 20_210_522_043_104) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
-  create_table 'profiles', force: :cascade do |t|
-    t.integer 'role'
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'nick_name'
-    t.string 'pesel'
-    t.integer 'gender'
-    t.string 'skills'
-    t.string 'contact_number'
-    t.string 'avatar'
-    t.date 'birth_date'
-    t.bigint 'user_id', null: false
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.boolean 'onboarded', default: false
-    t.boolean 'verified', default: false
-    t.index ['user_id'], name: 'index_profiles_on_user_id'
+  create_table "profiles", force: :cascade do |t|
+    t.integer "role"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "nick_name"
+    t.string "pesel"
+    t.integer "gender"
+    t.string "skills"
+    t.string "contact_number"
+    t.string "avatar"
+    t.date "birth_date"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "onboarded", default: false
+    t.boolean "verified", default: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "transfers", force: :cascade do |t|
+    t.bigint "sender_material_id", null: false
+    t.bigint "reciever_material_id", null: false
+    t.bigint "sender_id", null: false
+    t.bigint "reciever_id", null: false
+    t.integer "weight"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reciever_id"], name: "index_transfers_on_reciever_id"
+    t.index ["reciever_material_id"], name: "index_transfers_on_reciever_material_id"
+    t.index ["sender_id"], name: "index_transfers_on_sender_id"
+    t.index ["sender_material_id"], name: "index_transfers_on_sender_material_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -165,8 +198,13 @@ ActiveRecord::Schema.define(version: 20_210_522_043_104) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "memberships", "dispensaries"
-  add_foreign_key "memberships", "users"
+  add_foreign_key "dispensaries", "users", column: "manager_id"
+  add_foreign_key "materials", "material_types"
+  add_foreign_key "materials", "users", column: "owner_id"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "transfers", "materials", column: "reciever_material_id"
+  add_foreign_key "transfers", "materials", column: "sender_material_id"
+  add_foreign_key "transfers", "users", column: "reciever_id"
+  add_foreign_key "transfers", "users", column: "sender_id"
 end
