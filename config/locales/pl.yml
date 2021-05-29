@@ -7,22 +7,29 @@ pl:
     street: "ul. Nawrot 114, 2 p. lok. 205"
     phone: "+48 422 784 420"
   navbar:
-    about: "O"
-    media: "Głoska bezdźwięczna"
-    map: "Mapa"
+    about: "O nas"
     account: "Konto"
+    billing: "Historia Operacji"
+    media: "Media"
+    stock: "Asortyment"
   devise:
-    login: "Zaloguj sie"
-    singup: "Zapisać się"
-    logout: "Wyloguj"
+    login: "Zaloguj się"
+    signup: "Zapisz się"
+    logout: "Wyloguj się"
+    sessions:
+      user:
+        already_signed_out: "Jesteś już wylogowany."
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
+  forms:
+    save: "Zapisać"
+    cancel: "Anuluj"
   pages:
     landing:
       hero:
         title: "Pomóż ratować życie"
         content: "Cannabis House daje każdemu szansę przyczynienia się do postępu w dziedzinie medycyny i udziału w badaniach z pogranicza dyscypliny naukowej."
-        cta: "Dowiedz się więcej"
+        cta: "Dowiedz się więcej"
       description:
         title: "Jesteśmy fascynatorami badań naukowych"
         content: "Nasza platforma zapewnia bezpieczną przestrzeń dla lekarzy, badaczy i uczestników badań do współpracy nad badaniem skutków i korzyści płynących ze stosowania ziół leczniczych."
@@ -76,3 +83,47 @@ pl:
   models:
     user:
       agreements_checked: "Proszę zaakceptować oświadczenia."
+    onboarding:
+      welcome: "Witamy w Cannabis House!"
+      start: "Zaczynaj"
+      placeholder:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        nickname: "Przezwisko"
+        pesel: "Numer PESEL"
+        skills: "Moje umiejętności"
+      labels:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        nickname: "Przezwisko"
+        pesel: "PESEL"
+        skills: "Umiejętności"
+        number: "Numer telefonu"
+        avatar: "Zdjęcie profilowe"
+        birthday: "Urodziny"
+        save: "Zapisać"
+      errors:
+        pesel: "Podaj prawidłowy numer PESEL"
+  profiles:
+    update:
+      update:
+        success: "Profil zaktualizowany."
+        error: "Prosimy o wypełnienie wszystkich informacji."
+  activerecord:
+    errors:
+      models:
+        profile:
+          attributes:
+            user:
+              required: "Profil powinien być powiązany z użytkownikiem"
+            pesel:
+              invalid: "Podaj prawidłowy numer PESEL"
+              blank: "Podaj prawidłowy numer PESEL"
+            first_name:
+              blank: "Proszę podaj swoje imię"
+            last_name:
+              blank: "Proszę podać swoje nazwisko"
+            contact_number:
+              blank: "Proszę podać swój numer telefonu"
+            gender:
+              blank: "Proszę wybrać swoją płeć"
