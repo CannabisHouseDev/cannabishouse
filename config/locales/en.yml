@@ -107,6 +107,8 @@ en:
         edit:
           title: "Edit user"
   views:
+    dispensary_portal:
+      participant_nr: "Numer uczestnika"
     user:
       session:
         sign_in: "Sign in to your CH account"
