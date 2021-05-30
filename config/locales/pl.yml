@@ -78,6 +78,7 @@ pl:
   views:
     dispensary_portal:
       participant_nr: "Numer uczestnika"
+      scan_qr: "Skanuj kod QR"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

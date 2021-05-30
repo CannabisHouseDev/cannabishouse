@@ -5,3 +5,11 @@
       .relative.flex-grow.w-full.p-16.inline-flex.items-center.justify-center
         = image_tag 'dispensary_portal/magnifier.svg', alt: 'magnifier'
         = form.text_field :query, placeholder: "#{t('views.dispensary_portal.participant_nr')}", class: "w-96 ml-8 bg-gray-100 bg-opacity-50 rounded focus:bg-transparent text-base outline-none text-gray-700 py-4 px-4 leading-8 transition-colors duration-200 ease-in-out text-center text-2xl border-0"
+  .flex.justify-center
+    .qr_img
+      = image_tag 'dispensary_portal/qr_blob.svg', alt: 'blob', class: "qr_blob"
+    .mt-16.absolute.items-center.justify-center
+      = link_to 'scan_qr' do
+        .relative
+          = image_tag 'dispensary_portal/qr_scanner.svg', alt: 'scanner', class: "mt-16 absolute items-center justify-center"
+        %span=t('views.dispensary_portal.scan_qr')  
