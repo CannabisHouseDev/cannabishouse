@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Material type:
+  = @material.material_type
+%p
+  %b Name:
+  = @material.name
+%p
+  %b Description:
+  = @material.description
+%p
+  %b Weight:
+  = @material.weight
+%p
+  %b Thc:
+  = @material.thc
+%p
+  %b Cbd:
+  = @material.cbd
+%p
+  %b Terpene:
+  = @material.terpene
+%p
+  %b Drought:
+  = @material.drought
+%p
+  %b Oil:
+  = @material.oil
+%p
+  %b Edible:
+  = @material.edible
+%p
+  %b Cost:
+  = @material.cost
+%p
+  %b Owner:
+  = @material.owner
+
+= link_to 'Edit', edit_material_path(@material)
+\|
+= link_to 'Back', materials_path

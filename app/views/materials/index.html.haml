@@ -1,0 +1,43 @@
+%h1 Listing materials
+
+%table
+  %thead
+    %tr
+      %th Material type
+      %th Name
+      %th Description
+      %th Weight
+      %th Thc
+      %th Cbd
+      %th Terpene
+      %th Drought
+      %th Oil
+      %th Edible
+      %th Cost
+      %th Owner
+      %th
+      %th
+      %th
+
+  %tbody
+    - @materials.each do |material|
+      %tr
+        %td= material.material_type
+        %td= material.name
+        %td= material.description
+        %td= material.weight
+        %td= material.thc
+        %td= material.cbd
+        %td= material.terpene
+        %td= material.drought
+        %td= material.oil
+        %td= material.edible
+        %td= material.cost
+        %td= material.owner
+        %td= link_to 'Show', material
+        %td= link_to 'Edit', edit_material_path(material)
+        %td= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Material', new_material_path
