@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_154752) do
+ActiveRecord::Schema.define(version: 2021_05_29_184037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,22 @@ ActiveRecord::Schema.define(version: 2021_05_27_154752) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
+  end
+
+  create_table "dispensaries", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "avatar"
+    t.integer "category"
+    t.string "documents"
+    t.boolean "verified"
+    t.boolean "open"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "manager_id", null: false
+    t.index ["manager_id"], name: "index_dispensaries_on_manager_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -182,6 +198,7 @@ ActiveRecord::Schema.define(version: 2021_05_27_154752) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "dispensaries", "users", column: "manager_id"
   add_foreign_key "materials", "material_types"
   add_foreign_key "materials", "users", column: "owner_id"
   add_foreign_key "posts", "users"

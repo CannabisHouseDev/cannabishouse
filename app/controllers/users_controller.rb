@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(secure_params)
-      redirect_to users_path, notice:
+      redirect_to users_path, notice: 'User updated'
     else
       redirect_to users_path, alert: 'Unable to update user.'
     end

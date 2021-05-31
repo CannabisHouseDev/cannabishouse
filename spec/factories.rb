@@ -33,6 +33,19 @@ FactoryBot.define do
     password { '1234123412341234' }
     password_confirmation { '1234123412341234' }
   end
+
+  factory :dispensary do
+    name { "WRO-1" }
+    description { "MyString" }
+    avatar { "MyString" }
+    category { 0 }
+    documents { "MyString" }
+    verified { false }
+    open { false }
+    lat { "9.99" }
+    lng { "9.99" }
+  end
+
   factory :profile do
     role { 0 }
     first_name { 'John' }

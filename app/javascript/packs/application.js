@@ -19,3 +19,11 @@ require("trix")
 require("@rails/actiontext")
 
 import "controllers"
+
+// Google Maps callback
+window.initMap = function (...args) {
+  const event = document.createEvent("Events")
+  event.initEvent("google-maps-callback", true, true)
+  event.args = args
+  window.dispatchEvent(event)
+}

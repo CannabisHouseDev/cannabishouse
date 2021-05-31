@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @dispensary.name
+%p
+  %b Description:
+  = @dispensary.description
+%p
+  %b Avatar:
+  = @dispensary.avatar
+%p
+  %b Category:
+  = @dispensary.category
+%p
+  %b Documents:
+  = @dispensary.documents
+%p
+  %b Verified:
+  = @dispensary.verified
+%p
+  %b Open:
+  = @dispensary.open
+%p
+  %b Lat:
+  = @dispensary.lat
+%p
+  %b Lng:
+  = @dispensary.lng
+
+= link_to 'Edit', edit_dispensary_path(@dispensary)
+\|
+= link_to 'Back', dispensaries_path

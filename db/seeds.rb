@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
 # require 'roo'
-Profile.delete_all
-Address.delete_all
+
 Post.delete_all
 Page.delete_all
+Address.delete_all
+Profile.delete_all
 User.delete_all
+Dispensary.delete_all
 
 users_list = [
   { email: 'wolak88@gmail.com', password: 'wierd123321_16charsmin', password_confirmation: 'wierd123321_16charsmin', # role: 2,
@@ -64,6 +66,19 @@ users_list.each do |hash|
   user.profile.update profiles_list.pop
   user.profile.save!
   user.addresses.create! addresses_list.pop
+end
+
+puts "time for Dispensaries"
+dispensaries_list = [
+  { name: "Dyspensarium - Gdańsk 1", description: "GD 1", category: 0, verified: true, open: true, lat: 54.352628,lng: 18.6513903 },
+  { name: "Dyspensarium - Legionowo 1", description: "LEG 1", category: 0, verified: true, open: true, lat: 52.3991,lng: 20.9367, },
+  { name: "Dyspensarium - Poznań 1", description: "PZN 1", category: 0, verified: true, open: true, lat: 52.4111,lng: 16.8959, },
+  { name: "Dyspensarium - Bydgoszcz 1", description: "BDG 1", category: 0, verified: true, open: true, lat: 53.1338,lng: 18.0113, },
+  { name: "Dyspensarium - Szczecin 1", description: "SCZ 1", category: 0, verified: true, open: true, lat: 53.43585,lng: 14.5544, }
+]
+dispensaries_list.each do |d|
+  disp = Dispensary.new d
+  disp.save!
 end
 
 # This is temporary solution for development
