@@ -1,5 +1,5 @@
 !!!
-%html.text-gray-900.leading-tight.max-w-full{:translate => "no"}
+%html.text-gray-900.leading-tight.max-w-screen{:translate => "no"}
   %head
     = display_meta_tags
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -11,8 +11,8 @@
     = action_cable_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.bg-gray-100.w-screen
-    .max-w-7xl.mx-auto.px-4.sm:px-6.flex.flex-col.h-screen
+  %body.bg-gray-100.w-full
+    .w-full.mx-auto.px-4.sm:px-6.flex.flex-col.h-screen
       = render 'layouts/navigation'
       = yield
       = toastr_flash
