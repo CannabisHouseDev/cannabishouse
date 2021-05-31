@@ -1,15 +1,15 @@
-%section.text-gray-600.body-font
-  .container.px-5.py-24.mx-auto
-    .flex.w-full.sm:flex-row.flex-col.mx-auto.px-8.sm:space-x-4.sm:space-y-0.space-y-4.sm:px-0.items-end{:class => "lg:w-full"}
-    = form_with url: "/search", method: :get do |form|  
-      .relative.flex-grow.w-full.p-16.inline-flex.items-center.justify-center
-        = image_tag 'dispensary_portal/magnifier.svg', alt: 'magnifier'
-        = form.text_field :query, placeholder: "#{t('views.dispensary_portal.participant_nr')}", class: "w-96 ml-8 bg-gray-100 bg-opacity-50 rounded focus:bg-transparent text-base outline-none text-gray-700 py-4 px-4 leading-8 transition-colors duration-200 ease-in-out text-center text-2xl border-0"
-  .flex.justify-center
-    .qr_img
-      = image_tag 'dispensary_portal/qr_blob.svg', alt: 'blob', class: "qr_blob"
-    .mt-16.absolute.items-center.justify-center
-      = link_to 'scan_qr' do
-        .relative
-          = image_tag 'dispensary_portal/qr_scanner.svg', alt: 'scanner', class: "mt-16 absolute items-center justify-center"
-        %span=t('views.dispensary_portal.scan_qr')  
+%container.text-gray-600.body-font.h-full.w-full.px-5.mx-auto.flex.flex-col.items-center
+  = form_with url: "/search", method: :get, class: "flex-grow flex flex-col justify-center items-center w-full" do |form|
+    .p-16.flex.flex-col.md:flex-row.sm:flex-wrap.w-full.justify-center
+      = form.text_field :query, placeholder: "#{t('views.dispensary_portal.participant_nr')}", class: "bg-gray-100 bg-opacity-50 rounded focus:bg-transparent text-base outline-none text-gray-700 py-4 px-4 leading-8 transition-colors duration-200 ease-in-out text-center text-2xl border-0"
+      %button.bg-gray-300.hover:bg-gray-400.text-gray-800.font-bold.py-2.px-4.rounded.inline-flex.items-center.justify-center
+        %svg.fill-current.w-4.h-4.mr-2{"viewBox" => "0 0 20 20"}
+          %path{"d" => "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"}
+        %span
+          Search
+  = link_to 'scan_qr', class: 'w-full overflow-hidden' do
+    .flex.flex-col.justify-start.flex-nowrap.items-center.rounded-full.w-60.h-60.bg-gray-300.p-10.mx-auto.transform.translate-y-20.sm:translate-y-10.md:translate-y-20.hover:translate-y-0.duration-500#qr_bubble
+      Scan QR Code
+      .h-full.w-full
+        %svg{:viewBox => "0 0 24 24", :fill => "none", :stroke => "currentColor", :xmlns => "http://www.w3.org/2000/svg"}
+          %path{:d => "M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
