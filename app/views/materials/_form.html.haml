@@ -1,0 +1,46 @@
+= form_for @material do |f|
+  - if @material.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@material.errors.count, "error")} prohibited this material from being saved:"
+      %ul
+        - @material.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :material_type
+    = f.text_field :material_type
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :weight
+    = f.number_field :weight
+  .field
+    = f.label :thc
+    = f.text_field :thc
+  .field
+    = f.label :cbd
+    = f.text_field :cbd
+  .field
+    = f.label :terpene
+    = f.text_field :terpene
+  .field
+    = f.label :drought
+    = f.check_box :drought
+  .field
+    = f.label :oil
+    = f.check_box :oil
+  .field
+    = f.label :edible
+    = f.check_box :edible
+  .field
+    = f.label :cost
+    = f.text_field :cost
+  .field
+    = f.label :owner
+    = f.text_field :owner
+  .actions
+    = f.submit 'Save'
