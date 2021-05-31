@@ -24,6 +24,7 @@ pl:
   forms:
     save: "Zapisać"
     cancel: "Anuluj"
+    next: "Dalej"
   pages:
     landing:
       hero:
@@ -76,6 +77,12 @@ pl:
         edit:
           title: "Edycja użytkownika"
   views:
+    dispensary_portal:
+      allowed_amount: "Dozwolona dawka"
+      current_study: "Aktualne Badanie:"
+      donator: "Darczyńca"
+      name: "Imię i nazwisko:"
+      next_renewal: "Następny odbiór:"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

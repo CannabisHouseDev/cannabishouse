@@ -55,6 +55,7 @@ en:
   forms:
     save: "Save"
     cancel: "Cancel"
+    next: "Next"
   pages:
     landing:
       hero:
@@ -107,6 +108,12 @@ en:
         edit:
           title: "Edit user"
   views:
+    dispensary_portal:
+      allowed_amount: "Amount Allowed:"
+      current_study: "Current Study:"
+      donator: "Donator"
+      name: "Name:"
+      next_renewal: "Next renewal:"
     user:
       session:
         sign_in: "Sign in to your CH account"

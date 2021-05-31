@@ -5,21 +5,25 @@
         = image_tag "https://dummyimage.com/400x400", alt:  "ecommerce", class: "object-cover object-center rounded-full p-10"
         .inline-flex.items-center.ml-32.-mt-32
           = image_tag "dispensary_portal/approved.svg", alt: "approved", class: "flex"
-          .text-3xl.font-bold Donator
-      .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0{:class => "lg:w-1/2"}
+          .text-3xl.font-bold= t('views.dispensary_portal.donator')
+      .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0.md:mt-64.sm:mt-64.xs:mt-64{:class => "lg:w-1/2"}
         .justify-center.items-center.flex.mt-10
-          %h1.text-gray-900.text-3xl.title-font.font-medium.mb-1 NAME: John Wick
+          %h1.text-gray-900.text-3xl.title-font.font-medium.mb-1
+            = t('views.dispensary_portal.name')
+            John Wick
         .flex.justify-end.items-end.text-sm.font-light 532-03492-3049
         .flex.mx-auto.mt-8.justify-center.items-center
           .text-gray-700.font-medium.text-2xl
-            Current Study:
+            = t('views.dispensary_portal.current_study')
           .text-gray-800.font-medium.ml-10.text-2xl
-            Jakiś study
+            Research topic
         .flex.justify-center.mt-8
-          .text-2xl Amount Allowed: 30 grams/month
+          .text-2xl 
+            = t('views.dispensary_portal.allowed_amount')
+            30 grams/month
         .flex.justify-center.items-center.mt-8.text-xl
-          Next renewal: 
+          =t('views.dispensary_portal.next_renewal')
           = Time.now + 30.days
         .inline-flex.mt-10
-          %button.ml-32.flex.mr-auto.text-green-300.bg-green-100.border-green-300.border-2.py-2.px-6.focus:outline-none.hover:bg-green-600.rounded-full Next
-          %button.ml-16.rounded-full.w-20.h-10.p-0.border-0.inline-flex.items-center.justify-center.text-gray-500.ml-4.bg-transparent Cancel
+          %button.ml-32.flex.mr-auto.text-green-300.bg-green-100.border-green-300.border-2.py-2.px-6.focus:outline-none.hover:bg-green-600.rounded-full= t('forms.next')
+          %button.ml-16.rounded-full.w-20.h-10.p-0.border-0.inline-flex.items-center.justify-center.text-gray-500.ml-4.bg-transparent= t('forms.cancel')
