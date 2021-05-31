@@ -1,0 +1,25 @@
+%section.text-gray-600.body-font.overflow-hidden
+  .container.px-5.py-24.mx-auto
+    .mx-auto.flex.flex-wrap{:class => "lg:w-4/5"}
+      .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64{:class => "lg:w-1/2"}
+        = image_tag "https://dummyimage.com/400x400", alt:  "ecommerce", class: "object-cover object-center rounded-full p-10"
+        .inline-flex.items-center.ml-32.-mt-32
+          = image_tag "dispensary_portal/approved.svg", alt: "approved", class: "flex"
+          .text-3xl.font-bold Donator
+      .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0{:class => "lg:w-1/2"}
+        .justify-center.items-center.flex.mt-10
+          %h1.text-gray-900.text-3xl.title-font.font-medium.mb-1 NAME: John Wick
+        .flex.justify-end.items-end.text-sm.font-light 532-03492-3049
+        .flex.mx-auto.mt-8.justify-center.items-center
+          .text-gray-700.font-medium.text-2xl
+            Current Study:
+          .text-gray-800.font-medium.ml-10.text-2xl
+            Jakiś study
+        .flex.justify-center.mt-8
+          .text-2xl Amount Allowed: 30 grams/month
+        .flex.justify-center.items-center.mt-8.text-xl
+          Next renewal: 
+          = Time.now + 30.days
+        .inline-flex.mt-10
+          %button.ml-32.flex.mr-auto.text-green-300.bg-green-100.border-green-300.border-2.py-2.px-6.focus:outline-none.hover:bg-green-600.rounded-full Next
+          %button.ml-16.rounded-full.w-20.h-10.p-0.border-0.inline-flex.items-center.justify-center.text-gray-500.ml-4.bg-transparent Cancel
