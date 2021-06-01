@@ -80,6 +80,9 @@ pl:
       select_material:  "Wybierz rodzaj materiału badawczego"
       warn: "Susz jest własnością jednostki naukowej, przed wydaniem potwierdź tożsamość uczestnika badań"
       gram: "gram"
+      participant_nr: "Numer uczestnika"
+      scan_qr: "Skanuj kod QR"
+      search: "Szukaj"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"
