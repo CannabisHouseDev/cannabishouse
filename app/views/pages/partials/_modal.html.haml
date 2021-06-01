@@ -3,9 +3,16 @@
   / Modal Inner Container
   .max-h-screen.w-full.max-w-lg.relative
     / Modal Card
-    .m-1.bg-white.rounded.shadow
-      .p-8
-        %h2.text-xl.mb-4 Large Modal Content
-        %p.mb-4 This is an example modal dialog box.
-        .flex.justify-end.items-center.flex-wrap.mt-6
-          %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"} Close
+    %div{"data-controller" => "tabs", "data-tabs-active-tab" => "bg-gray-300"}
+      %ul.flex.justify-center.hidden
+        %li.rounded-t-md{"data-action" => "click->tabs#change", "data-tabs-target" => "tab"}
+          %a.bg-white.inline-block.py-2.px-4.text-blue-500.hover:text-blue-700.font-semibold.no-underline{:href => "#"}
+            = t('devise.login')
+        %li.rounded-t-md{"data-action" => "click->tabs#change", "data-tabs-target" => "tab"}
+          %a.bg-white.inline-block.py-2.px-4.text-blue-500.hover:text-blue-700.font-semibold.no-underline{:href => "#"}
+            = t('devise.signup')
+      .hidden{"data-tabs-target" => "panel"}
+        = render partial: 'pages/partials/signin_modal' 
+      .hidden{"data-tabs-target" => "panel"}
+        = render partial: 'pages/partials/signup_modal' 
+    

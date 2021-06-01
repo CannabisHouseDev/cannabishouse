@@ -16,6 +16,17 @@ pl:
     login: "Zaloguj się"
     signup: "Zapisz się"
     logout: "Wyloguj się"
+    welcome_signin: "Witamy Spowrotem"
+    welcome_signup: "Witamy w Cannabis House"
+    email: "E-mail"
+    password: "Hasło"
+    remember: "Zapamiętaj mnie"
+    no_account: "Nie masz konta?"
+    have_account: "Posiadasz już konto?"
+    close: "blisko"
+    confirm: "Potwierdzenie Hasła"
+    agree: "zgadzam się z"
+    terms: "zasady i warunki"
     sessions:
       user:
         already_signed_out: "Jesteś już wylogowany."
