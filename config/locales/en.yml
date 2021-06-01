@@ -107,6 +107,10 @@ en:
         edit:
           title: "Edit user"
   views:
+    dispensary_portal:
+      participant_nr: "Participant Number"
+      scan_qr: "Scan QR Code"
+      search: "Search"
     user:
       session:
         sign_in: "Sign in to your CH account"

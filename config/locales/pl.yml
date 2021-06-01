@@ -76,6 +76,10 @@ pl:
         edit:
           title: "Edycja użytkownika"
   views:
+    dispensary_portal:
+      participant_nr: "Numer uczestnika"
+      scan_qr: "Skanuj kod QR"
+      search: "Szukaj"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

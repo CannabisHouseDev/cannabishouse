@@ -1,5 +1,5 @@
 !!!
-%html.text-gray-900.leading-tight{:translate => "no"}
+%html.text-gray-900.leading-tight.max-w-screen{:translate => "no"}
   %head
     = display_meta_tags
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -11,9 +11,10 @@
     = action_cable_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body.bg-gray-100
-    .max-w-7xl.mx-auto.px-4.sm:px-6
+  %body.bg-gray-100.w-full
+    .w-full.mx-auto.px-4.sm:px-6.flex.flex-col{:class => ('h-screen' unless action_name == 'landing')}
       = render 'layouts/navigation'
-      = yield
+      .w-full.h-full.flex-grow.z-0
+        = yield
       = toastr_flash
-      = render 'layouts/footer'
+    = render 'layouts/footer'
