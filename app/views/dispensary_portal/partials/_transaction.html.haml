@@ -1,0 +1,19 @@
+%section.text-gray-600.body-font.overflow-hidden
+  .container.px-5.py-24.mx-auto
+    = form_with url: '/send', method: :post do |form|
+      .mx-auto.flex.flex-wrap{:class => "lg:w-4/5"}
+        .lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64{:class => "w-1/2"}
+          = image_tag 'https://dummyimage.com/400x400', alt:  'ecommerce', class: 'object-cover object-center rounded-full p-10'
+          .inline-flex.items-center.ml-32.-mt-32
+            = image_tag 'dispensary_portal/approved.svg', alt: 'approved', class: 'flex'
+            .text-3xl.font-bold= t('views.dispensary_portal.donator')
+        .my-auto.lg:px-10.lg:py-6{:class => "w-1/2"}
+          .justify-center.items-center.flex
+            .-ml-16.mr-16
+              =image_tag 'dispensary_portal/vector.svg', alt: 'equal'
+            %span.text-gray-900.text-lg.title-font.font-medium.mb-1.inline-flex
+              = t('views.dispensary_portal.amount')
+              = form.text_field :amount, placeholder: 'max allowed 3g'
+        .inline-flex.mt-10.mx-auto
+          = form.submit t('forms.finish'), class: "flex text-green-300 bg-green-100 border-green-300 border-2 py-2 px-6 focus:outline-none hover:bg-green-600 rounded-full"
+          = link_to t('forms.cancel'), :back, class: "ml-16 rounded-full w-20 h-10 p-0 border-0 inline-flex items-center justify-center text-gray-500 bg-transparent"
