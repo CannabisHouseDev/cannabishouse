@@ -107,6 +107,10 @@ en:
         edit:
           title: "Edit user"
   views:
+    dispensary_portal:
+      select_material:  "Select Material To Transfer"
+      warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
+      gram: "gram"
     user:
       session:
         sign_in: "Sign in to your CH account"
