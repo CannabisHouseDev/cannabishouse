@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     get 'media', to: 'pages#media', as: 'media'
     get 'billing', to: 'dispensary_portal#billing', as: 'billing'
     get 'stock', to: 'dispensary_portal#stock', as: 'stock'
+    get 'search', to: 'dispensary_portal#search', as: 'user_lookup'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
