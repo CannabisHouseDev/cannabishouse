@@ -16,6 +16,17 @@ pl:
     login: "Zaloguj się"
     signup: "Zapisz się"
     logout: "Wyloguj się"
+    welcome_signin: "Witamy Spowrotem"
+    welcome_signup: "Witamy w Cannabis House"
+    email: "E-mail"
+    password: "Hasło"
+    remember: "Zapamiętaj mnie"
+    no_account: "Nie masz konta?"
+    have_account: "Posiadasz już konto?"
+    close: "blisko"
+    confirm: "Potwierdzenie Hasła"
+    agree: "zgadzam się z"
+    terms: "zasady i warunki"
     sessions:
       user:
         already_signed_out: "Jesteś już wylogowany."
@@ -30,7 +41,7 @@ pl:
       hero:
         title: "Pomóż ratować życie"
         content: "Cannabis House daje każdemu szansę przyczynienia się do postępu w dziedzinie medycyny i udziału w badaniach z pogranicza dyscypliny naukowej."
-        cta: "Dowiedz się więcej"
+        cta: "Dowiedz się więcej"
       description:
         title: "Jesteśmy fascynatorami badań naukowych"
         content: "Nasza platforma zapewnia bezpieczną przestrzeń dla lekarzy, badaczy i uczestników badań do współpracy nad badaniem skutków i korzyści płynących ze stosowania ziół leczniczych."
@@ -83,6 +94,9 @@ pl:
       donator: "Darczyńca"
       name: "Imię i nazwisko:"
       next_renewal: "Następny odbiór:"
+      participant_nr: "Numer uczestnika"
+      scan_qr: "Skanuj kod QR"
+      search: "Szukaj"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

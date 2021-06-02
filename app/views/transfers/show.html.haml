@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Sender material:
+  = @transfer.sender_material
+%p
+  %b Reciever material:
+  = @transfer.reciever_material
+%p
+  %b Sender:
+  = @transfer.sender
+%p
+  %b Reciever:
+  = @transfer.reciever
+%p
+  %b Weight:
+  = @transfer.weight
+
+= link_to 'Edit', edit_transfer_path(@transfer)
+\|
+= link_to 'Back', transfers_path

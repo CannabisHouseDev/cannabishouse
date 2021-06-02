@@ -7,6 +7,7 @@ module.exports = {
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus','active'],
+    justifyContent: ['hover']
   },
   plugins: [
     require('@tailwindcss/forms'),

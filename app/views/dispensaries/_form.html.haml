@@ -1,0 +1,35 @@
+= form_for @dispensary do |f|
+  - if @dispensary.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@dispensary.errors.count, "error")} prohibited this dispensary from being saved:"
+      %ul
+        - @dispensary.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name, class: 'Form-label'
+    = f.text_field :name, class: 'Form-input'
+  .field
+    = f.label :description, class: 'Form-label'
+    = f.rich_text_area :description, class: 'Form-input'
+  .field
+    = f.label :avatar, class: 'Form-label'
+    = f.file_field :avatar, class: 'Form-input'
+  .field
+    = f.label :category, class: 'Form-label'
+    = f.select :category, Dispensary.categories.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
+  .field
+    = f.label :documents, class: 'Form-label'
+    = f.file_field :documents, class: 'Form-input'
+  .field
+    = f.label :verified, class: 'Form-label'
+    = f.check_box :verified, class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"
+  .field
+    = f.label :open, class: 'Form-label'
+    = f.check_box :open, class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"
+  .hidden
+    = f.hidden_field :lat, id: 'map_lat'
+    = f.hidden_field :lng, id: 'map_lng'
+  .actions
+    %br
+    = f.submit 'Save', class: 'Form-submit'

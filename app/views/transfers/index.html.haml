@@ -1,0 +1,29 @@
+%h1 Listing transfers
+
+%table
+  %thead
+    %tr
+      %th Sender material
+      %th Reciever material
+      %th Sender
+      %th Reciever
+      %th Weight
+      %th
+      %th
+      %th
+
+  %tbody
+    - @transfers.each do |transfer|
+      %tr
+        %td= transfer.sender_material
+        %td= transfer.reciever_material
+        %td= transfer.sender
+        %td= transfer.reciever
+        %td= transfer.weight
+        %td= link_to 'Show', transfer
+        %td= link_to 'Edit', edit_transfer_path(transfer)
+        %td= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Transfer', new_transfer_path
