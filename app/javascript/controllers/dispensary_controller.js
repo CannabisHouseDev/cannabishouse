@@ -18,7 +18,10 @@ export default class extends Controller {
     });
   }
 
-  initialize () { window.root = this.dispensaryTarget }
+  initialize () {
+    window.root = this.dispensaryTarget;
+    console.log(root);
+    }
 
   connect () {}
 

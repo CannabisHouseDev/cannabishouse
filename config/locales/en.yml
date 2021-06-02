@@ -56,7 +56,7 @@ en:
     have_account: "Already have an account?"
     close: "close"
     confirm: "Password Confirmation"
-    agree: "I agree to the"
+    agree: "I agree to the terms and conditions"
     terms: "terms and conditions"
     sessions:
       user:
