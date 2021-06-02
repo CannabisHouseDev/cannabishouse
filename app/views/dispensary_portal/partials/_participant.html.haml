@@ -8,8 +8,7 @@
     .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0.md:mt-64.sm:mt-64.xs:mt-64{:class => "lg:w-1/2"}
       .justify-center.items-center.flex.mt-10
         %h1.text-gray-900.text-3xl.title-font.font-medium.mb-1
-          = t('views.dispensary_portal.name')
-          John Wick
+          #{@profile.first_name} #{@profile.last_name}
       .flex.justify-end.items-end.text-sm.font-light 532-03492-3049
       .flex.mx-auto.mt-8.justify-center.items-center
         .text-gray-700.font-medium.text-2xl
