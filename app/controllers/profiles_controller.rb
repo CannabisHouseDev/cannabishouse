@@ -39,14 +39,14 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
-      @profile.avatar.attach(params[:avatar])
+      @profile.avatar.attach(params[:avatar]) if params[:avatar].present?
       if @profile.update(profile_params)
         current_user.profile.onboarded = true
         current_user.profile.save
         format.html { redirect_to authenticated_root_path, notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to onboarding_path, alert: t('.update.error') }
+        format.html { redirect_to user_profile_path, alert: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
