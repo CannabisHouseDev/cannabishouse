@@ -16,6 +16,17 @@ pl:
     login: "Zaloguj się"
     signup: "Zapisz się"
     logout: "Wyloguj się"
+    welcome_signin: "Witamy Spowrotem"
+    welcome_signup: "Witamy w Cannabis House"
+    email: "E-mail"
+    password: "Hasło"
+    remember: "Zapamiętaj mnie"
+    no_account: "Nie masz konta?"
+    have_account: "Posiadasz już konto?"
+    close: "blisko"
+    confirm: "Potwierdzenie Hasła"
+    agree: "zgadzam się z"
+    terms: "zasady i warunki"
     sessions:
       user:
         already_signed_out: "Jesteś już wylogowany."
@@ -25,6 +36,7 @@ pl:
     save: "Zapisać"
     cancel: "Anuluj"
     finish: "Zakończ"
+    next: "Dalej"
   pages:
     landing:
       hero:
@@ -81,6 +93,11 @@ pl:
       select_material:  "Wybierz rodzaj materiału badawczego"
       warn: "Susz jest własnością jednostki naukowej, przed wydaniem potwierdź tożsamość uczestnika badań"
       gram: "gram"
+      allowed_amount: "Dozwolona dawka"
+      current_study: "Aktualne Badanie:"
+      donator: "Darczyńca"
+      name: "Imię i nazwisko:"
+      next_renewal: "Następny odbiór:"
       participant_nr: "Numer uczestnika"
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"

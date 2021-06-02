@@ -47,6 +47,17 @@ en:
     login: "Login"
     signup: "Sign Up"
     logout: "Logout"
+    welcome_signin: "Welcome Back"
+    welcome_signup: "Welcome to Cannabis House"
+    email: "Email"
+    password: "Password"
+    remember: "Remember Me"
+    no_account: "Don't have an account?"
+    have_account: "Already have an account?"
+    close: "close"
+    confirm: "Password Confirmation"
+    agree: "I agree to the terms and conditions"
+    terms: "terms and conditions"
     sessions:
       user:
         already_signed_out: "You are already signed out."
@@ -56,6 +67,7 @@ en:
     save: "Save"
     cancel: "Cancel"
     finish: "Finish"
+    next: "Next"
   pages:
     landing:
       hero:
@@ -112,6 +124,11 @@ en:
       select_material:  "Select Material To Transfer"
       warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
       gram: "gram"
+      allowed_amount: "Amount Allowed:"
+      current_study: "Current Study:"
+      donator: "Donator"
+      name: "Name:"
+      next_renewal: "Next renewal:"
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
