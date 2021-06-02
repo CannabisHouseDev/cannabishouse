@@ -56,7 +56,7 @@ en:
     have_account: "Already have an account?"
     close: "close"
     confirm: "Password Confirmation"
-    agree: "I agree to the"
+    agree: "I agree to the terms and conditions"
     terms: "terms and conditions"
     sessions:
       user:
@@ -66,6 +66,7 @@ en:
   forms:
     save: "Save"
     cancel: "Cancel"
+    next: "Next"
   pages:
     landing:
       hero:
@@ -119,6 +120,11 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      allowed_amount: "Amount Allowed:"
+      current_study: "Current Study:"
+      donator: "Donator"
+      name: "Name:"
+      next_renewal: "Next renewal:"
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
