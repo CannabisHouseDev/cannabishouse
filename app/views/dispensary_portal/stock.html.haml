@@ -1,0 +1,32 @@
+%section.text-gray-600.body-font
+  .container.px-5.py-24.mx-auto
+    .flex.flex-wrap.w-full.mb-20
+      .w-full.mb-6.lg:mb-0{:class => "lg:w-1/2"}
+        %h1.sm:text-3xl.text-2xl.font-medium.title-font.mb-2.text-gray-900= t('views.dispensary_portal.available_material')
+        .h-1.w-20.bg-green-500.rounded
+    .flex.flex-wrap.-m-4
+      .p-4{:class => "xl:w-1/4 md:w-1/2"}
+        .bg-gray-100.pt-6.rounded-3xl.bg-gray-200
+          %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center =
+          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'h-80 rounded w-full object-cover object-center mb-6 rounded-3xl'
+        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center
+          40 
+          =t('views.dispensary_portal.grams')
+      .p-4{:class => "xl:w-1/4 md:w-1/2"}
+        .bg-gray-100.pt-6.rounded-3xl.bg-gray-200
+          %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Power Plant
+          = image_tag 'dispensary_portal/weed_dev/weed2.png', alt: 'weed', class: 'h-80 rounded w-full object-cover object-center mb-6 rounded-3xl'
+        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 44 grams
+      .p-4{:class => "xl:w-1/4 md:w-1/2"}
+        .bg-gray-100.pt-6.rounded-3xl.bg-gray-200
+          %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Big Bud
+          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'h-80 rounded w-full object-cover object-center mb-6 rounded-3xl'
+        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 10 grams
+      .p-4{:class => "xl:w-1/4 md:w-1/2"}
+        .bg-gray-100.pt-6.rounded-3xl.bg-gray-200
+          %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Super Lemon Skunk
+          = image_tag 'dispensary_portal/weed_dev/weed2.png', alt: 'weed', class: 'h-80 rounded w-full object-cover object-center mb-6 rounded-3xl'
+        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 25 grams
+    .flex.flex-wrap.w-full.mb-20.mt-10
+      .items-center.justify-center.mx-auto
+        %button.border-purple-600.border-2.shadow-lg.px-12.py-5.rounded-xl.text-3xl.text-purple-600= t('views.dispensary_portal.make_order')
