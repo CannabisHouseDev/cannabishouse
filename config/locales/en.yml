@@ -66,6 +66,7 @@ en:
   forms:
     save: "Save"
     cancel: "Cancel"
+    finish: "Finish"
     next: "Next"
   pages:
     landing:
@@ -120,6 +121,9 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      select_material:  "Select Material To Transfer"
+      warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
+      gram: "gram"
       allowed_amount: "Amount Allowed:"
       current_study: "Current Study:"
       donator: "Donator"
@@ -128,6 +132,7 @@ en:
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
+      amount: "Enter amount to send:"
     user:
       session:
         sign_in: "Sign in to your CH account"

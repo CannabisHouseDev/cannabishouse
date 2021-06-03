@@ -11,6 +11,8 @@
     = action_cable_meta_tag
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    :javascript
+      window.locale = "#{escape_javascript I18n.locale}"
   %body.bg-gray-100.w-full
     .w-full.mx-auto.px-4.sm:px-6.flex.flex-col{:class => ('h-screen' unless action_name == 'landing')}
       = render 'layouts/navigation'

@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     get 'billing', to: 'dispensary_portal#billing', as: 'billing'
     get 'stock', to: 'dispensary_portal#stock', as: 'stock'
     get 'search', to: 'dispensary_portal#search', as: 'user_lookup'
+    get 'trasnfer', to: 'dispensary_portal#transfer', as: 'dispensary_to_participant'
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
