@@ -120,11 +120,13 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      amount: "Amount"
       allowed_amount: "Amount Allowed:"
       current_study: "Current Study:"
       donator: "Donator"
       name: "Name:"
       next_renewal: "Next renewal:"
+      order: "order"
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"

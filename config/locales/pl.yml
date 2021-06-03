@@ -89,11 +89,13 @@ pl:
           title: "Edycja użytkownika"
   views:
     dispensary_portal:
+      amount: "Ilość"
       allowed_amount: "Dozwolona dawka"
       current_study: "Aktualne Badanie:"
       donator: "Darczyńca"
       name: "Imię i nazwisko:"
       next_renewal: "Następny odbiór:"
+      order: "zamów"
       participant_nr: "Numer uczestnika"
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"
