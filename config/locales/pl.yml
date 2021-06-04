@@ -90,6 +90,9 @@ pl:
   views:
     dispensary_portal:
       amount: "Ilość"
+      select_material:  "Wybierz rodzaj materiału badawczego"
+      warn: "Susz jest własnością jednostki naukowej, przed wydaniem potwierdź tożsamość uczestnika badań"
+      gram: "gram"
       allowed_amount: "Dozwolona dawka"
       current_study: "Aktualne Badanie:"
       donator: "Darczyńca"
