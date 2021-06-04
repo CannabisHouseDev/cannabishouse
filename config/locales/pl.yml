@@ -90,6 +90,7 @@ pl:
           title: "Edycja użytkownika"
   views:
     dispensary_portal:
+      amount: "Ilość"
       select_material:  "Wybierz rodzaj materiału badawczego"
       warn: "Susz jest własnością jednostki naukowej, przed wydaniem potwierdź tożsamość uczestnika badań"
       gram: "gram"
@@ -98,6 +99,7 @@ pl:
       donator: "Darczyńca"
       name: "Imię i nazwisko:"
       next_renewal: "Następny odbiór:"
+      order: "zamów"
       participant_nr: "Numer uczestnika"
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"

@@ -121,6 +121,7 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      amount: "Amount"
       select_material:  "Select Material To Transfer"
       warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
       gram: "gram"
@@ -129,6 +130,7 @@ en:
       donator: "Donator"
       name: "Name:"
       next_renewal: "Next renewal:"
+      order: "order"
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
