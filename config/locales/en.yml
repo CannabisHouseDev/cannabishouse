@@ -66,6 +66,7 @@ en:
   forms:
     save: "Save"
     cancel: "Cancel"
+    finish: "Finish"
     next: "Next"
   pages:
     landing:
@@ -133,6 +134,7 @@ en:
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
+      amount: "Enter amount to send:"
     user:
       session:
         sign_in: "Sign in to your CH account"

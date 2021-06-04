@@ -10,7 +10,18 @@ export default class extends Controller {
     const code = document.getElementById("code").value;
     Rails.ajax({
      type: "get",
-     url: `/search?code=${code}`,
+     url: `${window.locale == 'en' ? '/en' : ''}/search?code=${code}`,
+     success: function(data){
+      console.log(data.body.innerHTML);
+      root.innerHTML = data.body.innerHTML;
+     }
+    });
+  }
+
+  transferScreen (e) {
+    Rails.ajax({
+     type: "get",
+     url: `${window.locale == 'en' ? '/en' : ''}/trasnfer`,
      success: function(data){
       console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
@@ -20,7 +31,6 @@ export default class extends Controller {
 
   initialize () {
     window.root = this.dispensaryTarget;
-    console.log(root);
     }
 
   connect () {}

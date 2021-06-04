@@ -35,6 +35,7 @@ pl:
   forms:
     save: "Zapisać"
     cancel: "Anuluj"
+    finish: "Zakończ"
     next: "Dalej"
   pages:
     landing:
@@ -102,6 +103,7 @@ pl:
       participant_nr: "Numer uczestnika"
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"
+      amount: "Ile chcesz wydać:"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"
