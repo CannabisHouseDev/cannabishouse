@@ -1,5 +1,3 @@
-%h1
-  =I18n.locale
 %section.text-gray-600.body-font.overflow-hidden.px-5.md:py-10
   .mx-auto.flex.flex-col.flex-wrap.md:flex-row.md:flex-nowrap.justify-center{:class => "lg:w-4/5"}
     .lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64.flex.flex-col.justify-center.flex-shrink.relative{:class => "lg:w-1/2"}
@@ -25,5 +23,5 @@
         =t('views.dispensary_portal.next_renewal')
         = Time.now + 30.days
       .flex.flex-row.justify-around.w-full
-        %button.py-4.rounded.border-green-400.border-2.flex-grow.m-2.bg-green-400.bg-opacity-25{ "data-action" => "click->dispensary#transferScreen"}= t('forms.next')
-        %button.py-4.rounded.border-red-400.border-2.flex-grow.m-2.bg-red-400.bg-opacity-25= t('forms.cancel')
+        %button.py-4.rounded.border-green-400.border-2.flex-grow.m-2.bg-green-400.bg-opacity-25{ "data-action" => "click->dispensary#materialScreen"}= t('forms.next')
+        %button.py-4.rounded.border-red-400.border-2.flex-grow.m-2.bg-red-400.bg-opacity-25{ "data-action" => "click->dispensary#searchScreen"}= t('forms.cancel')
