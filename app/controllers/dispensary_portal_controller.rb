@@ -3,10 +3,6 @@
 class DispensaryPortalController < ApplicationController
   def index; end
 
-  def billing; end
-
-  def stock; end
-
   def search
     render partial: 'dispensary_portal/partials/search'
   end
@@ -23,5 +19,17 @@ class DispensaryPortalController < ApplicationController
   def transfer
     @material_id = params[:material]
     render partial: 'dispensary_portal/partials/transfer'
+  end
+
+  def billing; end
+
+  def stock; end
+
+  def warehouse
+    render partial: 'dispensary_portal/partials/warehouse_stock'
+  end
+
+  def order
+    render partial: 'dispensary_portal/partials/material_order'
   end
 end

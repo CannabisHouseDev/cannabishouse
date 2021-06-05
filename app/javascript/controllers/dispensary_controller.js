@@ -52,6 +52,28 @@ export default class extends Controller {
     });
   }
 
+  warehouseScreen(e) {
+    Rails.ajax({
+     type: "get",
+     url: `${window.locale == 'en' ? '/en' : ''}/warehouse_stock`,
+     success: function(data){
+      console.log(data.body.innerHTML);
+      root.innerHTML = data.body.innerHTML;
+     }
+    });
+  }
+
+  orderScreen(e){
+    Rails.ajax({
+     type: "get",
+     url: `${window.locale == 'en' ? '/en' : ''}/order`,
+     success: function(data){
+      console.log(data.body.innerHTML);
+      root.innerHTML = data.body.innerHTML;
+     }
+    });
+  }
+
   initialize () {
     window.root = this.dispensaryTarget;
     }

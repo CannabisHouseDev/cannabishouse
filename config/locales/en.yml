@@ -20,7 +20,7 @@
 # the default I18n backend:
 #
 # true, false, on, off, yes, no
-#
+#warehouse
 # Instead, surround them with single quotes.
 #
 # en:
@@ -122,6 +122,7 @@ en:
   views:
     dispensary_portal:
       available_material: "Material in stock:"
+      warehouse_material: "Select material to order:"
       make_order: "Make an Order"
       grams: "grams"
       amount: "Amount"
