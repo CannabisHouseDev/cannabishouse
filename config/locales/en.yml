@@ -121,10 +121,12 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      available_material: "Material Available:"
+      make_order: "Make an Order"
+      grams: "grams"
       amount: "Amount"
       select_material:  "Select Material To Transfer"
       warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
-      gram: "gram"
       allowed_amount: "Amount Allowed:"
       current_study: "Current Study:"
       donator: "Donator"
