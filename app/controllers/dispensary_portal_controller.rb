@@ -12,5 +12,7 @@ class DispensaryPortalController < ApplicationController
     render partial: 'dispensary_portal/partials/participant'
   end
 
-  def transfer; end
+  def transfer
+    render partial: 'dispensary_portal/partials/transaction'
+  end
 end
