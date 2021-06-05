@@ -120,7 +120,7 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
-      available_material:  "Available in Stock:"
+      available_material: "Choose material to transfer:"
       make_order: "Make an Order"
       grams: "grams"
       allowed_amount: "Amount Allowed:"

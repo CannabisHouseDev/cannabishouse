@@ -42,3 +42,15 @@
 }
 @import "tailwindcss/utilities";
 
+// Monkey Patch to fix the slider on the views/dispensary_portal/partials/meterial_choice partial
+@media screen and (max-width: 640px){
+  .material_slider{
+    grid-auto-columns: 50%;
+  }
+}
+@media screen and (min-width: 768px){
+  .material_slider{
+    grid-auto-columns: 30%;
+  }
+}
+

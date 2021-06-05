@@ -89,7 +89,7 @@ pl:
           title: "Edycja użytkownika"
   views:
     dispensary_portal:
-      available_material:  "Posiadasz następujące ilości materiału badawczego"
+      available_material: "Wybierz materiał do przeniesienia:"
       make_order: "Złóż zamówienie"
       grams: "gramów"
       allowed_amount: "Dozwolona dawka"
