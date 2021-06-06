@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Page < ApplicationRecord
+  has_paper_trail
   extend FriendlyId
   friendly_id :title, use: :slugged
 
