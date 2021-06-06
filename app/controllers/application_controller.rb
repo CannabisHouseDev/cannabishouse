@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, :set_locale
+  before_action :set_paper_trail_whodunnit
   before_action :authenticate_user!
 
   def default_url_options

@@ -230,6 +230,9 @@ GEM
     nokogiri (1.11.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    paper_trail (12.0.0)
+      activerecord (>= 5.2)
+      request_store (~> 1.1)
     parallel (1.20.1)
     parser (3.0.1.1)
       ast (~> 2.4.1)
@@ -281,6 +284,8 @@ GEM
       ffi (~> 1.0)
     redis (4.2.5)
     regexp_parser (2.1.1)
+    request_store (1.5.0)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -407,6 +412,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.3)
   meta-tags
+  paper_trail
   pg (~> 1.1)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

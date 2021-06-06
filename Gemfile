@@ -33,6 +33,9 @@ gem 'aws-sdk-s3'
 # Extends active record validations, adds attachment validation
 gem 'active_storage_validations'
 
+# Data tracking and versioning
+gem 'paper_trail'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
