@@ -6,12 +6,12 @@
           %li= message
   .flex.flex-wrap.flex-col.md:mx-8.lg:mx-24.xl:mx-48.2xl:mx-80
     .flex
-      .field.w-full.mb-5.flex.flex-col.items-center
+      .field.w-full.mb-5.flex.flex-col.items-center{ "data-controller" => "onboarding", "data-onboarding-target" => "avatarDrop" }
         - if @profile.avatar.attached?
-          = image_tag(@profile.avatar, size: 280, class: "h-64 w-64 items-center rounded-full border")
+          = image_tag(@profile.avatar, size: 280, class: "h-40 w-40 items-center rounded-full border")
         - else
-          = image_tag(gravatar_url_for(current_user.email, size: 280), class: "h-64 w-64 items-center rounded-full border")
-        = profile_form.file_field :avatar, class: "w-64"
+          = image_tag(gravatar_url_for(current_user.email, size: 280), data: { action: "click->onboarding#avatarUpload" }, class: "h-40 w-40 items-center rounded-full border")
+        = profile_form.file_field :avatar, class: "hidden", data: {"onboarding-target" => "input", action: "change->onboarding#avatarReplace"}
     .flex.mb-5
       .field.mr-10{class: "w-1/2"}
         = profile_form.label :first_name, class: 'Form-label'
