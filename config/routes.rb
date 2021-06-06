@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   }
 
   scope '(:locale)', locale: /en/ do
+    mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
 

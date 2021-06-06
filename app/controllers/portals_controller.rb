@@ -16,6 +16,8 @@ class PortalsController < ApplicationController
       redirect_to doctor_portal_path and return
     when 'researcher'
       redirect_to researcher_portal_path and return
+    when 'admin'
+      redirect_to '/administrator' and return
     end
     head :ok
   end
