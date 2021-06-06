@@ -15,6 +15,11 @@ class Profile < ApplicationRecord
   validates :gender, presence: true, on: :update
   validates :pesel, presence: true, on: :update
   validates :contact_number, presence: true, on: :update
+  validates :avatar, attached: true, content_type: 'image/png'
 
   validates :pesel, format: { with: /\A(\d{11})\z/ }, on: :update
+
+  def avatar_path
+    ActiveStorage::Blob.service.path_for(avatar.key)
+  end
 end

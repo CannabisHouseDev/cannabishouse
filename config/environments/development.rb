@@ -4,6 +4,7 @@ require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.session_store :cache_store
+  config.web_console.automount = true
 
   # Settings specified here will take precedence over those in config/application.rb.
 
