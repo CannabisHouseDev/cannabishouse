@@ -35,6 +35,8 @@ pl:
   forms:
     save: "Zapisać"
     cancel: "Anuluj"
+    finish: "Zakończ"
+    next: "Dalej"
   pages:
     landing:
       hero:
@@ -88,9 +90,22 @@ pl:
           title: "Edycja użytkownika"
   views:
     dispensary_portal:
+      available_material: "Materiał w magazynie:"
+      make_order: "Złóż zamówienie"
+      grams: "gramów"
+      amount: "Ilość"
+      select_material:  "Wybierz rodzaj materiału badawczego"
+      warn: "Susz jest własnością jednostki naukowej, przed wydaniem potwierdź tożsamość uczestnika badań"
+      allowed_amount: "Dozwolona dawka"
+      current_study: "Aktualne Badanie:"
+      donator: "Darczyńca"
+      name: "Imię i nazwisko:"
+      next_renewal: "Następny odbiór:"
+      order: "zamów"
       participant_nr: "Numer uczestnika"
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"
+      amount: "Ile chcesz wydać:"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

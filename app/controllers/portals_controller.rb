@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class PortalsController < ApplicationController
+  before_action :authenticate_user!
   def role_router
+    redirect_to landing_page and return if !current_user
     redirect_to onboarding_path and return unless current_user.onboarded?
-
     case current_user.profile.role
     when 'user'
       redirect_to participant_portal_path and return

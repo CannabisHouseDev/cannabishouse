@@ -20,7 +20,7 @@
 # the default I18n backend:
 #
 # true, false, on, off, yes, no
-#
+#warehouse
 # Instead, surround them with single quotes.
 #
 # en:
@@ -56,7 +56,7 @@ en:
     have_account: "Already have an account?"
     close: "close"
     confirm: "Password Confirmation"
-    agree: "I agree to the"
+    agree: "I agree to the terms and conditions"
     terms: "terms and conditions"
     sessions:
       user:
@@ -66,6 +66,8 @@ en:
   forms:
     save: "Save"
     cancel: "Cancel"
+    finish: "Finish"
+    next: "Next"
   pages:
     landing:
       hero:
@@ -119,9 +121,23 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      available_material: "Material in stock:"
+      warehouse_material: "Select material to order:"
+      make_order: "Make an Order"
+      grams: "grams"
+      amount: "Amount"
+      select_material:  "Select Material To Transfer"
+      warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
+      allowed_amount: "Amount Allowed:"
+      current_study: "Current Study:"
+      donator: "Donator"
+      name: "Name:"
+      next_renewal: "Next renewal:"
+      order: "order"
       participant_nr: "Participant Number"
       scan_qr: "Scan QR Code"
       search: "Search"
+      amount: "Enter amount to send:"
     user:
       session:
         sign_in: "Sign in to your CH account"
