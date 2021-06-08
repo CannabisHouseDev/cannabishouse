@@ -8,6 +8,8 @@ Profile.delete_all
 User.delete_all
 Dispensary.delete_all
 MaterialType.delete_all
+Material.delete_all
+Transfer.delete_all
 
 url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
 filename = File.basename(URI.parse(url).path)
@@ -40,8 +42,26 @@ for i in 0..6 do
 end
 
 puts 'Creating MaterialTypes'
-for i in 0..2 do
-  material_type = MaterialType.create(
+material_type_ids = (0..2).collect do |i|
+  MaterialType.create(
   name:"#{["Sativa", "Indica", "Hybrid"][i]}")
-  material_type.save
+end.pluck(:id)
+
+puts 'Creating Material'
+10.times do |i|
+  material = Material.create(
+    material_type_id: material_type_ids.sample,
+    name: Faker::Cannabis.strain,
+    description: "Description #{i}",
+    weight: 1000,
+    thc: rand(0..0.4).round(2),
+    cbd: rand(0..0.4).round(2),
+    terpene: rand(0..0.4).round(2),
+    drought: i % 5 != 0,
+    oil: i % 5 == 0,
+    edible: i % 5 == 0,
+    cost: i % 5 == 0 ? 120 : 40,
+    owner_id: Profile.find_by(role: "warehouse").user_id)
+  dispensary_material = material.split(Profile.find_by(role: "dispensary").user, 1000)
+  dispensary_material.split(Profile.find_by(role: "participant").user, 5)
 end
