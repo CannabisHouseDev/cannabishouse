@@ -3,39 +3,35 @@ import { Controller } from "stimulus"
 import Rails from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ["dispensary"]
+  static targets = ["dispensary", "transfer"]
   static values = { material: Number}
 
-  searchScreen(e){
+  searchScreen(){
     Rails.ajax({
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/dispensary_search`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
   }
 
-  participantScreen (e) {
-    e.preventDefault();
+  participantScreen () {
     const code = document.getElementById("code").value;
     Rails.ajax({
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/dispensary_participant?code=${code}`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
   }
 
-  materialScreen(e){
+  materialScreen(){
     Rails.ajax({
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/material_choice`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
@@ -46,29 +42,38 @@ export default class extends Controller {
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/transfer?material=${e.currentTarget.dataset.material}`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
   }
 
-  warehouseScreen(e) {
+  finalizeTransfer() {
+    let amount = this.transferTarget.value
+    Rails.ajax({
+     type: "get",
+     url: `${window.locale == 'en' ? '/en' : ''}/finalize_transfer?amount=${amount}`,
+     success: function(data){
+      root.innerHTML = data.body.innerHTML;
+      toastr.success(`${amount} grams transferred`, 'Success!')
+      }
+    });
+  }
+
+  warehouseScreen() {
     Rails.ajax({
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/warehouse_stock`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
   }
 
-  orderScreen(e){
+  orderScreen(){
     Rails.ajax({
      type: "get",
      url: `${window.locale == 'en' ? '/en' : ''}/order`,
      success: function(data){
-      console.log(data.body.innerHTML);
       root.innerHTML = data.body.innerHTML;
      }
     });
