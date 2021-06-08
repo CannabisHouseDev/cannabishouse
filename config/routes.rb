@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   }
 
   scope '(:locale)', locale: /en/ do
+    mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
 
@@ -29,8 +30,12 @@ Rails.application.routes.draw do
       get 'map', to: 'home#map', as: :map
       get 'billing', to: 'dispensary_portal#billing', as: 'billing'
       get 'stock', to: 'dispensary_portal#stock', as: 'stock'
-      get 'search', to: 'dispensary_portal#search', as: 'user_lookup'
-      get 'trasnfer', to: 'dispensary_portal#transfer', as: 'dispensary_to_participant'
+      get 'warehouse_stock', to: 'dispensary_portal#warehouse'
+      get 'order', to: 'dispensary_portal#order'
+      get 'dispensary_search', to: 'dispensary_portal#search'
+      get 'dispensary_participant', to: 'dispensary_portal#participant'
+      get 'material_choice', to: 'dispensary_portal#material_choice'
+      get 'transfer', to: 'dispensary_portal#transfer'
     end
 
     root 'pages#landing'

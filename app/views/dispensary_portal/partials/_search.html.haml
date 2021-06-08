@@ -2,7 +2,7 @@
   .flex-grow.flex.flex-col.justify-center.items-center.w-full
     .p-16.flex.flex-col.md:flex-row.sm:flex-wrap.w-full.justify-center
       %input#code.bg-gray-100.bg-opacity-50.rounded.focus:bg-transparent.text-base.outline-none.text-gray-700.py-4.px-4.leading-8.transition-colors.duration-200.ease-in-out.text-center.text-2xl.border-0{ placeholder: "#{t('views.dispensary_portal.participant_nr')}" }
-      %button.bg-gray-300.hover:bg-gray-400.text-gray-800.font-bold.py-2.px-4.rounded.inline-flex.items-center.justify-center{ "data-action" => "click->dispensary#showParticipant"}
+      %button.bg-gray-300.hover:bg-gray-400.text-gray-800.font-bold.py-2.px-4.rounded.inline-flex.items-center.justify-center{ "data-action" => "click->dispensary#participantScreen"}
         %svg.fill-current.w-4.h-4.mr-2{"viewBox" => "0 0 20 20"}
           %path{"d" => "M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"}
         %span

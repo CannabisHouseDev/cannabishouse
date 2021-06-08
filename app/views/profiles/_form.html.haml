@@ -1,33 +1,46 @@
-= form_with(model: [ @user, profile ], local: true) do |profile_form|
-  - if @user.profile.errors.any?
+= form_with(model: [ current_user, @profile ], remote: true, method: :patch) do |profile_form|
+  - if current_user.profile.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@user.profile.errors.count, "error")} prohibited this profile from being saved:"
       %ul
-        - @user.profile.errors.full_messages.each do |message|
+        - current_user.profile.errors.full_messages.each do |message|
           %li= message
-  .field
-    = profile_form.label :first_name, class: 'Form-label'
-    = profile_form.text_field :first_name, placeholder: "Twoje Imię", class: 'Form-input'
-  .field
-    = profile_form.label :last_name, class: 'Form-label'
-    = profile_form.text_field :last_name, placeholder: "Twoje Nazwisko", class: 'Form-input'
-  .field
-    = profile_form.label :nick_name, class: 'Form-label'
-    = profile_form.text_field :nick_name, placeholder: "Nick na forum", class: 'Form-input'
-  .field
-    = profile_form.label :pesel, class: 'Form-label'
-    = profile_form.text_field :pesel, placeholder: I18n.t('activerecord.attributes.profile.pesel_11_digit'), class: 'Form-input'
-  .field
-    = profile_form.label :gender, class: 'Form-label'
-    = profile_form.select :gender, Profile.genders.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
-  .field
-    = profile_form.label :skills, class: 'Form-label'
-    = profile_form.text_field :skills, placeholder: "np. mechanik, stylistka", class: 'Form-input'
-  .field
-    = profile_form.label :contact_number, class: 'Form-label'
-    = profile_form.text_field :contact_number, placeholder: '777888999', class: 'Form-input'
-  .field
-    = profile_form.label :avatar, class: 'Form-label'
-    = profile_form.file_field :avatar
-  .actions
-    = profile_form.submit 'Zapisz', class: 'Form-submit'
+  .flex.flex-wrap.flex-col.md:mx-8.lg:mx-24.xl:mx-48.2xl:mx-80
+    .flex
+      .field.w-full.mb-5.flex.flex-col.items-center{ "data-controller" => "onboarding", "data-onboarding-target" => "avatarDrop" }
+        - if @profile.avatar.valid?
+          = image_tag polymorphic_url(@profile.avatar), size: 280, data: { action: "click->onboarding#avatarUpload" }, class: "h-40 w-40 items-center rounded-full border"
+        - else
+          = image_tag(gravatar_url_for(current_user.email, size: 280), data: { action: "click->onboarding#avatarUpload" }, class: "h-40 w-40 items-center rounded-full border #{"ring-2 ring-opacity-40 ring-red-500" unless @profile.errors[:avatar].empty?} ")
+        = profile_form.file_field :avatar, class: "hidden", data: {"onboarding-target" => "input", action: "change->onboarding#avatarReplace"}
+    .flex.mb-5
+      .field.mr-10{class: "w-1/2"}
+        = profile_form.label :first_name, class: 'Form-label'
+        = profile_form.text_field :first_name, placeholder: "Twoje Imię", class: "Form-input rounded bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:first_name].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:first_name][0] unless @profile.errors[:first_name].empty?
+      .field.ml-10{class: "w-1/2"}
+        = profile_form.label :last_name, class: 'Form-label '
+        = profile_form.text_field :last_name, placeholder: "Twoje Nazwisko", class: "Form-input rounded bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:last_name].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:last_name][0] unless @profile.errors[:last_name].empty?
+    .flex.mb-5
+      .field.mr-10{class: "w-1/2"}
+        = profile_form.label :pesel, class: 'Form-label'
+        = profile_form.text_field :pesel, placeholder: I18n.t('activerecord.attributes.profile.pesel_11_digit'), class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:pesel].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:pesel][0] unless @profile.errors[:pesel].empty?
+      .field.ml-10{class: "w-1/2"}
+        = profile_form.label :contact_number, class: 'Form-label'
+        = profile_form.text_field :contact_number, placeholder: '777888999', class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:contact_number].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:contact_number][0] unless @profile.errors[:contact_number].empty?
+    .flex.mb-5
+      .field.mr-10{class: "w-1/2"}
+        = profile_form.label :nick_name, class: 'Form-label'
+        = profile_form.text_field :nick_name, placeholder: "Nick na forum", class: 'Form-input bg-gray-200 border-gray-500'
+      .field.ml-10{class: "w-1/2"}
+        = profile_form.label :skills, class: 'Form-label'
+        = profile_form.text_field :skills, placeholder: "np. mechanik, stylistka", class: 'Form-input bg-gray-200 border-gray-500'
+    .flex.mb-5
+      .field.mr-10{class: "w-1/2"}
+        = profile_form.label :gender, class: 'Form-label'
+        = profile_form.select :gender, Profile.genders.keys.to_a, {prompt: true}, class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:gender].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:gender][0] unless @profile.errors[:gender].empty?
+      .actions.ml-10.mt-3{class: "w-1/2"}
+        = profile_form.submit 'Zapisz', class: 'Form-submit w-full bg-gray-100 border-green-200 hover:bg-gray-100 text-green-300 text-3xl'

@@ -20,7 +20,7 @@
 # the default I18n backend:
 #
 # true, false, on, off, yes, no
-#
+#warehouse
 # Instead, surround them with single quotes.
 #
 # en:
@@ -121,10 +121,13 @@ en:
           title: "Edit user"
   views:
     dispensary_portal:
+      available_material: "Material in stock:"
+      warehouse_material: "Select material to order:"
+      make_order: "Make an Order"
+      grams: "grams"
       amount: "Amount"
       select_material:  "Select Material To Transfer"
       warn: "The research material is the property of the research unit, confirm the identity of the research participant before issuing it"
-      gram: "gram"
       allowed_amount: "Amount Allowed:"
       current_study: "Current Study:"
       donator: "Donator"

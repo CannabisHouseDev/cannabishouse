@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     redirect_to authenticated_root_path and return if current_user.onboarded?
 
     @profile = current_user.profile || Profile.new(current_user)
+    render 'onboarding'
   end
 
   def show

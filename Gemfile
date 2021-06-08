@@ -27,7 +27,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Amazon S3 SDK
 gem 'aws-sdk-s3'
+
+# Extends active record validations, adds attachment validation
+gem 'active_storage_validations'
+
+# Data tracking and versioning
+gem 'paper_trail'
+gem "rails_admin"
+gem 'rails_admin-i18n'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -45,7 +54,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 4.1.0'
+  gem 'web-console', '3.6.2'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'better_errors'

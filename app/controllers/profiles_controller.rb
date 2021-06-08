@@ -26,10 +26,10 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to user_path(@user), notice: t('.create.success') }
+        format.html { redirect_to authenticated_root_path, notice: t('.create.success') }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { redirect_to user_path(@user), alert: t('.create.error') }
+        format.html { render 'pages/onboarding', alert: t('.create.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -39,14 +39,14 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
-      @profile.avatar.attach(params[:avatar])
-      if @profile.update(profile_params)
+      @profile.avatar.attach(params[:avatar]) if params[:avatar].present?
+      if @profile.update(profile_params) and @profile.avatar.attached?
         current_user.profile.onboarded = true
         current_user.profile.save
         format.html { redirect_to authenticated_root_path, notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
-        format.html { redirect_to onboarding_path, alert: t('.update.error') }
+        format.html { render 'pages/onboarding', alert: t('.update.error') }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
