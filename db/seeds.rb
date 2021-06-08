@@ -38,3 +38,9 @@ for i in 0..6 do
   puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
 end
 
+puts 'Creating MaterialTypes'
+for i in 0..2 do
+  material = MaterialType.create(
+  name:"#{["Sativa", "Indica", "Hybrid"][i]}")
+  material.save
+end
