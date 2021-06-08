@@ -1,9 +1,9 @@
 %section.text-gray-600.body-font.overflow-hidden.px-5.md:py-10
   .mx-auto.flex.flex-col.flex-wrap.md:flex-row.md:flex-nowrap.justify-center{:class => "lg:w-4/5"}
     .lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64.flex.flex-col.justify-center.flex-shrink.relative{:class => "lg:w-1/2"}
-      = image_tag "https://dummyimage.com/400x400", alt:  "ecommerce", class: "object-cover object-center rounded-full p-10"
+      = image_tag @profile.avatar, alt:  "avatar", class: "object-cover object-center rounded-full p-10"
       - if @profile.user.donated?
-        .flex.justify-center.item-center.flex-col.absolute.bottom-0{class: "right-1/4"}
+        .flex.justify-center.item-center.flex-col.absolute.bottom-0.w-20{class: "right-1/4"}
           = image_tag "dispensary_portal/approved.svg", alt: "approved"
           .text-2xl.font-bold.align-text-middle= t('views.dispensary_portal.donator')
     .w-full.lg:px-10.lg:py-6.mt-6.lg:mt-0.md:mt-64.sm:mt-64.xs:mt-64{:class => "lg:w-1/2"}

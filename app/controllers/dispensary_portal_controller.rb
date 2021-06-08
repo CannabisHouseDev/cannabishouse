@@ -9,6 +9,7 @@ class DispensaryPortalController < ApplicationController
 
   def participant
     @profile = Profile.find_by(user_id: params[:code])
+    session[:current_participant] = @profile.id
     render partial: 'dispensary_portal/partials/participant'
   end
 
@@ -18,6 +19,8 @@ class DispensaryPortalController < ApplicationController
 
   def transfer
     @material_id = params[:material]
+    session[:material_selected] = params[:material]
+    @profile = Profile.find(session[:current_participant])
     render partial: 'dispensary_portal/partials/transfer'
   end
 
