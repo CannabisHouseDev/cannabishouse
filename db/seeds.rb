@@ -7,6 +7,7 @@ Address.delete_all
 Profile.delete_all
 User.delete_all
 Dispensary.delete_all
+MaterialType.delete_all
 
 url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
 filename = File.basename(URI.parse(url).path)
@@ -40,7 +41,7 @@ end
 
 puts 'Creating MaterialTypes'
 for i in 0..2 do
-  material = MaterialType.create(
+  material_type = MaterialType.create(
   name:"#{["Sativa", "Indica", "Hybrid"][i]}")
-  material.save
+  material_type.save
 end
