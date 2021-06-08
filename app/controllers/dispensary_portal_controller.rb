@@ -18,10 +18,20 @@ class DispensaryPortalController < ApplicationController
   end
 
   def transfer
-    @material_id = params[:material]
     session[:material_selected] = params[:material]
     @profile = Profile.find(session[:current_participant])
     render partial: 'dispensary_portal/partials/transfer'
+  end
+
+  def finalize
+    # Need to add tranfer failsafe measure before going live
+    material = Material.find(session[:material_selected])
+    reciever = Profile.find(session[:current_participant]).user
+    material.split(reciever, params[:amount].to_i)
+    respond_to do |format|
+      format.html { render partial: 'dispensary_portal/partials/search', notice: "Material transferred" }
+      format.json { render json: {message: "success"}.to_json, status: :created}
+    end
   end
 
   def billing; end

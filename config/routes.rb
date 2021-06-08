@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       get 'dispensary_participant', to: 'dispensary_portal#participant'
       get 'material_choice', to: 'dispensary_portal#material_choice'
       get 'transfer', to: 'dispensary_portal#transfer'
+      get 'finalize_transfer', to: 'dispensary_portal#finalize'
     end
 
     root 'pages#landing'
