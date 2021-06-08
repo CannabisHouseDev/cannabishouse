@@ -16,5 +16,6 @@ class Material < ApplicationRecord
                     sender: self.owner,
                     reciever: reciever,
                     weight: amount)
+    reciever_material
   end
 end
