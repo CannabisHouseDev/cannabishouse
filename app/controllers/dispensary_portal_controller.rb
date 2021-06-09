@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class DispensaryPortalController < ApplicationController
-  def index; end
+  def index
+    @material = Material.all.take(6)
+  end
 
   def search
     render partial: 'dispensary_portal/partials/search'
@@ -34,7 +36,9 @@ class DispensaryPortalController < ApplicationController
     end
   end
 
-  def billing; end
+  def billing
+  
+  end
 
   def stock; end
 
