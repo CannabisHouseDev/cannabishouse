@@ -24,7 +24,7 @@ class DispensaryPortalController < ApplicationController
   end
 
   def finalize
-    # Need to add tranfer failsafe measure before going live
+    # Need to add tranfer failsafe measures before going live
     material = Material.find(session[:material_selected])
     reciever = Profile.find(session[:current_participant]).user
     material.split(reciever, params[:amount].to_i)
@@ -39,10 +39,12 @@ class DispensaryPortalController < ApplicationController
   def stock; end
 
   def warehouse
+    @material = Material.where(owner: Profile.find_by(role: 'warehouse').user.id)
     render partial: 'dispensary_portal/partials/warehouse_stock'
   end
 
   def order
+    @material = Material.find(params[:material])
     render partial: 'dispensary_portal/partials/material_order'
   end
 end
