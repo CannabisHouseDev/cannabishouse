@@ -36,8 +36,16 @@ class DispensaryPortalController < ApplicationController
     end
   end
 
-  def billing
-  
+  def transfers
+    @transfers = if params[:start] && params[:end]
+                  Transfer.where(sender: current_user, created_at: params[:start].to_date..params[:end].to_date)
+                 elsif params[:start]
+                  Transfer.where(sender: current_user, created_at: params[:start].to_date..Date.today)
+                 else
+                  Transfer.where(sender: current_user, created_at: (Date.today.prev_month)..Date.today)
+                end
+    @start = (params[:start].to_date if params[:start]) || Date.today.prev_month
+    @end = (params[:end].to_date if params[:end]) || Date.today
   end
 
   def stock; end
