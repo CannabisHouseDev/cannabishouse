@@ -9,7 +9,7 @@ pl:
   navbar:
     about: "O nas"
     account: "Konto"
-    billing: "Historia Operacji"
+    transfers: "Transfery"
     media: "Media"
     stock: "Asortyment"
   devise:
@@ -106,6 +106,13 @@ pl:
       scan_qr: "Skanuj kod QR"
       search: "Szukaj"
       amount: "Ile chcesz wydać:"
+      filter: "Filtr"
+      start_date: "Data rozpoczęcia"
+      end_date: "Data końcowa"
+      statement: "Wyciąg z rachunków"
+      generate: "Generuj raport"
+      sent_to: "wysłane do"
+      on_date: "na"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

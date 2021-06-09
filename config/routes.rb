@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :transfers
   namespace :admin do
     resources :users
     resources :pages
@@ -28,7 +27,7 @@ Rails.application.routes.draw do
       get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'
 
       get 'map', to: 'home#map', as: :map
-      get 'billing', to: 'dispensary_portal#billing', as: 'billing'
+      get 'dispensary/transfers', to: 'dispensary_portal#transfers', as: 'transfers'
       get 'stock', to: 'dispensary_portal#stock', as: 'stock'
       get 'warehouse_stock', to: 'dispensary_portal#warehouse'
       get 'order', to: 'dispensary_portal#order'
