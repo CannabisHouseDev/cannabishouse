@@ -2,23 +2,19 @@
   .lg:mb-0.rounded-lg.overflow-hidden{:class => "lg:w-1/2"}
     = image_tag 'dispensary_portal/weed_dev/weed1.png', size: "450x450", alt: 'weed', class: 'object-cover object-center m-auto'
   .flex.flex-col.flex-wrap.lg:py-6.-mb-10.lg:pl-12.lg:text-left.text-center{:class => "lg:w-1/2"}
-    %h1.text-3xl.text-gray-900.mr-auto.mb-10 Material Name
+    %h1.text-3xl.text-gray-900.mr-auto.mb-10 #{@material.name}
     .flex.flex-col.mb-8.lg:items-start.items-center
       .flex-grow
         %h2.text-gray-900.text-lg.title-font.font-medium.mb-3.text-2xl
-          THC: 24%
+          THC: #{@material.thc*100}%
     .flex.flex-col.mb-8.lg:items-start.items-center
       .flex-grow
         %h2.text-gray-900.text-lg.title-font.font-medium.mb-3.text-2xl
-          CBD: 2%
+          CBD: #{@material.cbd*100}%
     .flex.flex-col.mb-8.lg:items-start.items-center
       .flex-grow
         %h2.text-gray-900.text-lg.title-font.font-medium.mb-3.text-2xl
-          Terpene: 2%
-    .flex.flex-col.mb-8.lg:items-start.items-center
-      .flex-grow
-        %h2.text-gray-900.text-lg.title-font.font-medium.mb-3.text-2xl
-          Cost: 150 złoty per gram
+          Terpene: #{@material.terpene*100}%
     .flex.flex-row.flex-grow.justify-start.items-center
       .flex.flex-col.justify-center.items-center.flex-row
         .flex.flex-row.justify-around.border-purple-600.border-2.shadow-lg.rounded.text-2xl.text-purple-600.bg-white

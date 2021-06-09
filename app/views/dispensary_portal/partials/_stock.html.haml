@@ -7,28 +7,10 @@
         %p.w-full.leading-relaxed.text-gray-500{:class => "lg:w-1/2"}= t('views.dispensary_portal.warn')
       %button.py-4.rounded.border-purple-400.border-2.flex-grow.m-2.bg-purple-400.bg-opacity-25.text-purple-600{ "data-action" => "click->dispensary#warehouseScreen"}= t('views.dispensary_portal.make_order')
     .flex-grow.overflow-x-scroll.overflow-y-hidden.w-full.pt-4.grid.grid-rows-1.gap-2.grid-flow-col.material_slider
-      .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 1}
-        .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
-          %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Lemon Haze
-          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
-        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 40 grams
-      .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 2}
-        .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
-          %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Lemon Haze
-          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
-        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 40 grams
-      .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 3}
-        .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
-          %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Lemon Haze
-          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
-        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 40 grams
-      .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 4}
-        .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
-          %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Lemon Haze
-          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
-        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 40 grams
-      .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 5}
-        .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
-          %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center Lemon Haze
-          = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
-        %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center 40 grams
+      - Material.where(owner: current_user).each do |material|
+        .card.flex.flex-col.justify-start.mx-4{ "data-action" => "click->dispensary#transferScreen", "data-material" => 1}
+          .bg-gray-100.pt-6.rounded-t-3xl.bg-gray-200
+            %h2.whitespace-nowrap.px-4.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center #{material.name}
+            = image_tag 'dispensary_portal/weed_dev/weed1.png', alt: 'weed', class: 'rounded-b rounded-t-3xl w-full'
+          %h2.text-lg.text-gray-900.font-medium.title-font.mb-4.text-center #{material.weight} grams
+

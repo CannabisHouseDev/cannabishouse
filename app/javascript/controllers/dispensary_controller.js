@@ -69,10 +69,10 @@ export default class extends Controller {
     });
   }
 
-  orderScreen(){
+  orderScreen(e){
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/order`,
+     url: `${window.locale == 'en' ? '/en' : ''}/order?material=${e.currentTarget.dataset.material}`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
