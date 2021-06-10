@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_06_130654) do
+ActiveRecord::Schema.define(version: 2021_06_10_122846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -120,6 +120,24 @@ ActiveRecord::Schema.define(version: 2021_06_06_130654) do
     t.index ["owner_id"], name: "index_materials_on_owner_id"
   end
 
+  create_table "order_materials", force: :cascade do |t|
+    t.bigint "order_id", null: false
+    t.bigint "material_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["material_id"], name: "index_order_materials_on_material_id"
+    t.index ["order_id"], name: "index_order_materials_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "status", default: 0, null: false
+    t.integer "amount", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -213,6 +231,9 @@ ActiveRecord::Schema.define(version: 2021_06_06_130654) do
   add_foreign_key "dispensaries", "users", column: "manager_id"
   add_foreign_key "materials", "material_types"
   add_foreign_key "materials", "users", column: "owner_id"
+  add_foreign_key "order_materials", "materials"
+  add_foreign_key "order_materials", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "transfers", "materials", column: "reciever_material_id"

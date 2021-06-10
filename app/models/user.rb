@@ -13,6 +13,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile, reject_if: ->(attributes) { attributes['name'].blank? }, allow_destroy: true
 
   has_many :materials, class_name: 'Material', foreign_key: 'owner_id', dependent: :destroy
+
+  has_many :orders
+  
   attr_accessor :agreement_1, :agreement_2
 
   # Include default devise modules. Others available are:

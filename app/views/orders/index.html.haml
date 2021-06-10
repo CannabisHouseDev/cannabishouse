@@ -1,0 +1,18 @@
+%h1 Listing orders
+
+%table
+  %thead
+    %tr
+      %th ID
+      %th Material type
+      %th Status
+      %th Amount
+
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td= order.id
+        %td= order.materials.map do |material| material.material_type&.name end.join(", ")
+        %td= order.status
+        %td= order.amount
+
