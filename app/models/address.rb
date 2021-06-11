@@ -1,5 +1,26 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: addresses
+#
+#  id               :bigint           not null, primary key
+#  addressable_type :string
+#  category         :integer
+#  city             :string
+#  country          :string
+#  province         :integer
+#  street1          :string
+#  street2          :string
+#  zip_code         :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  addressable_id   :bigint
+#
+# Indexes
+#
+#  index_addresses_on_addressable  (addressable_type,addressable_id)
+#
 class Address < ApplicationRecord
   has_paper_trail
   belongs_to :addressable, polymorphic: true
