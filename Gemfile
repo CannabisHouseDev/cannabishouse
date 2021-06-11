@@ -38,6 +38,9 @@ gem 'paper_trail'
 gem "rails_admin"
 gem 'rails_admin-i18n'
 
+# State Machine
+gem 'aasm'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
