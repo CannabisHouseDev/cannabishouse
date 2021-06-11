@@ -62,6 +62,14 @@ puts 'Creating Material'
     edible: i % 5 == 0,
     cost: i % 5 == 0 ? 120 : 40,
     owner_id: Profile.find_by(role: "warehouse").user_id)
-  dispensary_material = material.split(Profile.find_by(role: "dispensary").user, 1000)
-  dispensary_material.split(Profile.find_by(role: "participant").user, 5)
 end
+puts 'Transferring Material from Warehouse to Dispensary'
+Material.all.each do |material|
+  transfer = material.split(Profile.find_by(role: "dispensary").user, 1000)
+  puts "Transferred #{transfer.weight} grams of #{material.name} to dispensary"
+end
+Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |material|
+  transfer = material.split(Profile.find_by(role: "participant").user, 5)
+  puts "Transferred #{transfer.weight} grams of #{material.name} to participant"
+end
+

@@ -3,9 +3,9 @@
 FactoryBot.define do
   factory :transfer do
     sender_material { nil }
-    reciever_material { nil }
+    receiver_material { nil }
     sender { nil }
-    reciever { nil }
+    receiver { nil }
     weight { 1 }
   end
 

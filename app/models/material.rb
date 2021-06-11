@@ -3,19 +3,19 @@ class Material < ApplicationRecord
   belongs_to :material_type, class_name: "MaterialType", foreign_key: 'material_type_id'
   belongs_to :owner, class_name: "User", foreign_key: 'owner_id', dependent: :destroy
 
-  def split(reciever, amount)
-    reciever_material = self.dup
+  def split(receiver, amount)
+    receiver_material = self.dup
     self.weight -= amount
-    reciever_material.weight = amount
-    reciever_material.owner = reciever
-    reciever_material.material_type = self.material_type
-    reciever_material.save
+    receiver_material.weight = amount
+    receiver_material.owner = receiver
+    receiver_material.material_type = self.material_type
+    receiver_material.save
     self.save
-    Transfer.create(sender_material: self,
-                    reciever_material: reciever_material,
+    transfer = Transfer.create(sender_material: self,
+                    receiver_material: receiver_material,
                     sender: self.owner,
-                    reciever: reciever,
+                    receiver: receiver,
                     weight: amount)
-    reciever_material
+    transfer
   end
 end
