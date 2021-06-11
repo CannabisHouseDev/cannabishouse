@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_065120) do
+ActiveRecord::Schema.define(version: 2021_06_11_070004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -106,13 +106,13 @@ ActiveRecord::Schema.define(version: 2021_06_11_065120) do
     t.string "name"
     t.string "description"
     t.integer "weight"
-    t.decimal "thc"
-    t.decimal "cbd"
-    t.decimal "terpene"
+    t.integer "thc"
+    t.integer "cbd"
+    t.integer "terpene"
     t.boolean "drought", default: false
     t.boolean "oil", default: false
     t.boolean "edible", default: false
-    t.decimal "cost"
+    t.integer "cost"
     t.bigint "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
