@@ -11,6 +11,7 @@
 #  first_name     :string
 #  gender         :integer
 #  last_name      :string
+#  locked         :boolean          default(FALSE)
 #  nick_name      :string
 #  onboarded      :boolean          default(FALSE)
 #  pesel          :string
