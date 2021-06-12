@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_075023) do
+ActiveRecord::Schema.define(version: 2021_06_12_121340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 2021_06_11_075023) do
     t.bigint "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "aasm_state"
     t.index ["material_type_id"], name: "index_materials_on_material_type_id"
     t.index ["owner_id"], name: "index_materials_on_owner_id"
   end
@@ -163,6 +164,9 @@ ActiveRecord::Schema.define(version: 2021_06_11_075023) do
     t.boolean "onboarded", default: false
     t.boolean "verified", default: false
     t.boolean "locked", default: false
+    t.integer "quota_max", default: 0
+    t.integer "quota_left", default: 0
+    t.integer "credits", default: 0
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
