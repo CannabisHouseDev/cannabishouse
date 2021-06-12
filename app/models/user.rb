@@ -61,6 +61,7 @@ class User < ApplicationRecord
 
   def approved?
     # todo
+    true
   end
 
   def donated?
