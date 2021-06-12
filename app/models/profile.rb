@@ -8,6 +8,7 @@
 #  avatar         :string
 #  birth_date     :date
 #  contact_number :string
+#  credits        :integer          default(0)
 #  first_name     :string
 #  gender         :integer
 #  last_name      :string
@@ -15,6 +16,8 @@
 #  nick_name      :string
 #  onboarded      :boolean          default(FALSE)
 #  pesel          :string
+#  quota_left     :integer          default(0)
+#  quota_max      :integer          default(0)
 #  role           :integer
 #  skills         :string
 #  verified       :boolean          default(FALSE)
