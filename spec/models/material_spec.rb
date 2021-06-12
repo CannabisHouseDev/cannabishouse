@@ -3,6 +3,7 @@
 # Table name: materials
 #
 #  id               :bigint           not null, primary key
+#  aasm_state       :string
 #  cbd              :integer
 #  cost             :integer
 #  description      :string
