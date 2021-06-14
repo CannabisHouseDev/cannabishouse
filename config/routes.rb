@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
       get 'map', to: 'home#map', as: :map
       get 'dispensary/transfers', to: 'dispensary_portal#transfers', as: 'transfers'
+      post 'dispensary/transfers', to: 'dispensary_portal#transfers_report', as: 'report'
       get 'stock', to: 'dispensary_portal#stock', as: 'stock'
       get 'warehouse_stock', to: 'dispensary_portal#warehouse'
       get 'order', to: 'dispensary_portal#order'
