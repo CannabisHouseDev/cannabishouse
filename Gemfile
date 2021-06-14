@@ -84,3 +84,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'administrate'
 gem 'devise'
 gem 'prawn'
+gem 'prawn-table'
