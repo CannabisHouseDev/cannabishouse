@@ -39,7 +39,6 @@ class Material < ApplicationRecord
   # After every error event, a specific error message is attached to exception.failures
 
   aasm no_direct_assignment: true, whiny_persistence: true do
-    error_on_all_events :handle_error_for_all_events
     state :ready, initial: true
     state :validating_dispensary
     state :validating_stock
@@ -52,27 +51,27 @@ class Material < ApplicationRecord
       transitions to: :ready
     end
 
-    event :process_tranfer, before: :reset, after: :validate_dispensary do
+    event :start_tranfer, before: :reset do
       transitions to: :validating_dispensary
     end
 
-    event :validate_dispensary, after: :validate_stock do
+    event :validate_dispensary do
       transitions to: :validating_stock, guard: :dispensary_locked?
     end
 
-    event :validate_stock, after: :validate_receiver do
+    event :validate_stock do
       transitions to: :validating_profile, guard: :stock_enough?
     end
 
-    event :validate_receiver, after: :validate_evaluation do
+    event :validate_receiver do
       transitions to: :validating_evaluation, guard: :receiver_valid?
     end
 
-    event :validate_evaluation, after: :validate_amount_allowed do
+    event :validate_evaluation do
       transitions to: :validating_amount, guard: :receiver_approved?
     end
 
-    event :validate_amount_allowed, after: :validate_credits do
+    event :validate_amount_allowed do
       transitions to: :validating_credits, guard: :has_quota?
     end
 
@@ -95,7 +94,7 @@ class Material < ApplicationRecord
 
   def split(receiver, amount)
     # Run validations
-    process_tranfer!(receiver, amount)
+    validate_transfer(receiver, amount)
 
     # Duplicate Material being sent
     receiver_material = dup
@@ -125,43 +124,56 @@ class Material < ApplicationRecord
                                receiver: receiver,
                                weight: amount)
     [true, transfer]
-  rescue AASM::InvalidTransition => e
-    [false, e]
+  rescue AASM::InvalidTransition, ArgumentError => e
+    [false, error_message(e), e]
   end
 
   private
 
-  def handle_error_for_all_events(err)
-    byebug
-    case aasm.current_event
-    when :validate_dispensary
-      message = t('materials.profile_locked')
-    when :validate_stock
-      message = t('materials.restock')
-    when :validate_receiver
-      message = t('materials.profile_invalid')
-    when :validate_evaluation
-      message = t('materials.unapproved')
-    when :validate_amount_allowed
-      message = t('materials.quota')
-    when :validate_credits
-      message = t('materials.credits')
-    else
-      message = t('materials.unknown_error')
+  def validate_transfer(receiver, amount)
+    start_tranfer
+    validate_dispensary!
+    validate_stock!(amount)
+    validate_receiver!(receiver)
+    validate_evaluation!(receiver)
+    validate_amount_allowed!(receiver, amount)
+    validate_credits!(receiver, amount)
+  end
+
+  def error_message(err)
+    if err.class == AASM::InvalidTransition
+      case aasm.current_event
+      when :validate_dispensary!
+        message = I18n.t('materials.profile_locked')
+      when :validate_stock!
+        message = I18n.t('materials.restock')
+      when :validate_receiver!
+        message = I18n.t('materials.profile_invalid')
+      when :validate_evaluation!
+        message = I18n.t('materials.unapproved')
+      when :validate_amount_allowed!
+        message = I18n.t('materials.quota')
+      when :validate_credits!
+        message = I18n.t('materials.credits')
+      else
+        message = err
+      end
+      message
+    else err.message
     end
-    err.failures.replace [message]
-    raise err and return
   end
 
   # Validates that the sender has the correct role and that their account isn't locked
   def dispensary_locked?
-    profile = owner.profile
-    %w[admin warehouse dispensary].include?(profile.role) && !profile.locked
+    %w[admin warehouse dispensary].include?(owner.profile.role) && !owner.profile.locked
   end
 
   # Validates that the amount is a positive integer and that the sender has enough material to send
-  def stock_enough?(receiver, amount)
-    (self.weight >= amount) && amount.positive?
+  def stock_enough?(amount)
+    raise ArgumentError.new(
+      "Amount should be a positive integer, got #{amount}"
+    ) unless amount.positive?
+    weight >= amount
   end
 
   # Validates if the receiver has filled their information, has been verified
@@ -177,13 +189,14 @@ class Material < ApplicationRecord
   # Validates if the receiver has not exhausted their quota for the interval
   def has_quota?(receiver, amount)
     return true if %w[dispensary warehouse admin].include? receiver.profile.role
+
     receiver.profile.quota_left >= amount
   end
 
   # Validates if the receiver has enough credits to receieve the transfer
   def has_credits?(receiver, amount)
     return true if %w[dispensary warehouse admin].include? receiver.profile.role
-    credits_needed = amount * cost
-    receiver.profile.credits >= credits_needed
+
+    receiver.profile.credits >= (amount * cost)
   end
 end
