@@ -1,0 +1,20 @@
+%h1 Listing orders
+
+%table.border.border-separate.border-green-500
+  %thead
+    %tr
+      %th.border.border-green-800 ID
+      %th.border.border-green-800 Material type
+      %th.border.border-green-800 Status
+      %th.border.border-green-800 Amount
+      %th.border.border-green-800 Action
+
+  %tbody
+    - @orders.each do |order|
+      %tr
+        %td.border.border-green-500= order.id
+        %td.border.border-green-500= order.materials.map do |material| material.material_type&.name end.join(", ")
+        %td.border.border-green-500= order.status
+        %td.border.border-green-500= order.amount
+        %td.border.border-green-500= link_to "Show", "#", class: 'rounded bg-blue-400'
+
