@@ -123,6 +123,7 @@ ActiveRecord::Schema.define(version: 2021_06_10_122846) do
   create_table "order_materials", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "material_id", null: false
+    t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["material_id"], name: "index_order_materials_on_material_id"
@@ -132,7 +133,6 @@ ActiveRecord::Schema.define(version: 2021_06_10_122846) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.integer "status", default: 0, null: false
-    t.integer "amount", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_orders_on_user_id"

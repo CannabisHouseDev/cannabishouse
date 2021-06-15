@@ -3,8 +3,15 @@ class Order < ApplicationRecord
   has_many :order_materials
   has_many :materials, through: :order_materials
   
-  enum status: [:pending, :approved, :rejected, :done]
+  enum status: [:cart, :pending, :approved, :rejected, :done]
 
   validates :status, presence: true
-  validates :amount, numericality: { maximum: 5 }, presence: true
+
+  def material_count
+    OrderMaterial.count
+  end
+
+  def total_weight
+    OrderMaterial.sum(:amount)
+  end
 end

@@ -1,15 +1,18 @@
 class OrdersController < ApplicationController
-  before_action :set_user
+   before_action :set_order
 
   def index
-    @orders = @user.orders
+    @orders = Order.all
+  end
+
+  def show
   end
 
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
+  def set_order
+    @order = Order.find(params[:id])
   end
 
 end
