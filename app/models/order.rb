@@ -8,10 +8,10 @@ class Order < ApplicationRecord
   validates :status, presence: true
 
   def material_count
-    OrderMaterial.count
+    order_materials.count
   end
 
   def total_weight
-    OrderMaterial.sum(:amount)
+    order_materials.sum(:amount)
   end
 end
