@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :order_material do
+    order { nil }
+    material { nil }
+  end
+
   factory :transfer do
     sender_material { nil }
     receiver_material { nil }

@@ -85,6 +85,8 @@ class Material < ApplicationRecord
   belongs_to :owner, class_name: 'User', foreign_key: 'owner_id'
   has_many :outgoing_transfers, class_name: 'Transfer', foreign_key: 'sender_material_id', dependent: :destroy
   has_many :incoming_transfers, class_name: 'Transfer', foreign_key: 'receiver_material_id', dependent: :destroy
+  has_many :order_materials
+  has_many :orders, through: :order_materials
 
   # Returns an array, the first element will be a boolean that describes
   # whether or not the tranfer was successful. If the tranfer is successful

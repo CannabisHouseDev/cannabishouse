@@ -40,7 +40,7 @@ en:
   navbar:
     about: "About"
     account: "Account"
-    billing: "Billing"
+    transfers: "Transfers"
     media: "Media"
     stock: "Stock"
   devise:
@@ -138,6 +138,13 @@ en:
       scan_qr: "Scan QR Code"
       search: "Search"
       amount: "Enter amount to send:"
+      filter: "Filter"
+      start_date: "Start Date"
+      end_date: "End Date"
+      statement: "Statement of Accounts"
+      generate: "Generate Report"
+      sent_to: "sent to"
+      on_date: "on"
     user:
       session:
         sign_in: "Sign in to your CH account"
