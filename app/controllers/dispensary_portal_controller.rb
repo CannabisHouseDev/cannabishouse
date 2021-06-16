@@ -2,7 +2,7 @@
 
 class DispensaryPortalController < ApplicationController
   def index
-    @material = Material.all.take(6)
+    @material = Material.where(owner: current_user)
   end
 
   def search
