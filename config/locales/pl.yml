@@ -12,6 +12,8 @@ pl:
     transfers: "Transfery"
     media: "Media"
     stock: "Asortyment"
+    appointments: "Spotkania"
+    calendar: "Kalendarz"
   devise:
     login: "Zaloguj się"
     signup: "Zapisz się"
