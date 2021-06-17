@@ -23,4 +23,8 @@ class Profile < ApplicationRecord
   def avatar_path
     ActiveStorage::Blob.service.path_for(avatar.key)
   end
+
+  def full_name
+    first_name + last_name
+  end
 end
