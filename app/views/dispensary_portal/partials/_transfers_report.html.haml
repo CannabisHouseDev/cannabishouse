@@ -1,0 +1,36 @@
+- i=0
+.row-auto.w-full
+  %h1.text-2xl.text-bg-gray-100
+    Księga Ewidencji nr 
+    = evidence_book.1/2021
+
+
+
+.flex-grow.col-auto
+  .mx-auto
+    %table
+      %thead
+        %tr
+          %th 'LP.'
+          %th rodzaj operacji magazynowej
+          %th data zdarzenia
+          %th nr dok operacji
+          %th Imie i nazwisko wydajacego
+          %th signature
+          %th imie i nazwisko odbiorcy
+          %th rodzaj srodka lub produktu
+          %th nr serii
+          %th ilosc szt/g
+      %tbody
+        - @t.each do |transfer|
+          %tr
+            %td= i+=1
+            %td Wydanie
+            %td= transfer.updated_at
+            %td= transfer.id
+            %td= Profile.find_by(user_id: transfer.sender_id).full_name
+            %td ........
+            %td= Profile.find_by(user_id: transfer.reciever_id).full_name
+            %td 'rodzaj materialu'
+            %td 'nr serii'
+            %td= transfer.weight

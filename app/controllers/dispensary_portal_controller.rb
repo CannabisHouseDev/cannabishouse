@@ -48,17 +48,12 @@ class DispensaryPortalController < ApplicationController
                 end
     @start = (params[:start].to_date if params[:start]) || Date.today.prev_month
     @end = (params[:end].to_date if params[:end]) || Date.today
+    return @transfers
   end
 
   def transfers_report
-    @t = Transfer.all
-    respond_to do |format|
-      format.html
-      format.pdf do 
-        pdf = Prawn::ReportPdf.new(@t)
-        send_data pdf.render, filename: 'report.pdf', type: 'application/pdf'
-      end
-    end
+    @t = self.transfers
+    render partial: 'dispensary_portal/partials/transfers_report'
   end
   
   def stock; end
