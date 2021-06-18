@@ -12,13 +12,13 @@
           .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
   / Second Column
   .h-full.flex.flex-col.px-1.flex-grow
-    / Evaluations Section
+    / Appointment Details
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.mb-2.relative
-      %span.w-full.flex-grow
+      %span.w-full.flex-grow.flex.flex-col
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl Appointments Details
-        / Cards
-        .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        / Content
+        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
       / Action Button Footer
       .grid.grid-cols-2.w-full
         = link_to "Cancel", "#", class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
