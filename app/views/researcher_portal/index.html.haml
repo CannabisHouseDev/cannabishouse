@@ -1,2 +1,4 @@
-%h1
-  TODO: Researcher Portal
+.w-full.h-full{ "data-controller" => "researcher", "data-researcher-target" => "researcher" }
+  - @survey[:questions].each do |q|
+    = render 'components/containers/question_row', q: q
+

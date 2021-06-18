@@ -1,0 +1,12 @@
+.w-full.p-2
+  - case local_assigns[:q][:type]
+  - when 'short'
+    = render 'components/inputs/short', q: local_assigns[:q]
+  - when 'long'
+    = render 'components/inputs/long', q: local_assigns[:q]
+  - when 'number'
+    = render 'components/inputs/number', q: local_assigns[:q]
+  - when 'range'
+    = render 'components/inputs/range', q: local_assigns[:q]
+  - when 'single'
+    = render 'components/inputs/single', q: local_assigns[:q]
