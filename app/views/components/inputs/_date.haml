@@ -1,4 +1,6 @@
 .input_group.flex.flex-col.justify-start
   - question = local_assigns[:locals][:question]
-  %label.text-gray-700.text-sm.font-bold #{question[:label]}
-  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question[:id], type: question[:type], placeholder: question[:placeholder]}
+  %label.text-gray-700.text-sm.font-bold #{question.question_text}
+  - if question.default_text
+    %label.text-gray-600.text-sm #{question.default_text}
+  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question[:id], type: 'datetime-local', placeholder: question[:placeholder]}

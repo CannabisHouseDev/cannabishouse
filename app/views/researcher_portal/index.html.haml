@@ -1,4 +1,3 @@
 .w-full.h-full{ "data-controller" => "researcher", "data-researcher-target" => "researcher" }
-  - @survey[:questions].each do |q|
-    = render 'components/containers/question_row', q: q
+ = render 'components/containers/survey', s: @survey
 

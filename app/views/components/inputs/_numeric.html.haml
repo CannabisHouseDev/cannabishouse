@@ -3,4 +3,4 @@
   %label.text-gray-700.text-sm.font-bold.capitalize #{question.question_text}
   - if question.default_text
     %label.text-gray-600.text-sm #{question.default_text}
-  %textarea.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{rows: 3, id: question.id, type: 'textarea', placeholder: (question.placeholder if question.placeholder)}
+  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question.id, type: 'number', min: question.validation_rules[:minimum], max: question.validation_rules[:maximum], placeholder: question.placeholder}

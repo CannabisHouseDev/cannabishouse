@@ -1,0 +1,5 @@
+.w-full.h-full.flex.flex-col
+  .text-2xl.capitalize #{local_assigns[:s].name}
+  .text-md.grey--text #{local_assigns[:s].introduction}
+  - local_assigns[:s].questions.each do |q|
+    = render 'components/containers/question_row', q: q

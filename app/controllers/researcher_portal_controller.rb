@@ -67,6 +67,6 @@ class ResearcherPortalController < ApplicationController
         max: Time.now + 1.months
       }
     ]
-    @survey = { questions: questions }
+    @survey = Rapidfire::Survey.find(1)
   end
 end
