@@ -1,72 +1,37 @@
 # frozen_string_literal: true
 
 class ResearcherPortalController < ApplicationController
-  def index
-    questions = [
-      {
-        id: 1,
-        survey: 12,
-        type: 'short',
-        label: 'short question',
-        description: 'an example of a short question',
-        placeholder: 'your answer here'
-      },
-      {
-        id: 2,
-        survey: 12,
-        type: 'long',
-        label: 'long question',
-        description: 'an example of a long question',
-        placeholder: 'your answer here'
-      },
-      {
-        id: 3,
-        survey: 12,
-        type: 'number',
-        label: 'number question',
-        description: 'an example of a number question',
-        min: 10,
-        max: 100,
-        step: 5,
-        unit: 'days'
-      },
-      {
-        id: 4,
-        survey: 12,
-        type: 'range',
-        label: 'range question',
-        description: 'an example of a range question',
-        min: 10,
-        max: 100,
-        step: 2,
-        unit: 'grams'
-      },
-      {
-        id: 5,
-        survey: 12,
-        type: 'single',
-        label: 'single choice question',
-        description: 'an example of a single choice question',
-        options: %w[option1 option2 option3]
-      },
-      {
-        id: 6,
-        survey: 12,
-        type: 'multiple',
-        label: 'multiple choice question',
-        description: 'an example of a multiple choice question',
-        options: %w[option1 option2 option3]
-      },
-      {
-        id: 7,
-        survey: 12,
-        type: 'date',
-        label: 'date question',
-        description: 'an example of a date question',
-        min: Time.now,
-        max: Time.now + 1.months
-      }
-    ]
-    @survey = Rapidfire::Survey.find(1)
+  before_action :set_surveys, only: %w[index surveys survey_edit]
+  before_action :set_survey, only: %w[survey_edit show_questions add_question]
+  def index; end
+
+  def add_survey
+    Survey.create(author: current_user, title: 'New Survey')
+    respond_to do |format|
+      format.html { redirect_back fallback_location: authenticated_root_path }
+      format.json { head :no_content }
+    end
+  end
+
+  def surveys; end
+
+  def survey_edit; end
+
+  def show_questions
+    @questions = Question.where(survey_id: @survey.id)
+  end
+
+  def add_question
+    Question.create(type: params[:type], survey_id: @survey.id)
+  end
+
+  private
+
+  def set_surveys
+    @surveys = Survey.where(author: current_user, hidden: false)
+  end
+
+  def set_survey
+     @survey = Survey.where(survey_id: params[:survey])
   end
 end
