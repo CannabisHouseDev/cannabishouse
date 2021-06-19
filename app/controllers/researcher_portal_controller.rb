@@ -3,6 +3,7 @@
 class ResearcherPortalController < ApplicationController
   before_action :set_surveys, only: %w[index surveys survey_edit]
   before_action :set_survey, only: %w[survey_edit show_questions add_question]
+  after_action :back, only: %w[add_question]
   def index; end
 
   def add_survey
@@ -33,5 +34,12 @@ class ResearcherPortalController < ApplicationController
 
   def set_survey
      @survey = Survey.where(survey_id: params[:survey])
+  end
+
+  def back
+    respond_to do |format|
+      format.html { redirect_back fallback_location: authenticated_root_path }
+      format.json { head :no_content }
+    end
   end
 end

@@ -9,23 +9,7 @@
           You don't have any surveys yet
       - else
         / Cards
-        .w-full.flex-grow
-          - @surveys.each do |s|
-            .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.justify-between.mb-2.px-2.relative
-              %div #{s.title}
-              %div.flex.justify-space-around.red-700.items-center
-                = link_to survey_edit_dashboard_path(s.id) do
-                  %svg.h-6.w-6.text-blue-700.hover:text-blue-300{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-                    %path{:d => "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
-                = link_to survey_edit_dashboard_path(s.id) do
-                  %svg.h-5.w-5.text-gray-700.hover:text-gray-300{:fill => "currentColor", :viewbox => "0 0 20 20", :xmlns => "http://www.w3.org/2000/svg"}
-                    %path{"clip-rule" => "evenodd", :d => "M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z", "fill-rule" => "evenodd"}
-                = link_to survey_edit_dashboard_path(s.id) do
-                  %svg.h-6.w-6.text-purple-700.hover:text-purple-300{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-                    %path{:d => "M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
-                = link_to hide_survey_url(s.id), method: :delete do
-                  %svg.h-6.w-6.text-red-700.hover:text-red-300{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-                    %path{:d => "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+        = render 'researcher_portal/partials/surveylist', s: @surveys
         / Action Button Footer
     .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md
       = link_to "Create a Survey", add_survey_path, method: :post
