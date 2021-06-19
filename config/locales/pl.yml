@@ -157,6 +157,14 @@ pl:
       update:
         success: "Profil zaktualizowany."
         error: "Prosimy o wypełnienie wszystkich informacji."
+  materials:
+    profile_locked: "Twoje konto jest zablokowane, skontaktuj się z administratorem."
+    restock: "Za mało materiału do przeniesienia, proszę uzupełnić zapas."
+    profile_invalid: "Konto odbiorcy nie jest jeszcze gotowe do odbioru materiałów."
+    unapproved: "Odbiorca wciąż czeka na zgodę lekarza."
+    quota: "Odbiorca wyczerpał limit na dany miesiąc, limity są resetowane na początku każdego miesiąca."
+    credits: "Odbiorca nie ma wystarczającej liczby kredytów, aby skorzystać z tej funkcji."
+    unknown_error: "Nieznany błąd, skontaktuj się z programistą."
   activerecord:
     errors:
       models:

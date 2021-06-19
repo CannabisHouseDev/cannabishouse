@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (5.2.0)
+      concurrent-ruby (~> 1.0)
     actioncable (6.1.3.2)
       actionpack (= 6.1.3.2)
       activesupport (= 6.1.3.2)
@@ -83,6 +85,11 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    after_commit_everywhere (1.0.0)
+      activerecord (>= 4.2)
+    annotate (3.1.1)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     aws-eventstream (1.1.1)
     aws-partitions (1.469.0)
@@ -423,8 +430,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  aasm
   active_storage_validations
   administrate
+  after_commit_everywhere (~> 1.0)
+  annotate
   aws-sdk-s3
   better_errors
   bootsnap (>= 1.4.4)

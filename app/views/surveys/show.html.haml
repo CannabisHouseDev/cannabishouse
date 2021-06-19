@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @survey.title
+%p
+  %b Description:
+  = @survey.description
+%p
+  %b User:
+  = @survey.user
+
+= link_to 'Edit', edit_survey_path(@survey)
+\|
+= link_to 'Back', surveys_path

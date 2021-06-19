@@ -38,9 +38,12 @@ gem 'paper_trail'
 gem "rails_admin"
 gem 'rails_admin-i18n'
 
+# State Machine
+gem 'aasm'
+gem 'after_commit_everywhere', '~> 1.0' # Integration ith Active Record to store state in Database
+
 # Surveys
 gem 'rapidfire'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -64,6 +67,7 @@ group :development do
   gem 'letter_opener'
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
+  gem 'annotate'
 end
 
 group :test do

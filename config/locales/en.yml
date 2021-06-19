@@ -187,6 +187,14 @@ en:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+  materials:
+    profile_locked: "Your account is locked, please contact an administrator."
+    restock: "Not enough material to transfer, please restock."
+    profile_invalid: "The recipient account isn't ready to receive material yet."
+    unapproved: "The recipient is still waiting for the doctor's approval."
+    quota: "The recipient has exhausted their quota for the month, quotas are reset at the beginning of every month."
+    credits: "The recipient does not have enough credits to use this feature."
+    unknown_error: "Unknown error, please contact a developer."
   activerecord:
     errors:
       models:

@@ -4,9 +4,9 @@
   %thead
     %tr
       %th Sender material
-      %th Reciever material
+      %th Receiver material
       %th Sender
-      %th Reciever
+      %th Receiver
       %th Weight
       %th
       %th
@@ -16,9 +16,9 @@
     - @transfers.each do |transfer|
       %tr
         %td= transfer.sender_material
-        %td= transfer.reciever_material
+        %td= transfer.receiver_material
         %td= transfer.sender
-        %td= transfer.reciever
+        %td= transfer.receiver
         %td= transfer.weight
         %td= link_to 'Show', transfer
         %td= link_to 'Edit', edit_transfer_path(transfer)

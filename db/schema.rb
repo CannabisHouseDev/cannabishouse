@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_06_19_075929) do
+=======
+ActiveRecord::Schema.define(version: 2021_06_12_121340) do
+>>>>>>> dispensary_flo
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -321,10 +325,13 @@ ActiveRecord::Schema.define(version: 2021_06_19_075929) do
   add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+<<<<<<< HEAD
   add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "surveys"
   add_foreign_key "surveys", "users"
+=======
+>>>>>>> dispensary_flo
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"
   add_foreign_key "transfers", "users", column: "receiver_id"
