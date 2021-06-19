@@ -38,6 +38,8 @@ class User < ApplicationRecord
   has_many :materials, class_name: 'Material', foreign_key: 'owner_id', dependent: :destroy
 
   has_many :orders
+
+  has_many :surveys, dependent: :destroy
   
   attr_accessor :agreement_1, :agreement_2
 
