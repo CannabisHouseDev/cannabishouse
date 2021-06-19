@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
       get 'doctor/appointments', to: 'doctor_portal#appointments', as: 'appointments'
       get 'doctor/calendar', to: 'doctor_portal#calendar', as: 'calendar'
+      get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
 
       # Researcher Related Routes
       get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'

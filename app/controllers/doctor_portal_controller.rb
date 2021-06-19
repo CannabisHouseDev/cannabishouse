@@ -5,6 +5,8 @@ class DoctorPortalController < ApplicationController
 
   def appointments; end
 
+  def evaluations; end
+
   def calendar
     @start_time = 8
     @end_time = 20
