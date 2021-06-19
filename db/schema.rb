@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_101927) do
+ActiveRecord::Schema.define(version: 2021_06_19_075929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -188,6 +188,34 @@ ActiveRecord::Schema.define(version: 2021_06_18_101927) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "question_options", force: :cascade do |t|
+    t.string "name"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_id"], name: "index_question_options_on_question_id"
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "question_type_id", null: false
+    t.bigint "survey_id", null: false
+    t.integer "min"
+    t.integer "max"
+    t.string "placeholder"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_type_id"], name: "index_questions_on_question_type_id"
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
+  end
+
   create_table "rapidfire_answers", force: :cascade do |t|
     t.bigint "attempt_id"
     t.bigint "question_id"
@@ -229,6 +257,15 @@ ActiveRecord::Schema.define(version: 2021_06_18_101927) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "after_survey_content"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
   create_table "transfers", force: :cascade do |t|
@@ -284,6 +321,10 @@ ActiveRecord::Schema.define(version: 2021_06_18_101927) do
   add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "question_options", "questions"
+  add_foreign_key "questions", "question_types"
+  add_foreign_key "questions", "surveys"
+  add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"
   add_foreign_key "transfers", "users", column: "receiver_id"

@@ -1,6 +1,31 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :question_option do
+    name { "MyString" }
+    question { nil }
+  end
+
+  factory :question do
+    title { "MyString" }
+    description { "MyString" }
+    question_type { nil }
+    survey { nil }
+    min { 1 }
+    max { 1 }
+    placeholder { "MyString" }
+  end
+
+  factory :question_type do
+    name { "MyString" }
+  end
+
+  factory :survey do
+    title { "MyString" }
+    description { "MyString" }
+    user { nil }
+  end
+
   factory :order_material do
     order { nil }
     material { nil }

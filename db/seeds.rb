@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 puts 'Deleting old data...'
+Transfer.delete_all
 Post.delete_all
 Page.delete_all
 Address.delete_all
 Profile.delete_all
-User.delete_all
+User.destroy_all
 Dispensary.delete_all
 MaterialType.delete_all
 Material.delete_all
-Transfer.delete_all
 
 url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
 filename = File.basename(URI.parse(url).path)
@@ -64,4 +64,29 @@ puts 'Creating Material'
     owner_id: Profile.find_by(role: "warehouse").user_id)
   dispensary_material = material.split(Profile.find_by(role: "dispensary").user, 1000)
   dispensary_material.split(Profile.find_by(role: "participant").user, 5)
+end
+
+puts 'Creating Question Types'
+%w[short long number single multiple date].each do |t|
+  QuestionType.create(name: t)
+end
+
+puts 'Creating Surveys'
+3.times do |i|
+  s = Survey.create(title: "Survey #{i}", description: 'An example description of the survey', author: Profile.find_by(role: 'researcher').user.id)
+  QuestionType.all.each do |qt|
+    q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type_id: qt.id, survey_id: s.id)
+    case qt.name
+    when 'short' || 'long'
+      q.placeholder = 'placeholder'
+    when 'single' || 'multiple'
+      3.times do
+        QuestionOption.create(question_id: q.id, name: Faker::Cannabis.strain)
+      end
+    when 'number'
+      q.min = 10
+      q.max = 100
+      q.save!
+    end
+  end
 end

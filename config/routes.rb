@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :question_options
+  resources :questions
+  resources :question_types
+  resources :surveys
   namespace :admin do
     resources :users
     resources :pages
@@ -16,7 +20,7 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /en/ do
     mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
-    mount Rapidfire::Engine => "/surveys"
+    mount Rapidfire::Engine => "/rapidfire"
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
       get 'welcome', to: 'pages#onboarding', as: 'onboarding'
