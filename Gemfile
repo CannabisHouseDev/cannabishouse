@@ -35,15 +35,13 @@ gem 'active_storage_validations'
 
 # Data tracking and versioning
 gem 'paper_trail'
-gem "rails_admin"
+gem 'rails_admin'
 gem 'rails_admin-i18n'
 
 # State Machine
 gem 'aasm'
 gem 'after_commit_everywhere', '~> 1.0' # Integration ith Active Record to store state in Database
 
-# Surveys
-gem 'rapidfire'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

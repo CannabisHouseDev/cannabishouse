@@ -6,6 +6,10 @@ User.destroy_all
 Material.destroy_all
 Profile.destroy_all
 Address.destroy_all
+QuestionOption.destroy_all
+QuestionType.destroy_all
+Question.destroy_all
+Survey.destroy_all
 
 url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
 filename = File.basename(URI.parse(url).path)
@@ -50,42 +54,6 @@ puts 'Creating Material'
     name: Faker::Cannabis.strain,
     description: "Description #{i}",
     weight: 1000,
-<<<<<<< HEAD
-    thc: rand(0..0.4).round(2),
-    cbd: rand(0..0.4).round(2),
-    terpene: rand(0..0.4).round(2),
-    drought: i % 5 != 0,
-    oil: i % 5 == 0,
-    edible: i % 5 == 0,
-    cost: i % 5 == 0 ? 120 : 40,
-    owner_id: Profile.find_by(role: "warehouse").user_id)
-  dispensary_material = material.split(Profile.find_by(role: "dispensary").user, 1000)
-  dispensary_material.split(Profile.find_by(role: "participant").user, 5)
-end
-
-puts 'Creating Question Types'
-%w[short long number single multiple date].each do |t|
-  QuestionType.create(name: t)
-end
-
-puts 'Creating Surveys'
-3.times do |i|
-  s = Survey.create(title: "Survey #{i}", description: 'An example description of the survey', author: Profile.find_by(role: 'researcher').user.id)
-  QuestionType.all.each do |qt|
-    q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type_id: qt.id, survey_id: s.id)
-    case qt.name
-    when 'short' || 'long'
-      q.placeholder = 'placeholder'
-    when 'single' || 'multiple'
-      3.times do
-        QuestionOption.create(question_id: q.id, name: Faker::Cannabis.strain)
-      end
-    when 'number'
-      q.min = 10
-      q.max = 100
-      q.save!
-    end
-=======
     thc: rand(0..40),
     cbd: rand(0..40),
     terpene: rand(0..40),
@@ -115,6 +83,33 @@ Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |mate
     puts "Transferred #{transfer[1].weight} grams of #{material.name} to participant"
   else
     puts "Could not transfer #{material.name}, message: #{m[1]}"
->>>>>>> dispensary_flo
+  end
+end
+
+
+puts 'Creating Question Types'
+%w[short long number single multiple date].each do |t|
+  QuestionType.create(name: t)
+end
+
+puts 'Creating Surveys'
+3.times do |i|
+  s = Survey.create(title: "Survey #{i}", description: 'An example description of the survey', author: Profile.find_by(role: 'researcher').user)
+  QuestionType.all.each do |qt|
+    q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type: qt, survey: s)
+    case qt.name
+    when 'short'
+    when 'long'
+      q.placeholder = 'placeholder'
+    when 'single'
+    when 'multiple'
+      3.times do
+        QuestionOption.create(question_id: q.id, name: Faker::Cannabis.strain)
+      end
+    when 'number'
+      q.min = 10
+      q.max = 100
+      q.save!
+    end
   end
 end

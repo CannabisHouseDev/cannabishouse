@@ -198,6 +198,12 @@ en:
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            question_type:
+              required: "required"
+            survey:
+              required: "required"
         profile:
           attributes:
             user:

@@ -168,6 +168,12 @@ pl:
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            question_type:
+              required: "wymagany"
+            survey:
+              required: "wymagany"
         profile:
           attributes:
             user:

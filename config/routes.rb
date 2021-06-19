@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :question_options
-  resources :questions
-  resources :question_types
-  resources :surveys
   namespace :admin do
     resources :users
     resources :pages
@@ -35,7 +31,11 @@ Rails.application.routes.draw do
       get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
 
       # Researcher Related Routes
-      get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'
+      get 'researcher', to: 'researcher_portal#surveys', as: 'researcher_portal'
+      get 'researcher/survey/:survey', to: 'researcher_portal#survey_edit', as: 'survey_edit_dashboard'
+      resources :surveys
+      delete 'survey/:id', to: 'surveys#hide', as: 'hide_survey'
+      post 'survey/add', to: 'researcher_portal#add_survey', as: 'add_survey'
 
       get 'map', to: 'home#map', as: :map
 

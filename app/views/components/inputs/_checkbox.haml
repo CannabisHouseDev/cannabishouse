@@ -1,4 +1,10 @@
 .input_group.flex.flex-col.justify-start
-  - question = local_assigns[:locals][:question]
-  %label.text-gray-700.text-sm.font-bold #{question[:label]}
-  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question[:id], type: question[:type], placeholder: question[:placeholder]}
+  - question = local_assigns[:q]
+  %label.text-gray-700.text-md.font-bold.capitalize.mb-1 #{question.title}
+  - if question.description
+    %label.text-gray-600.text-sm #{question.description}
+  .mt-2
+    - question.options.each do |o|
+      %div
+        %input{id: "#{q.id}_#{o.id}", type: "checkbox"}
+        %span.ml-2 #{o.name}

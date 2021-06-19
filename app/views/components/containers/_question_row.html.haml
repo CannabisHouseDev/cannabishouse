@@ -1,14 +1,14 @@
 .w-full.p-2
-  - case local_assigns[:q].type
-  - when 'Rapidfire::Questions::Short'
+  - case local_assigns[:q].question_type.name
+  - when 'short'
     = render 'components/inputs/short', q: local_assigns[:q]
-  - when 'Rapidfire::Questions::Long'
+  - when 'long'
     = render 'components/inputs/long', q: local_assigns[:q]
-  - when 'Rapidfire::Questions::Numeric'
-    = render 'components/inputs/numeric', q: local_assigns[:q]
-  - when 'Rapidfire::Questions::Select'
+  - when 'number'
+    = render 'components/inputs/number', q: local_assigns[:q]
+  - when 'single'
     = render 'components/inputs/single', q: local_assigns[:q]
-  - when 'Rapidfire::Questions::Checkbox'
+  - when 'multiple'
     = render 'components/inputs/checkbox', q: local_assigns[:q]
-  - when 'Rapidfire::Questions::Date'
+  - when 'date'
     = render 'components/inputs/date', q: local_assigns[:q]

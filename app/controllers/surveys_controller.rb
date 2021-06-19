@@ -1,9 +1,9 @@
 class SurveysController < ApplicationController
-  before_action :set_survey, only: %i[ show edit update destroy ]
+  before_action :set_survey, only: %i[show edit update destroy hide]
 
   # GET /surveys or /surveys.json
   def index
-    @surveys = Survey.all
+    @surveys = Survey.where(hidden: false)
   end
 
   # GET /surveys/1 or /surveys/1.json
@@ -22,13 +22,14 @@ class SurveysController < ApplicationController
   # POST /surveys or /surveys.json
   def create
     @survey = Survey.new(survey_params)
-
+    @survey.author = current_user
+    byebug
     respond_to do |format|
       if @survey.save
-        format.html { redirect_to @survey, notice: "Survey was successfully created." }
+        format.html { redirect_back fallback_location: authenticated_root_path, notice: "Survey was successfully created." }
         format.json { render :show, status: :created, location: @survey }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_back fallback_location: authenticated_root_path, error: :unprocessable_entity }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
       end
     end
@@ -38,10 +39,10 @@ class SurveysController < ApplicationController
   def update
     respond_to do |format|
       if @survey.update(survey_params)
-        format.html { redirect_to @survey, notice: "Survey was successfully updated." }
+        format.html { redirect_back fallback_location: authenticated_root_path, notice: "Survey was successfully updated." }
         format.json { render :show, status: :ok, location: @survey }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { redirect_back fallback_location: authenticated_root_path, status: :unprocessable_entity }
         format.json { render json: @survey.errors, status: :unprocessable_entity }
       end
     end
@@ -56,6 +57,14 @@ class SurveysController < ApplicationController
     end
   end
 
+  def hide
+    @survey.hide
+    respond_to do |format|
+      format.html { redirect_back fallback_location: authenticated_root_path, error: 'Survey Deleted' }
+      format.json { head :no_content }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
@@ -64,6 +73,6 @@ class SurveysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def survey_params
-      params.require(:survey).permit(:title, :description, :user_id)
+      params.require(:survey).permit(:title, :description, :author)
     end
 end
