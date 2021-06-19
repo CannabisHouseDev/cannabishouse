@@ -1,0 +1,6 @@
+.input_group.flex.flex-col.justify-start
+  - question = local_assigns[:q]
+  %label.text-gray-700.text-sm.font-bold.capitalize #{question.title}
+  - if question.description
+    %label.text-gray-600.text-sm #{question.description}
+  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question.id, type: 'number', min: question.min, max: question.max, placeholder: question.placeholder}
