@@ -20,13 +20,14 @@
                 %svg.h-6.w-6.ml-2{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
                   %path{:d => "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
         - unless local_assigns[:q].options.empty?
-          .flex.w-full.justify-start
+          .flex.w-full.justify-start.flex-col
             - local_assigns[:q].options.each do |o|
-              = form.fields_for :o do |option_form|
-                = option_form.text_field :name, placeholder: 'Option 1', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
-                = option_form.text_field :display, placeholder: 'Option shown to user', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
-                = link_to remove_option_path(o.id), method: :delete do
-                  %svg.h-6.w-6.text-red-600.hover:text-red-200{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
-                    %path{:d => "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+              .flex
+                = form.fields_for(:options, o) do |option_form|
+                  = option_form.text_field :name, placeholder: 'New Option', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
+                  = option_form.text_field :display, placeholder: 'Option name shown to user', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
+                  = link_to remove_option_path(o.id), method: :delete do
+                    %svg.h-6.w-6.text-red-600.hover:text-red-200{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
+                      %path{:d => "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
     .flex.flex-col
       = form.submit(id: "save_#{local_assigns[:q].id}", hidden: true)

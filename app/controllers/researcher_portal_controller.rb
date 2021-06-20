@@ -25,6 +25,20 @@ class ResearcherPortalController < ApplicationController
     back 'Added new question'
   end
 
+  def update_question
+    question = Question.find(params[:id])
+    params.require(:question)[:options_attributes].permit!
+    options = params[:question][:options_attributes]
+    if question.update(question_update_param)
+      options.each do |option|
+        o = QuestionOption.find(option[1][:id]).update(option[1])
+      end
+      back 'Question updated'
+    else
+      back question.errors
+    end
+  end
+
   def remove_question
     Question.find(params[:id]).destroy
     back 'removed question'
@@ -54,7 +68,7 @@ class ResearcherPortalController < ApplicationController
   end
 
   def question_update_param
-    params.require(:question).permit(:title, :description, :question_type_id, :min, :max)
+    params.require(:question).permit(:title, :description, :question_type_id, :min, :max, options_attributes: [:id, :name, :display, :_update])
   end
 
   def back(message)
