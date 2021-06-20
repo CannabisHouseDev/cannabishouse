@@ -166,3 +166,32 @@ pl:
               blank: "Proszę podać swój numer telefonu"
             gender:
               blank: "Proszę wybrać swoją płeć"
+  rapidfire:
+    attempts:
+      header: "Proszę odpowiedzieć na następujące pytania"
+      save: "Zapisz"
+    questions:
+      header: "Pytania"
+      new: "Nowe Pytanie"
+      question: "Ankieta"
+      update: "Aktualizuj"
+      create: "Utwórz Pytanie"
+      questions: "Pytania"
+      other_options: "Inne opcje"
+      edit: "Edytuj"
+      delete: "Usuń"
+    surveys:
+      name: "Nazwa"
+      introduction: "Krótki opis"
+      save: "Zapisz"
+      new_survey: "Nowa Ankieta"
+      edit_survey: "Edycja Ankiety"
+      fill_out_survey: "Wypełnij ankietę"
+      results: "Wyniki"
+      delete: "Usuń"
+      new: "Nowa ankieta"
+      surveys: "Ankiety:"
+      name_of_survey: "Nazwa Ankiety:"
+      results: "Rezultaty"
+      options: "Opcje"
+      jointly: "Łącznie"
