@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def can_administer?
+    current_user.profile.try(:admin?) || current_user.profile.try(:researcher?)
+  end
+
   protected
 
   def prepare_meta_tags(options = {})
