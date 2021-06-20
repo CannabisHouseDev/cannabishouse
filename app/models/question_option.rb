@@ -3,6 +3,7 @@
 # Table name: question_options
 #
 #  id          :bigint           not null, primary key
+#  display     :string
 #  name        :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
@@ -17,5 +18,5 @@
 #  fk_rails_...  (question_id => questions.id)
 #
 class QuestionOption < ApplicationRecord
-  belongs_to :question
+  belongs_to :question, optional: true
 end

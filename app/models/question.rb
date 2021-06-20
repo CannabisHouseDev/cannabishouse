@@ -27,5 +27,5 @@ class Question < ApplicationRecord
   belongs_to :question_type
   belongs_to :survey
   has_many :options, class_name: 'QuestionOption', dependent: :destroy
-  accepts_nested_attributes_for :options
+  accepts_nested_attributes_for :options, allow_destroy: true, reject_if: proc { |att| att['name'].blank? }
 end

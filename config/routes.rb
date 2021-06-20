@@ -16,7 +16,6 @@ Rails.application.routes.draw do
 
   scope '(:locale)', locale: /en/ do
     mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
-    mount Rapidfire::Engine => "/rapidfire"
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
       get 'welcome', to: 'pages#onboarding', as: 'onboarding'
@@ -36,6 +35,13 @@ Rails.application.routes.draw do
       resources :surveys
       delete 'survey/:id', to: 'surveys#hide', as: 'hide_survey'
       post 'survey/add', to: 'researcher_portal#add_survey', as: 'add_survey'
+      get 'researcher/survey/:survey/questions', to: 'researcher_portal#show_questions', as: 'show_questions'
+      post 'survey/:survey/questions/add', to: 'researcher_portal#add_question', as: 'add_question'
+      delete 'question/:id', to: 'researcher_portal#remove_question', as: 'remove_question'
+      post 'questions/new/:survey', to: 'researcher_portal#add_question', as: 'new_question'
+      patch 'question/:id/update', to: 'researcher_portal#update_question', as: 'update_question'
+      post 'question/:id/add_option', to: 'researcher_portal#add_option', as: 'add_option'
+      delete 'option/:id', to: 'researcher_portal#remove_option', as: 'remove_option'
 
       get 'map', to: 'home#map', as: :map
 
