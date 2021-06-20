@@ -1,0 +1,23 @@
+.container
+  .col-md-6.col-md-offset-3
+    .row.rapidfire-body
+      %h1= t('rapidfire.surveys.results')
+      -@survey_results.each do |result|
+        %div
+          %h4= result.question.question_text
+          %p
+            -if result.results.is_a?(Array)
+              %ol
+              -result.results.each do |answer|
+                %li= answer
+            -elsif result.results.is_a?(Hash)
+              %table
+                %thead
+                  %tr
+                    %th= t('rapidfire.surveys.options')
+                    %th= t('rapidfire.surveys.jointly')
+                %tbody
+                  - result.results.each do |option, count|
+                    %tr
+                      %td= option
+                      %td= count

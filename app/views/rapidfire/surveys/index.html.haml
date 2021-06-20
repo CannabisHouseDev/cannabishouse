@@ -1,0 +1,24 @@
+.container
+  .col-md-6.col-md-offset-3
+    .row.rapidfire-head
+      %h2
+        = t('rapidfire.surveys.surveys')
+        %br
+        -if can_administer?
+          = link_to t('rapidfire.surveys.new_survey'), new_survey_path
+      .external-questionnaire
+        We współpracy z Akademią Pedagogiki Specjalnej im. Marii Grzegorzewskiej reprezentowanej przez Kajetana Krupę oraz przy współpracy organizacyjnej dr. Piotra Grzegorczyka z Zakładu Postępowań Karnych Szczególnych i Kryminalistyki Uniwersytetu Łódzkiego chcielibyśmy zaprosić Was do wypełnienia ankiety:
+        %br
+        = link_to "Związek pomiędzy regularnym używaniem marihuany a osobowością, aleksytymią i depresją.", "https://docs.google.com/forms/d/e/1FAIpQLSfao2zROZ75_HH6ihKXWuXVQAqTI59qL6eqkKeSOvIggKSxLQ/viewform?usp=sf_link"
+    .row.rapidfire-body
+      %table.table
+        %colgroup
+          %col{:width => "60%"}
+          %col{:width => "40%"}
+        %thead
+          %tr
+            %th
+              %strong= t('rapidfire.surveys.name_of_survey')
+            %th
+        %tbody
+          = render partial: "survey", collection: @surveys

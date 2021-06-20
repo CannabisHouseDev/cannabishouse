@@ -1,0 +1,16 @@
+.container
+  .col-md-6.col-md-offset-3
+    .row.rapidfire-body
+      %h2
+        = t('rapidfire.questions.header')
+        = link_to t('rapidfire.questions.new'), new_survey_question_path(@survey)
+      %hr/
+      %table.rapidfire-style
+        %colgroup
+          %col/
+          %col{:width => "250"}
+        %thead
+          %tr
+            %th= t('rapidfire.questions.question')
+            %th
+        %tbody= render partial: "question", collection: @questions

@@ -1,0 +1,6 @@
+%tr{:id => "question_#{question.id}"}
+  %td= question.question_text
+  %td
+    %ul.horizontal-list
+      %li= link_to t('rapidfire.questions.edit'), [:edit, question.survey, question]
+      %li= link_to t('rapidfire.questions.delete'), [question.survey, question], method: :delete

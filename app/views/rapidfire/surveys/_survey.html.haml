@@ -1,0 +1,15 @@
+%tr{:id => "survey_#{survey.id}"}
+  %td
+    - if can_administer?
+      %p.rapidfire-body
+        = link_to survey.name, survey_questions_path(survey)
+    - else
+      %p.rapidfire-body
+        = survey.name
+  %td
+    %ul.horizontal-list
+      %li= link_to t('rapidfire.surveys.fill_out_survey'), new_survey_attempt_path(survey)
+      - if can_administer?
+        %li= link_to t('rapidfire.surveys.results'), [:results, survey]
+        %li= link_to t('rapidfire.surveys.delete'), survey, method: :delete
+
