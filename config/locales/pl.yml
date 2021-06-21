@@ -12,6 +12,8 @@ pl:
     transfers: "Transfery"
     media: "Media"
     stock: "Asortyment"
+    appointments: "Spotkania"
+    calendar: "Kalendarz"
   devise:
     login: "Zaloguj się"
     signup: "Zapisz się"
@@ -157,6 +159,10 @@ pl:
   activerecord:
     errors:
       models:
+        slot:
+          attributes:
+            doctor:
+              required: "Wymagany lekarz"
         profile:
           attributes:
             user:

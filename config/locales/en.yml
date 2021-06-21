@@ -43,6 +43,8 @@ en:
     transfers: "Transfers"
     media: "Media"
     stock: "Stock"
+    appointments: "Appointments"
+    calendar: "Calendar"
   devise:
     login: "Login"
     signup: "Sign Up"
@@ -187,6 +189,10 @@ en:
   activerecord:
     errors:
       models:
+        slot:
+          attributes:
+            doctor:
+              required: "Doctor Required"
         profile:
           attributes:
             user:
