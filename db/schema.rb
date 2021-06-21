@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_12_121340) do
+ActiveRecord::Schema.define(version: 2021_06_21_065455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,16 @@ ActiveRecord::Schema.define(version: 2021_06_12_121340) do
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
   end
 
+  create_table "answers", force: :cascade do |t|
+    t.bigint "filled_survey_id", null: false
+    t.string "content"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["filled_survey_id"], name: "index_answers_on_filled_survey_id"
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
   create_table "dispensaries", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -82,6 +92,16 @@ ActiveRecord::Schema.define(version: 2021_06_12_121340) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "manager_id", null: false
     t.index ["manager_id"], name: "index_dispensaries_on_manager_id"
+  end
+
+  create_table "filled_surveys", force: :cascade do |t|
+    t.bigint "survey_id", null: false
+    t.string "state", default: "pending"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_filled_surveys_on_survey_id"
+    t.index ["user_id"], name: "index_filled_surveys_on_user_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -188,6 +208,88 @@ ActiveRecord::Schema.define(version: 2021_06_12_121340) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "question_options", force: :cascade do |t|
+    t.string "name"
+    t.bigint "question_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "display"
+    t.index ["question_id"], name: "index_question_options_on_question_id"
+  end
+
+  create_table "question_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "question_type_id", null: false
+    t.bigint "survey_id", null: false
+    t.integer "min"
+    t.integer "max"
+    t.string "placeholder"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["question_type_id"], name: "index_questions_on_question_type_id"
+    t.index ["survey_id"], name: "index_questions_on_survey_id"
+  end
+
+  create_table "rapidfire_answers", force: :cascade do |t|
+    t.bigint "attempt_id"
+    t.bigint "question_id"
+    t.text "answer_text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["attempt_id"], name: "index_rapidfire_answers_on_attempt_id"
+    t.index ["question_id"], name: "index_rapidfire_answers_on_question_id"
+  end
+
+  create_table "rapidfire_attempts", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "user_type"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_rapidfire_attempts_on_survey_id"
+    t.index ["user_id", "user_type"], name: "index_rapidfire_attempts_on_user_id_and_user_type"
+    t.index ["user_type", "user_id"], name: "index_rapidfire_attempts_on_user"
+  end
+
+  create_table "rapidfire_questions", force: :cascade do |t|
+    t.bigint "survey_id"
+    t.string "type"
+    t.string "question_text"
+    t.string "default_text"
+    t.string "placeholder"
+    t.integer "position"
+    t.text "answer_options"
+    t.text "validation_rules"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["survey_id"], name: "index_rapidfire_questions_on_survey_id"
+  end
+
+  create_table "rapidfire_surveys", force: :cascade do |t|
+    t.string "name"
+    t.text "introduction"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.text "after_survey_content"
+  end
+
+  create_table "surveys", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "hidden", default: false
+    t.index ["user_id"], name: "index_surveys_on_user_id"
+  end
+
   create_table "transfers", force: :cascade do |t|
     t.bigint "sender_material_id", null: false
     t.bigint "receiver_material_id", null: false
@@ -233,7 +335,11 @@ ActiveRecord::Schema.define(version: 2021_06_12_121340) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "answers", "filled_surveys"
+  add_foreign_key "answers", "questions"
   add_foreign_key "dispensaries", "users", column: "manager_id"
+  add_foreign_key "filled_surveys", "surveys"
+  add_foreign_key "filled_surveys", "users"
   add_foreign_key "materials", "material_types"
   add_foreign_key "materials", "users", column: "owner_id"
   add_foreign_key "order_materials", "materials"
@@ -241,6 +347,10 @@ ActiveRecord::Schema.define(version: 2021_06_12_121340) do
   add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "question_options", "questions"
+  add_foreign_key "questions", "question_types"
+  add_foreign_key "questions", "surveys"
+  add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"
   add_foreign_key "transfers", "users", column: "receiver_id"
