@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: slots
+#
+#  id         :bigint           not null, primary key
+#  booked     :boolean          default(FALSE)
+#  day        :integer          default(1)
+#  time       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class Slot < ApplicationRecord
   belongs_to :doctor, class_name: 'User'
   has_many :appointments
