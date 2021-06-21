@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :answer do
+    filled_survey { nil }
+    content { "MyString" }
+  end
+
+  factory :filled_survey do
+    survey { nil }
+    state { "MyString" }
+    user { nil }
+  end
+
   factory :question_option do
     name { "MyString" }
     question { nil }
