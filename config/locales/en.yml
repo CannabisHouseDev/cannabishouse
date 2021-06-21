@@ -204,6 +204,10 @@ en:
               required: "required"
             survey:
               required: "required"
+        slot:
+          attributes:
+            doctor:
+              required: "Doctor Required"
         profile:
           attributes:
             user:
