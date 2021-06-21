@@ -2,7 +2,7 @@
 
 class DispensaryPortalController < ApplicationController
   def index
-    @material = Material.all.take(6)
+    @material = Material.where(owner: current_user)
   end
 
   def search
@@ -26,10 +26,9 @@ class DispensaryPortalController < ApplicationController
   end
 
   def finalize
-    # Need to add tranfer failsafe measures before going live
     material = Material.find(session[:material_selected])
-    reciever = Profile.find(session[:current_participant]).user
-    material.split(reciever, params[:amount].to_i)
+    receiver = Profile.find(session[:current_participant]).user
+    material.split(receiver, params[:amount].to_i)
     respond_to do |format|
       format.html { render partial: 'dispensary_portal/partials/search', notice: "Material transferred" }
       format.json { render json: {message: "success"}.to_json, status: :created}
@@ -58,5 +57,9 @@ class DispensaryPortalController < ApplicationController
   def order
     @material = Material.find(params[:material])
     render partial: 'dispensary_portal/partials/material_order'
+  end
+
+  def add_to_cart
+    OrderMaterial.create(material_id: @material.id, )
   end
 end
