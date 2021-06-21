@@ -21,7 +21,7 @@
 #
 class FilledSurvey < ApplicationRecord
   belongs_to :survey
-  belongs_to :participant, class_name: 'User'
+  belongs_to :user, class_name: 'User'
   has_many :answers, class_name: 'Answer'
   accepts_nested_attributes_for :answers
   validates :state, inclusion: { in: %w[pending done redo] }

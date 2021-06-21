@@ -23,6 +23,8 @@ Rails.application.routes.draw do
 
       # Participant Related Routes
       get 'participant', to: 'participant_portal#index', as: 'participant_portal'
+      get 'participant/surveys', to: 'participant_portal#surveys', as: 'participant_surveys'
+      get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'

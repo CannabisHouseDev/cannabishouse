@@ -1,0 +1,5 @@
+.w-full.flex-grow.overflow-y-auto.h-24
+  - local_assigns[:q].answers.each do |q|
+    .rounded-md.bg-gray-100.opacity-75.flex.items-center.justify-between.mb-2.p-2.relative
+      %span.flex-grow
+        = render "components/inputs/#{q.question.question_type.name}", q: q.question
