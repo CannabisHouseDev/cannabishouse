@@ -1,0 +1,33 @@
+%h1 Listing questions
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Question type
+      %th Survey
+      %th Min
+      %th Max
+      %th Placeholder
+      %th
+      %th
+      %th
+
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.title
+        %td= question.description
+        %td= question.question_type
+        %td= question.survey
+        %td= question.min
+        %td= question.max
+        %td= question.placeholder
+        %td= link_to 'Show', question
+        %td= link_to 'Edit', edit_question_path(question)
+        %td= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Question', new_question_path

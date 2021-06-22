@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 puts 'Destroying old records...'
 Transfer.destroy_all
 MaterialType.destroy_all
@@ -7,6 +6,10 @@ User.destroy_all
 Material.destroy_all
 Profile.destroy_all
 Address.destroy_all
+QuestionOption.destroy_all
+QuestionType.destroy_all
+Question.destroy_all
+Survey.destroy_all
 
 url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
 filename = File.basename(URI.parse(url).path)
@@ -80,5 +83,33 @@ Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |mate
     puts "Transferred #{transfer[1].weight} grams of #{material.name} to participant"
   else
     puts "Could not transfer #{material.name}, message: #{m[1]}"
+  end
+end
+
+
+puts 'Creating Question Types'
+%w[short long number single multiple date].each do |t|
+  QuestionType.create(name: t)
+end
+
+puts 'Creating Pre-Psychiatrist Surveys'
+6.times do |i|
+  s = Survey.create(title: "Medical Survey #{i + 1}", description: 'This survey is required to participate in the program', author: Profile.find_by(role: 'researcher').user)
+  QuestionType.all.each do |qt|
+    q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type: qt, survey: s)
+    case qt.name
+    when 'short'
+    when 'long'
+      q.placeholder = 'placeholder'
+    when 'single'
+    when 'multiple'
+      3.times do
+        QuestionOption.create(question_id: q.id, name: Faker::Cannabis.strain)
+      end
+    when 'number'
+      q.min = 10
+      q.max = 100
+      q.save!
+    end
   end
 end

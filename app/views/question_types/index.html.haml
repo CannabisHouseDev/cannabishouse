@@ -1,0 +1,21 @@
+%h1 Listing question_types
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+      %th
+      %th
+
+  %tbody
+    - @question_types.each do |question_type|
+      %tr
+        %td= question_type.name
+        %td= link_to 'Show', question_type
+        %td= link_to 'Edit', edit_question_type_path(question_type)
+        %td= link_to 'Destroy', question_type, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Question type', new_question_type_path

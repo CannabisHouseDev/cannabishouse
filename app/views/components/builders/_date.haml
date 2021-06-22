@@ -1,0 +1,14 @@
+.input_group.flex.flex-col.justify-start
+  = form_for(local_assigns[:q], url: update_question_path(local_assigns[:q].id), method: :patch, class: 'flex flex-row') do |form|
+    .flex.flex-col
+      .flex.flex-row.items-center.mb-2
+        = form.label :quetion_type_id, class: 'w-32'
+        = form.collection_select :question_type_id, QuestionType.all, :id, :name, {prompt: 'Select Question Type'}, {id: "question_#{local_assigns[:q].id}", class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow'}
+      .flex.flex-row.items-center.mb-2
+        = form.label :title, class: 'w-32'
+        = form.text_field :title, class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow'
+      .flex.flex-row.items-center.mb-2
+        = form.label :description, class: 'w-32'
+        = form.text_area :description, class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow', rows: 3, placeholder: 'Optional extra explanation'
+    .flex.flex-col
+      = form.submit(id: "save_#{local_assigns[:q].id}", hidden: true)

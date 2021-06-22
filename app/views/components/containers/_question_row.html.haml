@@ -1,0 +1,14 @@
+.w-full.p-2
+  - case local_assigns[:q].question_type.name
+  - when 'short'
+    = render 'components/inputs/short', q: local_assigns[:q]
+  - when 'long'
+    = render 'components/inputs/long', q: local_assigns[:q]
+  - when 'number'
+    = render 'components/inputs/number', q: local_assigns[:q]
+  - when 'single'
+    = render 'components/inputs/single', q: local_assigns[:q]
+  - when 'multiple'
+    = render 'components/inputs/checkbox', q: local_assigns[:q]
+  - when 'date'
+    = render 'components/inputs/date', q: local_assigns[:q]

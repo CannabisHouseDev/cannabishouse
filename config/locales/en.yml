@@ -22,7 +22,7 @@
 # true, false, on, off, yes, no
 #warehouse
 # Instead, surround them with single quotes.
-#
+#rapidfire:
 # en:
 #   'true': 'foo'
 #
@@ -70,6 +70,15 @@ en:
     cancel: "Cancel"
     finish: "Finish"
     next: "Next"
+  rapidfire:
+    attempts:
+      header: "Please answer these Questions"
+      save: "Save"
+    questions:
+      header: "Questions"
+      new: "New Question"
+      question: "Question"
+      back: "Back to surveys"
   pages:
     landing:
       hero:
@@ -189,6 +198,12 @@ en:
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            question_type:
+              required: "Type Required"
+            survey:
+              required: "Survey Required"
         slot:
           attributes:
             doctor:

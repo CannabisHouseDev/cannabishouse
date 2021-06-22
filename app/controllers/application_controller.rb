@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def can_administer?
+    %w[admin researcher doctor].include? current_user.profile.role
+  end
+
   def prepare_meta_tags(options = {})
     site = t('company.name')
     site_name = 'cannabishouse.eu'

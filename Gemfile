@@ -35,7 +35,7 @@ gem 'active_storage_validations'
 
 # Data tracking and versioning
 gem 'paper_trail'
-gem "rails_admin"
+gem 'rails_admin'
 gem 'rails_admin-i18n'
 
 # State Machine

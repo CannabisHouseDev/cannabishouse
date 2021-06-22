@@ -1,0 +1,33 @@
+.input_group.flex.flex-col.justify-start
+  = form_for(local_assigns[:q], url: update_question_path(local_assigns[:q].id), method: :patch, class: 'flex flex-row') do |form|
+    .flex.flex-col
+      .flex.flex-row.items-center.mb-2
+        = form.label :quetion_type_id, class: 'w-32'
+        = form.collection_select :question_type_id, QuestionType.all, :id, :name, {prompt: 'Select Question Type'}, {id: "question_#{local_assigns[:q].id}", class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow'}
+      .flex.flex-row.items-center.mb-2
+        = form.label :title, class: 'w-32'
+        = form.text_field :title, class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow'
+      .flex.flex-row.items-center.mb-2
+        = form.label :description, class: 'w-32'
+        = form.text_area :description, class: 'bg-transparent ml-2 border-0 border-b-2 flex-grow', rows: 3, placeholder: 'Optional extra explanation'
+      .flex.flex-col.items-center.mb-2
+        .flex.w-full.justify-start.mb-2
+          %label.w-32 Options
+          .w-full.flex.justify-center
+            = link_to add_option_path(local_assigns[:q].id), method: :post do
+              %button.border-2.border-gray-500.rounded.text-center.flex.justify-center.p-4.bg-gray-200.hover:bg-gray-100
+                Add new option
+                %svg.h-6.w-6.ml-2{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
+                  %path{:d => "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+        - unless local_assigns[:q].options.empty?
+          .flex.w-full.justify-start.flex-col
+            - local_assigns[:q].options.each do |o|
+              .flex
+                = form.fields_for(:options, o) do |option_form|
+                  = option_form.text_field :name, placeholder: 'New Option', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
+                  = option_form.text_field :display, placeholder: 'Option name shown to user', class: 'flex-grow border-0 border-gray-500 border-b-2 mx-2 bg-transparent'
+                  = link_to remove_option_path(o.id), method: :delete do
+                    %svg.h-6.w-6.text-red-600.hover:text-red-200{:fill => "none", :stroke => "currentColor", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}
+                      %path{:d => "M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+    .flex.flex-col
+      = form.submit(id: "save_#{local_assigns[:q].id}", hidden: true)

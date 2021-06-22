@@ -1,0 +1,31 @@
+.text-2xl New Survey
+= form_with model: local_assigns[:s] do |form|
+  .w-full.flex.items-center.py-4
+    = form.label :title, class: 'w-24 text-center'
+    = form.text_field :title, class: 'border-dashed border-0 border-b-2 ml-2 w-full bg-transparent'
+  .w-full.flex.items-center.py-4
+    = form.label :description, class: 'w-24 text-center'
+    = form.text_field :description, class: 'border-dashed border-0 border-b-2 ml-2 w-full bg-transparent'
+  .text-xl Questions
+  %ul
+    = form.fields_for Question.new do |questions_form|
+      %li
+        = questions_form.label :title
+        = questions_form.text_field :title
+        = questions_form.label :description
+        = questions_form.text_field :description
+        = questions_form.label :question_type
+        = questions_form.select(:questions_type, options_for_select(QuestionType.all.map{|qt| [qt.name, qt.id] }))
+        = questions_form.label :placeholder
+        = questions_form.text_field :placeholder
+    = form.fields_for Question.new do |questions_form|
+      %li
+        = questions_form.label :title
+        = questions_form.text_field :title
+        = questions_form.label :description
+        = questions_form.text_field :description
+        = questions_form.label :question_type
+        = questions_form.select(:questions_type, options_for_select(QuestionType.all.map{|qt| [qt.name, qt.id] }))
+        = questions_form.label :placeholder
+        = questions_form.text_field :placeholder
+  = form.submit
