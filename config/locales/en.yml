@@ -201,9 +201,9 @@ en:
         question:
           attributes:
             question_type:
-              required: "required"
+              required: "Type Required"
             survey:
-              required: "required"
+              required: "Survey Required"
         slot:
           attributes:
             doctor:

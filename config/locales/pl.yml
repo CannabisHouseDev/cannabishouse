@@ -171,9 +171,9 @@ pl:
         question:
           attributes:
             question_type:
-              required: "wymagany"
+              required: "Wymagany typ"
             survey:
-              required: "wymagany"
+              required: "Wymagana ankieta"
         slot:
           attributes:
             doctor:
