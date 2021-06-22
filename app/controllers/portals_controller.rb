@@ -6,7 +6,7 @@ class PortalsController < ApplicationController
     redirect_to landing_page and return if !current_user
     redirect_to onboarding_path and return unless current_user.onboarded?
     case current_user.profile.role
-    when 'user'
+    when 'associate'
       redirect_to participant_portal_path and return
     when 'participant'
       redirect_to participant_portal_path and return

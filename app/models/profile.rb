@@ -65,7 +65,7 @@ class Profile < ApplicationRecord
     state :filled_info, :cleaning, :consented,
           :filled_first_survey, :filled_second_survey, :filled_third_survey,
           :filled_fourth_survey, :filled_fifth_survey, :filled_all_surveys,
-          :paid, :booked, :approved, :rejected
+          :paid, :booked, :approved, :rejected, :locked
 
     event :fill_info do
       transitions from: :fresh, to: :filled_info
@@ -85,7 +85,7 @@ class Profile < ApplicationRecord
     end
 
     event :book do
-      ransitions to: :booked
+      transitions to: :booked
     end
 
     event :approve do
@@ -95,5 +95,21 @@ class Profile < ApplicationRecord
     event :paid do
       transitions from: :booked, to: :rejected
     end
+
+    event :lock, before: :save_old_state do
+      transitions to: :locked
+    end
+  end
+
+  private
+
+  def save_old_state
+    self.old_state = aasm.current_state
+    save
+  end
+
+  def old_aasm_state
+    @old_state = old_state.to_sym
+    @old_state
   end
 end
