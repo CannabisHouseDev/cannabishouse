@@ -5,6 +5,7 @@
 # Table name: profiles
 #
 #  id             :bigint           not null, primary key
+#  aasm_state     :string
 #  avatar         :string
 #  birth_date     :date
 #  contact_number :string
@@ -14,6 +15,7 @@
 #  last_name      :string
 #  locked         :boolean          default(FALSE)
 #  nick_name      :string
+#  old_state      :string
 #  onboarded      :boolean          default(FALSE)
 #  pesel          :string
 #  quota_left     :integer          default(0)

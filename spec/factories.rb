@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :appointment do
+    time { "2021-06-22 20:59:49" }
+    doctor { nil }
+    participant { nil }
+    state { 1 }
+  end
+
   factory :question_option do
     name { "MyString" }
     question { nil }
