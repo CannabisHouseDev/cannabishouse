@@ -92,9 +92,9 @@ puts 'Creating Question Types'
   QuestionType.create(name: t)
 end
 
-puts 'Creating Surveys'
-3.times do |i|
-  s = Survey.create(title: "Survey #{i}", description: 'An example description of the survey', author: Profile.find_by(role: 'researcher').user)
+puts 'Creating Pre-Psychiatrist Surveys'
+6.times do |i|
+  s = Survey.create(title: "Medical Survey #{i + 1}", description: 'This survey is required to participate in the program', author: Profile.find_by(role: 'researcher').user)
   QuestionType.all.each do |qt|
     q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type: qt, survey: s)
     case qt.name
