@@ -30,7 +30,7 @@ class Appointment < ApplicationRecord
   private
 
   def set_time
-    dt = DateTime(d.year, d.month, d.day, h, m)
+    dt = DateTime.new(d.year, d.month, d.day, h, m)
   end
 
   def h
