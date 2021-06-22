@@ -40,6 +40,9 @@ class User < ApplicationRecord
   has_many :orders
 
   has_many :surveys, dependent: :destroy
+
+  has_many :appointments, class_name: 'Appointment', foreign_key: 'participant_id'
+  has_many :appointments, class_name: 'Appointment', foreign_key: 'doctor_id'
   
   attr_accessor :agreement_1, :agreement_2
 

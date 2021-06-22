@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 2021_06_22_070607) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "appointments", force: :cascade do |t|
+    t.datetime "time"
+    t.bigint "doctor_id", null: false
+    t.bigint "participant_id", null: false
+    t.integer "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
+    t.index ["participant_id"], name: "index_appointments_on_participant_id"
+  end
+
   create_table "dispensaries", force: :cascade do |t|
     t.string "name"
     t.string "description"

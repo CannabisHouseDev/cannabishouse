@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Time:
+  = @appointment.time
+%p
+  %b Doctor:
+  = @appointment.doctor
+%p
+  %b Participant:
+  = @appointment.participant
+%p
+  %b State:
+  = @appointment.state
+
+= link_to 'Edit', edit_appointment_path(@appointment)
+\|
+= link_to 'Back', appointments_path

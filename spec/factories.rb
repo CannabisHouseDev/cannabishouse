@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+
   factory :answer do
     filled_survey { nil }
     content { "MyString" }
@@ -10,6 +11,13 @@ FactoryBot.define do
     survey { nil }
     state { "MyString" }
     user { nil }
+  end
+
+  factory :appointment do
+    time { "2021-06-22 20:59:49" }
+    doctor { nil }
+    participant { nil }
+    state { 1 }
   end
 
   factory :question_option do
