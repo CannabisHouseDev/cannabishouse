@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_103617) do
+ActiveRecord::Schema.define(version: 2021_06_22_070607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -205,6 +205,8 @@ ActiveRecord::Schema.define(version: 2021_06_21_103617) do
     t.integer "quota_max", default: 0
     t.integer "quota_left", default: 0
     t.integer "credits", default: 0
+    t.string "aasm_state"
+    t.string "old_state"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
