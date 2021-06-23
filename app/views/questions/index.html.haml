@@ -3,10 +3,10 @@
 %table
   %thead
     %tr
-      %th Title
-      %th Description
-      %th Question type
-      %th Survey
+      %th t('views.question_label.title')
+      %th t('views.question_label.desc')
+      %th t('views.question_label.question_type')
+      %th t('views.question_label.survey')
       %th Min
       %th Max
       %th Placeholder
@@ -24,10 +24,10 @@
         %td= question.min
         %td= question.max
         %td= question.placeholder
-        %td= link_to 'Show', question
-        %td= link_to 'Edit', edit_question_path(question)
-        %td= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.question_options.show'), question
+        %td= link_to t('views.question_options.edit'), edit_question_path(question)
+        %td= link_to t('views.question_options.destroy'), question, method: :delete, data: { confirm: t('views.question_options.confirm') }
 
 %br
 
-= link_to 'New Question', new_question_path
+= link_to t('views.question_options.new'), new_question_path

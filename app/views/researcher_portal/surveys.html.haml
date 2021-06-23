@@ -3,13 +3,13 @@
   .h-full.w-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
     %span.w-full.flex-grow.flex.flex-col.pb-2
       / Title
-      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl My Surveys
+      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl t('views.researcher_portal.title2')
       - if @surveys.empty?
         .w-full.text-center.flex.flex-col.justify-center.flex-grow
-          You don't have any surveys yet
+          t('views.researcher_portal.empty2')
       - else
         / Cards
         = render 'researcher_portal/partials/surveylist', s: @surveys
         / Action Button Footer
     .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md
-      = link_to "Create a Survey", add_survey_path, method: :post
+      = link_to t('views.researcher_portal.'create), add_survey_path, method: :post

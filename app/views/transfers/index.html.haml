@@ -3,11 +3,11 @@
 %table
   %thead
     %tr
-      %th Sender material
-      %th Receiver material
-      %th Sender
-      %th Receiver
-      %th Weight
+      %th t('views.transfers.label.sender_material')
+      %th t('views.transfers.label.receiver_material')
+      %th t('views.transfers.label.sender')
+      %th t('views.transfers.label.receiver')
+      %th t('views.transfers.label.weight')
       %th
       %th
       %th
@@ -20,10 +20,10 @@
         %td= transfer.sender
         %td= transfer.receiver
         %td= transfer.weight
-        %td= link_to 'Show', transfer
-        %td= link_to 'Edit', edit_transfer_path(transfer)
-        %td= link_to 'Destroy', transfer, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.transfers.show'), transfer
+        %td= link_to t('views.transfers.edit'), edit_transfer_path(transfer)
+        %td= link_to t('views.transfers.destroy'), transfer, method: :delete, data: { confirm: t('views.transfers.confirm') }
 
 %br
 
-= link_to 'New Transfer', new_transfer_path
+= link_to t('views.transfers.new'), new_transfer_path
