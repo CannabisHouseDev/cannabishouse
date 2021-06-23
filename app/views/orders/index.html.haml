@@ -4,10 +4,10 @@
   %thead
     %tr
       %th.border.border-green-800 ID
-      %th.border.border-green-800 Material type
+      %th.border.border-green-800 t('views.orders.type')
       %th.border.border-green-800 Status
-      %th.border.border-green-800 Amount
-      %th.border.border-green-800 Action
+      %th.border.border-green-800 t('views.orders.amount')
+      %th.border.border-green-800 t('views.orders.action')
 
   %tbody
     - @orders.each do |order|
@@ -16,5 +16,5 @@
         %td.border.border-green-500= order.materials.map do |material| material.material_type&.name end.join(", ")
         %td.border.border-green-500= order.status
         %td.border.border-green-500= order.amount
-        %td.border.border-green-500= link_to "Show", "#", class: 'rounded bg-blue-400'
+        %td.border.border-green-500= link_to t('views.orders.show'), "#", class: 'rounded bg-blue-400'
 

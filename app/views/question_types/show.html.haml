@@ -1,9 +1,9 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b t('views.question_options.label.name'):
   = @question_type.name
 
-= link_to 'Edit', edit_question_type_path(@question_type)
+= link_to t('views.question_options.edit'), edit_question_type_path(@question_type)
 \|
-= link_to 'Back', question_types_path
+= link_to t('views.question_options.back'), question_types_path

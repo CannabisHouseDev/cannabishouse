@@ -3,15 +3,15 @@
 %table
   %thead
     %tr
-      %th Name
-      %th Description
-      %th Avatar
-      %th Category
-      %th Documents
-      %th Verified
-      %th Open
-      %th Lat
-      %th Lng
+      %th t('views.dispensaries.table.name')
+      %th t('views.dispensaries.table.description')
+      %th t('views.dispensaries.table.avatar')
+      %th t('views.dispensaries.table.category')
+      %th t('views.dispensaries.table.documents')
+      %th t('views.dispensaries.table.verifeid')
+      %th t('views.dispensaries.table.open')
+      %th t('views.dispensaries.table.lat')
+      %th t('views.dispensaries.table.lng')
       %th
       %th
       %th
@@ -28,10 +28,10 @@
         %td= dispensary.open
         %td= dispensary.lat
         %td= dispensary.lng
-        %td= link_to 'Show', dispensary
-        %td= link_to 'Edit', edit_dispensary_path(dispensary)
-        %td= link_to 'Destroy', dispensary, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.dispensaries.show'), dispensary
+        %td= link_to t('views.dispensaries.edit'), edit_dispensary_path(dispensary)
+        %td= link_to t('views.dispensaries.destroy'), dispensary, method: :delete, data: { confirm: t('dispensaries.confirm') }
 
 %br
 
-= link_to 'New Dispensary', new_dispensary_path
+= link_to t('views.dispensaries.new'), new_dispensary_path
