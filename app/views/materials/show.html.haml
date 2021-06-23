@@ -1,16 +1,16 @@
 %p#notice= notice
 
 %p
-  %b t('views.materials.table..type')
+  %b #{t('views.materials.table..type')}
   = @material.material_type
-%p
-  %b t('views.materials.table..name')
+%p}
+  %b #{t('views.materials.table..name')
   = @material.name
 %p
-  %b t('views.materials.table..desc')
+  %b #{t('views.materials.table..desc')}
   = @material.description
 %p
-  %b t('views.materials.table..weight')
+  %b #{t('views.materials.table..weight')}
   = @material.weight
 %p
   %b Thc:
@@ -19,22 +19,22 @@
   %b Cbd:
   = @material.cbd
 %p
-  %b t('views.materials.table..terpene')
+  %b #{t('views.materials.table..terpene')}
   = @material.terpene
 %p
-  %b t('views.materials.table..drought')
+  %b #{t('views.materials.table..drought')}
   = @material.drought
 %p
-  %b t('views.materials.table..oil')
+  %b #{t('views.materials.table..oil')}
   = @material.oil
 %p
-  %b t('views.materials.table..edible')
+  %b #{t('views.materials.table..edible')}
   = @material.edible
 %p
-  %b t('views.materials.table..cost')
+  %b #{t('views.materials.table..cost')}
   = @material.cost
 %p
-  %b t('views.materials.table.owner')
+  %b #{t('views.materials.table.owner')}
   = @material.owner
 
 = link_to t('views.materials.edit'), edit_material_path(@material)
