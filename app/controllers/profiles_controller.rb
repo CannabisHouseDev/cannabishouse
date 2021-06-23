@@ -41,9 +41,9 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       @profile.avatar.attach(params[:avatar]) if params[:avatar].present?
       if @profile.update(profile_params) and @profile.avatar.attached?
-        current_user.profile.onboarded = true
-        current_user.profile.save
-        current_user.profile.fill_info!
+        @profile.onboarded = true
+        @profile.save
+        @profile.fill_info!
         format.html { redirect_to authenticated_root_path, notice: t('.update.success') }
         format.json { render :show, status: :ok, location: @profile }
       else
