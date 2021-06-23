@@ -1,31 +1,31 @@
 %p#notice= notice
 
 %p
-  %b t('views.dispensaries.table.name'):
+  %b #{t('views.dispensaries.table.name')}:
   = @dispensary.name
 %p
-  %b t('views.dispensaries.table.description'):
+  %b #{t('views.dispensaries.table.description')}:
   = @dispensary.description
 %p
-  %b t('views.dispensaries.table.avatar'):
+  %b #{t('views.dispensaries.table.avatar')}:
   = @dispensary.avatar
 %p
-  %b t('views.dispensaries.table.category'):
+  %b #{t('views.dispensaries.table.category')}:
   = @dispensary.category
 %p
-  %b t('views.dispensaries.table.documents'):
+  %b #{t('views.dispensaries.table.documents')}:
   = @dispensary.documents
 %p
-  %b t('views.dispensaries.table.verifeid'):
+  %b #{t('views.dispensaries.table.verifeid')}:
   = @dispensary.verified
 %p
-  %b t('views.dispensaries.table.open'):
+  %b #{t('views.dispensaries.table.open')}:
   = @dispensary.open
 %p
-  %b t('views.dispensaries.table.lat'):
+  %b #{t('views.dispensaries.table.lat')}:
   = @dispensary.lat
 %p
-  %b t('views.dispensaries.table.lng'):
+  %b #{t('views.dispensaries.table.lng')}:
   = @dispensary.lng
 
 = link_to t('views.dispensaries.edit'), edit_dispensary_path(@dispensary)
