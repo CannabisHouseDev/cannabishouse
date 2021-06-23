@@ -2,7 +2,18 @@
 
 class ParticipantPortalController < ApplicationController
   before_action :set_filled, only: %w[surveys fill_survey]
-  def index; end
+  def index
+    redirect_to :steps if current_user.profile.aasm_state == 'filled_info'
+  end
+
+  def agree
+    current_user.profile.consent!
+    redirect_to :steps
+  end
+
+  def steps
+    redirect_to :book if current_user.profile.aasm_state == 'paid'
+  end
 
   def surveys; end
 

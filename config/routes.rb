@@ -22,6 +22,9 @@ Rails.application.routes.draw do
       get 'welcome', to: 'pages#onboarding', as: 'onboarding'
 
       # Participant Related Routes
+      get 'steps', to: 'participant_portal#steps', as: 'steps'
+      get 'consent', to: 'participant_portal#consent', as: 'consent'
+      get 'agree', to: 'participant_portal#agree', as: 'agree'
       get 'participant', to: 'participant_portal#index', as: 'participant_portal'
       get 'participant/surveys', to: 'participant_portal#surveys', as: 'participant_surveys'
       get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'

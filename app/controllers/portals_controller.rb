@@ -3,11 +3,10 @@
 class PortalsController < ApplicationController
   before_action :authenticate_user!
   def role_router
-    redirect_to landing_page and return if !current_user
-    redirect_to onboarding_path and return unless current_user.onboarded?
+    redirect_to landing_page and return unless current_user
+    redirect_to onboarding_path and return if (current_user.profile.aasm_state == 'fresh') && (%w[user participant].include? current_user.profile.role)
+
     case current_user.profile.role
-    when 'associate'
-      redirect_to participant_portal_path and return
     when 'participant'
       redirect_to participant_portal_path and return
     when 'dispensary'

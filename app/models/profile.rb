@@ -62,13 +62,17 @@ class Profile < ApplicationRecord
 
   aasm do
     state :fresh, initial: true
-    state :filled_info, :cleaning, :consented,
+    state :filled_info, :consented, :locked_profile,
           :filled_first_survey, :filled_second_survey, :filled_third_survey,
           :filled_fourth_survey, :filled_fifth_survey, :filled_all_surveys,
-          :paid, :booked, :approved, :rejected, :locked
+          :paid, :booked, :approved, :rejected
 
-    event :fill_info do
+    event :fill_info, before: :update_role do
       transitions from: :fresh, to: :filled_info
+    end
+
+    event :consent do
+      transitions to: :consented
     end
 
     event :fill_surveys do
@@ -96,8 +100,8 @@ class Profile < ApplicationRecord
       transitions from: :booked, to: :rejected
     end
 
-    event :lock, before: :save_old_state do
-      transitions to: :locked
+    event :lock_profile, before: :save_old_state do
+      transitions to: :locked_profile
     end
   end
 
@@ -111,5 +115,10 @@ class Profile < ApplicationRecord
   def old_aasm_state
     @old_state = old_state.to_sym
     @old_state
+  end
+
+  def update_role
+    self.role = 'participant' if self.role == 'user'
+    save
   end
 end

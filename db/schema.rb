@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_070607) do
+ActiveRecord::Schema.define(version: 2021_06_23_073028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,9 +127,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_070607) do
   end
 
   create_table "material_types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -246,51 +246,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_070607) do
     t.string "placeholder"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "order", default: 0
     t.index ["question_type_id"], name: "index_questions_on_question_type_id"
     t.index ["survey_id"], name: "index_questions_on_survey_id"
-  end
-
-  create_table "rapidfire_answers", force: :cascade do |t|
-    t.bigint "attempt_id"
-    t.bigint "question_id"
-    t.text "answer_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attempt_id"], name: "index_rapidfire_answers_on_attempt_id"
-    t.index ["question_id"], name: "index_rapidfire_answers_on_question_id"
-  end
-
-  create_table "rapidfire_attempts", force: :cascade do |t|
-    t.bigint "survey_id"
-    t.string "user_type"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["survey_id"], name: "index_rapidfire_attempts_on_survey_id"
-    t.index ["user_id", "user_type"], name: "index_rapidfire_attempts_on_user_id_and_user_type"
-    t.index ["user_type", "user_id"], name: "index_rapidfire_attempts_on_user"
-  end
-
-  create_table "rapidfire_questions", force: :cascade do |t|
-    t.bigint "survey_id"
-    t.string "type"
-    t.string "question_text"
-    t.string "default_text"
-    t.string "placeholder"
-    t.integer "position"
-    t.text "answer_options"
-    t.text "validation_rules"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["survey_id"], name: "index_rapidfire_questions_on_survey_id"
-  end
-
-  create_table "rapidfire_surveys", force: :cascade do |t|
-    t.string "name"
-    t.text "introduction"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "after_survey_content"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -308,6 +266,8 @@ ActiveRecord::Schema.define(version: 2021_06_22_070607) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "hidden", default: false
+    t.boolean "required", default: false
+    t.string "internal_name"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 

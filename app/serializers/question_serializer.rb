@@ -6,6 +6,7 @@
 #  description      :string
 #  max              :integer
 #  min              :integer
+#  order            :integer          default(0)
 #  placeholder      :string
 #  title            :string
 #  created_at       :datetime         not null
