@@ -6,7 +6,7 @@
       .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 3
       %span.w-full.flex-grow
         / Title
-        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl t('views.doctor_portal.upcoming')
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.upcoming')}
         / Cards
         - 3.times do
           .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
@@ -20,7 +20,7 @@
       .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 2
       %span.w-full.flex-grow
         / Title
-        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl t('views.doctor_portal.pending')
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.pending')}
         / Cards
         - 2.times do
           .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
@@ -31,7 +31,7 @@
     .flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2{class: "h-1/3"}
       %span.w-full.flex-grow
         / Title
-        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl t('views.doctor_portal.calendar')
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.calendar')}
         / Action Button Footer
         .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md
           = link_to t('views.doctor_portal.edit')

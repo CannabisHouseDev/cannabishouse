@@ -1,19 +1,19 @@
 %p#notice= notice
 
 %p
-  %b t('views.transfers.label.sender_material'):
+  %b #{t('views.transfers.label.sender_material')}:
   = @transfer.sender_material
 %p
-  %b t('views.transfers.label.receiver_material'):
+  %b #{t('views.transfers.label.receiver_material')}:
   = @transfer.receiver_material
 %p
-  %b t('views.transfers.label.sender'):
+  %b #{t('views.transfers.label.sender')}:
   = @transfer.sender
 %p
-  %b t('views.transfers.label.receiver'):
+  %b #{t('views.transfers.label.receiver')}:
   = @transfer.receiver
 %p
-  %b t('views.transfers.label.weight'):
+  %b #{t('views.transfers.label.weight')}:
   = @transfer.weight
 
 = link_to t('views.transfers.edit'), edit_transfer_path(@transfer)
