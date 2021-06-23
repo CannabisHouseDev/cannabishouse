@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
-      get 'welcome', to: 'pages#onboarding', as: 'onboarding'
+      get 'info', to: 'pages#info', as: 'info'
 
       # Participant Related Routes
       get 'steps', to: 'participant_portal#steps', as: 'steps'

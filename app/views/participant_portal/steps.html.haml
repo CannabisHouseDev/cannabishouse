@@ -1,35 +1,16 @@
 .w-full.h-full.flex.flex-col.justify-center.text-2xl
-  .flex.flex-row.items-center.justify-center.text-green-500
-    .span.w-56.text-center
-      Fill Profile Info
-  .flex.flex-row.items-center.justify-center.p-2
-    - unless current_user.profile.aasm_state == 'consented'
-      = link_to consent_path do
-        .span.w-56.text-center Agree to Regulation
-    - else
-      .span.w-56.text-center.text-green-500 Agree to Regulation
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #1
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #2
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #3
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #4
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #5
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Fill Survey #6
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Registration Fee
-  .flex.flex-row.items-center.justify-center.p-2
-    .span.w-56.text-center
-      Book Appointment
-
+  - case current_user.profile.aasm_state
+  - when 'filled_info'
+    = render partial: 'participant_portal/partials/consent'
+  - when 'consented'
+    = render partial: 'participant_portal/partials/first_survey'
+  - when 'filled_first_survey'
+    = render partial: 'participant_portal/partials/second_survey'
+  - when 'filled_second_survey'
+    = render partial: 'participant_portal/partials/third_survey'
+  - when 'filled_third_survey'
+    = render partial: 'participant_portal/partials/fourth_survey'
+  - when 'filled_fourth_survey'
+    = render partial: 'participant_portal/partials/fifth_survey'
+  - when 'filled_fifth_survey'
+    = render partial: 'participant_portal/partials/sixth_survey'
