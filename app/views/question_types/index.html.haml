@@ -3,7 +3,7 @@
 %table
   %thead
     %tr
-      %th Name
+      %th t('views.question_options.label.name')
       %th
       %th
       %th
@@ -12,10 +12,10 @@
     - @question_types.each do |question_type|
       %tr
         %td= question_type.name
-        %td= link_to 'Show', question_type
-        %td= link_to 'Edit', edit_question_type_path(question_type)
-        %td= link_to 'Destroy', question_type, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.question_options.show'), question_type
+        %td= link_to t('views.question_options.edit'), edit_question_type_path(question_type)
+        %td= link_to t('views.question_options.destroy'), question_type, method: :delete, data: { confirm: t('views.question_options.confirm') }
 
 %br
 
-= link_to 'New Question type', new_question_type_path
+= link_to t('views.question_options.new'), new_question_type_path

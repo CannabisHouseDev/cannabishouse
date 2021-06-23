@@ -1,22 +1,22 @@
 %p#notice= notice
 
 %p
-  %b Title:
+  %b t('views.posts.label.title'):
   = @post.title
 %p
-  %b Body:
+  %b t('views.posts.label.body'):
   = @post.body
 %p
   %b Status:
   = @post.status
 %p
-  %b User:
+  %b t('views.posts.label.user'):
   = @post.user
 %p
-  %b Post date:
+  %b t('views.posts.label.post_date'):
   = @post.post_date
 %p
-  %b Image:
+  %b t('views.posts.label.image'):
   = @post.image
 %p
   %b Slug:
@@ -25,6 +25,6 @@
   %b Inner:
   = @post.inner
 
-= link_to 'Edit', edit_post_path(@post)
+= link_to t('views.posts.edit'), edit_post_path(@post)
 \|
-= link_to 'Back', posts_path
+= link_to t('views.posts.back'), posts_path

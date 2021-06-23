@@ -1,33 +1,33 @@
 %p#notice= notice
 
 %p
-  %b Name:
+  %b t('views.dispensaries.table.name'):
   = @dispensary.name
 %p
-  %b Description:
+  %b t('views.dispensaries.table.description'):
   = @dispensary.description
 %p
-  %b Avatar:
+  %b t('views.dispensaries.table.avatar'):
   = @dispensary.avatar
 %p
-  %b Category:
+  %b t('views.dispensaries.table.category'):
   = @dispensary.category
 %p
-  %b Documents:
+  %b t('views.dispensaries.table.documents'):
   = @dispensary.documents
 %p
-  %b Verified:
+  %b t('views.dispensaries.table.verifeid'):
   = @dispensary.verified
 %p
-  %b Open:
+  %b t('views.dispensaries.table.open'):
   = @dispensary.open
 %p
-  %b Lat:
+  %b t('views.dispensaries.table.lat'):
   = @dispensary.lat
 %p
-  %b Lng:
+  %b t('views.dispensaries.table.lng'):
   = @dispensary.lng
 
-= link_to 'Edit', edit_dispensary_path(@dispensary)
+= link_to t('views.dispensaries.edit'), edit_dispensary_path(@dispensary)
 \|
-= link_to 'Back', dispensaries_path
+= link_to t('views.dispensaries.back'), dispensaries_path

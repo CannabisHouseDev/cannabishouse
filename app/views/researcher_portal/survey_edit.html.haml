@@ -7,7 +7,7 @@
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
       %span.w-full.flex-grow
         / Title
-        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl Edit Survey
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl t('views.researcher_portal.edit')
         / Cards
         = form_for @survey do |form|
           %span.flex.flex-col
@@ -16,6 +16,6 @@
           = form.submit(hidden: true, data: { 'researcher-target' => 'update' })
       / Action Button Footer
       .grid.grid-cols-2.w-full
-        = link_to "Cancel", authenticated_root_path, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
+        = link_to t('views.researcher_portal.cancel'), authenticated_root_path, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
         %a.flex.flex-grow.justify-center.bg-green-200.rounded-xl.text-gray-700.py-4.ml-1{ 'data-action' => 'click->researcher#confirmResearchUpdate'}
-          Save Survey
+          t('views.researcher_portal.save')

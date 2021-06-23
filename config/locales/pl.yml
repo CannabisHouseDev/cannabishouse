@@ -25,7 +25,7 @@ pl:
     remember: "Zapamiętaj mnie"
     no_account: "Nie masz konta?"
     have_account: "Posiadasz już konto?"
-    close: "blisko"
+    close: "Zamknij"
     confirm: "Potwierdzenie Hasła"
     agree: "zgadzam się z"
     terms: "zasady i warunki"
@@ -100,6 +100,48 @@ pl:
         edit:
           title: "Edycja użytkownika"
   views:
+    addresses:
+      save: "Zapisz"
+      destroy: "Usuń adresy"
+    appointments:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróc"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      confirm: "Na pewno?"
+      new_appointment: "Nowe spotkanie"
+      label:
+        time: "Czas"
+        doctor: "Doktor"
+        participant: "Uczestnik"
+        state: "Status"
+    components:
+      builders:
+        question: "Wybierz rodzaj pytania"
+        save: "Zapisz"
+      placeholders:
+        explanation: "Opcjonalne, dodatkowe objaśnienie"
+        option: "Nowa opcja"
+        option_name: "Nazwa opcji widoczna dla użytkownika"
+    dispensaries:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróć"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      confirm: "Na pewno?"
+      new: "Nowe dyspensarium"
+      table:
+        name: "Nazwa"
+        description: "Opis"
+        avatar: "Avatar"
+        category: "Kategoria"
+        documents: "Dokumenty"
+        verified: "Zweryfikowany"
+        open: "otwarte"
+        lat: "Lat"
+        lng: "Lng"
     dispensary_portal:
       available_material: "Materiał w magazynie:"
       make_order: "Złóż zamówienie"
@@ -124,6 +166,100 @@ pl:
       generate: "Generuj raport"
       sent_to: "wysłane do"
       on_date: "na"
+      send: "Wyślij"
+      cancel: "Anuluj"
+    doctor_portal:
+      load: "Wczytaj wszystko"
+      edit: "Edytuj czas dyspozycyjny"
+      cancel: "Anuluj"
+      mark: "Oznacz jako zakończone"
+      start: "Rozpocznij ocenę"
+      pending: "Oczekujące oceny"
+      appointments: "Szczegóły spotkania"
+      upcoming: "Najbliższe spoktania"
+      calendar: "Mój kalendarz"
+    home:
+      more: "Więcej"
+    materials:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróć"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      new: "Nowy materiał"
+      table:
+        type: "Typ"
+        name: "Nazwa"
+        desc: "Opis"
+        weight: "Waga"
+        terpene: "Terpen"
+        drought: "Susz"
+        oil: "Olej"
+        edible: "Jadalne"
+        cost: "Koszt"
+        owner: "Właściciel"
+      confirm: "Na pewno?"
+    orders:
+      type: "Typ materiału"
+      amount: "Ilość"
+      action: "Ackja"
+      show: "Pokaż"
+    posts:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróć"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      new: "Nowy post"
+      confirm: "Na pewno?"
+      label:
+        title: "Tytuł"
+        body: "Treść"
+        user: "Uzytkownik"
+        post_date: "Data"
+        image: "Zdjęcie"
+        slug: 
+        inner:
+    question_options:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróć"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      new: "Nowe pytanie"
+      confirm: "Na pewno?"
+      label:
+        name: "Nazwa"
+        question: "Pytanie" 
+    question_label:
+      title: "Tytuł"
+      desc: "Opis"
+      question_type: "Typ pytania"
+      Survey: "Ankieta"
+    researcher_portal:
+      title: "Pytania"
+      title2: "Moje ankiety"
+      empty: "Ta ankieta nie ma jeszcze pytań"
+      empty2: "Nie masz jeszcze żadnych ankiet"
+      new: "Dodaj pytanie"
+      create: "Stwórz ankiete"
+      save: "Zapisz ankiete"
+      cancel: "Anuluj"
+      edit: "Edytuj ankiete"
+    transfers:
+      save: "Zapisz"
+      show: "Pokaż"
+      back: "Wróć"
+      edit: "Edytuj"
+      destroy: "Usuń"
+      new: "Nowy transfer"
+      confirm: "Na pewno?"
+      label:
+        sender_material: "Materiał nadawcy"
+        receiver_material: "Materiał odbiorcy"
+        sender: "Nadawca"
+        receiver: "Odbiorca"
+        weight: "Waga"
     user:
       session:
         sign_in: "Zaloguj się na swoje konto CH"

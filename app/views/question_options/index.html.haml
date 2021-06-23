@@ -3,8 +3,8 @@
 %table
   %thead
     %tr
-      %th Name
-      %th Question
+      %th t('views.question_options.label.name')
+      %th t('views.question_options.label.question')
       %th
       %th
       %th
@@ -14,10 +14,10 @@
       %tr
         %td= question_option.name
         %td= question_option.question
-        %td= link_to 'Show', question_option
-        %td= link_to 'Edit', edit_question_option_path(question_option)
-        %td= link_to 'Destroy', question_option, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.question_options.show'), question_option
+        %td= link_to t('views.question_options.edit'), edit_question_option_path(question_option)
+        %td= link_to t('views.question_options.destroy'), question_option, method: :delete, data: { confirm: t('views.question_options.confirm') }
 
 %br
 
-= link_to 'New Question option', new_question_option_path
+= link_to t('views.question_options.new'), new_question_option_path
