@@ -22,7 +22,6 @@ class AnswersController < ApplicationController
   # POST /answers or /answers.json
   def create
     @answer = Answer.new(answer_params)
-
     respond_to do |format|
       if @answer.save
         format.html { redirect_to @answer, notice: "Answer was successfully created." }
@@ -36,6 +35,7 @@ class AnswersController < ApplicationController
 
   # PATCH/PUT /answers/1 or /answers/1.json
   def update
+    params[:answer][:content] = QuestionOption.find(params[:answer][:option_id]).name
     respond_to do |format|
       if @answer.update(answer_params)
         format.html { redirect_to @answer, notice: "Answer was successfully updated." }
@@ -64,6 +64,6 @@ class AnswersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def answer_params
-      params.require(:answer).permit(:filled_survey_id, :content)
+      params.require(:answer).permit(:filled_survey_id, :content, :option_id)
     end
 end

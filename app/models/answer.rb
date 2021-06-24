@@ -7,6 +7,7 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #  filled_survey_id :bigint           not null
+#  option_id        :integer
 #  question_id      :bigint           not null
 #
 # Indexes

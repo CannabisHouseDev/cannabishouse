@@ -3,20 +3,17 @@ import { Controller } from "stimulus"
 import Rails from "@rails/ujs";
 
 export default class extends Controller {
-  static targets = ["researcher", "update"]
+  static targets = ["participant"]
 
-  saveQuestion (e) {
-    const submit = document.getElementById("save_".concat(e.target.dataset.q))
-    submit.click()
-  }
-
-  confirmResearchUpdate (e) {
-    e.preventDefault()
-    this.updateTarget.click()
+  updateAnswer (e) {
+    let form_id = `${e.currentTarget.dataset.answer}_form`
+    let form = document.getElementById(form_id)
+    console.log(form)
+    Rails.fire(form, 'submit');
   }
 
   initialize () {
-    window.root = this.researcherTarget;
+    window.root = this.participantTarget;
     }
 
   connect () {}

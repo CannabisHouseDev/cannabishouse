@@ -1,8 +1,10 @@
 .input_group.flex.flex-col.justify-start
-  - question = local_assigns[:q]
-  %label.text-gray-700.text-md.font-bold.capitalize.mb-1 #{question.title}
-  - if question.description
-    %label.text-gray-600.text-sm #{question.description}
-  %select.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question.id}
-    - question.options.each do |o|
-      %option #{o.name}
+- q = local_assigns[:q]
+%label.text-gray-700.text-md.font-bold.capitalize
+  = q.question.title
+  - if q.question.description
+    %label.text-gray-600.text-sm #{q.question.description}
+  .p-4
+    = form.fields_for :answers do |a_form|
+      = a_form.collection_select(:option_id, q.question.options, :id, :name, { include_blank: false }, { data: { action: "change->participant#updateAnswer" }, class: 'bg-transparent mx-2', data: { answer: q.id } })
+

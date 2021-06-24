@@ -26,6 +26,11 @@ class ParticipantPortalController < ApplicationController
     end
   end
 
+  def agree
+    current_user.profile.consent!
+    redirect_to action: :steps
+  end
+
   def pay; end
   def book; end
 
@@ -37,7 +42,10 @@ class ParticipantPortalController < ApplicationController
       set_filled
     end
     @fill = FilledSurvey.find(params[:id])
-    @answers = @fill.survey.questions.map { |q| Answer.find_or_create_by(question_id: q.id, filled_survey_id: @fill.id) }
+    @answers = @fill.survey.questions.map { |q| Answer.find_or_create_by(question_id: q.id, filled_survey_id: @fill.id) }.sort_by { |q| q.question.order }
+    @answers.each do |a|
+      a.update(option_id: a.question.options.first.id, content: a.question.options.first.name) unless a.option_id
+    end
   end
 
   private
