@@ -28,10 +28,13 @@ class DispensaryPortalController < ApplicationController
   def finalize
     material = Material.find(session[:material_selected])
     receiver = Profile.find(session[:current_participant]).user
-    material.split(receiver, params[:amount].to_i)
+    t = material.split(receiver, params[:amount].to_i)
     respond_to do |format|
-      format.html { render partial: 'dispensary_portal/partials/search', notice: "Material transferred" }
-      format.json { render json: {message: "success"}.to_json, status: :created}
+      if t[0]
+        format.html { render partial: 'dispensary_portal/partials/search', notice: "Material transferred", status: :ok }
+      else
+        format.html { render json: { error: true, message: t[1]}.to_json, status: :bad_request }
+      end
     end
   end
 
