@@ -50,12 +50,15 @@ export default class extends Controller {
   finalizeTransfer() {
     let amount = this.transferTarget.value
     Rails.ajax({
-     type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/finalize_transfer?amount=${amount}`,
-     success: function(data){
-      root.innerHTML = data.body.innerHTML;
-      toastr.success(`${amount} grams transferred`, 'Success!')
-      }
+      type: "get",
+      url: `${window.locale == 'en' ? '/en' : ''}/finalize_transfer?amount=${amount}`,
+      success: function (data) {
+        root.innerHTML = data.body.innerHTML;
+        toastr.success(`${amount} transferred`, 'Success')
+      },
+        error: function(data) {
+          toastr.error(JSON.parse(data.body.innerHTML).message)
+        }
     });
   }
 
@@ -79,7 +82,7 @@ export default class extends Controller {
     });
   }
 
-  filterTransfer(e){
+  filterTransfer(){
     let start = this.startTarget.value
     let end = this.endTarget.value
     console.log(start)
