@@ -21,4 +21,4 @@
   = address_form.label :category, class: 'Form-label'
   = address_form.select :category, Address.categories.keys.to_a, prompt: true, class: 'mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-gray-400 focus:border-gray-400 sm:text-sm'
   .col-span-6.sm:col-span-3
-  = address_form.submit 'zapisz', class: 'Form-submit'
+  = address_form.submit t('views.addresses.save'), class: 'Form-submit'

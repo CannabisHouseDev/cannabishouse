@@ -5,16 +5,16 @@ RSpec.describe "transfers/index", type: :view do
     assign(:transfers, [
       Transfer.create!(
         sender_material: nil,
-        reciever_material: nil,
+        receiver_material: nil,
         sender: nil,
-        reciever: nil,
+        receiver: nil,
         weight: 2
       ),
       Transfer.create!(
         sender_material: nil,
-        reciever_material: nil,
+        receiver_material: nil,
         sender: nil,
-        reciever: nil,
+        receiver: nil,
         weight: 2
       )
     ])

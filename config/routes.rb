@@ -30,7 +30,18 @@ Rails.application.routes.draw do
       get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
 
       # Researcher Related Routes
-      get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'
+      get 'researcher', to: 'researcher_portal#surveys', as: 'researcher_portal'
+      get 'researcher/survey/:survey', to: 'researcher_portal#survey_edit', as: 'survey_edit_dashboard'
+      resources :surveys
+      delete 'survey/:id', to: 'surveys#hide', as: 'hide_survey'
+      post 'survey/add', to: 'researcher_portal#add_survey', as: 'add_survey'
+      get 'researcher/survey/:survey/questions', to: 'researcher_portal#show_questions', as: 'show_questions'
+      post 'survey/:survey/questions/add', to: 'researcher_portal#add_question', as: 'add_question'
+      delete 'question/:id', to: 'researcher_portal#remove_question', as: 'remove_question'
+      post 'questions/new/:survey', to: 'researcher_portal#add_question', as: 'new_question'
+      patch 'question/:id/update', to: 'researcher_portal#update_question', as: 'update_question'
+      post 'question/:id/add_option', to: 'researcher_portal#add_option', as: 'add_option'
+      delete 'option/:id', to: 'researcher_portal#remove_option', as: 'remove_option'
 
       get 'map', to: 'home#map', as: :map
 

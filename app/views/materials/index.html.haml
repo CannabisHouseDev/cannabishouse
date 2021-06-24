@@ -3,18 +3,18 @@
 %table
   %thead
     %tr
-      %th Material type
-      %th Name
-      %th Description
-      %th Weight
+      %th #{t('views.materials.table..type')}
+      %th #{t('views.materials.table..name')}
+      %th #{t('views.materials.table..desc')}
+      %th #{t('views.materials.table..weight')}
       %th Thc
       %th Cbd
-      %th Terpene
-      %th Drought
-      %th Oil
-      %th Edible
-      %th Cost
-      %th Owner
+      %th #{t('views.materials.table..terpene')}
+      %th #{t('views.materials.table..drought')}
+      %th #{t('views.materials.table..oil')}
+      %th #{t('views.materials.table..edible')}
+      %th #{t('views.materials.table..cost')}
+      %th #{t('views.materials.table..owner')}
       %th
       %th
       %th
@@ -34,10 +34,10 @@
         %td= material.edible
         %td= material.cost
         %td= material.owner
-        %td= link_to 'Show', material
-        %td= link_to 'Edit', edit_material_path(material)
-        %td= link_to 'Destroy', material, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.materials.show'), material
+        %td= link_to t('views.materials.edit'), edit_material_path(material)
+        %td= link_to t('views.materials.destroy'), material, method: :delete, data: { confirm: t('views.materials.confirm') }
 
 %br
 
-= link_to 'New Material', new_material_path
+= link_to t('views.materials.new'), new_material_path

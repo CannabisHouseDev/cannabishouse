@@ -22,7 +22,7 @@
 # true, false, on, off, yes, no
 #warehouse
 # Instead, surround them with single quotes.
-#
+#rapidfire:
 # en:
 #   'true': 'foo'
 #
@@ -70,6 +70,15 @@ en:
     cancel: "Cancel"
     finish: "Finish"
     next: "Next"
+  rapidfire:
+    attempts:
+      header: "Please answer these Questions"
+      save: "Save"
+    questions:
+      header: "Questions"
+      new: "New Question"
+      question: "Question"
+      back: "Back to surveys"
   pages:
     landing:
       hero:
@@ -122,6 +131,48 @@ en:
         edit:
           title: "Edit user"
   views:
+    addresses:
+      save: "Save"
+      destroy: "Delete address"
+    appointments:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Destroy"
+      confirm: "Are you sure?"
+      new_appointment: "New appointment"
+      label:
+        time: "Time"
+        doctor: "Doctor"
+        participant: "Participant"
+        state: "State"
+    components:
+      builders:
+        question: "Select question type"
+        save: "Save"
+      placeholders:
+        explanation: "Optional extra explanation"
+        option: "New option"
+        option_name: "Option name shown to user"
+    dispensaries:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Delete"
+      confirm: "Are you sure?"
+      new: "New dispensary"
+      table:
+        name: "Name"
+        description: "Description"
+        avatar: "Avatar"
+        category: "Category"
+        documents: "Documents"
+        verified: "Verified"
+        open: "Open"
+        lat: "Lat"
+        lng: "Lng"
     dispensary_portal:
       available_material: "Material in stock:"
       warehouse_material: "Select material to order:"
@@ -147,6 +198,100 @@ en:
       generate: "Generate Report"
       sent_to: "sent to"
       on_date: "on"
+      send: "Send"
+      cancel: "Cancel"
+    doctor_portal:
+      load: "Load all"
+      edit: "Edit Time available"
+      cancel: "Cancel"
+      mark: "Mark as done"
+      start: "Start evaluation"
+      pending: "Pending Evaluations"
+      appointments: "Appointments details"
+      upcoming: "Upcoming appointments"
+      calendar: "My calendar"
+    home:
+      more: "More"
+    materials:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Delete"
+      new: "New material"
+      table:
+        type: "Type"
+        name: "Name"
+        desc: "Description"
+        weight: "Weight"
+        terpene: "Terpene"
+        drought: "Drought"
+        oil: "Oil"
+        edible: "Edible"
+        cost: "Cost"
+        owner: "Owner"
+      confirm: "Are you sure?"
+    orders:
+      type: "Material type"
+      amount: "Ammount"
+      action: "Action"
+      show: "Show"
+    posts:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Delete"
+      new: "New post"
+      confirm: "Are you sure?"
+      label:
+        title: "Title"
+        body: "Body"
+        user: "User"
+        post_date: "Post date"
+        image: "Image"
+        slug: "Slug"
+        inner: "Inner"
+    question_options:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      edit_survey: "Edit survey"
+      destroy: "Delete"
+      new: "New question"
+      label:
+        name: "Name"
+        question: "Question"
+    question_label:
+      title: "Title"
+      desc: "Description"
+      question_type: "Question type"
+      Survey: "Survey"
+    researcher_portal:
+      title: "Questions"
+      title2: "My surveys"
+      empty: "This survey doesn't have any questions yet"
+      empty2: "You don't have any surveys yet"
+      new: "Add a question"
+      create: "Create a survey"
+      save: "Save survey"
+      cancel: "Cancel"
+      edit: "Edit survey"
+    transfers:
+      save: "Save"
+      show: "Show"
+      back: "Back"
+      edit: "Edit"
+      destroy: "Delete"
+      new: "New transfer"
+      confirm: "Are you sure?"
+      label:
+        sender_material: "Sender material"
+        receiver_material: "Receiver material"
+        sender: "Sender"
+        receiver: "Receiver"
+        weight: "Weight"
     user:
       session:
         sign_in: "Sign in to your CH account"
@@ -178,9 +323,27 @@ en:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+  materials:
+    profile_locked: "Your account is locked, please contact an administrator."
+    restock: "Not enough material to transfer, please restock."
+    profile_invalid: "The recipient account isn't ready to receive material yet."
+    unapproved: "The recipient is still waiting for the doctor's approval."
+    quota: "The recipient has exhausted their quota for the month, quotas are reset at the beginning of every month."
+    credits: "The recipient does not have enough credits to use this feature."
+    unknown_error: "Unknown error, please contact a developer."
   activerecord:
     errors:
       models:
+        question:
+          attributes:
+            question_type:
+              required: "Type Required"
+            survey:
+              required: "Survey Required"
+        slot:
+          attributes:
+            doctor:
+              required: "Doctor Required"
         profile:
           attributes:
             user:

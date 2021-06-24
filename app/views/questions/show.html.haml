@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b #{t('views.question_label.title')}:
+  = @question.title
+%p
+  %b #{t('views.question_label.desc')}:
+  = @question.description
+%p
+  %b #{t('views.question_label.question_type')}:
+  = @question.question_type
+%p
+  %b #{t('views.question_label.survey')}:
+  = @question.survey
+%p
+  %b Min:
+  = @question.min
+%p
+  %b Max:
+  = @question.max
+%p
+  %b Placeholder:
+  = @question.placeholder
+
+= link_to t('views.question_options.edit'), edit_question_path(@question)
+\|
+= link_to t('views.question_options.back'), questions_path

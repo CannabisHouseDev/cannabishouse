@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b #{t('views.question_options.label.name')}:
+  = @question_option.name
+%p
+  %b #{t('views.question_options.label.question')}:
+  = @question_option.question
+
+= link_to t('views.question_options.edit'), edit_question_option_path(@question_option)
+\|
+= link_to t('views.question_options.back'), question_options_path

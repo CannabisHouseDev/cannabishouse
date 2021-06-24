@@ -1,6 +1,38 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :appointment do
+    time { "2021-06-22 20:59:49" }
+    doctor { nil }
+    participant { nil }
+    state { 1 }
+  end
+
+  factory :question_option do
+    name { "MyString" }
+    question { nil }
+  end
+
+  factory :question do
+    title { "MyString" }
+    description { "MyString" }
+    question_type { nil }
+    survey { nil }
+    min { 1 }
+    max { 1 }
+    placeholder { "MyString" }
+  end
+
+  factory :question_type do
+    name { "MyString" }
+  end
+
+  factory :survey do
+    title { "MyString" }
+    description { "MyString" }
+    user { nil }
+  end
+
   factory :order_material do
     order { nil }
     material { nil }
@@ -8,9 +40,9 @@ FactoryBot.define do
 
   factory :transfer do
     sender_material { nil }
-    reciever_material { nil }
+    receiver_material { nil }
     sender { nil }
-    reciever { nil }
+    receiver { nil }
     weight { 1 }
   end
 

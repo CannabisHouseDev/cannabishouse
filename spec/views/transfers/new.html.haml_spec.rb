@@ -4,9 +4,9 @@ RSpec.describe "transfers/new", type: :view do
   before(:each) do
     assign(:transfer, Transfer.new(
       sender_material: nil,
-      reciever_material: nil,
+      receiver_material: nil,
       sender: nil,
-      reciever: nil,
+      receiver: nil,
       weight: 1
     ))
   end
@@ -18,11 +18,11 @@ RSpec.describe "transfers/new", type: :view do
 
       assert_select "input[name=?]", "transfer[sender_material_id]"
 
-      assert_select "input[name=?]", "transfer[reciever_material_id]"
+      assert_select "input[name=?]", "transfer[receiver_material_id]"
 
       assert_select "input[name=?]", "transfer[sender_id]"
 
-      assert_select "input[name=?]", "transfer[reciever_id]"
+      assert_select "input[name=?]", "transfer[receiver_id]"
 
       assert_select "input[name=?]", "transfer[weight]"
     end

@@ -3,12 +3,12 @@
 %table
   %thead
     %tr
-      %th Title
-      %th Body
+      %th #{t('views.posts.label.title')}
+      %th #{t('views.posts.label.body')}
       %th Status
-      %th User
-      %th Post date
-      %th Image
+      %th #{t('views.posts.label.user')}
+      %th #{t('views.posts.label.post_date')}
+      %th #{t('views.posts.label.image')}
       %th Slug
       %th Inner
       %th
@@ -26,10 +26,10 @@
         %td= post.image
         %td= post.slug
         %td= post.inner
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to t('views.posts.show'), post
+        %td= link_to t('views.posts.edit'), edit_post_path(post)
+        %td= link_to t('views.posts.destroy'), post, method: :delete, data: { confirm: t('views.posts.confirm') }
 
 %br
 
-= link_to 'New Post', new_post_path
+= link_to t('views.posts.new'), new_post_path

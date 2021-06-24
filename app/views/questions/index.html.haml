@@ -1,0 +1,33 @@
+%h1 Listing questions
+
+%table
+  %thead
+    %tr
+      %th #{t('views.question_label.title')}
+      %th #{t('views.question_label.desc')}
+      %th #{t('views.question_label.question_type')}
+      %th #{t('views.question_label.survey')}
+      %th Min
+      %th Max
+      %th Placeholder
+      %th
+      %th
+      %th
+
+  %tbody
+    - @questions.each do |question|
+      %tr
+        %td= question.title
+        %td= question.description
+        %td= question.question_type
+        %td= question.survey
+        %td= question.min
+        %td= question.max
+        %td= question.placeholder
+        %td= link_to t('views.question_options.show'), question
+        %td= link_to t('views.question_options.edit'), edit_question_path(question)
+        %td= link_to t('views.question_options.destroy'), question, method: :delete, data: { confirm: t('views.question_options.confirm') }
+
+%br
+
+= link_to t('views.question_options.new'), new_question_path

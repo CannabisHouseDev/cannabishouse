@@ -1,0 +1,5 @@
+.w-full.h-full.flex.flex-col.md:flex-row{ "data-controller" => "researcher", "data-researcher-target" => "researcher" }
+  / First Column
+  = render 'researcher_portal/partials/surveyscol', s: @surveys, selected: @survey.id
+  / Second Column
+  = render 'researcher_portal/partials/questionscol', q: @questions, s: @survey, n: @question

@@ -1,0 +1,27 @@
+%h1 Listing appointments
+
+%table
+  %thead
+    %tr
+      %th #{t('views.appointments.label.time')}
+      %th #{t('views.appointments.label.doctor')}
+      %th #{t('views.appointments.label.participant')}
+      %th #{t('views.appointments.label.state')"}
+      %th
+      %th
+      %th
+
+  %tbody
+    - @appointments.each do |appointment|
+      %tr
+        %td= appointment.time
+        %td= appointment.doctor
+        %td= appointment.participant
+        %td= appointment.state
+        %td= link_to t('views.appointments.show'), appointment
+        %td= link_to t('views.appointments.edit'), edit_appointment_path(appointment)
+        %td= link_to t('views.appointments.destroy'), appointment, method: :delete, data: { confirm: t('views.appointments.confirm') }
+
+%br
+
+= link_to t('views.appointments.new_appointment'), new_appointment_path

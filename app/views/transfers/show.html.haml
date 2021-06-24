@@ -1,21 +1,21 @@
 %p#notice= notice
 
 %p
-  %b Sender material:
+  %b #{t('views.transfers.label.sender_material')}:
   = @transfer.sender_material
 %p
-  %b Reciever material:
-  = @transfer.reciever_material
+  %b #{t('views.transfers.label.receiver_material')}:
+  = @transfer.receiver_material
 %p
-  %b Sender:
+  %b #{t('views.transfers.label.sender')}:
   = @transfer.sender
 %p
-  %b Reciever:
-  = @transfer.reciever
+  %b #{t('views.transfers.label.receiver')}:
+  = @transfer.receiver
 %p
-  %b Weight:
+  %b #{t('views.transfers.label.weight')}:
   = @transfer.weight
 
-= link_to 'Edit', edit_transfer_path(@transfer)
+= link_to t('views.transfers.edit'), edit_transfer_path(@transfer)
 \|
-= link_to 'Back', transfers_path
+= link_to t('views.transfers.back'), transfers_path

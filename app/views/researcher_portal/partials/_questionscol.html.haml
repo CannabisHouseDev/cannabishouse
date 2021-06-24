@@ -1,0 +1,18 @@
+.h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
+  / Questions Section
+  .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
+    %span.w-full.h-full.flex-grow.flex.flex-col.pb-2
+      / Title
+      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.researcher_portal.title')}
+      - if local_assigns[:q].empty?
+        .w-full.text-center.flex.flex-col.justify-center.flex-grow
+          #{t('views.researcher_portal.empty')}
+      - else
+        / Cards
+        = render 'researcher_portal/partials/questionlist', q: local_assigns[:q]
+        / Action Button Footer
+    .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer
+      = form_for(local_assigns[:n], url: new_question_path(local_assigns[:s].id), method: :post) do |form|
+        = form.collection_select(:question_type, QuestionType.all, :id, :name, { include_blank: false }, { class: 'bg-transparent mx-2' })
+        = form.submit t('views.researcher_portal.new'), class: 'cursor-pointer'
+        

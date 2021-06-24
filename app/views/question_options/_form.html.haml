@@ -1,0 +1,16 @@
+= form_for @question_option do |f|
+  - if @question_option.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@question_option.errors.count, "error")} prohibited this question_option from being saved:"
+      %ul
+        - @question_option.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :question
+    = f.text_field :question
+  .actions
+    = f.submit t('views.question_options.save')
