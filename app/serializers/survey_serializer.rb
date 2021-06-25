@@ -18,7 +18,7 @@
 #
 #  fk_rails_...  (user_id => users.id)
 #
-class SurveySerializer < ActiveModel::Serializer
+class SurveySerializer < ActiveModel::Serializers
   attributes :id, :title, :description
   has_one :user
 end

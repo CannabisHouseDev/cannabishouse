@@ -7,6 +7,6 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-class QuestionTypeSerializer < ActiveModel::Serializer
+class QuestionTypeSerializer < ActiveModel::Serializers
   attributes :id, :name
 end

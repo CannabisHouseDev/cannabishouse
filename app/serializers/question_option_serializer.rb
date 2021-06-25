@@ -17,7 +17,7 @@
 #
 #  fk_rails_...  (question_id => questions.id)
 #
-class QuestionOptionSerializer < ActiveModel::Serializer
+class QuestionOptionSerializer < ActiveModel::Serializers
   attributes :id, :name
   has_one :question
 end
