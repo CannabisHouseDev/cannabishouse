@@ -23,7 +23,7 @@
 #  fk_rails_...  (question_type_id => question_types.id)
 #  fk_rails_...  (survey_id => surveys.id)
 #
-class QuestionSerializer < ActiveModel::Serializer
+class QuestionSerializer < ActiveModel::Serializers
   attributes :id, :title, :description, :min, :max, :placeholder
   has_one :question_type
   has_one :survey
