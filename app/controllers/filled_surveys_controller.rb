@@ -38,7 +38,8 @@ class FilledSurveysController < ApplicationController
   def update
     respond_to do |format|
       if @filled_survey.update(filled_survey_params)
-        format.html { redirect_to @filled_survey, notice: "Filled survey was successfully updated." }
+        update_state
+        format.html { redirect_to authenticated_root_path, notice: "Survey Filled" }
         format.json { render :show, status: :ok, location: @filled_survey }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,5 +66,10 @@ class FilledSurveysController < ApplicationController
     # Only allow a list of trusted parameters through.
     def filled_survey_params
       params.require(:filled_survey).permit(:survey_id, :state, :user_id)
+    end
+
+    def update_state
+      byebug
+      current_user.profile.fill_surveys! if params[:ref]
     end
 end

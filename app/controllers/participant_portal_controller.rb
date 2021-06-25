@@ -26,6 +26,7 @@ class ParticipantPortalController < ApplicationController
     end
   end
 
+  # transitions asm state to consented and goes back to steps
   def agree
     current_user.profile.consent!
     redirect_to action: :steps
@@ -34,10 +35,11 @@ class ParticipantPortalController < ApplicationController
   def pay; end
   def book; end
 
+  # If the caller of this action sends a ref, it means we're in the onboarding process not filling out normal surveys
   def fill_survey
     if params[:ref]
       set_required_surveys
-      @ref = params[:ref].to_i - 1
+      @ref = params[:ref] # To choose which required survey's turn to answer is now out of the required_surveys array
     else
       set_filled
     end
