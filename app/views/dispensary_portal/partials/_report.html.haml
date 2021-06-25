@@ -1,0 +1,29 @@
+.flex.flex-col.w-full.h-full.p-4 
+  .flex.flex-col.w-full
+    .flex.flex-row.justify-evenly.items-end
+      .flex 
+        =image_tag 'logo.png', alt: 'Cannabis House logo'
+      .flex.sm:text-xl.md:text-3xl.lg:text-4xl.xl:text-5xl.2xl:text-6xl
+        Monthly Report
+      .flex.text-gray-400.md:text-xl.lg:text-2xl.xl:text-3xl
+        #{Date.current.strftime("%B")}  #{Date.current.strftime("%Y")}
+  .flex.flex-col.pt-8.pb-2
+    .flex.flex-col.items-center.py-2.sm:flex-row.justify-center.md:text-xl.lg:text-2xl.xl:text-3xl.2xl:text-4xl
+      .flex.sm:mr-5
+        %p.text-gray-500.mr-2 Total Transfer Weight:
+        %p #{rand(500..1500)} grams
+      .flex.sm:ml-5
+        %p.text-gray-500.mr-2 Amount To Receive:
+        %p #{rand(30000..99999)} Złoty
+  .flex.justify-center.text-4xl.p-4.text-gray-500
+    Transfers
+  .flex.flex-col.items-center
+    - 4.times do |i|
+      .flex.flex-col.border-black.border-b-2.py-2
+        .flex.justify-center.text-xl.text-gray-600
+          Material ##{i}
+        .flex.flex-row
+          %p.text-gray-500.mr-1 Transferred:
+          %p.mr-2 #{rand(150..600)} grams
+          %p.text-gray-500.mr-1 Remaining:
+          %p #{rand(15..60)} grams
