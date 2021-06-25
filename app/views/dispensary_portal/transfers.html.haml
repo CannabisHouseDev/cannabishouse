@@ -11,8 +11,8 @@
     .overflow-y-scroll.h-full.divide-y
       - @transfers.each do |t|
         .h-14.text-center.p-3.sm:text-xl
-          = "#{t.weight} grams #{t('views.dispensary_portal.sent_to')} ##{t.reciever.id} #{t('views.dispensary_portal.on_date')} #{t.created_at.strftime("%d %b %Y")}"
+          = "#{t.weight} grams #{t('views.dispensary_portal.sent_to')} ##{t.receiver.id} #{t('views.dispensary_portal.on_date')} #{t.created_at.strftime("%d %b %Y")}"
   .flex.flex-col.pt-20.align-center.flex-grow.text-2xl.md:text-2xl.lg:text-3xl.xl:text-4xl
     .mx-auto
       %p.mb-10.text-center #{t('views.dispensary_portal.statement')}
-      %p= button_to t('views.dispensary_portal.generate'), "#", class: 'rounded bg-gray-200 border border-gray-500 py-4 sm:px-6 md:px-10 lg:px-14 xl:px-20'
+      %p= button_to t('views.dispensary_portal.generate'), report_path, class: 'rounded bg-gray-200 border border-gray-500 py-4 sm:px-6 md:px-10 lg:px-14 xl:px-20', method: :get
