@@ -7,5 +7,5 @@
     %label.text-gray-600.text-sm #{q.question.description}
   .p-4
     = form.fields_for :q do |a_form|
-      = a_form.collection_select(:option_id, q.question.options, :id, :name, { include_blank: false }, { id: q.id, name: "#{q.id}_answer", class: 'bg-transparent mx-2'})
+      = a_form.collection_select(:option_id, q.question.options, :id, :display, { selected: q.option_id, include_blank: false }, { id: q.id, name: "#{q.id}_answer", class: 'bg-transparent mx-2'})
 

@@ -9,7 +9,7 @@
           This survey doesn't have any questions yet
       - else
         / Cards
-        = render 'participant_portal/partials/questionlist', q: local_assigns[:s]
+        = render 'participant_portal/partials/questionlist', q: local_assigns[:s], ref: @ref
         / Action Button Footer
     .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer
       = link_to fill_survey_path(ref: @ref) do

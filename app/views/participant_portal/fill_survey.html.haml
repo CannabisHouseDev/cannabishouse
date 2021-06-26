@@ -1,7 +1,7 @@
 .w-full.h-full.flex.flex-col.md:flex-row{ "data-controller" => "participant", "data-participant-target" => "participant" }
   / First Column
   - if @ref
-    - @surveys = [@surveys[@ref.to_i]]
+    - @surveys = [@surveys[@ref.to_i - 1]]
   = render 'participant_portal/partials/surveyscol', s: @surveys, selected: @fill.id
   / Second Column
   = render 'participant_portal/partials/questionscol', s: @fill, ref: @ref

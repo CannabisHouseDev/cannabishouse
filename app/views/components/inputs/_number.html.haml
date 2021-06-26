@@ -1,6 +1,7 @@
 .input_group.flex.flex-col.justify-start
-  - question = local_assigns[:q]
-  %label.text-gray-700.text-sm.font-bold.capitalize #{question.title}
-  - if question.description
-    %label.text-gray-600.text-sm #{question.description}
-  %input.w-full.rounded.border.py-2.px-3.text-gray-700.focus:outline-none{id: question.id, type: 'number', min: question.min, max: question.max, placeholder: question.placeholder}
+  - q = local_assigns[:q]
+  %label.text-gray-700.text-md.font-bold.capitalize.mb-1 #{q.question.title}
+  - if q.question.description
+    %label.text-gray-600.text-sm #{q.question.description}
+  = form.fields_for :q do |a_form|
+    = a_form.text_field :content, input_html: {type: 'number', id: q.id , placeholder: (q.question.placeholder if q.question.placeholder), class: 'w-full rounded border py-2 px-3 text-gray-700 focus:outline-none'}

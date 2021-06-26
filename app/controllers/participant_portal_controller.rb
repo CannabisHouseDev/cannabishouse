@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ParticipantPortalController < ApplicationController
-  before_action :set_filled, only: :steps
+  before_action :set_required_surveys, only: :steps
   def index; end
 
   # A mini router just for the new onboarding process
@@ -57,11 +57,12 @@ class ParticipantPortalController < ApplicationController
   end
 
   def set_required_surveys
-    @surveys = [FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: current_user.id, survey: Survey.find_by(internal_name: 'bMAST'))]
+    id = current_user.id
+    @surveys = [FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'bMAST')),
+                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'pum')),
+                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'phq9')),
+                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'index')),
+                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'kssuk30')),
+                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'ghq30'))]
   end
 end

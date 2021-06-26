@@ -20,5 +20,5 @@ s = Survey.create(title: title, description: description, internal_name: interna
 questions.each_with_index do |q,i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)
   QuestionOption.create(display: 'Yes', name: 'yes', question_id: q.id, score: 1)
-  QuestionOption.create(display: 'No', name: 'no', question_id: q.id)
+  QuestionOption.create(display: 'No', name: 'no', question_id: q.id, score: 0)
 end

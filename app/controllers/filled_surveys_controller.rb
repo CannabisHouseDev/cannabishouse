@@ -60,7 +60,7 @@ class FilledSurveysController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_filled_survey
-      @filled_survey = FilledSurvey.find(params[:id])
+      @filled_survey = FilledSurvey.find(params[:id]) if params[:id]
     end
 
     # Only allow a list of trusted parameters through.
@@ -69,7 +69,6 @@ class FilledSurveysController < ApplicationController
     end
 
     def update_state
-      byebug
-      current_user.profile.fill_surveys! if params[:ref]
+      current_user.profile.fill_surveys!(params[:ref]) if params[:ref]
     end
 end

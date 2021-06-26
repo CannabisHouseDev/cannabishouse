@@ -9,4 +9,4 @@
           You don't have any surveys yet
       - else
         / Cards
-        = render 'participant_portal/partials/surveylist', s: @filled_survey || local_assigns[:s], selected: local_assigns[:selected]
+        = render 'participant_portal/partials/surveylist', s: @filled || local_assigns[:s], selected: local_assigns[:selected]

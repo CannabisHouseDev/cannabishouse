@@ -75,12 +75,27 @@ class Profile < ApplicationRecord
       transitions to: :consented
     end
 
-    event :fill_surveys do
+    event :fill_first do
       transitions to: :filled_first_survey
+    end
+
+    event :fill_second do
       transitions to: :filled_second_survey
+    end
+
+    event :fill_third do
       transitions to: :filled_third_survey
+    end
+
+    event :fill_fourth do
       transitions to: :filled_fourth_survey
+    end
+
+    event :fill_fifth do
       transitions to: :filled_fifth_survey
+    end
+
+    event :fill_sixth do
       transitions to: :filled_all_surveys
     end
 
@@ -102,6 +117,23 @@ class Profile < ApplicationRecord
 
     event :lock_profile, before: :save_old_state do
       transitions to: :locked_profile
+    end
+  end
+
+  def fill_surveys!(ref)
+    case ref.to_i
+    when 1
+      fill_first!
+    when 2
+      fill_second!
+    when 3
+      fill_third!
+    when 4
+      fill_fourth!
+    when 5
+      fill_fifth!
+    when 6
+      fill_sixth!
     end
   end
 
