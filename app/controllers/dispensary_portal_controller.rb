@@ -65,4 +65,8 @@ class DispensaryPortalController < ApplicationController
   def add_to_cart
     OrderMaterial.create(material_id: @material.id, )
   end
+
+  def report
+
+  end
 end

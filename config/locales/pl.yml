@@ -72,6 +72,10 @@ pl:
         fourthStep:
           title: "Wypełniaj anonimowe ankiety"
           content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
+    about:
+      about: "O nas"
+      who_we_are: "Kim jesteśmy?"
+      paragraph_1: "Jestesmy stowarzyszeniem osób świadomych możliwości i zagrożeń wynikających ze stosowania konopi przez ludzi w wielu dziedzinach życia. Przyczyniamy się do jak najszerszego, praktycznego wykorzystania potencjału tej rośliny jednocześnie minimalizując spodziewane zjawiska niepożądane. Obserwujemy zmianę światowych trendów w kierunku odkłamywania informacji o konopiach i wyciągania przekonań na ich temat z dziedziny mitów. Jako stowarzyszenie dążymy do sytuacji, w której świadomi ludzie dbają tak o swoje zdrowie jak i o środowisko."
   controllers:
     addresses:
       create:

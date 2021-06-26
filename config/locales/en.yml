@@ -103,6 +103,10 @@ en:
         fourthStep:
           title: "Fill Anonymous Surveys"
           content: "Help researchers by filling out private anonymous Surveys"
+    about:
+      about: "About us"
+      who_we_are: "Who we are?"
+      paragraph_1: "We are an association of people who are aware of the possibilities and dangers of using cannabis in many areas of life. We contribute to the widest possible practical use of the potential of this plant while minimizing the expected undesirable phenomena. We are witnessing a shift in global trends towards providing true information about cannabis and drawing beliefs about it from the realm of myth. As an association, we strive for a situation in which conscious people take care of their health and the environment."
   controllers:
       addresses:
         create:
