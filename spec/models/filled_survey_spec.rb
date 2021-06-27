@@ -3,6 +3,7 @@
 # Table name: filled_surveys
 #
 #  id         :bigint           not null, primary key
+#  score      :integer
 #  state      :string           default("pending")
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

@@ -42,6 +42,17 @@ puts 'Creating users...'
   puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
 end
 
+puts 'Creating Question Types'
+%w[short long number single multiple date].each do |t|
+  QuestionType.create(name: t)
+end
+
+puts 'Creating Pre-Psychiatrist Surveys'
+
+Dir[Rails.root.join('db/seed/surveys/*.rb')].sort.each do |file|
+  require file
+end
+
 puts 'Creating MaterialTypes'
 3.times do |i|
   MaterialType.create(name: %w[Sativa Indica Hybrid][i])
@@ -86,14 +97,7 @@ Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |mate
   end
 end
 
-
-puts 'Creating Question Types'
-%w[short long number single multiple date].each do |t|
-  QuestionType.create(name: t)
-end
-
-puts 'Creating Pre-Psychiatrist Surveys'
-
-Dir[Rails.root.join('db/seed/surveys/*.rb')].sort.each do |file|
-  require file
+puts 'Generating fake appointment slots...'
+12.times do
+  Slot.create(day: rand(0..6), time: "#{rand(8..20)}:#{['00','30'][rand(0..1)]}", doctor: Profile.find_by(role: 'doctor').user)
 end

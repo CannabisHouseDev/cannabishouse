@@ -20,6 +20,7 @@
 #  pesel          :string
 #  quota_left     :integer          default(0)
 #  quota_max      :integer          default(0)
+#  risk           :string
 #  role           :integer
 #  skills         :string
 #  verified       :boolean          default(FALSE)
@@ -95,7 +96,7 @@ class Profile < ApplicationRecord
       transitions to: :filled_fifth_survey
     end
 
-    event :fill_sixth do
+    event :fill_sixth, after: :calculate_risk do
       transitions to: :filled_all_surveys
     end
 
@@ -152,5 +153,39 @@ class Profile < ApplicationRecord
   def update_role
     self.role = 'participant' if self.role == 'user'
     save
+  end
+
+  def calculate_risk
+    # Test taken into concideration
+    asset_test = %w[bMAST pum phq9 kssuk30]
+    normalized_scores = []
+    asset_test.each do |test|
+      survey = FilledSurvey.find_by(survey: Survey.find_by(internal_name: test))
+      # Rules for different risk assesment tests
+      case test
+      when 'bMAST'
+        normalized_scores.push survey.score > 7 ? 2 : survey.score > 4 ? 1 : 0
+      when 'pum'
+        normalized_scores.push survey.score > 5 ? 2 : survey.score > 2 ? 1 : 0
+      when 'phq9'
+        normalized_scores.push survey.score > 14 ? 2 : survey.score > 9 ? 1 : 0
+      when 'kssuk30'
+        normalized_scores.push survey.score < 24 ? 2 : survey.score < 40 ? 1 : 0
+      end
+    end
+    # All test have equal weight when deciding the final risk assesment
+    total = (normalized_scores.sum / normalized_scores.count.to_f)
+    self.risk = total > 1.5 ? 'red' : total > 0.5 ? 'orange' : 'green'
+    save!
+  end
+
+  def amount_allowed
+    # Check the amounts allowed for each category
+    case self.risk
+    when 'green'
+    when 'orange'
+    when 'red'
+    else
+    end
   end
 end

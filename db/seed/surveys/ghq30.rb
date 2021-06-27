@@ -38,7 +38,7 @@ internal_name = 'ghq30'
 author = Profile.find_by(role: 'researcher').user
 single = QuestionType.find_by(name: 'single').id
 
-s = Survey.create(title: title, description: description, internal_name: internal_name, author: author)
+s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)
 questions.each_with_index do |q,i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)
   QuestionOption.create(display: 'Zdecydowanie nie zgadzamsię', name: 'strong_no', question_id: q.id, score: 1)

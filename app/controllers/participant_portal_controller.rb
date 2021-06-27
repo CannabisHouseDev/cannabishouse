@@ -20,6 +20,9 @@ class ParticipantPortalController < ApplicationController
     when 'filled_all_surveys'
       render action: :pay
     when 'paid'
+      @slots = Slot.unscoped.group_by(&:day)
+      @start_date = DateTime.now
+      @end_date = DateTime.now + 30.days
       render action: :book
     else
       render action: :index
@@ -33,7 +36,19 @@ class ParticipantPortalController < ApplicationController
   end
 
   def pay; end
-  def book; end
+
+  def process_payment
+    @current_user.profile.pay!
+    redirect_to action: :steps
+  end
+
+  def book
+    slot = Slot.find(params[:id])
+    date = DateTime.parse(params[:d]).change({ hour: slot.hours.to_i, min: slot.minutes.to_i })
+    appointment = Appointment.find_or_create_by(participant: current_user, doctor: slot.doctor, time: date)
+    current_user.profile.book!
+    redirect_to action: :steps
+  end
 
   # If the caller of this action sends a ref, it means we're in the onboarding process not filling out normal surveys
   def fill_survey

@@ -65,7 +65,7 @@ internal_name = 'index'
 author = Profile.find_by(role: 'researcher').user
 single = QuestionType.find_by(name: 'single').id
 
-s = Survey.create(title: title, description: description, internal_name: internal_name, author: author)
+s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)
 questions.each_with_index do |q,i|
   question = Question.create(title: q[0], order: i, survey_id: s.id, question_type_id: single)
   q[1].each do |o|

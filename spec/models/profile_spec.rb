@@ -20,6 +20,7 @@
 #  pesel          :string
 #  quota_left     :integer          default(0)
 #  quota_max      :integer          default(0)
+#  risk           :string
 #  role           :integer
 #  skills         :string
 #  verified       :boolean          default(FALSE)

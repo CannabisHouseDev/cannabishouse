@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_24_070941) do
+ActiveRecord::Schema.define(version: 2021_06_27_183700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 2021_06_24_070941) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
     t.index ["survey_id"], name: "index_filled_surveys_on_survey_id"
     t.index ["user_id"], name: "index_filled_surveys_on_user_id"
   end
@@ -219,6 +220,7 @@ ActiveRecord::Schema.define(version: 2021_06_24_070941) do
     t.integer "credits", default: 0
     t.string "aasm_state"
     t.string "old_state"
+    t.string "risk"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -256,9 +258,11 @@ ActiveRecord::Schema.define(version: 2021_06_24_070941) do
   create_table "slots", force: :cascade do |t|
     t.boolean "booked", default: false
     t.integer "day", default: 1
-    t.string "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.datetime "time"
+    t.index ["user_id"], name: "index_slots_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -333,6 +337,7 @@ ActiveRecord::Schema.define(version: 2021_06_24_070941) do
   add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "surveys"
+  add_foreign_key "slots", "users"
   add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"

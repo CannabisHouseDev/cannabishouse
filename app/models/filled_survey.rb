@@ -4,6 +4,7 @@
 #
 #  id         :bigint           not null, primary key
 #  state      :string           default("pending")
+#  score      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  survey_id  :bigint           not null
@@ -25,4 +26,9 @@ class FilledSurvey < ApplicationRecord
   has_many :answers, class_name: 'Answer'
   accepts_nested_attributes_for :answers
   validates :state, inclusion: { in: %w[pending done redo] }
+
+  def update_score
+    self.score = answers.sum {|a| QuestionOption.find(a.option_id).score}
+    save!
+  end
 end

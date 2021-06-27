@@ -69,6 +69,7 @@ class FilledSurveysController < ApplicationController
     end
 
     def update_state
+      ScoreSurveyJob.perform_later(@filled_survey.id)
       current_user.profile.fill_surveys!(params[:ref]) if params[:ref]
     end
 end

@@ -1,0 +1,12 @@
+.w-full.h-full.flex.flex-col{ "data-controller" => "participant", "data-participant-target" => "participant" }
+  %h1.text-2xl.w-full.text-center Choose Appointment Time
+  .w-full.h-full.flex.flex-col.overflow-y-auto
+    - (@start_date..@end_date).each_with_index do |d,i|
+      - if @slots[d.wday]
+        %div.flex.flex-col.w-full.rounded.mb-4.p-4.justify-center.items-center
+          %h1.w-full.text-center.text-xl.mb-2 #{d.strftime('%A %d %h %Y')}
+          %hr
+          .flex.flex-col.justify-center.items-center
+          - @slots[d.wday].each do |s|
+            = link_to s.time, book_appointment_path(id: s.id, d: d), class: "flex flex-col justify-center text-center border-2 border-green-300 bg-green-200 rounded-md w-20 h-12 mb-2 hover:bg-green-100"
+
