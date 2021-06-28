@@ -53,6 +53,12 @@ Dir[Rails.root.join('db/seed/surveys/*.rb')].sort.each do |file|
   require file
 end
 
+puts 'Generating fake appointment slots...'
+12.times do
+  time = DateTime.now.change({hour: rand(8..20), min: ['00','30'][rand(0..1)].to_i})
+  Slot.create(day: rand(0..6), time: time, doctor: Profile.find_by(role: 'doctor').user)
+end
+
 puts 'Creating MaterialTypes'
 3.times do |i|
   MaterialType.create(name: %w[Sativa Indica Hybrid][i])
@@ -95,9 +101,4 @@ Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |mate
   else
     puts "Could not transfer #{material.name}, message: #{m[1]}"
   end
-end
-
-puts 'Generating fake appointment slots...'
-12.times do
-  Slot.create(day: rand(0..6), time: "#{rand(8..20)}:#{['00','30'][rand(0..1)]}", doctor: Profile.find_by(role: 'doctor').user)
 end
