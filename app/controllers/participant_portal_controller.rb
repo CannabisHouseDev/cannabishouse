@@ -20,10 +20,7 @@ class ParticipantPortalController < ApplicationController
     when 'filled_all_surveys'
       render action: :pay
     when 'paid'
-      @slots = Slot.unscoped.group_by(&:day)
-      @start_date = DateTime.now
-      @end_date = DateTime.now + 30.days
-      render action: :book
+      redirect_to action: :book
     else
       render action: :index
     end
@@ -43,9 +40,15 @@ class ParticipantPortalController < ApplicationController
   end
 
   def book
+    @slots = Slot.unscoped.group_by(&:day)
+    @start_date = DateTime.now
+    @end_date = DateTime.now + 30.days
+  end
+
+  def book_appointment
     slot = Slot.find(params[:id])
     date = DateTime.parse(params[:d]).change({ hour: slot.hours.to_i, min: slot.minutes.to_i })
-    appointment = Appointment.find_or_create_by(participant: current_user, doctor: slot.doctor, time: date)
+    Appointment.find_or_create_by(participant: current_user, doctor: slot.doctor, time: date)
     current_user.profile.book!
     redirect_to action: :steps
   end

@@ -30,7 +30,8 @@ Rails.application.routes.draw do
       get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'
       patch 'survey/:id', to: 'filled_surveys#update', as: 'update_filled_survey'
       get 'steps/pay/process', to: 'participant_portal#process_payment', as: 'process_payment'
-      get 'steps/book', to: 'participant_portal#book', as: 'book_appointment'
+      get 'steps/book', to: 'participant_portal#book'
+      post 'steps/book', to: 'participant_portal#book_appointment', as: 'book_appointment'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'

@@ -26,20 +26,25 @@
 #  verified       :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  doctor_id      :bigint           not null
 #  user_id        :bigint           not null
 #
 # Indexes
 #
-#  index_profiles_on_user_id  (user_id)
+#  index_profiles_on_doctor_id  (doctor_id)
+#  index_profiles_on_user_id    (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (doctor_id => users.id)
 #  fk_rails_...  (user_id => users.id)
 #
 class Profile < ApplicationRecord
   include AASM
   has_paper_trail
   belongs_to :user
+
+  alias_attribute :approved_by, :doctor_id
 
   has_one_attached :avatar
 
@@ -101,7 +106,7 @@ class Profile < ApplicationRecord
     end
 
     event :pay do
-      transitions from: :filled_all_surveys, to: :paid
+      transitions to: :paid
     end
 
     event :book do
