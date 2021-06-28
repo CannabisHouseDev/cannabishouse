@@ -59,6 +59,13 @@ puts 'Generating fake appointment slots...'
   Slot.create(day: rand(0..6), time: time, doctor: Profile.find_by(role: 'doctor').user)
 end
 
+puts 'Generating fake appointments...'
+3.times do |i|
+  s = Slot.find(rand(1..10))
+  time = DateTime.new(year: 2021, month: 7, day: s.day, hour: s.hours, min: s.minutes)
+  Appointment.create(doctor_id: Profile.find_by(role: 'doctor').user, participant_id: Profile.find_by(role: 'participant'), time: time)
+end
+
 puts 'Creating MaterialTypes'
 3.times do |i|
   MaterialType.create(name: %w[Sativa Indica Hybrid][i])
