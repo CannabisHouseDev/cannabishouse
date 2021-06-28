@@ -73,9 +73,31 @@ pl:
           title: "Wypełniaj anonimowe ankiety"
           content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
     about:
-      about: "O nas"
-      who_we_are: "Kim jesteśmy?"
-      paragraph_1: "Jestesmy stowarzyszeniem osób świadomych możliwości i zagrożeń wynikających ze stosowania konopi przez ludzi w wielu dziedzinach życia. Przyczyniamy się do jak najszerszego, praktycznego wykorzystania potencjału tej rośliny jednocześnie minimalizując spodziewane zjawiska niepożądane. Obserwujemy zmianę światowych trendów w kierunku odkłamywania informacji o konopiach i wyciągania przekonań na ich temat z dziedziny mitów. Jako stowarzyszenie dążymy do sytuacji, w której świadomi ludzie dbają tak o swoje zdrowie jak i o środowisko."
+      title:  
+        about_us: "O nas"
+      who_we_are: 
+        title: "Kim jesteśmy?"
+        content: "Jestesmy stowarzyszeniem osób świadomych możliwości i zagrożeń wynikających ze stosowania konopi przez ludzi w wielu dziedzinach życia. Przyczyniamy się do jak najszerszego, praktycznego wykorzystania potencjału tej rośliny jednocześnie minimalizując spodziewane zjawiska niepożądane. Obserwujemy zmianę światowych trendów w kierunku odkłamywania informacji o konopiach i wyciągania przekonań na ich temat z dziedziny mitów. Jako stowarzyszenie dążymy do sytuacji, w której świadomi ludzie dbają tak o swoje zdrowie jak i o środowisko."
+      mission:
+        title: "Misja"
+        content: "Naszą misją jest doprowadzić do podniesienia świadomości społecznej na temat korzyści i zagrożeń niesionych związanych z szeroko rozumianym wykorzystaniem konopi, poprzez działalność naukową (badania), informacyjną (konferencje) i dydaktyczną (szkolenia, warsztaty, czasopismo). W naszej opinii przyczyni się to nie tylko do ogólnej poprawy zdrowia społecznego, ale też do rozwoju stref ekonomicznych czy zwiększenia poczucia wolności obywatelskiej. Działamy w myśl słów niezrównanego profesora Kotarbińskiego /„w wolności najważniejsza jest jej świadomość/”."
+      goals:
+        title: "Z naszej misji wynikają jasne cele:"
+        list:
+          item_1: "Wspieranie właściwego wykorzystania konopi we wszystkich dziedzinach życia, szczególnie w branży medycznej, farmaceutycznej i rolniczej;"
+          item_2: "Wspieranie właściwego wykorzystania konopi w takich gałęziach przemysłu jak:  kosmetyczny, spożywczy, chemiczny, włókienniczy, opakowaniowy, budowlany, meblowy, lotniczy, energetyczny, papierniczy, farbiarski, muzyczny, szkutniczy, samochodowy;"
+          item_3: "Stworzenie modeli przeciwdziałania uzależnieniom;"
+          item_4: "Przetestowanie modelu reglamentacyjno-permisywnego (ReglaPermis) jako propozycji najlepszego rozwiązania społeczno-prawnego w przypadku przyzwolenia na stosowanie konopi innych niż włókniste w celach profilaktyczno-rekraacyjnych;"
+          item_5: "Wspieranie ochrony środowiska poprzez promowanie:"
+          subitem_5-a: "zastosowania materiału konopnego do produkcji biodegradowalnego bioplastiku w alternatywie do tworzyw sztucznych;"
+          subitem_5-b: "przeciwdziałania globanemu ociepleniu za pomocą rekultywacji ziemi pod uprawy przyczyniające się do redukucji dwutlenku węgla w atmosferze;"
+          subitem_5-c: "zastępowania szeroko stosowanych w przemyśle toksycznych substancji na rzecz połproduktów pochodzenia konopnego;"
+      vision:
+        title: "Wizja"
+        content_1: "Realizujemy naszą misję i wynikające z niej cele, oraz zadania poprzez zgrupowanie osób, instytucji i firm wokół Cannabis House – tzw KLASTRY KONOPNE. Obecność w klastrze daje instytucjom mozliwość przeprowadzenia badań w oparciu o infrastrukturę Stowarzyszenia, przedsiębiorcom szereg korzyści i wzmocnienie ich możliwości dzięki dostępowi do bazy wiedzy nt. Konopi. A także osobom prywatnym poprzez konsultacje, szkolenia i udział w ogólnopolskich badaniach, oraz corocznych konferencjach CannActive."
+        content_2: "Stworzyliśmy też PLATFORMĘ KONOPNĄ służącą do wymiany informacji, popularyzacji istotnych tematów prowadząc do eliminacji nieuczciwych osób na rynku konopnym."
+      how_long: "Stowarzyszenie działa nieprzerwanie od 2015 roku edukując tysiące osób m.in. w temacie wychodzenia z uzależnienia, działania prawa dot. konopi, warunków prowadzenia badań nad wpływem konopi."
+      register: "Jeśli chcesz być częścią tego ogólnopolskiego projektu o wymiarze globalnym (nigdzie na świecie nie prowadzono dotąd takiego badania), to zarejestruj się na naszej stronie już dziś. Staniesz się automatycznie Członkiem Wspierającym Stowarzyszenia Cannabis House i dowiesz się jakie badania aktualnie prowadzimy. Rejestracja jako Członek Wspierający jest bezpłatna."
   controllers:
     addresses:
       create:
