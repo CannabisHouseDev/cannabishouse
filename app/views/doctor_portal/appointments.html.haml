@@ -3,14 +3,23 @@
   .h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
     / Appointments Section
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.relative
-      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 3
+      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white #{@appointments.count || 0}
       %span.w-full.flex-grow
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.upcoming')}
-        / Cards
-        - 3.times do
-          .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        / Content
+        .flex.flex-col.overflow-y-auto
+          / Cards
+          - if @appointments.count.zero?
+            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center No upcoming appointment
+          - else
+            - @appointments.each do |a|
+              = link_to appointment_details_path(a.id) do
+                .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.flex.justify-between{class: a.id == @selected.to_i ? 'bg-gray-400 text-white' : 'bg-gray-100'}
+                  %span #{a.id} #{a.time.strftime('%A %B %d, %Y')}
+                  %span #{a.time.strftime('%H:%M')}
   / Second Column
+  - appointment = Appointment.find(@selected)
   .h-full.flex.flex-col.px-1.flex-grow
     / Appointment Details
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.mb-2.relative
