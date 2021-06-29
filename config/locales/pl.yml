@@ -52,26 +52,26 @@ pl:
     landing:
       hero:
         title: "Pomóż ratować życie"
-        content: "Cannabis House daje każdemu szansę przyczynienia się do postępu w dziedzinie medycyny i udziału w badaniach z pogranicza dyscypliny naukowej."
-        cta: "Dowiedz się więcej"
+        content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie medycyny. Pokaż swoje poparcie dla naszych idei i weź udział w badaniach!"
+        cta: "Dołącz do nas!"
       description:
-        title: "Jesteśmy fascynatorami badań naukowych"
-        content: "Nasza platforma zapewnia bezpieczną przestrzeń dla lekarzy, badaczy i uczestników badań do współpracy nad badaniem skutków i korzyści płynących ze stosowania ziół leczniczych."
+        title: "Jesteśmy inicjatorami badań naukowych"
+        content: "Nasza platforma przez następne kilka lat zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
       instructions:
-        title: "jak to działa"
-        subheading: "Miesięczny proces, jako uczestnik badania"
+        title: "Jak to działa?"
+        subheading: "Kroki aktywnego uczestnika badania"
         firstStep:
           title: "Wypełnij swój profil"
-          content: "Podaj swoje podstawowe informacje i wszelkie informacje wymagane przez naszych lekarzy"
+          content: "Podaj swoje podstawowe informacje i wszelkie dane wymagane przez naszych lekarzy"
         secondStep:
-          title: "zaplanowana wizyta"
+          title: "Zaplanuj wizytę"
           content: "Skorzystaj z naszej platformy, aby umówić się na wizytę u lekarza, który zatwierdzi Twój profil"
         thirdStep:
-          title: "Odwiedź ambulatorium"
-          content: "Korzystając z konta CH, możesz odwiedzić wyznaczoną lokalną przychodnię, aby odebrać materiał do nauki"
+          title: "Odwiedź placówkę"
+          content: "Korzystając z konta CH, możesz wybrać wyznaczoną lokalną placówkę, aby odebrać materiał badawczy"
         fourthStep:
           title: "Wypełniaj anonimowe ankiety"
-          content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
+          content: "Pomóż badaczom, wypełniając prywatne, anonimowe ankiety"
     about:
       title:  
         about_us: "O nas"
