@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_175949) do
+ActiveRecord::Schema.define(version: 2021_06_28_061255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "option_id"
     t.index ["filled_survey_id"], name: "index_answers_on_filled_survey_id"
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "score"
     t.index ["survey_id"], name: "index_filled_surveys_on_survey_id"
     t.index ["user_id"], name: "index_filled_surveys_on_user_id"
   end
@@ -127,9 +129,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
   end
 
   create_table "material_types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
   create_table "materials", force: :cascade do |t|
@@ -218,6 +220,9 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.integer "credits", default: 0
     t.string "aasm_state"
     t.string "old_state"
+    t.string "risk"
+    t.bigint "doctor_id"
+    t.index ["doctor_id"], name: "index_profiles_on_doctor_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -227,6 +232,7 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "display"
+    t.integer "score", default: 0
     t.index ["question_id"], name: "index_question_options_on_question_id"
   end
 
@@ -246,59 +252,19 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.string "placeholder"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "order", default: 0
     t.index ["question_type_id"], name: "index_questions_on_question_type_id"
     t.index ["survey_id"], name: "index_questions_on_survey_id"
-  end
-
-  create_table "rapidfire_answers", force: :cascade do |t|
-    t.bigint "attempt_id"
-    t.bigint "question_id"
-    t.text "answer_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["attempt_id"], name: "index_rapidfire_answers_on_attempt_id"
-    t.index ["question_id"], name: "index_rapidfire_answers_on_question_id"
-  end
-
-  create_table "rapidfire_attempts", force: :cascade do |t|
-    t.bigint "survey_id"
-    t.string "user_type"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["survey_id"], name: "index_rapidfire_attempts_on_survey_id"
-    t.index ["user_id", "user_type"], name: "index_rapidfire_attempts_on_user_id_and_user_type"
-    t.index ["user_type", "user_id"], name: "index_rapidfire_attempts_on_user"
-  end
-
-  create_table "rapidfire_questions", force: :cascade do |t|
-    t.bigint "survey_id"
-    t.string "type"
-    t.string "question_text"
-    t.string "default_text"
-    t.string "placeholder"
-    t.integer "position"
-    t.text "answer_options"
-    t.text "validation_rules"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["survey_id"], name: "index_rapidfire_questions_on_survey_id"
-  end
-
-  create_table "rapidfire_surveys", force: :cascade do |t|
-    t.string "name"
-    t.text "introduction"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "after_survey_content"
   end
 
   create_table "slots", force: :cascade do |t|
     t.boolean "booked", default: false
     t.integer "day", default: 1
-    t.string "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.datetime "time"
+    t.index ["user_id"], name: "index_slots_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -308,6 +274,8 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "hidden", default: false
+    t.boolean "required", default: false
+    t.string "internal_name"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
@@ -368,9 +336,11 @@ ActiveRecord::Schema.define(version: 2021_06_22_175949) do
   add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "profiles", "users", column: "doctor_id"
   add_foreign_key "question_options", "questions"
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "surveys"
+  add_foreign_key "slots", "users"
   add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"

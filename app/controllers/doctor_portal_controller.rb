@@ -1,44 +1,44 @@
 # frozen_string_literal: true
 
 class DoctorPortalController < ApplicationController
-  before_action :set_appointment, only: %i[appointments done cancel]
   before_action :set_appointments, only: %i[index appointments]
-
-  def index
-  end
+  before_action :set_evaluations, only: %i[index evaluations]
+  def index; end
 
   def appointments
+    @selected = params[:id] || nil
   end
 
-  def evaluations; end
+  def evaluations
+    @selected = params[:id] || nil
+  end
 
   def calendar
     @start_time = 8
     @end_time = 20
   end
 
-  def done
-    if @appointment.update(state: :done)
-      redirect_to doctor_portal_path, notice: 'Appointment updated'
-    else
-      redirect_to appointments_path(@appointment), alert: 'Unable to update appointment.'
-    end
+  def appointment_done
+    appointment = Appointment.find(params[:id])
+    appointment.state = 'done'
+    appointment.save!
+    render action: :evaluations
   end
 
-  def cancel
-    if @appointment.update(state: :cancelled)
-      redirect_to doctor_portal_path, notice: 'Appointment updated'
-    else
-      redirect_to appointments_path(@appointment), alert: 'Unable to update appointment.'
-    end
+  def appointment_cancel
+    appointment = Appointment.find(params[:id])
+    appointment.state = 'cancelled'
+    appointment.save!
+    render action: :appointments
   end
 
   private
 
   def set_appointments
-    @appointments = Appointment.includes(participant: :profile).where(state: :pending).order(time: :asc)
+    @appointments = Appointment.where(doctor_id: current_user.id, state: 'pending').order(time: :asc)
   end
-  def set_appointment
-    @appointment = Appointment.find(params[:appointment_id])
+
+  def set_evaluations
+    @evaluations = Appointment.where(doctor_id: current_user.id, state: 'done').order(time: :asc)
   end
 end

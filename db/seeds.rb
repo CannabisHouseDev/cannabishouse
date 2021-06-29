@@ -42,6 +42,36 @@ puts 'Creating users...'
   puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
 end
 
+puts 'Creating Question Types'
+%w[short long number single multiple date].each do |t|
+  QuestionType.create(name: t)
+end
+
+puts 'Creating Pre-Psychiatrist Surveys'
+
+Dir[Rails.root.join('db/seed/surveys/*.rb')].sort.each do |file|
+  require file
+end
+
+puts 'Generating fake appointment slots...'
+12.times do
+  time = DateTime.now.change({hour: rand(8..20), min: ['00','30'][rand(0..1)].to_i})
+  Slot.create(day: rand(0..6), time: time, doctor: Profile.find_by(role: 'doctor').user)
+end
+
+puts 'Generating fake appointments...'
+6.times do |i|
+  s = Slot.find(rand(1..10))
+
+  # Next three lines are to convert Day of Week to Day of Month
+  temp = Date.parse(s.time.strftime('%A'))
+  delta = temp > Date.today ? 0 : 7
+  day = (temp + delta).day
+
+  time = DateTime.new(2021, 7, day, s.hours, s.minutes)
+  Appointment.create(doctor: Profile.find_by(role: 'doctor').user, participant: Profile.find_by(role: 'participant').user, time: time)
+end
+
 puts 'Creating MaterialTypes'
 3.times do |i|
   MaterialType.create(name: %w[Sativa Indica Hybrid][i])
@@ -83,33 +113,5 @@ Material.where(owner_id: Profile.find_by(role: 'dispensary').user).each do |mate
     puts "Transferred #{transfer[1].weight} grams of #{material.name} to participant"
   else
     puts "Could not transfer #{material.name}, message: #{m[1]}"
-  end
-end
-
-
-puts 'Creating Question Types'
-%w[short long number single multiple date].each do |t|
-  QuestionType.create(name: t)
-end
-
-puts 'Creating Pre-Psychiatrist Surveys'
-6.times do |i|
-  s = Survey.create(title: "Medical Survey #{i + 1}", description: 'This survey is required to participate in the program', author: Profile.find_by(role: 'researcher').user)
-  QuestionType.all.each do |qt|
-    q = Question.create(title: qt.name, description: "An example of a #{qt.name} question", question_type: qt, survey: s)
-    case qt.name
-    when 'short'
-    when 'long'
-      q.placeholder = 'placeholder'
-    when 'single'
-    when 'multiple'
-      3.times do
-        QuestionOption.create(question_id: q.id, name: Faker::Cannabis.strain)
-      end
-    when 'number'
-      q.min = 10
-      q.max = 100
-      q.save!
-    end
   end
 end

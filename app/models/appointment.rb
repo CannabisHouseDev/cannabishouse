@@ -19,5 +19,5 @@ class Appointment < ApplicationRecord
   belongs_to :doctor, class_name: 'User'
   belongs_to :participant, class_name: 'User'
 
-  enum state: [:pending, :done, :evaluated, :cancelled]
+  enum state: %i[pending done evaluated cancelled], _default: 0
 end
