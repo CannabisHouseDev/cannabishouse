@@ -20,19 +20,23 @@
 #  pesel          :string
 #  quota_left     :integer          default(0)
 #  quota_max      :integer          default(0)
+#  risk           :string
 #  role           :integer
 #  skills         :string
 #  verified       :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  doctor_id      :bigint           not null
 #  user_id        :bigint           not null
 #
 # Indexes
 #
-#  index_profiles_on_user_id  (user_id)
+#  index_profiles_on_doctor_id  (doctor_id)
+#  index_profiles_on_user_id    (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (doctor_id => users.id)
 #  fk_rails_...  (user_id => users.id)
 #
 require 'rails_helper'

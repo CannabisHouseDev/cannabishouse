@@ -7,11 +7,9 @@ class PagesController < ApplicationController
   def about; end
   def media; end
 
-  def onboarding
-    redirect_to authenticated_root_path and return if current_user.onboarded?
-
+  def info
     @profile = current_user.profile || Profile.new(current_user)
-    render 'onboarding'
+    render 'info'
   end
 
   def show

@@ -1,0 +1,6 @@
+.w-full.flex-grow.overflow-y-auto.h-24
+  - local_assigns[:s].each do |s|
+    .w-full.h-14.rounded-md.opacity-75.flex.items-center.justify-between.mb-2.px-2.relative{class: "#{local_assigns[:selected] == s.id ? 'bg-gray-400' : 'bg-gray-100'}"}
+      %div #{s.survey.title}
+      %div.flex.justify-space-around.red-700.items-center
+        = link_to 'Fill Survey', fill_survey_path(s.id), class: 'rounded border-2 border-green-400 p-2 bg-green-300 hover:bg-green-200'

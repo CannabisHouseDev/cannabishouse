@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_order, only: :create
 
   # GET /questions or /questions.json
   def index
@@ -65,5 +66,12 @@ class QuestionsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def question_params
       params.require(:question).permit(:title, :description, :question_type_id, :survey_id, :min, :max, :placeholder)
+    end
+
+    def set_order
+      params[:question][:order] = if @question.survey.questions.empty?
+                                    0
+                                  else
+                                    @question.survey.questions.sort_by(created_at: :asc).last.order + 1
     end
 end

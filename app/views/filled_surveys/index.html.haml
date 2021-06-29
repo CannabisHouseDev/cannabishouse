@@ -1,0 +1,25 @@
+%h1 Listing filled_surveys
+
+%table
+  %thead
+    %tr
+      %th Survey
+      %th State
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @filled_surveys.each do |filled_survey|
+      %tr
+        %td= filled_survey.survey
+        %td= filled_survey.state
+        %td= filled_survey.user
+        %td= link_to 'Show', filled_survey
+        %td= link_to 'Edit', edit_filled_survey_path(filled_survey)
+        %td= link_to 'Destroy', filled_survey, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Filled survey', new_filled_survey_path

@@ -20,24 +20,31 @@
 #  pesel          :string
 #  quota_left     :integer          default(0)
 #  quota_max      :integer          default(0)
+#  risk           :string
 #  role           :integer
 #  skills         :string
 #  verified       :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  doctor_id      :bigint           not null
 #  user_id        :bigint           not null
 #
 # Indexes
 #
-#  index_profiles_on_user_id  (user_id)
+#  index_profiles_on_doctor_id  (doctor_id)
+#  index_profiles_on_user_id    (user_id)
 #
 # Foreign Keys
 #
+#  fk_rails_...  (doctor_id => users.id)
 #  fk_rails_...  (user_id => users.id)
 #
 class Profile < ApplicationRecord
+  include AASM
   has_paper_trail
   belongs_to :user
+
+  alias_attribute :approved_by, :doctor_id
 
   has_one_attached :avatar
 
@@ -57,5 +64,133 @@ class Profile < ApplicationRecord
 
   def avatar_path
     ActiveStorage::Blob.service.path_for(avatar.key)
+  end
+
+  aasm do
+    state :fresh, initial: true
+    state :filled_info, :consented, :locked_profile,
+          :filled_first_survey, :filled_second_survey, :filled_third_survey,
+          :filled_fourth_survey, :filled_fifth_survey, :filled_all_surveys,
+          :paid, :booked, :approved, :rejected
+
+    event :fill_info, before: :update_role do
+      transitions from: :fresh, to: :filled_info
+    end
+
+    event :consent do
+      transitions to: :consented
+    end
+
+    event :fill_first do
+      transitions to: :filled_first_survey
+    end
+
+    event :fill_second do
+      transitions to: :filled_second_survey
+    end
+
+    event :fill_third do
+      transitions to: :filled_third_survey
+    end
+
+    event :fill_fourth do
+      transitions to: :filled_fourth_survey
+    end
+
+    event :fill_fifth do
+      transitions to: :filled_fifth_survey
+    end
+
+    event :fill_sixth, after: :calculate_risk do
+      transitions to: :filled_all_surveys
+    end
+
+    event :pay do
+      transitions to: :paid
+    end
+
+    event :book do
+      transitions to: :booked
+    end
+
+    event :approve do
+      transitions from: :booked, to: :approved
+    end
+
+    event :paid do
+      transitions from: :booked, to: :rejected
+    end
+
+    event :lock_profile, before: :save_old_state do
+      transitions to: :locked_profile
+    end
+  end
+
+  def fill_surveys!(ref)
+    case ref.to_i
+    when 1
+      fill_first!
+    when 2
+      fill_second!
+    when 3
+      fill_third!
+    when 4
+      fill_fourth!
+    when 5
+      fill_fifth!
+    when 6
+      fill_sixth!
+    end
+  end
+
+  private
+
+  def save_old_state
+    self.old_state = aasm.current_state
+    save
+  end
+
+  def old_aasm_state
+    @old_state = old_state.to_sym
+    @old_state
+  end
+
+  def update_role
+    self.role = 'participant' if self.role == 'user'
+    save
+  end
+
+  def calculate_risk
+    # Test taken into concideration
+    asset_test = %w[bMAST pum phq9 kssuk30]
+    normalized_scores = []
+    asset_test.each do |test|
+      survey = FilledSurvey.find_by(survey: Survey.find_by(internal_name: test))
+      # Rules for different risk assesment tests
+      case test
+      when 'bMAST'
+        normalized_scores.push survey.score > 7 ? 2 : survey.score > 4 ? 1 : 0
+      when 'pum'
+        normalized_scores.push survey.score > 5 ? 2 : survey.score > 2 ? 1 : 0
+      when 'phq9'
+        normalized_scores.push survey.score > 14 ? 2 : survey.score > 9 ? 1 : 0
+      when 'kssuk30'
+        normalized_scores.push survey.score < 24 ? 2 : survey.score < 40 ? 1 : 0
+      end
+    end
+    # All test have equal weight when deciding the final risk assesment
+    total = (normalized_scores.sum / normalized_scores.count.to_f)
+    self.risk = total > 1.5 ? 'red' : total > 0.5 ? 'orange' : 'green'
+    save!
+  end
+
+  def amount_allowed
+    # Check the amounts allowed for each category
+    case self.risk
+    when 'green'
+    when 'orange'
+    when 'red'
+    else
+    end
   end
 end

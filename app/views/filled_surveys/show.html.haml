@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Survey:
+  = @filled_survey.survey
+%p
+  %b State:
+  = @filled_survey.state
+%p
+  %b User:
+  = @filled_survey.user
+
+= link_to 'Edit', edit_filled_survey_path(@filled_survey)
+\|
+= link_to 'Back', filled_surveys_path
