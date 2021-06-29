@@ -104,9 +104,31 @@ en:
           title: "Fill Anonymous Surveys"
           content: "Help researchers by filling out private anonymous Surveys"
     about:
-      about: "About us"
-      who_we_are: "Who we are?"
-      paragraph_1: "We are an association of people who are aware of the possibilities and dangers of using cannabis in many areas of life. We contribute to the widest possible practical use of the potential of this plant while minimizing the expected undesirable phenomena. We are witnessing a shift in global trends towards providing true information about cannabis and drawing beliefs about it from the realm of myth. As an association, we strive for a situation in which conscious people take care of their health and the environment."
+      title:  
+        about_us: "About us"
+      who_we_are: 
+        title: "Who we are?"
+        content: "We are an association of people who are aware of the possibilities and dangers of using cannabis in many areas of life. We contribute to the widest possible practical use of the potential of this plant while minimizing the expected undesirable phenomena. We are witnessing a shift in global trends towards providing true information about cannabis and drawing beliefs about it from the realm of myth. As an association, we strive for a situation in which conscious people take care of their health and the environment."
+      mission:
+        title: "Our Mission"
+        content: "Our mission is to raise public awareness of the benefits and risks associated with the broadly understood use of cannabis through scientific (research), information (conferences) and didactic activities (training, workshops, publishing). In our opinion, this will contribute not only to the overall improvement of social health, but also to the development of economic zones and increasing of civil freedom. We act according to the words of the incomparable professor Kotarbiński /"in freedom the most important thing is the awareness of it/"."
+      goals:
+        title: "Our mission provides us these clear goals:"
+        list:
+          item_1: "Supporting the proper use of cannabis in all walks of life, especially in the medical, pharmaceutical and agricultural branches;"
+          item_2: "Supporting the proper use of hemp in such industries as: cosmetics, food, chemical, textile, packaging, construction, furniture, aviation, energy, paper, dyeing, music, boatbuilding, automotive;"
+          item_3: "Creation of addiction prevention models;"
+          item_4: "Testing the rationing-permissive model (ReglaPermis) as a proposal of the best socio-legal solution in the case of allowing the use of non-fibrous hemp (cannabis) for preventive and rehabilitation purposes;"
+          item_5: "Supporting environmental protection by promoting:"
+          subitem_5-a: "the use of hemp material for the production of biodegradable bioplastic as an alternative to plastics;"
+          subitem_5-b: "counteracting global warming by land reclamation for crops, contributing to the reduction of carbon dioxide in the atmosphere;"
+          subitem_5-c: "replacing industry-wide toxic substances with hemp-derived intermediates;"
+      vision:
+        title: "Our Vision"
+        content_1: "We implement our mission and the resulting goals and tasks by grouping people, institutions and companies around the Cannabis House - with the so-called HEMP CLUSTERS. The presence in the cluster gives institutions the opportunity to conduct research on the basis of the Association's infrastructure, entrepreneurs with a number of benefits and strengthening their possibilities thanks to the access to the knowledge base on cannabis. As well as private individuals through consultations, training and participation in nationwide surveys and annual CannActive conferences."
+        content_2: "We have also created a HEMP PLATFORM used to exchange information, popularize important topics, leading to the elimination of dishonest people on the cannabis market."
+      how_long: "The association has been operating continuously since 2015, educating thousands of people, incl. in the subject of recovery from addiction, the operation of the law on cannabis, conditions for conducting research on the effects of cannabis."
+      register: "If you want to be part of this nationwide project with a global dimension (such a study has not been conducted anywhere else in the world so far), register on our website today. You will automatically become a Supporting Member of the Cannabis House Association and you will find out what research we are currently conducting. Registration as a Supporting Member is free."
   controllers:
       addresses:
         create:
