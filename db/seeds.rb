@@ -60,10 +60,16 @@ puts 'Generating fake appointment slots...'
 end
 
 puts 'Generating fake appointments...'
-3.times do |i|
+6.times do |i|
   s = Slot.find(rand(1..10))
-  time = DateTime.new(year: 2021, month: 7, day: s.day, hour: s.hours, min: s.minutes)
-  Appointment.create(doctor_id: Profile.find_by(role: 'doctor').user, participant_id: Profile.find_by(role: 'participant'), time: time)
+
+  # Next three lines are to convert Day of Week to Day of Month
+  temp = Date.parse(s.time.strftime('%A'))
+  delta = temp > Date.today ? 0 : 7
+  day = (temp + delta).day
+
+  time = DateTime.new(2021, 7, day, s.hours, s.minutes)
+  Appointment.create(doctor: Profile.find_by(role: 'doctor').user, participant: Profile.find_by(role: 'participant').user, time: time)
 end
 
 puts 'Creating MaterialTypes'
