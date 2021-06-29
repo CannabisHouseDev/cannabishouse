@@ -18,6 +18,20 @@ class DoctorPortalController < ApplicationController
     @end_time = 20
   end
 
+  def appointment_done
+    appointment = Appointment.find(params[:id])
+    appointment.state = 'done'
+    appointment.save!
+    render action: :evaluations
+  end
+
+  def appointment_cancel
+    appointment = Appointment.find(params[:id])
+    appointment.state = 'cancelled'
+    appointment.save!
+    render action: :appointments
+  end
+
   private
 
   def set_appointments

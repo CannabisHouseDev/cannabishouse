@@ -19,7 +19,7 @@
                   %span #{a.id} #{a.time.strftime('%A %B %d, %Y')}
                   %span #{a.time.strftime('%H:%M')}
   / Second Column
-  - appointment = Appointment.find(@selected)
+  - appointment = Appointment.find(@selected) if @selected
   .h-full.flex.flex-col.px-1.flex-grow
     / Appointment Details
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.mb-2.relative
@@ -27,8 +27,14 @@
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.appointments')}
         / Content
-        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        - unless @selected
+          .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.justify-center
+            Please select an appointment to show the details
+        - else
+          .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.px-2.justify-center
+            = image_tag polymorphic_url(appointment.participant.profile.avatar), size: 280, class: 'h-40 w-40 items-center rounded-full border'
+            %h1 #{appointment.participant.profile.first_name} #{appointment.participant.profile.last_name}
       / Action Button Footer
       .grid.grid-cols-2.w-full
-        = link_to t('views.doctor_portal.cancel'), "#", class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
-        = link_to t('views.doctor_portal.mark'), "#", class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-white py-4 ml-1'
+        = link_to t('views.doctor_portal.cancel'), appointment_cancel_path(@selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1' if @selected
+        = link_to t('views.doctor_portal.mark'), appointment_done_path(@selected), method: :post, class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-white py-4 ml-1' if @selected

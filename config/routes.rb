@@ -37,6 +37,8 @@ Rails.application.routes.draw do
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
       get 'doctor/appointments/', to: 'doctor_portal#appointments', as: 'appointments'
       get 'doctor/appointments/:id', to: 'doctor_portal#appointments', as: 'appointment_details'
+      post 'doctor/appointment/:id', to: 'doctor_portal#appointment_done', as: 'appointment_done'
+      delete 'doctor/appointment/:id', to: 'doctor_portal#appointment_cancel', as: 'appointment_cancel'
       get 'doctor/calendar', to: 'doctor_portal#calendar', as: 'calendar'
       get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
       get 'doctor/evaluations/:id', to: 'doctor_portal#evaluations', as: 'evaluation_details'

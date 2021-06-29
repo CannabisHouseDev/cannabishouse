@@ -1,14 +1,10 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[show edit update destroy]
   before_action :set_order, only: :create
 
   # GET /questions or /questions.json
   def index
     @questions = Question.all
-  end
-
-  # GET /questions/1 or /questions/1.json
-  def show
   end
 
   # GET /questions/new
@@ -17,8 +13,7 @@ class QuestionsController < ApplicationController
   end
 
   # GET /questions/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /questions or /questions.json
   def create
@@ -26,7 +21,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: "Question was successfully created." }
+        format.html { redirect_to @question, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +34,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: "Question was successfully updated." }
+        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,26 +47,24 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     respond_to do |format|
-      format.html { redirect_to questions_url, notice: "Question was successfully destroyed." }
+      format.html { redirect_to questions_url, notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_question
-      @question = Question.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def question_params
-      params.require(:question).permit(:title, :description, :question_type_id, :survey_id, :min, :max, :placeholder)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    def set_order
-      params[:question][:order] = if @question.survey.questions.empty?
-                                    0
-                                  else
-                                    @question.survey.questions.sort_by(created_at: :asc).last.order + 1
-    end
+  # Only allow a list of trusted parameters through.
+  def question_params
+    params.require(:question).permit(:title, :description, :question_type_id, :survey_id, :min, :max, :placeholder)
+  end
+
+  def set_order
+    params[:question][:order] = @question.survey.questions.empty? ? 0 : @question.survey.questions.max_by(&:order).order + 1
+  end
 end
