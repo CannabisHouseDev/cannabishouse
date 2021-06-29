@@ -3,13 +3,30 @@
   .h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
     / Appointments Section
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.relative
-      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 3
+      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white #{@appointments.count}
       %span.w-full.flex-grow
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.upcoming')}
         / Cards
-        - 3.times do
-          .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        - @appointments.each do |appointment|
+          = link_to appointments_path(appointment) do
+            .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.md:h-20.lg:h-14{class:@appointment.id==appointment.id ? "bg-gray-400" : ""}
+              %table.border-collapse.border.w-full
+                %tr
+                  %th.px-2.border.border-black  First name
+                  %th.px-2.border.border-black  Last name
+                  %th.px-2.border.border-black  Time
+                  %th.px-2.border.border-black.w-20 State
+                %tr
+                  %td.border.border-black.text-center
+                    = appointment.participant.profile.first_name
+                  %td.border.border-black.text-center
+                    = appointment.participant.profile.last_name
+                  %td.border.border-black.text-center
+                    = appointment.time.strftime("%d/%m/%Y %H:%M")
+                  %td.border.border-black.text-center
+                    = appointment.state
+              
   / Second Column
   .h-full.flex.flex-col.px-1.flex-grow
     / Appointment Details
@@ -18,8 +35,20 @@
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.appointments')}
         / Content
-        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.items-baseline
+          .card.flex.flex-grow.flex-col.items-center
+            = image_tag polymorphic_url(@appointment.participant.profile.avatar), size: 280, class: "h-60 w-60 justify-center rounded-full border"
+            %div
+              %h4.flex.justify-center.lg:text-2xl.xl:text-3xl.2xl:text-4xl 
+                %b
+                  = @appointment.participant.profile.first_name
+                  = @appointment.participant.profile.last_name
+              %p.flex.justify-center.lg:text-xl.xl:text-2xl.2xl:text-3xl 
+                = @appointment.time.strftime("Date: %d/%m/%Y")
+              %p.flex.justify-center.lg:text-xl.xl:text-2xl.2xl:text-3xl 
+                = @appointment.time.strftime("Time: %H:%M") 
+            
       / Action Button Footer
       .grid.grid-cols-2.w-full
-        = link_to t('views.doctor_portal.cancel'), "#", class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
-        = link_to t('views.doctor_portal.mark'), "#", class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-white py-4 ml-1'
+        = link_to t('views.doctor_portal.cancel'), cancel_path, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1', method: :patch
+        = link_to t('views.doctor_portal.mark'), done_path, class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-white py-4 ml-1', method: :patch

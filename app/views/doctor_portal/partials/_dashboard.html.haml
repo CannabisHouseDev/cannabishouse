@@ -3,13 +3,29 @@
   .h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
     / Appointments Section
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.relative
-      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 3
+      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white #{@appointments.count}
       %span.w-full.flex-grow
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.upcoming')}
         / Cards
-        - 3.times do
-          .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        - @appointments.each do |appointment|
+          = link_to appointments_path(appointment) do
+            .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.hover:bg-gray-200
+              %table.border-collapse.border.w-full
+                %tr
+                  %th.px-2.border.border-black  First name
+                  %th.px-2.border.border-black  Last name
+                  %th.px-2.border.border-black  Time
+                  %th.px-2.border.border-black.w-20 State
+                %tr
+                  %td.border.border-black.text-center
+                    = appointment.participant.profile.first_name
+                  %td.border.border-black.text-center
+                    = appointment.participant.profile.last_name
+                  %td.border.border-black.text-center
+                    = appointment.time.strftime("%d/%m/%Y %H:%M")
+                  %td.border.border-black.text-center
+                    = appointment.state
         / Action Button Footer
       .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md
         = link_to t('views.doctor_portal.load')
