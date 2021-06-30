@@ -1,0 +1,19 @@
+.w-full.h-full 
+  .flex.flex-row.justify-center.items-center.h-screen.text-xs
+    .grid.grid-col-4.border-r-4.border-black.p-4
+      %h2.flex.justify-end.mt-10.text-sm.sm:text-xl.md:text-2xl.lg:text-3xl.xl:text-5xl.2xl:text-7xl Active Study
+      .flex.h-7.justify-center.bg-green-200.mt-2.px-2.py-1.rounded-md.text-xs.justify-self-end.sm:text-sm.px-4.md:px-5.lg:px-6.xl:px-8
+        Active
+      .flex.justify-center.pt-4 
+        = image_tag 'participant_portal/check.png', size: "30x30", alt: 'checked icon'
+      %p.text-center.text-blue-600.sm:text-base Approved by Medical Professional
+    .flex.flex-col.items-center.justify-around.p-4.text-sm.sm:text-base.md:text-xl.lg:text-2xl.xl:text-3xl.2xl:text-4xl
+      .grid.grid-cols-2.justify-items-center 
+        %p.text-gray-600.break-all.p-1 Substance
+        %p.p-1 Cannabis Sativa
+      
+      .grid.grid-cols-2.justify-items-center 
+        %p.justify-self-start.text-gray-600.p-1 Start Date
+        %p.justify-self-start.p-1 July 10 2020
+    .flex.flex-col.justify-center.p-10
+      = image_tag 'participant_portal/arrow.png', size: "60x60", alt: 'arrow icon'   
