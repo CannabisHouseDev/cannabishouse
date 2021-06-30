@@ -67,7 +67,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "cannabishouse-staging"
           heroku_email: "konradrycerz@gmail.com"
-          healthcheck: "https://cannabishouse-staging.herokuapp.com/"
+          healthcheck: "https://cannabishouse-staging.herokuapp.com/healthcheck"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
           delay: 10
@@ -83,7 +83,7 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "cannabishouse"
           heroku_email: "konradrycerz@gmail.com"
-          healthcheck: "https://cannabishouse.herokuapp.com/"
+          healthcheck: "https://cannabishouse.herokuapp.com/healthcheck"
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
           delay: 10
