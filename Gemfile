@@ -33,6 +33,9 @@ gem 'aws-sdk-s3'
 # Extends active record validations, adds attachment validation
 gem 'active_storage_validations'
 
+# Serialization for active record instances
+gem 'active_model_serializers'
+
 # Data tracking and versioning
 gem 'paper_trail'
 gem 'rails_admin'
