@@ -10,7 +10,6 @@ class PageDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    body: Field::HasOne,
     id: Field::Number,
     title: Field::String,
     body: RichTextField,
