@@ -55,3 +55,35 @@ jobs:
         PG_USER: postgres
       run: |
         bundle exec rspec spec
+
+  staging-deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cannabishouse-staging"
+          heroku_email: "konradrycerz@gmail.com"
+          healthcheck: "https://cannabishouse-staging.herokuapp.com/"
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
+          delay: 10
+
+  production-deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/prod'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cannabishouse"
+          heroku_email: "konradrycerz@gmail.com"
+          healthcheck: "https://cannabishouse.herokuapp.com/"
+          checkstring: "ok"
+          rollbackonhealthcheckfailed: true
+          delay: 10

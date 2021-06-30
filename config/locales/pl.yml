@@ -52,26 +52,26 @@ pl:
     landing:
       hero:
         title: "Pomóż ratować życie"
-        content: "Cannabis House daje każdemu szansę przyczynienia się do postępu w dziedzinie medycyny i udziału w badaniach z pogranicza dyscypliny naukowej."
-        cta: "Dowiedz się więcej"
+        content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie medycyny. Pokaż swoje poparcie dla naszych idei i weź udział w badaniach!"
+        cta: "Dołącz do nas!"
       description:
-        title: "Jesteśmy fascynatorami badań naukowych"
-        content: "Nasza platforma zapewnia bezpieczną przestrzeń dla lekarzy, badaczy i uczestników badań do współpracy nad badaniem skutków i korzyści płynących ze stosowania ziół leczniczych."
+        title: "Jesteśmy inicjatorami badań naukowych"
+        content: "Nasza platforma przez następne kilka lat zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
       instructions:
-        title: "jak to działa"
-        subheading: "Miesięczny proces, jako uczestnik badania"
+        title: "Jak to działa?"
+        subheading: "Kroki aktywnego uczestnika badania"
         firstStep:
           title: "Wypełnij swój profil"
-          content: "Podaj swoje podstawowe informacje i wszelkie informacje wymagane przez naszych lekarzy"
+          content: "Podaj swoje podstawowe informacje i wszelkie dane wymagane przez naszych lekarzy"
         secondStep:
-          title: "zaplanowana wizyta"
+          title: "Zaplanuj wizytę"
           content: "Skorzystaj z naszej platformy, aby umówić się na wizytę u lekarza, który zatwierdzi Twój profil"
         thirdStep:
-          title: "Odwiedź ambulatorium"
-          content: "Korzystając z konta CH, możesz odwiedzić wyznaczoną lokalną przychodnię, aby odebrać materiał do nauki"
+          title: "Odwiedź placówkę"
+          content: "Korzystając z konta CH, możesz wybrać wyznaczoną lokalną placówkę, aby odebrać materiał badawczy"
         fourthStep:
           title: "Wypełniaj anonimowe ankiety"
-          content: "Pomóż badaczom, wypełniając prywatne anonimowe ankiety"
+          content: "Pomóż badaczom, wypełniając prywatne, anonimowe ankiety"
     about:
       title:  
         about_us: "O nas"
@@ -80,7 +80,7 @@ pl:
         content: "Jestesmy stowarzyszeniem osób świadomych możliwości i zagrożeń wynikających ze stosowania konopi przez ludzi w wielu dziedzinach życia. Przyczyniamy się do jak najszerszego, praktycznego wykorzystania potencjału tej rośliny jednocześnie minimalizując spodziewane zjawiska niepożądane. Obserwujemy zmianę światowych trendów w kierunku odkłamywania informacji o konopiach i wyciągania przekonań na ich temat z dziedziny mitów. Jako stowarzyszenie dążymy do sytuacji, w której świadomi ludzie dbają tak o swoje zdrowie jak i o środowisko."
       mission:
         title: "Misja"
-        content: "Naszą misją jest doprowadzić do podniesienia świadomości społecznej na temat korzyści i zagrożeń niesionych związanych z szeroko rozumianym wykorzystaniem konopi, poprzez działalność naukową (badania), informacyjną (konferencje) i dydaktyczną (szkolenia, warsztaty, czasopismo). W naszej opinii przyczyni się to nie tylko do ogólnej poprawy zdrowia społecznego, ale też do rozwoju stref ekonomicznych czy zwiększenia poczucia wolności obywatelskiej. Działamy w myśl słów niezrównanego profesora Kotarbińskiego \"„w wolności najważniejsza jest jej świadomość\"."
+        content: "Naszą misją jest doprowadzić do podniesienia świadomości społecznej na temat korzyści i zagrożeń niesionych związanych z szeroko rozumianym wykorzystaniem konopi, poprzez działalność naukową (badania), informacyjną (konferencje) i dydaktyczną (szkolenia, warsztaty, czasopismo). W naszej opinii przyczyni się to nie tylko do ogólnej poprawy zdrowia społecznego, ale też do rozwoju stref ekonomicznych czy zwiększenia poczucia wolności obywatelskiej. Działamy w myśl słów niezrównanego profesora Kotarbińskiego „w wolności najważniejsza jest jej świadomość”."
       goals:
         title: "Z naszej misji wynikają jasne cele:"
         list:
@@ -98,6 +98,78 @@ pl:
         content_2: "Stworzyliśmy też PLATFORMĘ KONOPNĄ służącą do wymiany informacji, popularyzacji istotnych tematów prowadząc do eliminacji nieuczciwych osób na rynku konopnym."
       how_long: "Stowarzyszenie działa nieprzerwanie od 2015 roku edukując tysiące osób m.in. w temacie wychodzenia z uzależnienia, działania prawa dot. konopi, warunków prowadzenia badań nad wpływem konopi."
       register: "Jeśli chcesz być częścią tego ogólnopolskiego projektu o wymiarze globalnym (nigdzie na świecie nie prowadzono dotąd takiego badania), to zarejestruj się na naszej stronie już dziś. Staniesz się automatycznie Członkiem Wspierającym Stowarzyszenia Cannabis House i dowiesz się jakie badania aktualnie prowadzimy. Rejestracja jako Członek Wspierający jest bezpłatna."
+    media:
+      title: "Dla mediów"
+      subtitle: "Biografia"
+      intro:
+        content: 
+          text: "Stowarzyszenie Cannabis House zostało powołane do życia  w  roku 2015. Głównym celem jaki przyświecał  jego założycielom było  upowszechnianie wiedzy o znaczeniu roślin w nowoczesnych metodach profilaktyki i leczenia chorób cywilizacyjnych."
+          text2: "W minionych latach Stowarzyszenie prowadziło aktywną działalność  zarówno w sferze edukacyjnej jak i badawczo - naukowej. Publikacje i tematyczne imprezy kulturalne to tylko jedne z form ,które służyły realizacji celów statutowych. Stowarzyszenie aktywnie wspierało działania obywateli i ich organizacji na rzecz kształtowania postaw obywatelskich w obszarze profilaktyki i leczenia uzależnień."
+          text3: "Działalność Stowarzyszenia i propagowane przez nie idee znajdowały coraz większe grono odbiorców. Liczba   członków  Stowarzyszenia zainteresowanych wzięciem  aktywnego udziału w proponowanych formach i kierunkach  działalności sukcesywnie rosła aby aktualnie osiągnąć poziom kilku tysięcy."
+          text4: "Od dnia założenia w roku 2015 Stowarzyszenie organizowało i aktywnie wspierało prace badawczo-naukowe z obszaru szeroko rozumianej profilaktyki i leczenia chorób cywilizacyjnych substancjami pozyskiwanymi z roślin. Ich wpływ na funkcjonowanie i zdrowie człowieka jest znany od wieków. w XIX w. regulacje prawne spowodowały, że przez wiele dekad wiedza na temat kultywowania konopi była znana tylko przez zamknięte środowiska miłośników naturalnego trybu życia. Nie do pominięcia jest też fakt, że aktualne wyniki badań oraz ciągle udoskonalane technologie otwierają przed szeroko rozumianym sektorem konopnym zupełnie nowe perspektywy rozwoju i postępu."
+          list: 
+            title: "Cannabis House statutowo wspiera wszelkie oddolne i społeczne działania na rzecz:"
+            item1: "• racjonalizacji i humanitaryzacji życia społecznego,"
+            item2: "• społeczeństwa obywatelskiego,"
+            item3: "•	ochrony praw i wolności człowieka i obywatela,"
+            item4: "•	ochrony praw pacjenta, praw konsumenta,"
+            item5: "•	krzewienie i wdrażanie idei sprawiedliwości naprawczej."
+        y2015: 
+          title: "Lata 2015 - 2017"
+          content1: "Z tego też powodu, w latach 2015 - 2017 roku Stowarzyszenie nawiązało współpracę z lobbystami, reprezentującymi interesy obywateli i wspierającymi idee Stowarzyszenia w polskim parlamencie. Zostaliśmy zaproszeni do  udziału w pracach komisji sejmowych, których bezpośrednim efektem  było rozporządzenie Ministra Zdrowia dopuszczające badania naukowe nad konopiami innymi niż włókniste."
+          content2: "Od 2017 roku Stowarzyszenie wydaje  czasopismo Index Scientia Cannabis pod redakcją dr. Piotra Grzegorczyka, w którym poruszamy zagadnienia regulacji prawnych dot. posiadania, udzielania, uprawy i przetwarzania konopi i publikujemy nasze wyniki. W zakres tematyki wchodzi też monitorowanie obrotu konopiami, społeczna i psychologiczna ocena uwarunkowań ich spożywania przez użytkowników i wiele więcej. "
+          content3: "Stowarzyszenie zbudowało w tym roku pierwszą wersję platformy internetowej, na której stowarzyszeni mogli uzyskać niezbędne informacje z zakresu aktualnie prowadzonych działań jak również otrzymać profesjonalną poradę prawną."
+        y2018:
+          title: "Lata 2018 - 2019"
+          content1: "Organizacja pierwszej konferencji naukowej CannActive, która odbyła się w 2019 roku na Uniwersytecie Wrocławskim. Powstała  pierwsza w Polsce przestrzeń ,w której spotkali się naukowcy, lekarze i przedsiębiorcy zainteresowani tematyką wykorzystania konopi w przemyśle i ochronie zdrowia."
+          content2: "W 2019 roku rozpoczęliśmy pilotażowy test modelu reglamentacyjno-permisywnego dla członków Stowarzyszenia."
+        y2020: 
+          title: "Rok 2020"
+          content1: "W styczniu 2020 roku odbyła się na Uniwersytecie Łódzkim druga konferencja CannActive.  Naukowcy, badacze, lekarze i przedsiębiorcy mieli możliwość wymiany poglądów  na temat konopi i możliwości jakie niesie uprawa i przetwórstwo  tej rośliny."
+          content2: "Stowarzyszenie nawiązało współpracę z wieloma jednostkami naukowymi w tym z laboratoriami specjalizującymi się w ekspertyzach suszu konopnego, badającymi zawartość alkaloidów, terpenów i innych związków."
+          content3: "Za jeden z większych sukcesów możemy uznać rozpoczęcie współpracy z notowaną na giełdzie w Australi i Londynie firmą  MGC Pharmaceuticals, która specjalizuje się w badaniach nad produktami z konopi i wprowadzaniem na rynek nowatorskich rozwiązań w dziedzinie produktów medycznych."
+        y2021: 
+          title: "Rok 2021"
+          content1: "W styczniu 2021 roku odbyła się na Uniwersytecie Łódzkim  trzecia konferencja CannActive, która miała już charakter międzynarodowy. Temat konferencji: „NAUKA –MEDYCYNA CZY BIZNES?“ Naukowcy, badacze, lekarze i przedsiębiorcy z Polski oraz Europy, USA oraz Ameryki Łacińskiej mieli możliwość nawiązania kontaktów, wymiany doświadczeń i wiedzy na temat miejsca konopi we współczesnej medycynie i przemyśle. Rozmawiali także o perspektywach jakie otwierają się w tych obszarach dla inwestorów. Była ona bardzo owocna we wnioski i rozwiązania dla nauki i biznesu."
+          content2: "Od kwietnia 2021 Stowarzyszenie jeszcze bliżej współpracuje z uczelniami wyższymi w zakresie prac naukowo-badawczych z zakresu profilaktyki uzależnień. Aktualnie prowadzona jest rekrutacja uczestników badania. Szczegóły na stronie Stowarzyszenia."
+          content3: ""
+      mentions: "Wzmianki o nas na innych stronach"
+      q_a: 
+        title: "Q&A (Pytania i Odpowiedzi)"
+        q1: "Q: Co skłoniło Was do założenia Stowarzyszenia?"
+        a1: "A: Zła sytuacja użytkowników konopi w Polsce, zarówno w aspekcie prawnym (karanie za posiadanie na własny użytek) jak i społecznym (stygmatyzacja, wykluczenie). Chcieliśmy zacząć prawdziwie działać w przedmiocie wspierania obywateli i ochrony zdrowia publicznego."
+        q2: "Q: Skąd Stowarzyszenie czerpie finansowanie na swoją działalność?"
+        a2: "A: Ze składek czlonkowskich oraz wpłat darczyńców."
+        q3: "Q: Jaki jest wasz największy sukces w walce o legalizację konopi?"
+        a3: "A: Nasze wsparcie przy powstawaniu rozporządzenia o “medycznej marihuanie”. Organizacja Konferencji naukowych mających na celu połączenia Nauki z Biznesem oraz pozyskanie partnera strategicznego MGC Pharmaceuticals - pioniera w opracowaniu konopnych produktów medycznych oraz w badaniach nad konopiami."
+        q4: "Q: Czego dotyczy aktualnie prowadzone przez Was badanie?"
+        a4: "A: Wykorzystania standaryzowanego suszu konopi innych niż włókniste w procesie działań mających na celu odwyk pacjentów uzależnionych od twardych narkotyków, oraz innych syntetycznych substancji psychoaktywnych, w modelu reglamentacyjno-permisywnym."
+        q5: "Q: Ilu uczestników będzie brało udział w badaniu?"
+        a5: "A: Aktualnie prowadzone badanie zaprojektowane jest na 4000 uczestników."
+        q6: "Q: Jak można dołaczyć do badania?"
+        a6: "A: Należy zarejestrować się na naszej stronie www.cannabishouse.eu (uzyskujesz automatycznie status Członka Wspierającego) i przejść procedurę wstępną aby uzyskać status Członka Aktywnego."
+        q7: "Q: O czym warto pamiętać podczas rejestracji?"
+        a7: "A: Są to unikalne na skalę światową pionierskie badania o ogólnopolskim zasięgu. Wymagamy odpowiedzialnej postawy obywatelskiej, a co za tym idzie, między innymi: rejestracji na prawdziwe dane, okresowe wypełnianie ankiet badawczych czy wizyty lekarskie."
+        q8: "Q: Jak można wesprzeć Stowarzyszenie?"
+        a8: "A: Działając wolontaryjnie na rzecz Stowarzyszenia (użyczając swoich talentów i umiejętności); Opłacając składkę członkowską (stając się Członkiem Aktywnym), ofiarowując darowiznę na konto bankowe Stowarzyszenia: "
+      social: 
+        title: "Nasze media społecznościowe"
+        link1: "facebook: "
+        link2: "instagram: "
+      team: 
+        title: "Nasz zespół"
+        content: ""
+      video:
+        title: "Materiały wideo"
+        link1: ""
+        link2: ""
+      logos: 
+        title: "Instytucje i firmy, które wspierają projekt"
+        content: "| GRL | WPiA UŁ | Index Scientia Cannabis | MGC | Szpital Powiatowy w Chrzanowie | SpectraMed | Cannabis House |"
+      contact: 
+        title: "Kontakt: "
+        contact1: "Nr tel.:    "
+        contact2: "Adres email:"
   controllers:
     addresses:
       create:
