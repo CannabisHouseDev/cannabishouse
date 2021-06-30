@@ -101,34 +101,43 @@ pl:
     media:
       title: "Dla mediów"
       subtitle: "Biografia"
-      intro: "Wprowadzenie"
-        content: "Stowarzyszenie Cannabis House powstało w 2015 roku m.in. w celu prowadzenia, organizowania i wspierania badań naukowych; prowadzenia własnej działalności edukacyjnej; wydawania publikacji dot. celów statutowych; organizacji imprez kulturalnych.  Ale również w celu prowadzenia oraz wspierania działań obywateli i ich organizacji na rzecz ochrony zdrowia publicznego. Włączając w to działania z zakresu wczesnej profilaktyki i leczenia chorób cywilizacyjnych, oraz leczenia i zapobiegania uzależnieniom."
-          List: "Cannabis House statutowo wspiera wszelkie oddolne i społeczne działania na rzecz:"
-          item1: "• racjonalizacji i humanitaryzacji życia społecznego,"
-          item2: "• społeczeństwa obywatelskiego,"
-          item3: "•	ochrony praw i wolności człowieka i obywatela,"
-          item4: "•	ochrony praw pacjenta, praw konsumenta,"
-          item5: "•	krzewienie i wdrażanie idei sprawiedliwości naprawczej oraz umacnianie metod sprawowania władzy."
-        y2015: "Lata 2015 - 2017"
-        content1: "W latach 2016 - 2020 roku Stowarzyszenie nawiązało współpracę z profesjonalnymi lobbystami, reprezentującymi interesy obywateli oraz nasze idee w polskim parlamencie. Tym samym braliśmy udział w pracach komisji sejmowych, których bezpośrednim efektem prac było rozporządzenie Ministra Zdrowia dopuszczające badania nad konopiami innymi niż włókniste."
-        content2: "Od 2017 roku wydajemy czasopismo Index Scientia Cannabis pod redakcją dra Piotra Grzegorczyka, w którym poruszamy zagadnienia regulacji prawnych dot. posiadania, udzielania, uprawy i przetwarzania konopi. A także monitorowania obrotu konopiami, społecznej i psychologicznej oceny uwarunkowań spożywania marihuany."
-        content3: "Jednocześnie zbudowaliśmy pierwszą wersję platformy internetowej, na której nasi Stowarzyszeni mogli uzyskać niezbędne informacje z zakresu aktualnie prowadzonych działań jak, uzyskać poradę w temacie obowiązującego prawa."
-        y2018: "Lata 2018 - 2019"
-        content1: "Wyciszyliśmy naszą obceność w przestrzeni publicznej na rzecz odpowiedniego skupienia na działaniach organizacyjnych związanych z projektem naukowym. Wynikiem tego była pierwsza konferencja naukowa CannActive, która odbyła się w 2019 roku na Uniwersytecie Wrocławskim. Stworzyliśmy tym samym, po raz pierwszy w Polsce, przestrzeń, w której spotkali się naukowcy, lekarze i przedsiębiorcy."
-        content2: "Opracowaliśmy system kontroli jakości i ewidencji przepływu materiału badawczego w oparciu o rozporządzenia MZ. Po przygotowaniu ww. elementów rozpoczęliśmy proces wnioskowania o uzyskanie pozytywnej opinii Komisji Bioetycznej. Pod koniec 2019 roku rozpoczęliśmy test modelu reglamentacyjno-permisywnego dla członków Stowarzyszenia. Był to dla nas okres prób i błędów, nauki i eskloracji, tak bardzo potrzebny gdy chodzi o temat badań naukowych."
-        y2020: "Rok 2020"
-        content1: "W styczniu 2020 roku odbyła się druga konferencja CannActive na Uniwersytecie Łódzkim, która cieszyła się dużą popularnością. Naukowcy, badacze, lekarze i przedsiębiorcy nawiązali znajomości, połączyli swoje doświadczenie i wiedzę by odmitologizować spojrzenie na konopie."
-        content2: "Nawiązaliśmy współpracę z laboratorium specjalizującym się w ekspertyzach suszu konopnego, badającym zawartość alkaloidów, terpenów i innych związków. To był też przełomowy rok dla nas pod kątem liczby współpracujących z nami Dyspensariów. W kilkudziesięciu miejscach Polski członkowie Stowarzyszenia mogli odebrać standaryzowany susz CBD-premium, pozyskiwany z konopi siewnej, w ramach prowadzonego przez nas badania."
-        content3: "Za największy sukces jednak możemy uznać połączenie sił z MGC Pharmaceuticals z Australii, które zajmuje się opracowywaniem i badaniami nad produktami z konopi, oraz wprowadzaniem na rynek nowatorskich rozwiązań w dziedzinie produktów medycznych."
-        y2021: "Rok 2021"
-        content1: "W styczniu 2021 roku odbyła się trzecia edycja konferencji CannActive pod tytułem: CANNACTIVE.SCIENCE - NAUKA, MEDYCYNA CZY BIZNES? Konferencja pierwszy raz odbyła się on-line lecz mimo to była bardzo owocna we wnioski i rozwiązania dla nauki i biznesu."
-        content2: "Przyspieszyliśmy też prace nad nowym systemem informatycznym do obsługi badanego w ramach prowadzonych badań by jego główne moduły były gotowe na koniec czerwca 2021 roku."
-        content3: "W kwietniu 2021 uzyskaliśmy pozytywną opinię Komisji Bioetycznej i aktualnie znajdujemy się we wstępnej fazie badania. Aktywujemy infrastrukturę, rozsyłamy materiały informacyjne i prowadzmy nabór do badania. Zapraszamy do aplikowania!"
-      mentiones: "Wzmianki o nas na innych stronach"
-        link1: 
-      q_a: "Q&A (Pytania i Odpowiedzi)"
+      intro:
+        content: 
+          text: "Stowarzyszenie Cannabis House zostało powołane do życia  w  roku 2015. Głównym celem jaki przyświecał  jego założycielom było  upowszechnianie wiedzy o znaczeniu roślin w nowoczesnych metodach profilaktyki i leczenia chorób cywilizacyjnych."
+          text2: "W minionych latach Stowarzyszenie prowadziło aktywną działalność  zarówno w sferze edukacyjnej jak i badawczo - naukowej. Publikacje i tematyczne imprezy kulturalne to tylko jedne z form ,które służyły realizacji celów statutowych. Stowarzyszenie aktywnie wspierało działania obywateli i ich organizacji na rzecz kształtowania postaw obywatelskich w obszarze profilaktyki i leczenia uzależnień."
+          text3: "Działalność Stowarzyszenia i propagowane przez nie idee znajdowały coraz większe grono odbiorców. Liczba   członków  Stowarzyszenia zainteresowanych wzięciem  aktywnego udziału w proponowanych formach i kierunkach  działalności sukcesywnie rosła aby aktualnie osiągnąć poziom kilku tysięcy."
+          text4: "Od dnia założenia w roku 2015 Stowarzyszenie organizowało i aktywnie wspierało prace badawczo-naukowe z obszaru szeroko rozumianej profilaktyki i leczenia chorób cywilizacyjnych substancjami pozyskiwanymi z roślin. Ich wpływ na funkcjonowanie i zdrowie człowieka jest znany od wieków. w XIX w. regulacje prawne spowodowały, że przez wiele dekad wiedza na temat kultywowania konopi była znana tylko przez zamknięte środowiska miłośników naturalnego trybu życia. Nie do pominięcia jest też fakt, że aktualne wyniki badań oraz ciągle udoskonalane technologie otwierają przed szeroko rozumianym sektorem konopnym zupełnie nowe perspektywy rozwoju i postępu."
+          list: 
+            title: "Cannabis House statutowo wspiera wszelkie oddolne i społeczne działania na rzecz:"
+            item1: "• racjonalizacji i humanitaryzacji życia społecznego,"
+            item2: "• społeczeństwa obywatelskiego,"
+            item3: "•	ochrony praw i wolności człowieka i obywatela,"
+            item4: "•	ochrony praw pacjenta, praw konsumenta,"
+            item5: "•	krzewienie i wdrażanie idei sprawiedliwości naprawczej."
+        y2015: 
+          title: "Lata 2015 - 2017"
+          content1: "Z tego też powodu, w latach 2015 - 2017 roku Stowarzyszenie nawiązało współpracę z lobbystami, reprezentującymi interesy obywateli i wspierającymi idee Stowarzyszenia w polskim parlamencie. Zostaliśmy zaproszeni do  udziału w pracach komisji sejmowych, których bezpośrednim efektem  było rozporządzenie Ministra Zdrowia dopuszczające badania naukowe nad konopiami innymi niż włókniste."
+          content2: "Od 2017 roku Stowarzyszenie wydaje  czasopismo Index Scientia Cannabis pod redakcją dr. Piotra Grzegorczyka, w którym poruszamy zagadnienia regulacji prawnych dot. posiadania, udzielania, uprawy i przetwarzania konopi i publikujemy nasze wyniki. W zakres tematyki wchodzi też monitorowanie obrotu konopiami, społeczna i psychologiczna ocena uwarunkowań ich spożywania przez użytkowników i wiele więcej. "
+          content3: "Stowarzyszenie zbudowało w tym roku pierwszą wersję platformy internetowej, na której stowarzyszeni mogli uzyskać niezbędne informacje z zakresu aktualnie prowadzonych działań jak również otrzymać profesjonalną poradę prawną."
+        y2018:
+          title: "Lata 2018 - 2019"
+          content1: "Organizacja pierwszej konferencji naukowej CannActive, która odbyła się w 2019 roku na Uniwersytecie Wrocławskim. Powstała  pierwsza w Polsce przestrzeń ,w której spotkali się naukowcy, lekarze i przedsiębiorcy zainteresowani tematyką wykorzystania konopi w przemyśle i ochronie zdrowia."
+          content2: "W 2019 roku rozpoczęliśmy pilotażowy test modelu reglamentacyjno-permisywnego dla członków Stowarzyszenia."
+        y2020: 
+          title: "Rok 2020"
+          content1: "W styczniu 2020 roku odbyła się na Uniwersytecie Łódzkim druga konferencja CannActive.  Naukowcy, badacze, lekarze i przedsiębiorcy mieli możliwość wymiany poglądów  na temat konopi i możliwości jakie niesie uprawa i przetwórstwo  tej rośliny."
+          content2: "Stowarzyszenie nawiązało współpracę z wieloma jednostkami naukowymi w tym z laboratoriami specjalizującymi się w ekspertyzach suszu konopnego, badającymi zawartość alkaloidów, terpenów i innych związków."
+          content3: "Za jeden z większych sukcesów możemy uznać rozpoczęcie współpracy z notowaną na giełdzie w Australi i Londynie firmą  MGC Pharmaceuticals, która specjalizuje się w badaniach nad produktami z konopi i wprowadzaniem na rynek nowatorskich rozwiązań w dziedzinie produktów medycznych."
+        y2021: 
+          title: "Rok 2021"
+          content1: "W styczniu 2021 roku odbyła się na Uniwersytecie Łódzkim  trzecia konferencja CannActive, która miała już charakter międzynarodowy. Temat konferencji: „NAUKA –MEDYCYNA CZY BIZNES?“ Naukowcy, badacze, lekarze i przedsiębiorcy z Polski oraz Europy, USA oraz Ameryki Łacińskiej mieli możliwość nawiązania kontaktów, wymiany doświadczeń i wiedzy na temat miejsca konopi we współczesnej medycynie i przemyśle. Rozmawiali także o perspektywach jakie otwierają się w tych obszarach dla inwestorów. Była ona bardzo owocna we wnioski i rozwiązania dla nauki i biznesu."
+          content2: "Od kwietnia 2021 Stowarzyszenie jeszcze bliżej współpracuje z uczelniami wyższymi w zakresie prac naukowo-badawczych z zakresu profilaktyki uzależnień. Aktualnie prowadzona jest rekrutacja uczestników badania. Szczegóły na stronie Stowarzyszenia."
+          content3: ""
+      mentions: "Wzmianki o nas na innych stronach"
+      q_a: 
+        title: "Q&A (Pytania i Odpowiedzi)"
         q1: "Q: Co skłoniło Was do założenia Stowarzyszenia?"
-        a1: "A: Ogólna systuacja i sytuacja prawna użytkowników konopi w Polsce. Chcieliśmy zacząć prawdziwie działać temacie wspierania obywateli i ochrony zdrowia publicznego."
+        a1: "A: Zła sytuacja użytkowników konopi w Polsce, zarówno w aspekcie prawnym (karanie za posiadanie na własny użytek) jak i społecznym (stygmatyzacja, wykluczenie). Chcieliśmy zacząć prawdziwie działać w przedmiocie wspierania obywateli i ochrony zdrowia publicznego."
         q2: "Q: Skąd Stowarzyszenie czerpie finansowanie na swoją działalność?"
         a2: "A: Ze składek czlonkowskich oraz wpłat darczyńców."
         q3: "Q: Jaki jest wasz największy sukces w walce o legalizację konopi?"
@@ -143,19 +152,24 @@ pl:
         a7: "A: Są to unikalne na skalę światową pionierskie badania o ogólnopolskim zasięgu. Wymagamy odpowiedzialnej postawy obywatelskiej, a co za tym idzie, między innymi: rejestracji na prawdziwe dane, okresowe wypełnianie ankiet badawczych czy wizyty lekarskie."
         q8: "Q: Jak można wesprzeć Stowarzyszenie?"
         a8: "A: Działając wolontaryjnie na rzecz Stowarzyszenia (użyczając swoich talentów i umiejętności); Opłacając składkę członkowską (stając się Członkiem Aktywnym), ofiarowując darowiznę na konto bankowe Stowarzyszenia: "
-      social: "Nasze media społecznościowe"
-        link1: "facebook: https://www.facebook.com/c.house.lodz/"
-        link2: "instagram: https://www.instagram.com/cannabis.house/"
-      team: "Nasz zespół"
-      content: "Prezes Stowarzyszenia - Grzegorz Kobyłecki;
- Członek zarządu - Piotr Nowak; 
- Członek zarządu - Marcin Przymęcki;"
-      video: "Materiały wideo"
-        link1: 
-        link2:
-      logos: "Instytucje i firmy, które wspierają projekt"
-      contact1: "Nr tel.:    "
-      contact2: "Adres email:"
+      social: 
+        title: "Nasze media społecznościowe"
+        link1: "facebook: "
+        link2: "instagram: "
+      team: 
+        title: "Nasz zespół"
+        content: ""
+      video:
+        title: "Materiały wideo"
+        link1: ""
+        link2: ""
+      logos: 
+        title: "Instytucje i firmy, które wspierają projekt"
+        content: "| GRL | WPiA UŁ | Index Scientia Cannabis | MGC | Szpital Powiatowy w Chrzanowie | SpectraMed | Cannabis House |"
+      contact: 
+        title: "Kontakt: "
+        contact1: "Nr tel.:    "
+        contact2: "Adres email:"
   controllers:
     addresses:
       create:

@@ -87,7 +87,7 @@ en:
         cta: "Join us!"
       description:
         title: "We are the initiators of scientific research"
-        content: "Our platform for the next few years will provide a safe space for information exchange and collaboration in researching the effects and benefits of cannabis use. It is designed for research participants as well as doctors, researchers and entrepreneurs."
+        content: "For the next few years our platform will provide a safe space for information exchange and collaboration in researching the effects and benefits of cannabis use. It is designed for research participants as well as doctors, researchers and entrepreneurs."
       instructions:
         title: "How does it work?"
         subheading: "Steps of an active participant in the study"
@@ -99,14 +99,14 @@ en:
           content: "Use our platform to make an appointment with a doctor who will approve your profile"
         thirdStep:
           title: "Visit the facility"
-          content: "Using your CH account, you can choose a designated local site to collect your research material"
+          content: "With your CH account you can visit your designated dispensary and collect your research material"
         fourthStep:
           title: "Complete anonymous surveys"
           content: "Help researchers by completing private, anonymous surveys"
     about:
-      title:  
+      title:
         about_us: "About us"
-      who_we_are: 
+      who_we_are:
         title: "Who we are?"
         content: "We are an association of people who are aware of the possibilities and dangers of using cannabis in many areas of life. We contribute to the widest possible practical use of the potential of this plant while minimizing the expected undesirable phenomena. We are witnessing a shift in global trends towards providing true information about cannabis and drawing beliefs about it from the realm of myth. As an association, we strive for a situation in which conscious people take care of their health and the environment."
       mission:
@@ -130,40 +130,50 @@ en:
       how_long: "The association has been operating continuously since 2015, educating thousands of people, incl. in the subject of recovery from addiction, the operation of the law on cannabis, conditions for conducting research on the effects of cannabis."
       register: "If you want to be part of this nationwide project with a global dimension (such a study has not been conducted anywhere else in the world so far), register on our website today. You will automatically become a Supporting Member of the Cannabis House Association and you will find out what research we are currently conducting. Registration as a Supporting Member is free."
     media:
-      title: "For media"
+      title: 
+        media: "For media"
       subtitle: "Assosiation Biography"
-      intro: "Introduction"
-        content: "The Cannabis House Association was established in 2015, incl. to conduct, organize and support scientific research; running its own educational activity; issuing publications on statutory goals; to organize cultural events. But also to guide and support the activities of citizens and their organizations for the protection of public health. Including activities in the field of early prevention and treatment of civilization diseases, as well as treatment and prevention of addictions."
-          List: "Cannabis House statutory supports all grassroots and social activities for:"
-          item1: "• rationalization and humanization of social life,"
-          item2: "• civil society,"
-          item3: "• protection of human and civil rights and freedoms,"
-          item4: "• protection of patients' rights, consumer rights,"
-          item5: "• promoting and implementing the idea of restorative justice and strengthening the methods of exercising power."
-        y2015: "Years 2015 - 2017"
-        content1: "In the years 2016-2020, the Association established cooperation with professional lobbyists representing the interests of citizens and our ideas in the Polish parliament. Thus, we participated in the work of parliamentary committees, the direct result of which was the regulation of the Minister of Health allowing research on non-fibrous hemp."
-        content2: "Since 2017, we have been publishing the Index Scientia Cannabis magazine, edited by Dr. Piotr Grzegorczyk, in which we discuss the issues of legal regulations regarding the possession, provision, cultivation and processing of cannabis. As well as monitoring cannabis trading, social and psychological assessment of the determinants of cannabis consumption."
-        content3: "At the same time, we built the first version of the internet platform, on which our Associates could obtain the necessary information on the current activities, as well as obtain advice on the subject of applicable law."
-        y2018: "Years 2018 - 2019"
-        content1: "We silenced our strangeness in the public space in order to properly focus on organizational activities related to the scientific project. The result of it was the first CannActive scientific conference held in 2019 at the University of Wrocław. Thus, we created, for the first time in Poland, a space where scientists, doctors and entrepreneurs met."
-        content2: "We have developed a quality control system and research material flow record based on the regulations of the Ministry of Health. After preparing the above-mentioned elements, we have started the process of applying for a positive opinion of the Bioethics Committee. At the end of 2019, we started the test of the rationing-permissive model for members of the Association. It was a period of trial and error, learning and exploration for us, so much needed when it comes to the subject of research."
-        y2020: "Year 2020"
-        content1: "In January 2020, the second CannActive conference took place at the University of Lodz, which was very popular. Scientists, researchers, doctors and entrepreneurs made friends, combined their experience and knowledge to demythologize the view on cannabis."
-        content2: "We have established cooperation with a laboratory specializing in the expertise of dried hemp, testing the content of alkaloids, terpenes and other compounds. It was also a breakthrough year for us in terms of the number of Dispensaries cooperating with us. In dozens of places in Poland, members of the Association could collect the standardized CBD-premium dried, obtained from hemp, as part of our research."
-        content3: "The greatest success, however, is joining forces with MGC Pharmaceuticals from Australia, which deals with the development and research of cannabis products, and the introduction to the market of innovative solutions in the field of medical products."
-        y2021: "Year 2021"
-        content1: "In January 2021, the third edition of the CannActive conference took place, entitled: CANNACTIVE.SCIENCE - SCIENCE, MEDICINE OR BUSINESS? The conference was held online for the first time, but it was nevertheless very fruitful in terms of conclusions and solutions for science and business."
-        content2: "We have also accelerated the work on a new IT system to support the respondent as part of the research so that its main modules are ready by the end of June 2021."
-        content3: "In April 2021, we obtained a positive opinion from the Bioethics Committee and we are currently in the preliminary phase of the study. We activate the infrastructure, send out information materials and recruit for research. We invite you to apply!"
-      mentiones: "Mentions about us on other sites"
-        link1: 
-      q_a: "Q&A"
+      intro:
+        content:
+          text: "The Cannabis House Association was established in 2015. The main goal of its founders was to disseminate knowledge about the importance of plants in modern methods of prevention and treatment of civilization diseases."
+          text2: "In recent years, the Association has been active both in the field of education and research. Publications and thematic cultural events are just some of the forms that served to achieve the statutory goals. The association actively supported the activities of citizens and their organizations aimed at shaping civic attitudes in the field of prevention and treatment of addictions."
+          text3: "The activities of the Association and the ideas it promoted found an increasing number of recipients. The number of members of the Association interested in taking an active part in the proposed forms and directions of activity has been gradually increasing to currently reach the level of several thousand."
+          text4: "From the day of its establishment in 2015, the Association organized and actively supported research and scientific work in the field of broadly understood prevention and treatment of civilization diseases with substances obtained from plants. Their impact on the functioning and health of humans has been known for centuries. In the nineteenth century, legal regulations caused for many decades a knowledge of cannabis cultivation was known only by the closed circles of lovers of the natural lifestyle. It is also notable that the current research results and constantly improves technologies and opens up completely new perspectives for development and progress for the broadly understood cannabis sector."
+          list: 
+            title: "Cannabis House statutory supports all grassroots and social activities for:"
+            item1: "rationalization and humanization of social life,"
+            item2: "civil society,"
+            item3: "protection of human and civil rights and freedoms,"
+            item4: "protection of patients' rights, consumer rights,"
+            item5: "promoting and implementing the idea of restorative justice."
+        y2015: 
+          title: ""
+          content1: "For this reason, in 2015-2017, the Association established cooperation with lobbyists representing the interests of citizens and supporting the Association's ideas in the Polish parliament. We were invited to participate in the work of parliamentary committees, the direct effect of which was the ordinance of the Minister of Health allowing scientific research on non-fibrous hemp."
+          content2: "Since 2017, the Association has been publishing the Index Scientia Cannabis magazine edited by Dr. Piotr Grzegorczyk, in which we discuss the issues of legal regulations regarding the possession, granting, cultivation and processing of cannabis and publish our results. The scope of the topics also includes the monitoring of cannabis trading, social and psychological assessment of the determinants of its consumption by users and much more."
+          content3: "This year, the association built the first version of an internet platform on which associates could obtain the necessary information on current activities as well as receive professional legal advice."
+        y2018: 
+          title: "Years 2018 - 2019"
+          content1: "Organization of the first CannActive scientific conference, which took place in 2019 at the University of Wrocław. The first space in Poland was created, where scientists, doctors and entrepreneurs interested in the topic of the use of cannabis in industry and health care met."
+          content2: "In 2019, we started a pilot test of the rationing-permissive model for members of the Association."
+        y2020: 
+          title: "Year 2020"
+          content1: "In January 2020, the second CannActive conference took place at the University of Lodz. Scientists, researchers, doctors and entrepreneurs had the opportunity to exchange views on cannabis and the possibilities offered by the cultivation and processing of this plant."
+          content2: "The association has established cooperation with many scientific units, including laboratories specializing in the expertise of dried hemp, testing the content of alkaloids, terpenes and other compounds."
+          content3: "One of our greatest successes is the commencement of cooperation with MGC Pharmaceuticals, a company listed on the Australian and London stock exchanges, which specializes in research on cannabis products and introducing innovative solutions in the field of medical products to the market."
+        y2021: 
+          title: "Year 2021"
+          content1: "In January 2021, the third CannActive conference was held at the University of Lodz, which already had an international character. The subject of the conference: "SCIENCE - MEDICINE OR BUSINESS?" Scientists, researchers, doctors and entrepreneurs from Poland, Europe, the USA and Latin America had the opportunity to establish contacts, exchange experiences and knowledge about the place of cannabis in modern medicine and industry. They also talked about the prospects for investors in these areas. It was very fruitful in conclusions and solutions for science and business."
+          content2: "From April 2021, the Association works even closer with universities in the field of research and development in the field of addiction prevention. Recruitment of study participants is currently underway. Details on the Association's website."
+          content3: ""
+      mentions: "Mentions about us on other sites"
+      q_a:
+        title: "Q&A"
         q1: "Q: What prompted you to found the Association?"
-        a1: "A: General situation and legal situation of cannabis users in Poland. We wanted to really start working on supporting citizens and protecting public health."
+        a1: "A: Bad situation of cannabis users in Poland, both in legal (punishment for own use) and social (stigmatization, exclusion). We wanted to really start to act on supporting citizens and protecting public health."
         q2: "Q: Where does the Association get funding for its activities?"
         a2: "A: From membership fees and contributions from donors."
         q3: "Q: What is your greatest success in the fight to legalize cannabis?"
-        a3: "A: Our support for the "medical marijuana" regulation. Organization of scientific conferences aimed at combining Science with Business and acquiring a strategic partner of MGC Pharmaceuticals - a pioneer in the development of medical cannabis products and in cannabis research."
+        a3: "A: Our support for the \"medical marijuana\" regulation. Organization of scientific conferences aimed at combining Science with Business and acquiring a strategic partner of MGC Pharmaceuticals - a pioneer in the development of medical cannabis products and in cannabis research."
         q4: "Q: What is your current research about?"
         a4: "A: The use of standardized dried non-fibrous cannabis in the process of measures aimed at the recovery of patients addicted to hard drugs and other synthetic psychoactive substances in a rationing-permissive model."
         q5: "Q: How many participants will take part in the study?"
@@ -173,16 +183,23 @@ en:
         q7: "Q: What is worth remembering when registering?"
         a7: "A: These are unique on a global scale pioneering nationwide research. We require responsible citizenship, and hence, among others: registration for real data, periodic completion of research surveys or medical visits."
         q8: "Q: How can you support the Association?"
-        a8: "A: Volunteering for the Association (lending their talents and skills); Paying the membership fee (becoming an Active Member), making a donation to the Association's bank account: "
-      social: "Social media"
+        a8: "A: Volunteering for the Association (lending their talents and skills), Paying the membership fee (becoming an Active Member), making a donation to the Association's bank account: "
+      social:
+        title: "Social media"
         link1: "facebook: "
         link2: "instagram: "
-      team: "Our team"
-      video: "Videos"
-        link1:
-        link2:
-      logos: "Institutions and companies that support the project"
-      contact: "Contact us: "
+      team:
+        title: "Our team"
+        content: ""
+      video:
+        title: "Videos"
+        link1: ""
+        link2: ""
+      logos:
+        title: "Institutions and companies that support the project"
+        content: "| GRL | WPiA UŁ | Index Scientia Cannabis | MGC | District Hospital in Chrzanów | SpectraMed | Cannabis House |"
+      contact:
+        title: "Contact us: "
         contact1: "Phone: "
         contact2: "E-mail: "
   controllers:
