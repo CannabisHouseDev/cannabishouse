@@ -23,7 +23,6 @@ class SurveysController < ApplicationController
   def create
     @survey = Survey.new(survey_params)
     @survey.author = current_user
-    byebug
     respond_to do |format|
       if @survey.save
         format.html { redirect_back fallback_location: authenticated_root_path, notice: "Survey was successfully created." }

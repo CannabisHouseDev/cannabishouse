@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :answers
   namespace :admin do
     resources :users
     resources :pages
@@ -18,16 +19,29 @@ Rails.application.routes.draw do
     mount RailsAdmin::Engine => '/administrator', as: 'rails_admin'
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
-      get 'welcome', to: 'pages#onboarding', as: 'onboarding'
+      get 'info', to: 'pages#info', as: 'info'
 
       # Participant Related Routes
+      get 'steps', to: 'participant_portal#steps', as: 'steps'
+      get 'consent', to: 'participant_portal#consent', as: 'consent'
+      get 'agree', to: 'participant_portal#agree', as: 'agree'
       get 'participant', to: 'participant_portal#index', as: 'participant_portal'
+      get 'participant/surveys', to: 'participant_portal#surveys', as: 'participant_surveys'
+      get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'
+      patch 'survey/:id', to: 'filled_surveys#update', as: 'update_filled_survey'
+      get 'steps/pay/process', to: 'participant_portal#process_payment', as: 'process_payment'
+      get 'steps/book', to: 'participant_portal#book'
+      post 'steps/book', to: 'participant_portal#book_appointment', as: 'book_appointment'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
-      get 'doctor/appointments', to: 'doctor_portal#appointments', as: 'appointments'
+      get 'doctor/appointments/', to: 'doctor_portal#appointments', as: 'appointments'
+      get 'doctor/appointments/:id', to: 'doctor_portal#appointments', as: 'appointment_details'
+      post 'doctor/appointment/:id', to: 'doctor_portal#appointment_done', as: 'appointment_done'
+      delete 'doctor/appointment/:id', to: 'doctor_portal#appointment_cancel', as: 'appointment_cancel'
       get 'doctor/calendar', to: 'doctor_portal#calendar', as: 'calendar'
       get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
+      get 'doctor/evaluations/:id', to: 'doctor_portal#evaluations', as: 'evaluation_details'
 
       # Researcher Related Routes
       get 'researcher', to: 'researcher_portal#surveys', as: 'researcher_portal'
@@ -72,7 +86,7 @@ Rails.application.routes.draw do
     end
 
   end
-
+  get '*path' => redirect('/')
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
