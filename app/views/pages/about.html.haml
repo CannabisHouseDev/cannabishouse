@@ -1,5 +1,35 @@
-%H1= t('pages.about.about')
-%br
-%h2= t('pages.about.who_we_are')
-%br
-%p= t('pages.about.paragraph_1')
+.container.flex.flex-col.mx-auto.w-full.items-center.justify-center
+  %h1= t('pages.about.about_us')
+  %br
+  %h2= t('pages.about.who_we_are.title')
+  %br
+  %p= t('pages.about.who_we_are.content')
+  %br
+  %h2= t('pages.about.mission.title')
+  %br
+  %p= t('pages.about.mission.content')
+  %h2= t('pages.about.goals.title')
+  %br
+  %ul.flex.flex-col
+    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_2')
+    %li.border-gray-400.flex.flex-row.mb-3= t('pages.about.goals.list.item_1')
+    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_3')
+    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_4')
+    %li.border-gray-400.flex.flex-row.mb-2
+    = t('pages.about.goals.list.item_5')
+    %ul    
+      %li= t('pages.about.goals.list.subitem_5-a')
+      %li= t('pages.about.goals.list.subitem_5-b')
+      %li= t('pages.about.goals.list.subitem_5-c') 
+  %br
+  %br
+  %h2= t('pages.about.vision.title')     
+  %p= t('pages.about.vision.content_1')
+  %p= t('pages.about.vision.content_2')
+  %br
+  %h2= t('pages.about.how_long')
+  %br
+  %h2= t('pages.about.register')
+
+
+
