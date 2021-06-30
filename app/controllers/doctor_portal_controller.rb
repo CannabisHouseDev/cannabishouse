@@ -10,7 +10,8 @@ class DoctorPortalController < ApplicationController
   end
 
   def evaluations
-    @selected = params[:id] || nil
+    @selected = params[:id] || @evaluations.first.id
+    set_required_surveys
   end
 
   def calendar
@@ -22,14 +23,14 @@ class DoctorPortalController < ApplicationController
     appointment = Appointment.find(params[:id])
     appointment.state = 'done'
     appointment.save!
-    render action: :evaluations
+    redirect_to action: :evaluations
   end
 
   def appointment_cancel
     appointment = Appointment.find(params[:id])
     appointment.state = 'cancelled'
     appointment.save!
-    render action: :appointments
+    redirect_to action: :appointments
   end
 
   private
@@ -40,5 +41,14 @@ class DoctorPortalController < ApplicationController
 
   def set_evaluations
     @evaluations = Appointment.where(doctor_id: current_user.id, state: 'done').order(time: :asc)
+  end
+
+  def set_required_surveys
+    @surveys = [FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'bMAST')),
+                FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'pum')),
+                FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'phq9')),
+                FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'index')),
+                FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'kssuk30')),
+                FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'ghq30'))]
   end
 end

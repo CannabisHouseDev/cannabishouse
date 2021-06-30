@@ -26,6 +26,7 @@
 class User < ApplicationRecord
   has_paper_trail
   after_create :create_user_profile
+  has_one :cycle
 
   has_many :addresses, as: :addressable
   accepts_nested_attributes_for :addresses, reject_if: ->(attributes) { attributes['name'].blank? }, allow_destroy: true

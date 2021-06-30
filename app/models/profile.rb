@@ -4,30 +4,31 @@
 #
 # Table name: profiles
 #
-#  id             :bigint           not null, primary key
-#  aasm_state     :string
-#  avatar         :string
-#  birth_date     :date
-#  contact_number :string
-#  credits        :integer          default(0)
-#  first_name     :string
-#  gender         :integer
-#  last_name      :string
-#  locked         :boolean          default(FALSE)
-#  nick_name      :string
-#  old_state      :string
-#  onboarded      :boolean          default(FALSE)
-#  pesel          :string
-#  quota_left     :integer          default(0)
-#  quota_max      :integer          default(0)
-#  risk           :string
-#  role           :integer
-#  skills         :string
-#  verified       :boolean          default(FALSE)
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  doctor_id      :bigint           not null
-#  user_id        :bigint           not null
+#  id              :bigint           not null, primary key
+#  aasm_state      :string
+#  avatar          :string
+#  birth_date      :date
+#  contact_number  :string
+#  credits         :integer          default(0)
+#  first_name      :string
+#  gender          :integer
+#  last_name       :string
+#  locked          :boolean          default(FALSE)
+#  nick_name       :string
+#  old_state       :string
+#  onboarded       :boolean          default(FALSE)
+#  pesel           :string
+#  quota_left      :integer          default(0)
+#  quota_max       :integer          default(0)
+#  risk            :string
+#  risk_calculated :integer
+#  role            :integer
+#  skills          :string
+#  verified        :boolean          default(FALSE)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  doctor_id       :bigint
+#  user_id         :bigint           not null
 #
 # Indexes
 #
@@ -52,6 +53,7 @@ class Profile < ApplicationRecord
        _default: 0
 
   enum gender: %i[male female]
+  enum risk_calculated: %i[green orange red]
 
   validates :first_name, presence: true, on: :update
   validates :last_name, presence: true, on: :update
@@ -180,17 +182,11 @@ class Profile < ApplicationRecord
     end
     # All test have equal weight when deciding the final risk assesment
     total = (normalized_scores.sum / normalized_scores.count.to_f)
-    self.risk = total > 1.5 ? 'red' : total > 0.5 ? 'orange' : 'green'
+    self.risk_calculated = total > 1.5 ? 'red' : total > 0.5 ? 'orange' : 'green'
     save!
   end
 
-  def amount_allowed
-    # Check the amounts allowed for each category
-    case self.risk
-    when 'green'
-    when 'orange'
-    when 'red'
-    else
-    end
+  def set_quota(amount)
+    self.quota_max(amount)
   end
 end

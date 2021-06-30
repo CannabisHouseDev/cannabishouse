@@ -4,30 +4,31 @@
 #
 # Table name: profiles
 #
-#  id             :bigint           not null, primary key
-#  aasm_state     :string
-#  avatar         :string
-#  birth_date     :date
-#  contact_number :string
-#  credits        :integer          default(0)
-#  first_name     :string
-#  gender         :integer
-#  last_name      :string
-#  locked         :boolean          default(FALSE)
-#  nick_name      :string
-#  old_state      :string
-#  onboarded      :boolean          default(FALSE)
-#  pesel          :string
-#  quota_left     :integer          default(0)
-#  quota_max      :integer          default(0)
-#  risk           :string
-#  role           :integer
-#  skills         :string
-#  verified       :boolean          default(FALSE)
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  doctor_id      :bigint           not null
-#  user_id        :bigint           not null
+#  id              :bigint           not null, primary key
+#  aasm_state      :string
+#  avatar          :string
+#  birth_date      :date
+#  contact_number  :string
+#  credits         :integer          default(0)
+#  first_name      :string
+#  gender          :integer
+#  last_name       :string
+#  locked          :boolean          default(FALSE)
+#  nick_name       :string
+#  old_state       :string
+#  onboarded       :boolean          default(FALSE)
+#  pesel           :string
+#  quota_left      :integer          default(0)
+#  quota_max       :integer          default(0)
+#  risk            :string
+#  risk_calculated :integer
+#  role            :integer
+#  skills          :string
+#  verified        :boolean          default(FALSE)
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  doctor_id       :bigint
+#  user_id         :bigint           not null
 #
 # Indexes
 #

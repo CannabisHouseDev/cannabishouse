@@ -3,22 +3,42 @@
   .h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
     / Appointments Section
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.relative
-      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white 2
+      .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white #{@evaluations.count || 0}
       %span.w-full.flex-grow
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.pending')}
-        / Cards
-        - 2.times do
-          .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        / Content
+        .flex.flex-col.overflow-y-auto
+          / Cards
+          - if @evaluations.count.zero?
+            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center All subjects have been evaluated
+          - else
+            - @evaluations.each do |a|
+              = link_to evaluation_details_path(a.id) do
+                .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.flex.justify-between{class: a.id == @selected.to_i ? 'bg-gray-400 text-white' : 'bg-gray-100'}
+                  %span #{a.participant.profile.first_name} #{a.participant.profile.last_name}
+                  %span #{a.time.strftime('%A %B %d, %Y')} #{a.time.strftime('%H:%M')}
   / Second Column
   .h-full.flex.flex-col.px-1.flex-grow
     / Evaluations Section
     .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2.mb-2.relative
       %span.w-full.flex-grow.flex.flex-col
         / Title
-        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.appointments')}
-        / Cards
-        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.evaluation')}
+        / Content
+        - risk = ['green', 'orange', 'red'].index(Appointment.find(@selected).participant.profile.risk_calculated)
+        .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.p-2
+          .flex.w-full.rounded.justify-center.pa-2.text-xl{style: "background: #{['green', 'orange', 'red'][risk]}"}
+            Automated Risk Assesment:
+            = ['green', 'orange', 'red'][risk]
+          .flex.w-full.rounded.justify-center.pa-2.text-lg
+            Recommended Maximum Dosage:
+          .flex.w-full.rounded.justify-center.pa-2.text-md
+            = ['Drought: 10g per month, Oil: 5g per month', 'Drought: 20g per month, Oil: 10g per month', 'Drought: 30g per month, Oil: 15g per month'][risk]
+          %hr.w-80.border-2.border-grey.mt-2
+          - @surveys.each do |s|
+            .flex.w-full.rounded.justify-center.pa-2
+              = "#{s.survey.internal_name} score: #{s.score}"
       / Action Button Footer
       .w-full.text-black
         = link_to t('views.doctor_portal.start'), "#", class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-gray-700 py-4'

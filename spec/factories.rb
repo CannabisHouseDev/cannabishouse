@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :cycle do
+    user { nil }
+    annual_paid_on { "2021-06-30 10:28:54" }
+    current_study_renews_on { "2021-06-30 10:28:54" }
+    monthly_cycle_start_day { 1 }
+  end
+
 
   factory :answer do
     filled_survey { nil }
