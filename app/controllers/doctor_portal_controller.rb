@@ -33,6 +33,19 @@ class DoctorPortalController < ApplicationController
     redirect_to action: :appointments
   end
 
+  def evaluate
+    s = Appointment.find(params[:id].to_i)
+    s.participant.profile.set_quota(params[:dry].to_i, params[:oil].to_i, params[:risk], true)
+    s.update!(state: 'evaluated')
+    redirect_to action: :evaluations
+  end
+
+  def reject
+    s = Appointment.find(params[:id].to_i)
+    s.participant.set_quota(0, 0, 0, 0, false)
+    redirect_to action: :evaluations
+  end
+
   private
 
   def set_appointments

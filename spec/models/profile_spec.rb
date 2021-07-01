@@ -18,8 +18,10 @@
 #  old_state       :string
 #  onboarded       :boolean          default(FALSE)
 #  pesel           :string
-#  quota_left      :integer          default(0)
-#  quota_max       :integer          default(0)
+#  quota_left_dry  :integer          default(0)
+#  quota_left_oil  :integer          default(0)
+#  quota_max_dry   :integer          default(0)
+#  quota_max_oil   :integer          default(0)
 #  risk            :string
 #  risk_calculated :integer
 #  role            :integer

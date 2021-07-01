@@ -2,6 +2,7 @@
 
 Rails.application.routes.draw do
   Healthcheck.routes(self)
+  get '*path' => redirect('/')
   resources :answers
   namespace :admin do
     resources :users
@@ -43,6 +44,8 @@ Rails.application.routes.draw do
       get 'doctor/calendar', to: 'doctor_portal#calendar', as: 'calendar'
       get 'doctor/evaluations', to: 'doctor_portal#evaluations', as: 'evaluations'
       get 'doctor/evaluations/:id', to: 'doctor_portal#evaluations', as: 'evaluation_details'
+      post 'doctor/evaluate/:id', to: 'doctor_portal#evaluate', as: 'evaluate'
+      delete 'doctor/evaluate/:id', to: 'doctor_portal#reject', as: 'reject'
 
       # Researcher Related Routes
       get 'researcher', to: 'researcher_portal#surveys', as: 'researcher_portal'
@@ -87,7 +90,6 @@ Rails.application.routes.draw do
     end
 
   end
-  get '*path' => redirect('/')
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 

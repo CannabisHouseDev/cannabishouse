@@ -18,8 +18,10 @@
 #  old_state       :string
 #  onboarded       :boolean          default(FALSE)
 #  pesel           :string
-#  quota_left      :integer          default(0)
-#  quota_max       :integer          default(0)
+#  quota_left_dry  :integer          default(0)
+#  quota_left_oil  :integer          default(0)
+#  quota_max_dry   :integer          default(0)
+#  quota_max_oil   :integer          default(0)
 #  risk            :string
 #  risk_calculated :integer
 #  role            :integer
@@ -145,6 +147,15 @@ class Profile < ApplicationRecord
     end
   end
 
+  def set_quota(dry, oil, risk, approval)
+    if approval
+      self.update!(quota_left_dry: dry, quota_max_dry: dry, quota_left_oil: oil, quota_max_oil: oil, risk: risk)
+      self.approve!
+    else
+      self.reject!
+    end
+  end
+
   private
 
   def save_old_state
@@ -184,9 +195,5 @@ class Profile < ApplicationRecord
     total = (normalized_scores.sum / normalized_scores.count.to_f)
     self.risk_calculated = total > 1.5 ? 'red' : total > 0.5 ? 'orange' : 'green'
     save!
-  end
-
-  def set_quota(amount)
-    self.quota_max(amount)
   end
 end

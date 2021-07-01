@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_162002) do
+ActiveRecord::Schema.define(version: 2021_06_30_211035) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -226,14 +226,16 @@ ActiveRecord::Schema.define(version: 2021_06_30_162002) do
     t.boolean "onboarded", default: false
     t.boolean "verified", default: false
     t.boolean "locked", default: false
-    t.integer "quota_max", default: 0
-    t.integer "quota_left", default: 0
+    t.integer "quota_max_dry", default: 0
+    t.integer "quota_left_dry", default: 0
     t.integer "credits", default: 0
     t.string "aasm_state"
     t.string "old_state"
     t.string "risk"
     t.bigint "doctor_id"
     t.integer "risk_calculated"
+    t.integer "quota_max_oil", default: 0
+    t.integer "quota_left_oil", default: 0
     t.index ["doctor_id"], name: "index_profiles_on_doctor_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
