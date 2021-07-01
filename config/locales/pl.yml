@@ -8,7 +8,7 @@ pl:
     phone: "+48 422 784 420"
   navbar:
     about: "O nas"
-    account: "Konto"
+    account: "Profil"
     transfers: "Transfery"
     media: "Media"
     stock: "Asortyment"
@@ -26,8 +26,8 @@ pl:
     no_account: "Nie masz konta?"
     have_account: "Posiadasz już konto?"
     close: "Zamknij"
-    confirm: "Potwierdzenie Hasła"
-    agree: "Oświadczam, że zapoznałam/zapoznałem się z treścia,"
+    confirm: "Powtórz hasło"
+    agree: "Oświadczam, że zapoznałam/zapoznałem się z treścią"
     statute: "Statutu Stowarzyszenia"
     content: "Cannabis House z siedzibą w Łodzi. Składam deklarację przystąpienia do Stowarzyszenia jako członek wspierający.  Oświadczam, że podane informacje są zgodne z prawdą. Zobowiązuję się do przestrzegania ww. statutu, regulaminu i innych uchwał Stowarzyszenia oraz zobowiązuję się do opłacenia składek członkowskich zgodnie z uchwałą ws. składek."
     agree2: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z art. 7 pkt 5 ustawy z 29.08.1997r o ochronie danych osobowych (Dz. U. Nr 133, poz. 883) przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji."
@@ -35,16 +35,20 @@ pl:
       user:
         already_signed_out: "Jesteś już wylogowany."
     users:
+      shared: 
+        new_confirmation: "Nie otrzymałeś emaila z potwierdzeniem?"
+        forgot: "Zapomniałeś hasła?"
+        unlock_instruction: "Nie otrzymałeś instrukcji do odblokowania konta?"
       reg: 
         new:
           sign_up: "Zarejestruj się"
           pass_num: "znaków minimum"
-          pass: "hasło"
-          pass_con: "powtórz hasło"
-          terms1: "Oświadczam, że zapoznałam/zapoznałem się z treścia, statutu Stowarzyszenia Cannabis House z siedzibą w Łodzi. Składam deklarację przystąpienia do Stowarzyszenia jako członek wspierający.  Oświadczam, że podane informacje są zgodne z prawdą. Zobowiązuję się do przestrzegania ww. statutu, regulaminu i innych uchwał Stowarzyszenia oraz zobowiązuję się do opłacenia składek członkowskich."
+          pass: "Hasło"          
           terms2: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z art. 7 pkt 5 ustawy z 29.08.1997r o ochronie danych osobowych (Dz. U. Nr 133, poz. 883) przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji."
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
+    devise:
+      sign up: "Zapisz się"
   forms:
     save: "Zapisać"
     cancel: "Anuluj"
@@ -279,13 +283,16 @@ pl:
       cancel: "Anuluj"
     doctor_portal:
       load: "Wczytaj wszystko"
-      edit: "Edytuj czas dyspozycyjny"
+      edit: "Edytuj czas dostępności"
       cancel: "Anuluj"
       mark: "Oznacz jako zakończone"
       start: "Rozpocznij ocenę"
       pending: "Oczekujące oceny"
+      no_pending: "Brak oczekująych ocen"
       appointments: "Szczegóły spotkania"
+      select: "Proszę wybrać termin, aby zobaczyć szczegóły"
       upcoming: "Najbliższe spoktania"
+      no_upcoming: "Brak nadchodzących spotkań"
       calendar: "Mój kalendarz"
     home:
       more: "Więcej"
