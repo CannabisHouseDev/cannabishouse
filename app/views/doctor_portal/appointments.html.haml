@@ -11,7 +11,8 @@
         .flex.flex-col.overflow-y-auto
           / Cards
           - if @appointments.count.zero?
-            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center No upcoming appointment
+            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center 
+            = t('views.doctor_portal.no_upcoming')
           - else
             - @appointments.each do |a|
               = link_to appointment_details_path(a.id) do
@@ -29,7 +30,7 @@
         / Content
         - unless @selected
           .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.justify-center
-            Please select an appointment to show the details
+            = t('views.doctor_portal.select') 
         - else
           .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.px-2.justify-center
             = image_tag polymorphic_url(appointment.participant.profile.avatar), size: 280, class: 'h-40 w-40 items-center rounded-full border'
