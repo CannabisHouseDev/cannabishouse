@@ -59,10 +59,21 @@ en:
     close: "close"
     confirm: "Password Confirmation"
     agree: "I agree to the terms and conditions"
-    terms: "terms and conditions"
+    statute: "of the statute of the Cannabis House Association"
+    content: "based in Łódź. I am submitting a declaration of joining the Association as a supporting member. I certify that the information provided is true. I undertake to comply with the above-mentioned of the statute, regulations and other resolutions of the Association and I undertake to pay membership fees in accordance with the resolution on contributions."
+    agree2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
     sessions:
       user:
         already_signed_out: "You are already signed out."
+    users:
+      reg: 
+        new:
+          sign_up: "Sign Up"
+          pass_num: "characters minimum"
+          pass: "password"
+          pass_con: "password confirmation"
+          terms1: "I declare that I have read the content of the statute of the Cannabis House Association based in Łódź. I am submitting a declaration of joining the Association as a supporting member. I certify that the information provided is true. I undertake to comply with the above-mentioned of the statute, regulations and other resolutions of the Association and I undertake to pay membership fees."
+          terms2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
   forms:
