@@ -2,7 +2,6 @@
 
 Rails.application.routes.draw do
   Healthcheck.routes(self)
-  get '*path' => redirect('/')
   resources :answers
   namespace :admin do
     resources :users

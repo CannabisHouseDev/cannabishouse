@@ -1,4 +1,4 @@
-.w-full.h-full.flex.flex-col.py-4.md:flex-row
+.w-full.h-full.flex.flex-col.py-4.md:flex-row{ "data-controller" => "doctor", "data-doctor-target" => "doctor" }
   / First Column
   .h-full.flex.flex-col.px-1.flex-grow.mb-2.md:mb-0
     / Appointments Section
@@ -38,7 +38,7 @@
             .flex.w-full.rounded.justify-center.pa-2
               = "#{s.survey.internal_name} score: #{s.score}"
           %hr.w-80.border-2.border-grey.mt-2
-          = form_with url: evaluate_path(id: @selected), class: 'flex flex-col justify-center text-center' do |form|
+          = form_with url: evaluate_path(id: @selected), method: :post, class: 'flex flex-col justify-center text-center', id: 'evaluation_form' do |form|
             = form.label "Risk Level", for: :risk, class: 'text-lg'
             = form.collection_select :risk, ['green', 'orange', 'red'], :to_s, :to_s, include_blank: false
             = form.label "Max amount of drought in grams", for: :dry, class: 'text-lg'
@@ -47,7 +47,8 @@
             = form.number_field :oil, min: 0, max: 30
             = form.submit "Submit", class: 'hidden', id: 'approve_submit'
       / Action Button Footer
-      .w-full.text-black
-        = link_to t('views.doctor_portal.start'), "#", class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-gray-700 py-4'
+      .grid.grid-cols-2.w-full
+        = link_to t('views.doctor_portal.reject'), evaluate_path(id: @selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-gray py-4 mr-1' if @selected
+        = link_to t('views.doctor_portal.finalize'), '#', class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-gray py-4 ml-1', data: { action: 'click->doctor#evaluate' } if @selected
 
         

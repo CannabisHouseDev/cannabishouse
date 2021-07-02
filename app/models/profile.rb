@@ -62,7 +62,8 @@ class Profile < ApplicationRecord
   validates :gender, presence: true, on: :update
   validates :pesel, presence: true, on: :update
   validates :contact_number, presence: true, on: :update
-  validates :avatar, attached: true, content_type: 'image/png'
+  # Removed until I fix :set_blob issue
+  # validates :avatar, attached: true, content_type: 'image/png'
 
   validates :pesel, format: { with: /\A(\d{11})\z/ }, on: :update
 
@@ -178,7 +179,7 @@ class Profile < ApplicationRecord
     asset_test = %w[bMAST pum phq9 kssuk30]
     normalized_scores = []
     asset_test.each do |test|
-      survey = FilledSurvey.find_by(survey: Survey.find_by(internal_name: test))
+      survey = FilledSurvey.find_by(user_id: self.user_id, survey: Survey.find_by(internal_name: test))
       # Rules for different risk assesment tests
       case test
       when 'bMAST'
