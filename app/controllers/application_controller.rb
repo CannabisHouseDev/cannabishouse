@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :prepare_meta_tags, :set_locale
   before_action :set_paper_trail_whodunnit
   before_action :authenticate_user!
+  add_flash_types :success, :error
 
   def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }

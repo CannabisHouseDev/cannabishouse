@@ -96,7 +96,7 @@ end
 
 puts 'Generating fake appointment slots...'
 12.times do
-  time = DateTime.now.change({hour: rand(8..20), min: ['00','30'][rand(0..1)].to_i})
+  time = DateTime.now.utc.change({ hour: rand(8..20), min: ['00', '30'][rand(0..1)].to_i })
   Slot.create(day: rand(0..6), time: time, doctor: Profile.find_by(role: 'doctor').user)
 end
 

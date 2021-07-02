@@ -3,7 +3,10 @@
 class DoctorPortalController < ApplicationController
   before_action :set_appointments, only: %i[index appointments]
   before_action :set_evaluations, only: %i[index evaluations]
-  def index; end
+  before_action :set_workday, only: %i[calendar spread_slots]
+  def index
+    flash.now[:error] = params[:flash][:error] if params[:flash] && params[:flash][:error]
+  end
 
   def appointments
     @selected = params[:id] || nil
@@ -12,11 +15,11 @@ class DoctorPortalController < ApplicationController
   def evaluations
     @selected = params[:id] || @evaluations.first.id
     set_required_surveys
+    no_scores
   end
 
   def calendar
-    @start_time = 8
-    @end_time = 20
+    spread_slots
   end
 
   def appointment_done
@@ -48,12 +51,17 @@ class DoctorPortalController < ApplicationController
 
   private
 
+  def set_workday
+    @start_time = 8
+    @end_time = 20
+  end
+
   def set_appointments
-    @appointments = Appointment.where(doctor_id: current_user.id, state: 'pending').order(time: :asc)
+    @appointments = Appointment.where(doctor_id: current_user.id, state: 'pending').order(time: :desc)
   end
 
   def set_evaluations
-    @evaluations = Appointment.where(doctor_id: current_user.id, state: 'done').order(time: :asc)
+    @evaluations = Appointment.where(doctor_id: current_user.id, state: 'done').order(time: :desc)
   end
 
   def set_required_surveys
@@ -63,5 +71,27 @@ class DoctorPortalController < ApplicationController
                 FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'index')),
                 FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'kssuk30')),
                 FilledSurvey.find_by(user_id: Appointment.find(@selected).participant.id, survey: Survey.find_by(internal_name: 'ghq30'))]
+  end
+
+  def no_scores
+    if @surveys.include? nil
+      flash[:error] = 'Could not fetch user scores, please contact support'
+      redirect_to action: :index
+    end
+  end
+
+  def spread_slots
+    @slots = []
+    slots = Slot.where(user_id: current_user.id).order(day: :asc).group_by(&:day).to_a
+    slots = slots.map do |slot|
+      [slot[0], slot[1].map { |s| [((s.hours - @start_time) / 2) + (s.minutes.zero? ? 0 : 1), s.booked] }]
+    end
+    (0..6).each do |i|
+      @slots << if !slots.detect { |s| s.include? i }.nil?
+                  slots.detect { |s| s.include? i }[1]
+                else
+                  []
+                end
+    end
   end
 end

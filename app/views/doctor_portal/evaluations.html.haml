@@ -26,26 +26,29 @@
         / Content
         - risk = ['green', 'orange', 'red'].index(Appointment.find(@selected).participant.profile.risk_calculated)
         .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.p-2
-          .flex.w-full.rounded.justify-center.pa-2.text-xl{style: "background: #{['green', 'orange', 'red'][risk]}"}
-            Automated Risk Assesment:
-            = ['green', 'orange', 'red'][risk]
-          .flex.w-full.rounded.justify-center.pa-2.text-lg
-            Recommended Maximum Dosage:
-          .flex.w-full.rounded.justify-center.pa-2.text-md
-            = ['Drought: 10g per month, Oil: 5g per month', 'Drought: 20g per month, Oil: 10g per month', 'Drought: 30g per month, Oil: 15g per month'][risk]
-          %hr.w-80.border-2.border-grey.mt-2
-          - @surveys.each do |s|
-            .flex.w-full.rounded.justify-center.pa-2
-              = "#{s.survey.internal_name} score: #{s.score}"
-          %hr.w-80.border-2.border-grey.mt-2
-          = form_with url: evaluate_path(id: @selected), method: :post, class: 'flex flex-col justify-center text-center', id: 'evaluation_form' do |form|
-            = form.label "Risk Level", for: :risk, class: 'text-lg'
-            = form.collection_select :risk, ['green', 'orange', 'red'], :to_s, :to_s, include_blank: false
-            = form.label "Max amount of drought in grams", for: :dry, class: 'text-lg'
-            = form.number_field :dry, min: 0, max: 50
-            = form.label "Max amount of oil in grams", for: :oil, class: 'text-lg'
-            = form.number_field :oil, min: 0, max: 30
-            = form.submit "Submit", class: 'hidden', id: 'approve_submit'
+          - if risk
+            .flex.w-full.rounded.justify-center.pa-2.text-xl{style: "background: #{['green', 'orange', 'red'][risk]}"}
+              Automated Risk Assesment:
+              = ['green', 'orange', 'red'][risk]
+            .flex.w-full.rounded.justify-center.pa-2.text-lg
+              Recommended Maximum Dosage:
+            .flex.w-full.rounded.justify-center.pa-2.text-md
+              = ['Drought: 10g per month, Oil: 5g per month', 'Drought: 20g per month, Oil: 10g per month', 'Drought: 30g per month, Oil: 15g per month'][risk]
+            %hr.w-80.border-2.border-grey.mt-2
+            - @surveys.each do |s|
+              .flex.w-full.rounded.justify-center.pa-2
+                = "#{s.survey.internal_name} score: #{s.score}"
+            %hr.w-80.border-2.border-grey.mt-2
+            = form_with url: evaluate_path(id: @selected), method: :post, class: 'flex flex-col justify-center text-center', id: 'evaluation_form' do |form|
+              = form.label "Risk Level", for: :risk, class: 'text-lg'
+              = form.collection_select :risk, ['green', 'orange', 'red'], :to_s, :to_s, include_blank: false
+              = form.label "Max amount of drought in grams", for: :dry, class: 'text-lg'
+              = form.number_field :dry, min: 0, max: 50
+              = form.label "Max amount of oil in grams", for: :oil, class: 'text-lg'
+              = form.number_field :oil, min: 0, max: 30
+              = form.submit "Submit", class: 'hidden', id: 'approve_submit'
+          - else
+            Something went wrong fetching the participant's scores please contact support
       / Action Button Footer
       .grid.grid-cols-2.w-full
         = link_to t('views.doctor_portal.reject'), evaluate_path(id: @selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-gray py-4 mr-1' if @selected

@@ -13,6 +13,7 @@ pl:
     media: "Media"
     stock: "Asortyment"
     appointments: "Spotkania"
+    evaluations: "Oceny"
     calendar: "Kalendarz"
   devise:
     login: "Zaloguj się"

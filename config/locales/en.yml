@@ -44,6 +44,7 @@ en:
     media: "Media"
     stock: "Stock"
     appointments: "Appointments"
+    evaluations: "Evaluations"
     calendar: "Calendar"
   devise:
     login: "Login"
