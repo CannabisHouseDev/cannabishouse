@@ -13,6 +13,7 @@ Survey.destroy_all
 
 puts 'Creating users...'
 6.times do |i|
+  participants = []
   if i == 1
     6.times do |j|
       url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
@@ -38,13 +39,27 @@ puts 'Creating users...'
       user.profile.verified = true unless i.zero?
       user.profile.credits = 10_000_000 if i == 1
       user.profile.save
+      participants << user
+      puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
+      user.profile.update!(
+      role: 'participant',
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      gender: rand(0..1),
+      contact_number: Faker::PhoneNumber.phone_number,
+      pesel: '19293012949',
+      risk_calculated: 'orange')
+      user.profile.onboarded = true unless i.zero?
+      user.profile.verified = true unless i.zero?
+      user.profile.credits = 10_000_000 if i == 1
+      user.profile.save
       puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
     end
   else
     url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
     filename = File.basename(URI.parse(url).path)
     user = User.create(
-      email: "#{%w[user dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
+      email: "#{%w[user participant dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
       password: '1111222233334444',
       password_confirmation: '1111222233334444',
       agreement_1: 'true',
@@ -53,23 +68,13 @@ puts 'Creating users...'
     user.confirm
     file = URI.open(url)
     user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg")
-    if i == 1
-      user.profile.update(
-      role: 'participant',
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      gender: rand(0..1),
-      contact_number: Faker::PhoneNumber.phone_number,
-      pesel: '19293012949')
-    else
-      user.profile.update(
-      role: %w[user participant dispensary doctor researcher warehouse admin][i],
-      first_name: Faker::Name.first_name,
-      last_name: Faker::Name.last_name,
-      gender: rand(0..1),
-      contact_number: Faker::PhoneNumber.phone_number,
-      pesel: '19293012949')
-    end
+    user.profile.update(
+    role: %w[user participant dispensary doctor researcher warehouse admin][i],
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    gender: rand(0..1),
+    contact_number: Faker::PhoneNumber.phone_number,
+    pesel: '19293012949')
     user.profile.onboarded = true unless i.zero?
     user.profile.verified = true unless i.zero?
     user.profile.credits = 10_000_000 if i == 1
