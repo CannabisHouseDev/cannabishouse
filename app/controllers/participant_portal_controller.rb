@@ -36,6 +36,7 @@ class ParticipantPortalController < ApplicationController
 
   def process_payment
     @current_user.profile.pay!
+    Cycle.create(user: @current_user, annual_paid_on: DateTime.now)
     redirect_to action: :steps
   end
 

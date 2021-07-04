@@ -21,6 +21,8 @@ class AppointmentsController < ApplicationController
 
   # POST /appointments or /appointments.json
   def create
+    @appointment = Appointment.find_by(appointment_params)
+    byebug
     @appointment = Appointment.new(appointment_params)
 
     respond_to do |format|
