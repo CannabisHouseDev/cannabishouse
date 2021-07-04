@@ -44,6 +44,7 @@ en:
     media: "Media"
     stock: "Stock"
     appointments: "Appointments"
+    evaluations: "Evaluations"
     calendar: "Calendar"
   devise:
     login: "Login"
@@ -59,12 +60,27 @@ en:
     close: "close"
     confirm: "Password Confirmation"
     agree: "I agree to the terms and conditions"
-    terms: "terms and conditions"
+    statute: "of the statute of the Cannabis House Association"
+    content: "based in Łódź. I am submitting a declaration of joining the Association as a supporting member. I certify that the information provided is true. I undertake to comply with the above-mentioned of the statute, regulations and other resolutions of the Association and I undertake to pay membership fees in accordance with the resolution on contributions."
+    agree2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
     sessions:
       user:
         already_signed_out: "You are already signed out."
+    users:
+      shared: 
+        new_confirmation: "Didn't receive confirmation instructions?"
+        forgot: "Forgot your password?"
+        unlock_instruction: "Didn't receive unlock instructions?"
+      reg: 
+        new:
+          sign_up: "Sign Up"
+          pass_num: "characters minimum"
+          pass: "Password"          
+          terms2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
+    devise:
+      sign up: "Zapisz się"
   forms:
     save: "Save"
     cancel: "Cancel"
@@ -304,10 +320,14 @@ en:
       edit: "Edit Time available"
       cancel: "Cancel"
       mark: "Mark as done"
-      start: "Start evaluation"
+      finalize: "Finalize evaluation"
+      reject: "Reject"
       pending: "Pending Evaluations"
+      no_pending: "No pending evaluations"
       appointments: "Appointments details"
+      select: "Please select an appointment to show the details"
       upcoming: "Upcoming appointments"
+      no_upcoming: "No upcoming appointments"
       calendar: "My calendar"
     home:
       more: "More"
