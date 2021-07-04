@@ -11,7 +11,8 @@
         .flex.flex-col.overflow-y-auto
           / Cards
           - if @appointments.count.zero?
-            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center No upcoming appointment
+            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center 
+              = t('views.doctor_portal.no_upcoming')
           - else
             - @appointments.each do |a|
               = link_to appointment_details_path(a.id) do
@@ -33,7 +34,8 @@
         .flex.flex-col.overflow-y-auto.flex-grow.h-52
           / Cards
           - if @evaluations.count.zero?
-            .w-full.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center No pending evaluation
+            .w-full.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center 
+              = t('views.doctor_portal.no_pending')
           - else
             - @evaluations.each do |a|
               = link_to evaluation_details_path(a.id) do
