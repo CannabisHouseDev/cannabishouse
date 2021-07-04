@@ -11,8 +11,7 @@ export default class extends Controller {
 
   initialize () {
     window.root = this.doctorTarget;
-    console.log('initializing')
-    }
+  }
 
   connect () {}
 

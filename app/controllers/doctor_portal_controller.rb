@@ -3,7 +3,7 @@
 class DoctorPortalController < ApplicationController
   before_action :set_appointments, only: %i[index appointments]
   before_action :set_evaluations, only: %i[index evaluations]
-  before_action :set_workday, only: %i[calendar spread_slots]
+  before_action :set_workday, only: %i[calendar spread_slots add_slot]
   def index
     flash.now[:error] = params[:flash][:error] if params[:flash] && params[:flash][:error]
   end
@@ -20,6 +20,20 @@ class DoctorPortalController < ApplicationController
 
   def calendar
     spread_slots
+  end
+
+  def remove_slot
+    slot = Slot.find(params[:id])
+    slot.destroy
+    redirect_to action: :calendar
+  end
+
+  def add_slot
+    time = DateTime.now.utc.change({ hour: params[:hours].to_i, min: params[:minutes].to_i })
+    Slot.find_or_create_by(user_id: current_user.id,
+                           day: params[:day].to_i,
+                           time: time)
+    redirect_to action: :calendar
   end
 
   def appointment_done
@@ -84,7 +98,7 @@ class DoctorPortalController < ApplicationController
     @slots = []
     slots = Slot.where(user_id: current_user.id).order(day: :asc).group_by(&:day).to_a
     slots = slots.map do |slot|
-      [slot[0], slot[1].map { |s| [((s.hours - @start_time) / 2) + (s.minutes.zero? ? 0 : 1), s.booked] }]
+      [slot[0], slot[1].map { |s| [(((s.hours - @start_time.to_f) * 2) + (s.minutes.zero? ? 0 : 1)).to_i, s.booked, s.id] }]
     end
     (0..6).each do |i|
       @slots << if !slots.detect { |s| s.include? i }.nil?
