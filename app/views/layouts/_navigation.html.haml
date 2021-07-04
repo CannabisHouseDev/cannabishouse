@@ -1,12 +1,13 @@
-.container.mx-auto{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
-  .flex.mx-auto.justify-between.items-center.border-b-2.border-gray-100.py-6
-    = link_to main_app.root_path, class: 'p-1 mr-4 flex-grow-0' do
-      %span.sr-only= t('.company.name')
+%nav.fixed.z-50.w-full.bg-gray-100.top-0.flex.flex-wrap.items-center.justify-between.px-2.py-3.shadow-lg
+  %header.text-gray-600.body-font
+  .container.mx-auto.flex.flex-wrap.flex-col.md:flex-row.items-end{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
+    %span.sr-only= t('.company.name')
+    = link_to main_app.root_path, class: '' do
       = image_tag 'logo.png', alt: 'Cannabis House Logo', class: "h-8 w-auto sm:h-10"
     - unless current_user
-      .flex-grow.justify-start
-        = link_to t('navbar.about'), about_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
-        = link_to t('navbar.media'), media_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+      %nav.md:mr-auto.md:ml-8.md:pl-8.md:border-l.md:border-gray-400.flex.flex-wrap.justify-center.leading-none.h
+        = link_to t('navbar.about'), about_path, class: "mr-5 text-primary-800 hover:text-primary font-medium"
+        = link_to t('navbar.media'), media_path, class: "mr-5 text-primary-800 hover:text-primary-600 transition-colors duration-300 font-medium"
     - else
       .flex-grow.justify-start
         - case current_user.profile.role
@@ -21,6 +22,32 @@
           = link_to t('navbar.calendar'), calendar_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
     %nav.flex-grow-0.md:flex
       = render 'layouts/navlinks_for_auth'
-  - unless current_user
-    = render partial: 'pages/partials/modal'
+    - unless current_user
+      = render partial: 'pages/partials/modal'
+
+-# .container.mx-auto{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
+-#   .flex.mx-auto.justify-between.items-center.border-b-2.border-gray-100.py-6
+-#     = link_to main_app.root_path, class: 'p-1 mr-4 flex-grow-0' do
+-#       %span.sr-only= t('.company.name')
+-#       = image_tag 'logo.png', alt: 'Cannabis House Logo', class: "h-8 w-auto sm:h-10"
+-#     - unless current_user
+-#       .flex-grow.justify-start
+-#         = link_to t('navbar.about'), about_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#         = link_to t('navbar.media'), media_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#     - else
+-#       .flex-grow.justify-start
+-#         - case current_user.profile.role
+-#         - when 'participant'
+-#           = link_to t('navbar.about'), about_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#           = link_to t('navbar.media'), media_path, class: "text-base p-4 font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#         - when 'dispensary'
+-#           = link_to t('navbar.transfers'), transfers_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#           = link_to t('navbar.stock'), stock_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#         - when 'doctor'
+-#           = link_to t('navbar.appointments'), doctor_portal_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#           = link_to t('navbar.calendar'), calendar_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+-#     %nav.flex-grow-0.md:flex
+-#       = render 'layouts/navlinks_for_auth'
+-#   - unless current_user
+-#     = render partial: 'pages/partials/modal'
 
