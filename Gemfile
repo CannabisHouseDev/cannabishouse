@@ -33,6 +33,9 @@ gem 'aws-sdk-s3'
 # Extends active record validations, adds attachment validation
 gem 'active_storage_validations'
 
+# Serialization for active record instances
+gem 'active_model_serializers'
+
 # Data tracking and versioning
 gem 'paper_trail'
 gem 'rails_admin'
@@ -44,6 +47,9 @@ gem 'after_commit_everywhere', '~> 1.0' # Integration ith Active Record to store
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+# Healthcheck url
+gem 'rails-healthcheck'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

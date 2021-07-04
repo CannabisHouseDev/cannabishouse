@@ -16,7 +16,7 @@
             - @appointments.each do |a|
               = link_to appointment_details_path(a.id) do
                 .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.flex.justify-between{class: a.id == @selected.to_i ? 'bg-gray-400 text-white' : 'bg-gray-100'}
-                  %span #{a.id} #{a.time.strftime('%A %B %d, %Y')}
+                  %span #{a.time.strftime('%A %B %d, %Y')}
                   %span #{a.time.strftime('%H:%M')}
   / Second Column
   - appointment = Appointment.find(@selected) if @selected

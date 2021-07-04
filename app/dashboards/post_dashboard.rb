@@ -11,7 +11,6 @@ class PostDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
-    body: Field::HasOne,
     id: Field::Number,
     title: Field::String,
     body: RichTextField,
