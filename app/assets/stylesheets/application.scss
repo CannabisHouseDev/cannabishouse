@@ -1,12 +1,16 @@
 // Graphical variables
-@import "config/index";
+@import 'config/index';
 
 // Reusable Components
-@import "components/index";
+@import 'components/index';
 
 // Pages
-@import "pages/index";
+@import 'pages/index';
 
-html{
+// Animaitons
+
+@import 'aos/dist/aos.css'; // You can also use <link> for styles
+
+html {
   scroll-behavior: smooth;
 }

@@ -14,9 +14,13 @@
     :javascript
       window.locale = "#{escape_javascript I18n.locale}"
   %body.bg-gray-100.w-full
-    .w-full.mx-auto.px-4.sm:px-6.flex.flex-col{:class => ('h-screen' unless action_name == 'landing')}
+    .w-full.mx-auto.flex.flex-col{:class => ('h-screen' unless action_name == 'landing')}
       = render 'layouts/navigation'
       .w-full.h-full.flex-grow.z-0
         = yield
       = toastr_flash
     = render 'layouts/footer'
+  -# TODO load from app.js
+  %script{:src => "https://unpkg.com/aos@next/dist/aos.js"}
+  :javascript
+    AOS.init({ duration: 1200,offset:300 });

@@ -51,14 +51,16 @@ pl:
   pages:
     landing:
       hero:
-        title: "Pomóż ratować życie"
+        title: "Pomóż ratować"
+        titleSecondPart: "życie"
         content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie medycyny. Pokaż swoje poparcie dla naszych idei i weź udział w badaniach!"
         cta: "Dołącz do nas!"
       description:
         title: "Jesteśmy inicjatorami badań naukowych"
         content: "Nasza platforma przez następne kilka lat zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
       instructions:
-        title: "Jak to działa?"
+        title: "Jak to"
+        titleSecondPart: "działa?"
         subheading: "Kroki aktywnego uczestnika badania"
         firstStep:
           title: "Wypełnij swój profil"
