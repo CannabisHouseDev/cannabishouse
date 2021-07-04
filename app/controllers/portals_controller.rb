@@ -6,6 +6,7 @@ class PortalsController < ApplicationController
     redirect_to landing_page and return unless current_user
     case current_user.profile.role
     when 'user'
+      redirect_to steps_path and return
     when 'participant'
       redirect_to steps_path and return
     when 'dispensary'

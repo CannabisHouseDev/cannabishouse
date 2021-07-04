@@ -10,6 +10,7 @@ module ApplicationHelper
       flash_messages << text.html_safe if message
     end.join("\n").html_safe
   end
+
   # Helper methods to use devise form anywhere in the app
   def resource_name
     :user

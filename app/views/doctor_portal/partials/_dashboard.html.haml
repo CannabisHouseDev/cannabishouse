@@ -27,21 +27,22 @@
     / Evaluations Section
     .flex.flex-col.bg-gray-300.rounded-xl.justify-between.items-center.p-2.mb-2.relative{class: "h-2/3"}
       .h-7.w-7.absolute.top-2.right-4.bg-red-500.rounded-full.flex.justify-center.items-center.text-white #{@evaluations.count || 0}
-      %span.w-full.flex-grow
+      %span.w-full.p-2.flex.flex-col
         / Title
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.pending')}
         /Content
-        .flex.flex-col.overflow-y-auto
+        .flex.flex-col.overflow-y-auto.flex-grow.h-52
           / Cards
           - if @evaluations.count.zero?
-            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center 
+            .w-full.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center 
               = t('views.doctor_portal.no_pending')
           - else
             - @evaluations.each do |a|
-              .w-full.h-14.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2
-                = a.time.strftime('%A')
+              = link_to evaluation_details_path(a.id) do
+                .w-full.rounded-md.bg-gray-100.opacity-75.flex.items-center.mb-2.px-2.py-3
+                  = "#{a.participant.profile.last_name}, #{a.participant.profile.first_name}"
       / Action Button Footer
-      = link_to appointments_path do
+      = link_to evaluations_path do
         .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md #{t('views.doctor_portal.load')}
     / Schedule Section
     .flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2{class: "h-1/3"}
@@ -50,4 +51,4 @@
         .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{t('views.doctor_portal.calendar')}
         / Action Button Footer
         .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md
-          = link_to t('views.doctor_portal.edit')
+          = link_to t('views.doctor_portal.edit'), calendar_path
