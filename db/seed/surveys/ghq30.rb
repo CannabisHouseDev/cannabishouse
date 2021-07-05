@@ -35,7 +35,7 @@ title = 'Medical Survey #6'
 description = 'This survey is required to participate in the program.'
 internal_name = 'ghq30'
 
-author = Profile.find_by(role: 'researcher').user
+author = Profile.find_by(role: 'admin').user
 single = QuestionType.find_by(name: 'single').id
 
 s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)

@@ -40,7 +40,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       @profile.avatar.attach(params[:avatar]) if params[:avatar].present?
-      if @profile.update(profile_params) and @profile.avatar.attached?
+      if @profile.update(profile_params)
         @profile.onboarded = true
         @profile.save
         @profile.fill_info!

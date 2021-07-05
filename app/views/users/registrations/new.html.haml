@@ -2,40 +2,46 @@
   .px-20.mt-10.mb-20
     =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       .mt-8.max-w-md.mx-auto
-        %h3.text-2xl.font-bold.text-center Sign Up
+        %h3.text-2xl.font-bold.text-center= t('devise.signup')
+        %br/
         .grid.grid-cols-1.gap-6
           = render "devise/shared/error_messages", resource: resource
           %label.block.text-center
             %span.text-gray-700
-              = f.label :email, 'email'
+              = f.label :email, 'E-mail'
             %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0", placeholder: "johndoe@example.com"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0", placeholder: "jankowalski@example.com"
           %label.block.text-center
             %span.text-gray-700  
-              = f.label :password, 'password'
+              = f.label :password, t('devise.password')
             - if @minimum_password_length
               %em
-                (#{@minimum_password_length} characters minimum)
+                ( #{@minimum_password_length}  
+                = t('devise.users.reg.new.pass_num')
+                )
             %br/
             = f.password_field :password, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
           .text-center
-            = f.label :password_confirmation, 'password_confirmation'
+            = f.label :password_confirmation, ''
+           
             %br/
-            = f.password_field :password_confirmation, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+            = f.password_field :password_confirmation, class: 'mt-1 block w-full rounded-md bg-grey-100 border-transparent focus:border-500 focus:bg-white focus:ring-0'
           .block
             .mt-2
               %div
                 %label{class: 'inline-flex items-center font-thin'}
                   = f.check_box :agreement_1, {class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
                   %span.ml-2
-                    Oświadczam, że zapoznałam/zapoznałem się z treścia, statutu Stowarzyszenia Cannabis House z siedzibą w Łodzi. Składam deklarację przystąpienia do Stowarzyszenia jako członek wspierający.  Oświadczam, że podane informacje są zgodne z prawdą.
-                    Zobowiązuję się do przestrzegania w/w statutu, regulaminu i innych uchwał Stowarzyszenia.    
+                  = f.label :agreement_1 do
+                    =t('devise.agree')
+                    = link_to t('devise.statute'), about_path, class: "ml-2 text-blue-800"
+                    = t('devise.content')
           .block
             .mt-2
               %div  
                 %label{class: 'inline-flex items-center font-thin'}
                   = f.check_box :agreement_2, {class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
                   %span.ml-2 
-                    Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z art. 7 pkt 5 ustawy z 29.08.1997r o ochronie danych osobowych (Dz. U. Nr 133, poz. 883) przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji.
+                    = t('devise.users.reg.new.terms2') 
           
           = f.submit 'zapisz się', :class => 'Form-submit'

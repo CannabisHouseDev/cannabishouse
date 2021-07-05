@@ -10,6 +10,11 @@ export default class extends Controller {
     submit.click()
   }
 
+  editStudy () {
+    const form = document.getElementById("study_edit_form")
+    form.submit()
+  }
+
   confirmResearchUpdate (e) {
     e.preventDefault()
     this.updateTarget.click()
