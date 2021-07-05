@@ -397,6 +397,10 @@ en:
       save: "Save survey"
       cancel: "Cancel"
       edit: "Edit survey"
+      studies_title: "Studies"
+      empty_studies: "You don't have any studies yet, create a study to start generating surveys"
+      new_study: "New Study"
+      update_study: "Update Study"
     transfers:
       save: "Save"
       show: "Show"

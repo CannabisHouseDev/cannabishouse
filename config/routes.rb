@@ -50,9 +50,10 @@ Rails.application.routes.draw do
       delete 'doctor/calendar/slot/:id', to: 'doctor_portal#remove_slot', as: 'remove_slot'
 
       # Researcher Related Routes
-      get 'researcher', to: 'researcher_portal#surveys', as: 'researcher_portal'
+      get 'researcher', to: 'researcher_portal#index', as: 'researcher_portal'
       get 'researcher/survey/:survey', to: 'researcher_portal#survey_edit', as: 'survey_edit_dashboard'
       resources :surveys
+      resources :studies
       delete 'survey/:id', to: 'surveys#hide', as: 'hide_survey'
       post 'survey/add', to: 'researcher_portal#add_survey', as: 'add_survey'
       get 'researcher/survey/:survey/questions', to: 'researcher_portal#show_questions', as: 'show_questions'
@@ -62,6 +63,8 @@ Rails.application.routes.draw do
       patch 'question/:id/update', to: 'researcher_portal#update_question', as: 'update_question'
       post 'question/:id/add_option', to: 'researcher_portal#add_option', as: 'add_option'
       delete 'option/:id', to: 'researcher_portal#remove_option', as: 'remove_option'
+      post 'researcher/study/add', to: 'researcher_portal#add_study', as: 'add_study'
+      get 'researcher/study/:id', to: 'researcher_portal#show_studies', as: 'show_studies'
 
       get 'map', to: 'home#map', as: :map
 
