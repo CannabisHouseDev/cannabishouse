@@ -67,7 +67,7 @@ puts 'Creating users...'
     user.save
     user.confirm
     file = URI.open(url)
-    user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg")
+    user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg") if file
     user.profile.update(
     role: %w[user participant dispensary doctor researcher warehouse admin][i],
     first_name: Faker::Name.first_name,
@@ -89,7 +89,12 @@ puts 'Creating Question Types'
 end
 
 puts 'Creating Studies'
-study = Study.create(title: 'onboarding', description: 'Required surveys during onboarding', cycle: 4, max: 0, user_id: Profile.find_by(role: 'admin').user)
+Study.create(title: 'onboarding', description: 'Required surveys during onboarding', cycle: 4, max: 0, user_id: Profile.find_by(role: 'admin').user.id)
+study = Study.create(title: 'dummy Study', description: 'Just to test out the views', cycle: 4, max: 10, user_id: Profile.find_by(role: 'researcher').user.id)
+
+puts 'Creating dummy survey'
+
+survey = Survey.create(title: 'Dummy Survey', description: 'Trying out the views', internal_name: 'dummy', required: false, user_id: Profile.find_by(role: 'researcher').user.id, study: study)
 
 puts 'Creating Pre-Psychiatrist Surveys'
 
