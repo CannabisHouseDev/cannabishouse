@@ -1,6 +1,20 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :study_participation do
+    user { nil }
+    study { nil }
+  end
+
+  factory :study do
+    title { "MyString" }
+    description { "MyString" }
+    user { nil }
+    max { 1 }
+    fee { 1 }
+    cycle { 1 }
+  end
+
   factory :cycle do
     user { nil }
     annual_paid_on { "2021-06-30 10:28:54" }

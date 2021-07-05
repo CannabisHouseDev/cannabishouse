@@ -12,7 +12,7 @@ Question.destroy_all
 Survey.destroy_all
 
 puts 'Creating users...'
-6.times do |i|
+7.times do |i|
   participants = []
   if i == 1
     6.times do |j|
@@ -87,6 +87,9 @@ puts 'Creating Question Types'
 %w[short long number single multiple date].each do |t|
   QuestionType.create(name: t)
 end
+
+puts 'Creating Studies'
+study = Study.create(title: 'onboarding', description: 'Required surveys during onboarding', cycle: 4, max: 0, user_id: Profile.find_by(role: 'admin').user)
 
 puts 'Creating Pre-Psychiatrist Surveys'
 

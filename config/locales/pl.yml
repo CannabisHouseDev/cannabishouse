@@ -364,6 +364,10 @@ pl:
       save: "Zapisz ankiete"
       cancel: "Anuluj"
       edit: "Edytuj ankiete"
+      studies_title: "Studia"
+      empty_studies: "Nie masz jeszcze żadnych badań, utwórz badanie, aby rozpocząć generowanie ankiet"
+      new_study: "Dodaj badanie"
+      update_study: "Aktualizuj badanie"
     transfers:
       save: "Zapisz"
       show: "Pokaż"
