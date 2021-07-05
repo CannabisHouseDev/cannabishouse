@@ -15,9 +15,9 @@ questions = ['Czy uważasz, że używasz konopi w taki sam sposób jak większo�
              'Czy kiedykolwiek popadłeś w konflikt z prawem z powodu konopi, byłeś zatrzymany za prowadzenie pojazdu po użyciu konopi lub czy kiedykolwiek prowadziłeś pojazd pod wpływem konopi?']
 author = Profile.find_by(role: 'admin').user
 single = QuestionType.find_by(name: 'single').id
-
-s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)
-questions.each_with_index do |q,i|
+study = Study.find_by(title: 'onboarding')
+s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
+questions.each_with_index do |q, i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)
   QuestionOption.create(display: 'Yes', name: 'yes', question_id: q.id, score: 1)
   QuestionOption.create(display: 'No', name: 'no', question_id: q.id, score: 0)
