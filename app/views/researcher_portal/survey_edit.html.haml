@@ -14,6 +14,7 @@
             = form.collection_select :study_id, Study.where(user_id: current_user.id), :id, :title, {}, { class: 'bg-transparent border-0 text-center focus:ring-0' }
             = form.text_field :title, class: 'bg-transparent border-0 border-b-2 text-center text-gray-600'
             = form.text_area :description, type: 'textarea', rows: 3, class: 'h-full bg-transparent border-0 border-b-2 text-center text-gray-600'
+            = form.select :study_id, Study.pluck(:title, :id),{prompt: false}, class: 'Form-input w-1/3 bg-gray-200 border-gray-500'
           = form.submit(hidden: true, data: { 'researcher-target' => 'update' })
       / Action Button Footer
       .grid.grid-cols-2.w-full

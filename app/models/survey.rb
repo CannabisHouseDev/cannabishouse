@@ -25,6 +25,7 @@
 #
 class Survey < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'user_id'
+  belongs_to :study
   has_many :questions, class_name: 'Question', dependent: :destroy
   has_many :filled, class_name: 'FilledSurvey'
   belongs_to :study
