@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_04_090712) do
+ActiveRecord::Schema.define(version: 2021_07_05_103606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -311,6 +311,8 @@ ActiveRecord::Schema.define(version: 2021_07_04_090712) do
     t.boolean "hidden", default: false
     t.boolean "required", default: false
     t.string "internal_name"
+    t.bigint "study_id"
+    t.index ["study_id"], name: "index_surveys_on_study_id"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
@@ -380,6 +382,7 @@ ActiveRecord::Schema.define(version: 2021_07_04_090712) do
   add_foreign_key "studies", "users"
   add_foreign_key "study_participations", "studies"
   add_foreign_key "study_participations", "users"
+  add_foreign_key "surveys", "studies"
   add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"
