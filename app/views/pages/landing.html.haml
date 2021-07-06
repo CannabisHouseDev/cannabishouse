@@ -8,9 +8,9 @@
   .container.mx-auto.flex.py-24.md:flex-row.flex-col.items-center.mt-12
     .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center
       .sm:text-center.lg:text-left
-      %h1.text-2xl.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl{"data-aos" => "fade-down", "data-aos-delay" => 300}
+      %h1.md:tracking-tight.font-extrabold.text-gray-900.text-3xl.md:text-4xl{"data-aos" => "fade-down", "data-aos-delay" => 300}
         = t('.hero.title')
-        %span.block.text-primary-600.xl:inline{"data-aos" => "fade-down", "data-aos-delay" => 1500}
+        %span.text-primary-600.xl:inline{"data-aos" => "fade-down", "data-aos-delay" => 1500}
           = t('.hero.titleSecondPart')
       %p.mt-3.text-base.text-gray-600.sm:mt-5.sm:text-lg.sm:max-w-xl.sm:mx-auto.md:mt-5.md:text-xl.lg:mx-0{"data-aos" => "fade-down", "data-aos-delay" => 800}
         = t('.hero.content')
@@ -26,17 +26,16 @@
       -# =image_tag 'http://assets.stickpng.com/images/5ea455f1b033640004a14ac4.png', alt: 'hero', class: "rounded-3xl"
 
 
--# rottate background
--# %section.text-gray-900.body-font.bg-gray-100.h-24.relative.bottom-10.w-full.-rotate-2.transform
 
 -# SECOND HERO
 %section.text-gray-600.body-font.mt-24
   .container.mx-auto.flex.px-5.py-20.md:flex-row.flex-col.items-center.bg-primary.rounded-3xl
-    .lg:flex-grow.flex.flex-col.md:text-left.mb-16.md:mb-0.items-center.text-center.justify-center{:class => "md:w-1/2", }
-      =image_tag 'http://placehold.it/600x300/FFFFFF', alt: 'description', class: "rounded-3xl"
-    .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "md:w-1/2"}
 
-      %h1.text-4xl.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed
+    .lg:flex-grow.flex.flex-col.md:text-left.mb-16.md:mb-0.items-center.text-center.justify-center{:class => "w-full md:w-1/2 hidden md:block px-4", }
+      =image_tag 'http://placehold.it/600x300/FFFFFF', alt: 'description', class: "rounded-3xl"
+
+    .lg:flex-grow.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "w-full md:w-1/2 md:px-4"}
+      %h2.text-3xl.md:tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed
         = t('.description.title')
       %p.mt-3.text-white.text-base.text-00.sm:mt-5.sm:text-lg.sm:max-w-xl.sm:mx-auto.md:mt-5.md:text-xl.lg:mx-0
         = t('.description.content')
@@ -44,10 +43,10 @@
 
 -# INSTRUCTION NEW
 %section.mb-24.mt-24
-  .container.px-48.mx-auto.m-8.text-xl.text-center
-    %h2.text-2xl.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed.text-center
+  .container.px-8.md:px-24.mx-auto.m-8.text-xl.text-center
+    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed.text-center
       = t('.instructions.title')
-      %span.block.text-primary-600.xl:inline 
+      %span.text-primary-600
         = t('.instructions.titleSecondPart')
     %p.text-gray-600.mt-3= t('.instructions.subheading')
 
@@ -56,26 +55,26 @@
 
     -# First step
     %div{"data-aos" => "fade-right"}
-      .flex.flex-wrap.py-8
+      .block.md:flex.flex-wrap.py-8
         .text-right.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .flex-col.pr-20
+          .block.md:flex-col
             %h3.text-.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.firstStep.title')
             %p.text-gray-600= t('.instructions.firstStep.content')
-          .flex
-            .rounded-full.ring-4.bg-white.ring-primary.w-28.h-28.flex.justify-center.items-center.text-black.font-bold.text-3xl= 1
-        .w-full.p-6{:class => "sm:w-1/2"}
+          .block.md:flex-col.pl-4.md:pl-12
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 1
+        .w-full.p-6{:class => "sm:w-1/2 hidden md:block"}
           =image_tag 'landing-page/1.svg', alt: '1', class: "w-48"
 
 
     -# Second step
     %div{"data-aos" => "fade-left"}
       .flex.flex-wrap.py-8
-        .w-full{:class => "sm:w-1/2"}
+        .w-full{:class => "sm:w-1/2  hidden md:block"}
           =image_tag 'landing-page/2.svg', alt: '2', class: "w-44 ml-auto"
         .text-left.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .flex
-            .rounded-full.ring-4.text-primary.bg-white.ring-gray-800.w-28.h-28.flex.justify-center.items-center.text-black.font-bold.text-3xl= 2
-          .flex-col.pl-20
+          .block.md:flex-col
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 2
+          .flex-col.pl-4.md:pl-12
             %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-left= t('.instructions.secondStep.title')
             %p.text-gray-600= t('.instructions.secondStep.content')
 
@@ -83,23 +82,23 @@
     %div{"data-aos" => "fade-right"}
       .flex.flex-wrap.py-8
         .text-right.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .flex-col.pr-20
+          .block.md:flex-col
             %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.thirdStep.title')
             %p.text-gray-600= t('.instructions.thirdStep.content')
-          .flex
-            .rounded-full.ring-4.bg-white.ring-primary.w-28.h-28.flex.justify-center.items-center.text-black.font-bold.text-3xl= 3
-        .w-full{:class => "sm:w-1/2"}
+          .flex-col.pl-4.md:pl-12
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 3
+        .w-full{:class => "sm:w-1/2  hidden md:block"}
           =image_tag 'landing-page/3.svg', alt: '3', class: "w-48"
 
     -# Fourth step
     %div{"data-aos" => "fade-left"}
       .flex.flex-wrap.py-8.animate__animated.animate__fadeInRight
-        .w-full{:class => "sm:w-1/2"}
+        .w-full{:class => "sm:w-1/2  hidden md:block"}
           =image_tag 'landing-page/4.svg', alt: '4', class: "w-48 ml-auto"
         .text-left.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .flex
-            .rounded-full.ring-4.bg-white.ring-gray-800.w-28.h-28.flex.justify-center.items-center.text-black.font-bold.text-3xl.text-primary= 4
-          .flex-col.pl-20
+          .flex-col.pr-4
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 4
+          .flex-col.pl-4.md:pl-12
             %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-left= t('.instructions.fourthStep.title')
             %p.text-gray-600= t('.instructions.fourthStep.content')
 

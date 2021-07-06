@@ -1,15 +1,19 @@
-.container.flex.flex-col.mx-auto.w-full.items-center.justify-center
-  %h1= t('pages.about.about_us')
-  %br
-  %h2= t('pages.about.who_we_are.title')
-  %br
+.container.flex.flex-col.mx-auto.w-full.mt-32
+
+  %h1.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed
+    = t('pages.about.about_us')
+
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.who_we_are.title')
   %p= t('pages.about.who_we_are.content')
-  %br
-  %h2= t('pages.about.mission.title')
-  %br
+
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.mission.title')
   %p= t('pages.about.mission.content')
-  %h2= t('pages.about.goals.title')
-  %br
+
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.goals.title')
+
   %ul.flex.flex-col
     %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_2')
     %li.border-gray-400.flex.flex-row.mb-3= t('pages.about.goals.list.item_1')
@@ -21,15 +25,15 @@
       %li= t('pages.about.goals.list.subitem_5-a')
       %li= t('pages.about.goals.list.subitem_5-b')
       %li= t('pages.about.goals.list.subitem_5-c') 
-  %br
-  %br
-  %h2= t('pages.about.vision.title')     
+
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.vision.title')     
   %p= t('pages.about.vision.content_1')
   %p= t('pages.about.vision.content_2')
-  %br
-  %h2= t('pages.about.how_long')
-  %br
-  %h2= t('pages.about.register')
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.how_long')
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+    = t('pages.about.register')
 
 
 
