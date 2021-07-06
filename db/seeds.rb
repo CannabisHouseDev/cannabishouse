@@ -56,8 +56,7 @@ puts 'Creating users...'
       puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
     end
   else
-    url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
-    filename = File.basename(URI.parse(url).path)
+    filename = File.basename(URI.parse('https://picsum.photos/200').path)
     user = User.create(
       email: "#{%w[user participant dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
       password: '1111222233334444',

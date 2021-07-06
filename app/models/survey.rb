@@ -28,7 +28,6 @@ class Survey < ApplicationRecord
   belongs_to :study
   has_many :questions, class_name: 'Question', dependent: :destroy
   has_many :filled, class_name: 'FilledSurvey'
-  belongs_to :study
   accepts_nested_attributes_for :questions
 
   def hide
