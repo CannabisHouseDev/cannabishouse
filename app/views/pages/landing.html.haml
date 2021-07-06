@@ -43,8 +43,8 @@
 
 -# INSTRUCTION NEW
 %section.mb-24.mt-24
-  .container.px-8.md:px-24.mx-auto.m-8.text-xl.text-center
-    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed.text-center
+  .container.overflow-hidden.px-8.md:px-24.mx-auto.m-8.text-xl.text-center
+    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed.text-center
       = t('.instructions.title')
       %span.text-primary-600
         = t('.instructions.titleSecondPart')
@@ -55,24 +55,24 @@
 
     -# First step
     %div{"data-aos" => "fade-right"}
-      .block.md:flex.flex-wrap.py-8
-        .text-right.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .block.md:flex-col
-            %h3.text-.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.firstStep.title')
+      .block.lg:flex.flex-wrap.py-8
+        .text-right.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .block.lg:flex-col
+            %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.firstStep.title')
             %p.text-gray-600= t('.instructions.firstStep.content')
-          .block.md:flex-col.pl-4.md:pl-12
+          .flex-col.pl-4.md:pl-12
             .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 1
-        .w-full.p-6{:class => "sm:w-1/2 hidden md:block"}
+        .w-full.p-6{:class => "hidden lg:block lg:w-1/2"}
           =image_tag 'landing-page/1.svg', alt: '1', class: "w-48"
 
 
     -# Second step
     %div{"data-aos" => "fade-left"}
-      .flex.flex-wrap.py-8
-        .w-full{:class => "sm:w-1/2  hidden md:block"}
-          =image_tag 'landing-page/2.svg', alt: '2', class: "w-44 ml-auto"
-        .text-left.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .block.md:flex-col
+      .flex.flex-wrap.py-8.animate__animated.animate__fadeInRight
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
+          =image_tag 'landing-page/2.svg', alt: '2', class: "w-48 ml-auto"
+        .text-left.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .flex-col.pr-4
             .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 2
           .flex-col.pl-4.md:pl-12
             %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-left= t('.instructions.secondStep.title')
@@ -81,21 +81,21 @@
     -# Third step
     %div{"data-aos" => "fade-right"}
       .flex.flex-wrap.py-8
-        .text-right.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
-          .block.md:flex-col
+        .text-right.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .block.lg:flex-col
             %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.thirdStep.title')
             %p.text-gray-600= t('.instructions.thirdStep.content')
           .flex-col.pl-4.md:pl-12
             .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 3
-        .w-full{:class => "sm:w-1/2  hidden md:block"}
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
           =image_tag 'landing-page/3.svg', alt: '3', class: "w-48"
 
     -# Fourth step
     %div{"data-aos" => "fade-left"}
       .flex.flex-wrap.py-8.animate__animated.animate__fadeInRight
-        .w-full{:class => "sm:w-1/2  hidden md:block"}
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
           =image_tag 'landing-page/4.svg', alt: '4', class: "w-48 ml-auto"
-        .text-left.flex.justify-center.align-center.items-center{:class => "sm:w-1/2"}
+        .text-left.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
           .flex-col.pr-4
             .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 4
           .flex-col.pl-4.md:pl-12
