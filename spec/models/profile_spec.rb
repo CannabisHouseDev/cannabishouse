@@ -43,12 +43,13 @@
 #  fk_rails_...  (user_id => users.id)
 #
 require 'rails_helper'
+require 'open-uri'
 
 RSpec.describe Profile, type: :model do
   User.find_by(email: 'valid@gmail.com').destroy if User.find_by(email: 'valid@gmail.com')
   user = User.create(email: 'valid@gmail.com', password: '123456123456123456')
   image = ActiveStorage::Blob.create_after_upload!(
-            io: File.open(Rails.root.join('spec', 'support', 'test_avatar.jpg'), 'rb'),
+            io: URI.open('https://picsum.photos/200'),
             filename: 'test_avatar.jpg',
             content_type: 'image/jpeg').signed_id
   user.profile.update(first_name: "John",

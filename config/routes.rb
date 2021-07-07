@@ -27,13 +27,14 @@ Rails.application.routes.draw do
       get 'consent', to: 'participant_portal#consent', as: 'consent'
       get 'agree', to: 'participant_portal#agree', as: 'agree'
       get 'participant', to: 'participant_portal#index', as: 'participant_portal'
-      get 'participant/:user_id', to: 'participant_portal#show', as: 'participant'
       get 'participant/surveys', to: 'participant_portal#surveys', as: 'participant_surveys'
       get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'
       patch 'survey/:id', to: 'filled_surveys#update', as: 'update_filled_survey'
       get 'steps/pay/process', to: 'participant_portal#process_payment', as: 'process_payment'
       get 'steps/book', to: 'participant_portal#book'
       post 'steps/book', to: 'participant_portal#book_appointment', as: 'book_appointment'
+      get  'participant/studies', to: 'participant_portal#studies', as: 'available_studies'
+      get 'participant/:user_id', to: 'participant_portal#show', as: 'participant'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
