@@ -150,16 +150,15 @@ class Profile < ApplicationRecord
 
   def set_quota(dry, oil, risk, approval)
     if approval
-      self.update!(quota_left_dry: dry, quota_max_dry: dry, quota_left_oil: oil, quota_max_oil: oil, risk: risk)
-      self.approve!
+      update!(quota_left_dry: dry, quota_max_dry: dry, quota_left_oil: oil, quota_max_oil: oil, risk: risk)
+      approve!
     else
-      self.reject!
+      reject!
     end
   end
 
   def active_study
-    sp = StudyParticipation.find_by(user_id: self.id)
-    return sp ? sp : false;
+    StudyParticipation.find_by(user_id: user.id) || false
   end
 
   private

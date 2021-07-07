@@ -246,6 +246,9 @@ en:
         edit:
           title: "Edit user"
   views:
+    participant_portal:
+      approved: "Approved by Medical Professional"
+      pending_approval: "Pending Approval by Medical Professional"
     addresses:
       save: "Save"
       destroy: "Delete address"

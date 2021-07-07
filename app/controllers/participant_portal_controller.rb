@@ -17,6 +17,7 @@ class ParticipantPortalController < ApplicationController
 
   def register
     StudyParticipation.find_or_create_by(study_id: params[:id], user_id: current_user.id)
+    redirect_to action: :index
   end
 
   # A mini router just for the new onboarding process
