@@ -9,5 +9,6 @@
         %p You are not registered to any study yet, feel free to browse
         %p the available studies using the button below
       .flex.flex-col.items-center.p-2.lg:text-xl
-        %button.bg-gray-300.py-1.rounded-md.px-4.border-2.border-gray-400.sm:px-4.py-2.md:py-3.px-6.lg:px-8.py-4
-          = 'Browse Avaliable Studies'  
+        = link_to available_studies_path do
+          %button.bg-gray-300.py-1.rounded-md.px-4.border-2.border-gray-400.sm:px-4.py-2.md:py-3.px-6.lg:px-8.py-4
+            = 'Browse Avaliable Studies'
