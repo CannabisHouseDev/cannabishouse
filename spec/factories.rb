@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :contribution do
+    contribution_type { 1 }
+    end_date { "2021-07-07" }
+    user { nil }
+  end
+
   factory :study_participation do
     user { nil }
     study { nil }
