@@ -100,14 +100,16 @@ en:
   pages:
     landing:
       hero:
-        title: "Help save lives"
+        title: "Help save "
+        titleSecondPart: "lives"
         content: "With its activities, Cannabis House pushes the boundaries of what is possible in the world of cannabis and gives you the opportunity to contribute to progress in the field of medicine. Show your support for our ideas and take part in research!"
         cta: "Join us!"
       description:
         title: "We are the initiators of scientific research"
         content: "For the next few years our platform will provide a safe space for information exchange and collaboration in researching the effects and benefits of cannabis use. It is designed for research participants as well as doctors, researchers and entrepreneurs."
       instructions:
-        title: "How does it work?"
+        title: "How does it "
+        titleSecondPart: "work?"
         subheading: "Steps of an active participant in the study"
         firstStep:
           title: "Fill in your profile"

@@ -24,7 +24,7 @@
             = f.password_field :password, class: 'w-full rounded h-2/3 bg-gray-100'
           %label.text-gray-700
             = f.check_box :remember_me, {class: "rounded"}, 'true', 'false'
-            = f.label :remember_me, t('devise.remember'), class: ""
+            = f.label :remember_me, t('devise.remember')
           = f.submit t('devise.login'), class: "Form-submit hover:bg-primary-800 bg-primary-700 w-full"
           %h2.flex.justify-center.mt-2{"data-action" => "click->tabs#change", "data-index" => "1"}
             = t('devise.no_account')
