@@ -296,6 +296,24 @@ pl:
       upcoming: "Najbliższe spoktania"
       no_upcoming: "Brak nadchodzących spotkań"
       calendar: "Mój kalendarz"
+    participant_portal: 
+      consent:
+        content1: "Drogi Stowarzyszony"
+        content2: "dziękujemy, że zdecydowałeś się wziąć udział w badaniach nad wpływem konopi. Zanim przejdziesz dalej wymagane jest
+zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia.
+W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar prowadzonych badań."
+        content3: "Następnie wypełnij wszystkie ankiety, aby móc zarejestrować się na wizytę lekarską, po której otrzymasz informację o kwalifikacji do badań."
+        regulation1: "Regulamin uczestnika badań"
+        regulation2: "Regulamin badania"
+        consent_study: "Świadoma zgoda na udział w badaniu i przetwarzanie danych"
+        consent_dna: "Zgoda na pobranie materiału genetycznego"
+        button: "Zrozumiałem i wyrażam zgodę"
+      surveys: 
+        pending_survey: "Oczekujące ankiety"
+        medical_survey: "Ankieta medyczna"
+        questions: "Pytania"
+        fill_survey: "Wypełnij ankietę"
+        complete_survey: "Zakończ ankietę"
     home:
       more: "Więcej"
     materials:
