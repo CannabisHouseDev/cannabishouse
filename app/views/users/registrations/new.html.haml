@@ -10,7 +10,7 @@
             %span.text-gray-700
               = f.label :email, 'E-mail'
             %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0", placeholder: "jankowalski@example.com"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md border focus:border-primary-500 focus:bg-white focus:ring-0", placeholder: "jankowalski@example.com"
           %label.block.text-center
             %span.text-gray-700  
               = f.label :password, t('devise.password')
@@ -20,17 +20,17 @@
                 = t('devise.users.reg.new.pass_num')
                 )
             %br/
-            = f.password_field :password, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0'
+            = f.password_field :password, class: 'mt-1 block w-full rounded-md border focus:border-primary-500 focus:bg-white focus:ring-0'
           .text-center
             = f.label :password_confirmation, ''
            
             %br/
-            = f.password_field :password_confirmation, class: 'mt-1 block w-full rounded-md bg-grey-100 border-transparent focus:border-500 focus:bg-white focus:ring-0'
+            = f.password_field :password_confirmation, class: 'mt-1 block w-full rounded-md bg-grey-100 border focus:border-primary-500 focus:bg-white focus:ring-0'
           .block
             .mt-2
               %div
                 %label{class: 'inline-flex items-center font-thin'}
-                  = f.check_box :agreement_1, {class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
+                  = f.check_box :agreement_1, {class:"rounded bg-gray-200 border focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
                   %span.ml-2
                   = f.label :agreement_1 do
                     =t('devise.agree')
@@ -40,7 +40,7 @@
             .mt-2
               %div  
                 %label{class: 'inline-flex items-center font-thin'}
-                  = f.check_box :agreement_2, {class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
+                  = f.check_box :agreement_2, {class:"rounded bg-gray-200 border focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
                   %span.ml-2 
                     = t('devise.users.reg.new.terms2') 
           

@@ -8,5 +8,5 @@
           %hr
           .flex.flex-col.justify-center.items-center
           - @slots[d.wday].each do |s|
-            = link_to "#{s.hours}:#{s.minutes == 30 ? 30 : '00'}", book_appointment_path(id: s.id, d: d), method: :post, class: "flex flex-col justify-center text-center border-2 border-primary-300 bg-primary-500 rounded-md w-20 h-12 mb-2 hover:bg-primary-100"
+            = link_to "#{s.hours}:#{s.minutes == 30 ? 30 : '00'}", book_appointment_path(id: s.id, d: d), method: :post, class: "flex flex-col justify-center text-center border-2 border-primary-300 bg-primary-500 rounded-md w-20 h-12 mb-2 hover:bg-primary-500"
 
