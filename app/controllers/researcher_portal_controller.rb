@@ -81,7 +81,7 @@ class ResearcherPortalController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey)
+    params.permit(:survey).permit(:study)
   end
 
   def question_update_param

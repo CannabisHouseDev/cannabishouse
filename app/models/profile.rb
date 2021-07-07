@@ -157,6 +157,11 @@ class Profile < ApplicationRecord
     end
   end
 
+  def active_study
+    sp = StudyParticipation.find_by(user_id: self.id)
+    return sp ? sp : false;
+  end
+
   private
 
   def save_old_state
