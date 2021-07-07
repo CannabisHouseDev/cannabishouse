@@ -1,8 +1,25 @@
 # frozen_string_literal: true
 
 class ResearcherPortalController < ApplicationController
-  before_action :set_surveys, only: %w[surveys survey_edit show_questions]
+  before_action :set_surveys, only: %w[surveys survey_edit show_questions index]
+  before_action :set_studies, only: %w[index show_studies show_studies]
   before_action :set_survey, only: %w[survey_edit show_questions add_question]
+
+  # Studies
+
+  def add_study
+    Study.create(user_id: current_user.id, title: 'New Study')
+    redirect_to action: :index
+  end
+
+  def show_studies
+    @selected = Study.find(params[:id])
+  end
+
+  def edit_study
+    byebug
+    Study.find(params[:id]).update!(params[:study])
+  end
 
   # Surveys
   def surveys; end
@@ -64,11 +81,15 @@ class ResearcherPortalController < ApplicationController
   end
 
   def survey_params
-    params.permit(:survey)
+    params.permit(:survey).permit(:study)
   end
 
   def question_update_param
     params.require(:question).permit(:title, :description, :question_type_id, :min, :max, options_attributes: [:id, :name, :display, :_update])
+  end
+
+  def set_studies
+    @studies = Study.where(user_id: current_user.id)
   end
 
   def back(message)

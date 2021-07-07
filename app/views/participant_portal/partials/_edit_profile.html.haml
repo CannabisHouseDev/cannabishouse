@@ -1,0 +1,26 @@
+= form_with(model: [ current_user, @profile ], remote: true, method: :patch) do |profile_form|
+  .flex.flex-row.justify-center.items-center
+    .flex.flex-col
+      .flex.flex-row
+        .p-4
+          = profile_form.label :First_name, class: 'Form-label text-gray-400'
+          = profile_form.text_field :first_name, class: "Form-input rounded bg-white"
+        .p-4
+          = profile_form.label :Last_name, class: 'Form-label text-gray-400'
+          = profile_form.text_field :last_name, class: "Form-input rounded bg-white"
+      .flex.flex-row
+        .p-4
+          = profile_form.label :Phone_number, class: 'Form-label text-gray-400'
+          = profile_form.text_field :contact_number, class: "Form-input rounded bg-white"
+        .p-4
+          = profile_form.label :Birthday, class: 'Form-label text-gray-400'
+          = profile_form.text_field :birth_date, class: "Form-input rounded bg-white"
+      .flex.flex-row.justify-around.mt-2.sm:mt-3.md:mt-4.lg:mt-5.md:text-xl.xl:text-2xl 
+        = link_to 'Cancel', "#", class: "bg-gray-500 px-7 text-white py-3 rounded-md md:px-10 md:py-4 lg:px-14"
+        = profile_form.submit 'Save', class: "bg-blue-600 px-7 text-white py-3 rounded-md md:px-10 md:py-4 lg:px-14"
+    .field{ "data-controller" => "onboarding", "data-onboarding-target" => "avatarDrop" }
+      - if @profile.avatar.valid?
+        = image_tag polymorphic_url(@profile.avatar), size: 280, data: { action: "click->onboarding#avatarUpload" }, class: "flex items-center rounded-full border ml-5"
+      - else
+        = image_tag(gravatar_url_for(current_user.email, size: 280), data: { action: "click->onboarding#avatarUpload" }, class: "flex items-center rounded-full border")
+      = profile_form.file_field :avatar, class: "hidden", data: {"onboarding-target" => "input", action: "change->onboarding#avatarReplace"}

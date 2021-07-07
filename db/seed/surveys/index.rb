@@ -61,12 +61,12 @@ questions = [['Czy osiągasz stałe, opodatkowane dochody?',
 title = 'Medical Survey #4'
 description = 'This survey is required to participate in the program.'
 internal_name = 'index'
-
-author = Profile.find_by(role: 'researcher').user
+study = Study.find_by(title: 'onboarding')
+author = Profile.find_by(role: 'admin').user
 single = QuestionType.find_by(name: 'single').id
 
-s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)
-questions.each_with_index do |q,i|
+s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
+questions.each_with_index do |q, i|
   question = Question.create(title: q[0], order: i, survey_id: s.id, question_type_id: single)
   q[1].each do |o|
     QuestionOption.create(display: o[0], name: o[1], question_id: question.id, score: o[2])

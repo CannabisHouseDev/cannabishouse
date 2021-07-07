@@ -1,0 +1,10 @@
+= form_with model: @selected, id: 'study_edit_form' do |form|
+  .flex.flex-col.justify-center.overflow-y-auto
+    .text-xl.text-center.text-gray-700 Title
+    = form.text_field :title, class: 'border-0 rounded focus:ring-0'
+    .text-xl.text-center.text-gray-700 Description
+    = form.text_area :description, class: 'border-0 rounded focus:ring-0'
+    .text-xl.text-center.text-gray-700 Duration in Months
+    = form.number_field :cycle, class: 'border-0 rounded focus:ring-0'
+    .text-xl.text-center.text-gray-700 Maximum Number of Participants
+    = form.number_field :max, class: 'border-0 rounded focus:ring-0'

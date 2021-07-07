@@ -12,11 +12,11 @@ Question.destroy_all
 Survey.destroy_all
 
 puts 'Creating users...'
-6.times do |i|
+7.times do |i|
   participants = []
+  url = 'https://picsum.photos/200'
   if i == 1
     6.times do |j|
-      url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
       filename = File.basename(URI.parse(url).path)
       user = User.create(
         email: "participant_#{j}@cannabishouse.eu",
@@ -56,8 +56,7 @@ puts 'Creating users...'
       puts "created #{user.profile.first_name}:#{user.id} with role #{user.profile.role}"
     end
   else
-    url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
-    filename = File.basename(URI.parse(url).path)
+    filename = File.basename(URI.parse('https://picsum.photos/200').path)
     user = User.create(
       email: "#{%w[user participant dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
       password: '1111222233334444',
@@ -67,7 +66,7 @@ puts 'Creating users...'
     user.save
     user.confirm
     file = URI.open(url)
-    user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg")
+    user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg") if file
     user.profile.update(
     role: %w[user participant dispensary doctor researcher warehouse admin][i],
     first_name: Faker::Name.first_name,
@@ -87,6 +86,14 @@ puts 'Creating Question Types'
 %w[short long number single multiple date].each do |t|
   QuestionType.create(name: t)
 end
+
+puts 'Creating Studies'
+Study.create(title: 'onboarding', description: 'Required surveys during onboarding', cycle: 4, max: 0, user_id: Profile.find_by(role: 'admin').user.id)
+study = Study.create(title: 'dummy Study', description: 'Just to test out the views', cycle: 4, max: 10, user_id: Profile.find_by(role: 'researcher').user.id)
+
+puts 'Creating dummy survey'
+
+survey = Survey.create(title: 'Dummy Survey', description: 'Trying out the views', internal_name: 'dummy', required: false, user_id: Profile.find_by(role: 'researcher').user.id, study: study)
 
 puts 'Creating Pre-Psychiatrist Surveys'
 

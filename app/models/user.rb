@@ -40,6 +40,7 @@ class User < ApplicationRecord
 
   has_many :orders
 
+  has_one :study_participation
   has_many :surveys, dependent: :destroy
 
   has_many :appointments, class_name: 'Appointment', foreign_key: 'participant_id'

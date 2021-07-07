@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_211035) do
+ActiveRecord::Schema.define(version: 2021_07_05_182339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -281,6 +281,27 @@ ActiveRecord::Schema.define(version: 2021_06_30_211035) do
     t.index ["user_id"], name: "index_slots_on_user_id"
   end
 
+  create_table "studies", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.integer "max"
+    t.integer "fee"
+    t.integer "cycle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_studies_on_user_id"
+  end
+
+  create_table "study_participations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "study_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_id"], name: "index_study_participations_on_study_id"
+    t.index ["user_id"], name: "index_study_participations_on_user_id"
+  end
+
   create_table "surveys", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -290,6 +311,8 @@ ActiveRecord::Schema.define(version: 2021_06_30_211035) do
     t.boolean "hidden", default: false
     t.boolean "required", default: false
     t.string "internal_name"
+    t.bigint "study_id", default: 1, null: false
+    t.index ["study_id"], name: "index_surveys_on_study_id"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
 
@@ -356,6 +379,10 @@ ActiveRecord::Schema.define(version: 2021_06_30_211035) do
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "surveys"
   add_foreign_key "slots", "users"
+  add_foreign_key "studies", "users"
+  add_foreign_key "study_participations", "studies"
+  add_foreign_key "study_participations", "users"
+  add_foreign_key "surveys", "studies"
   add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"

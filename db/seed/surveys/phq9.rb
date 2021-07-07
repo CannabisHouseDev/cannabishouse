@@ -14,10 +14,10 @@ title = 'Medical Survey #3'
 description = 'This survey is required to participate in the program.'
 internal_name = 'phq9'
 
-author = Profile.find_by(role: 'researcher').user
+author = Profile.find_by(role: 'admin').user
 single = QuestionType.find_by(name: 'single').id
-
-s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true)
+study = Study.find_by(title: 'onboarding')
+s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
 questions.each_with_index do |q,i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)
   QuestionOption.create(display: 'wcale nie dokuczały', name: 'first', question_id: q.id, score: 0)
