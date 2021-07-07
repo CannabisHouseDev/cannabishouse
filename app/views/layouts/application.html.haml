@@ -16,7 +16,7 @@
   %body.bg-white.md:bg-gray-100.w-full.overflow-x-hidden.static.min-h-screen 
     .w-full.mx-auto.flex.flex-col.min-h-screen
       = render 'layouts/navigation'
-      .w-full.h-full.flex-grow.z-0
+      .w-full.h-full.flex-grow.z-0.md:py-24
         = yield
       = toastr_flash
       = render 'layouts/footer'

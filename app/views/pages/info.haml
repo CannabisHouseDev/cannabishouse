@@ -38,4 +38,4 @@
         = profile_form.select :gender, Profile.genders.keys.to_a, {prompt: true}, class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:gender].empty?}"
         .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:gender][0] unless @profile.errors[:gender].empty?
       .actions.ml-10.mt-3{class: "w-1/2"}
-        = profile_form.submit 'Zapisz', class: 'Form-submit w-full bg-gray-100 border-green-200 hover:bg-gray-100 text-green-300 text-3xl'
+        = profile_form.submit 'Zapisz', class: 'Form-submit w-full bg-gray-100 border-primary-500 hover:bg-gray-100 text-primary-500 text-3xl'

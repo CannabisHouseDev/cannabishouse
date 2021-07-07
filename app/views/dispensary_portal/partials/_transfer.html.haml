@@ -13,7 +13,7 @@
           = t('views.dispensary_portal.amount')
         %input{placeholder: 'max allowed 3g', class: "mt-2 border-b-2 border-gray-500 text-center py-4 rounded", "data-dispensary-target" => "transfer"}
         .flex.flex-row.justify-around.w-full
-          %button.py-4.rounded.border-green-400.border-2.flex-grow.m-2.bg-primary-400.bg-opacity-25{ "data-action" => "click->dispensary#finalizeTransfer"}
+          %button.py-4.rounded.border-primary-400.border-2.flex-grow.m-2.bg-primary-400.bg-opacity-25{ "data-action" => "click->dispensary#finalizeTransfer"}
             = t('views.dispensary_portal.send')
           %button.py-4.rounded.border-red-400.border-2.flex-grow.m-2.bg-red-400.bg-opacity-25{ "data-action" => "click->dispensary#searchScreen"}
             = t('views.dispensary_portal.cancel')
