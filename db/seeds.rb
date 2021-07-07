@@ -14,9 +14,9 @@ Survey.destroy_all
 puts 'Creating users...'
 7.times do |i|
   participants = []
+  url = 'https://picsum.photos/200'
   if i == 1
     6.times do |j|
-      url = Faker::Avatar.image(slug: 'avatar', size: '250x250')
       filename = File.basename(URI.parse(url).path)
       user = User.create(
         email: "participant_#{j}@cannabishouse.eu",
