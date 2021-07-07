@@ -43,6 +43,7 @@
 #  fk_rails_...  (user_id => users.id)
 #
 require 'rails_helper'
+require 'open-uri'
 
 RSpec.describe Profile, type: :model do
   User.find_by(email: 'valid@gmail.com').destroy if User.find_by(email: 'valid@gmail.com')
