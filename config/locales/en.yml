@@ -347,6 +347,25 @@ en:
         questions: "Questions"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
+      steps: 
+        fill_profile: "Fill the profile info"
+        agreements: "Agree to the regulations"
+        filled_profile: "Your profile has been filled"
+        agreed: "Term & conditions accepted"
+        fill_1: "Fill the survey Nº1"
+        filled_1: "The survey Nº1 has been done"
+        fill_2: "Fill the survey Nº2"
+        filled_2: "The survey Nº2 has been done"
+        fill_3: "Fill the survey Nº3"
+        filled_3: "The survey Nº3 has been done"
+        fill_4: "Fill the survey Nº4"
+        filled_4: "The survey Nº4 has been done"
+        fill_5: "Fill the survey Nº5"
+        filled_5: "The survey Nº5 has been done"
+        fill_6: "Fill the survey Nº6"
+        filled_6: "The survey Nº6 has been done"
+        reg_fee: "Pay the registration fee"
+        book_appointment: "Book an appointment"
     home:
       more: "More"
     materials:
@@ -454,7 +473,8 @@ en:
         last_name: "Last Name"
         nickname: "Nickname"
         pesel: "PESEL"
-        skills: "Skills"
+        skills: "i.e. mechanic, stylist, activist"
+        gender: "Gender"
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
@@ -480,23 +500,23 @@ en:
             question_type:
               required: "Type Required"
             survey:
-              required: "Survey Required"
+              required: "Survey Required"          
         slot:
           attributes:
             doctor:
               required: "Doctor Required"
-        profile:
-          attributes:
-            user:
-              required: "Profile should be associated with a User"
-            pesel:
-              invalid: "Please enter a valid PESEL number"
-              blank: "Please enter a valid PESEL number"
-            first_name:
-              blank: "Please enter your first name"
-            last_name:
-              blank: "Please enter your last name"
-            contact_number:
-              blank: "Please enter your phone number"
-            gender:
-              blank: "Please select your gender"
+    profile:
+      attributes:
+        user:
+          required: "Profile should be associated with a User"
+        pesel:
+          invalid: "Please enter a valid PESEL number"
+          blank: "Please enter a valid PESEL number"
+        first_name:
+          blank: "Please enter your first name"
+        last_name:
+          blank: "Please enter your last name"
+        contact_number:
+          blank: "Please enter your phone number"
+        gender:
+          blank: "Please select your gender"

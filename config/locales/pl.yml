@@ -300,8 +300,8 @@ pl:
       consent:
         content1: "Drogi Stowarzyszony"
         content2: "dziękujemy, że zdecydowałeś się wziąć udział w badaniach nad wpływem konopi. Zanim przejdziesz dalej wymagane jest
-zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia.
-W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar prowadzonych badań."
+        zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia.
+        W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar prowadzonych badań."
         content3: "Następnie wypełnij wszystkie ankiety, aby móc zarejestrować się na wizytę lekarską, po której otrzymasz informację o kwalifikacji do badań."
         regulation1: "Regulamin uczestnika badań"
         regulation2: "Regulamin badania"
@@ -314,6 +314,26 @@ W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zro
         questions: "Pytania"
         fill_survey: "Wypełnij ankietę"
         complete_survey: "Zakończ ankietę"
+      steps: 
+        fill_profile: "Wypełnij profil"
+        filled_profile: "Profil wypełniony"
+        agreements: "Wyraź zgody"
+        agreed: "Zgody OK"
+        fill_1: "Wypełnij ankietę nr 1"
+        filled_1: "Ankieta nr 1 wypełniona"
+        fill_2: "Wypełnij ankietę nr 2"
+        filled_2: "Ankieta nr 2 wypełniona"
+        fill_3: "Wypełnij ankietę nr 3"
+        filled_3: "Ankieta nr 3 wypełniona"
+        fill_4: "Wypełnij ankietę nr 4"
+        filled_4: "Ankieta nr 4 wypełniona"
+        fill_5: "Wypełnij ankietę nr 5"
+        filled_5: "Ankieta nr 5 wypełniona"
+        fill_6: "Wypełnij ankietę nr 6"
+        filled_6: "Ankieta nr 6 wypełniona"
+        reg_fee: "Wnieś opłatę wstępną"
+        book_appointment: "Umów się na wizytę"
+
     home:
       more: "Więcej"
     materials:
@@ -411,17 +431,19 @@ W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zro
       welcome: "Witamy w Cannabis House!"
       start: "Zaczynaj"
       placeholder:
-        first_name: "Imię"
-        last_name: "Nazwisko"
-        nickname: "Przezwisko"
+        first_name: "Twoje Imię"
+        last_name: "Twoje Nazwisko"
+        nickname: "Twój Pseudonim"
         pesel: "Numer PESEL"
-        skills: "Moje umiejętności"
+        skills: "np. mechanik, stylistka, aktywista"
+        gender: "Płeć"
       labels:
         first_name: "Imię"
         last_name: "Nazwisko"
         nickname: "Przezwisko"
         pesel: "PESEL"
         skills: "Umiejętności"
+        gender: "Płeć"
         number: "Numer telefonu"
         avatar: "Zdjęcie profilowe"
         birthday: "Urodziny"
@@ -454,18 +476,18 @@ W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zro
           attributes:
             doctor:
               required: "Wymagany lekarz"
-        profile:
-          attributes:
-            user:
-              required: "Profil powinien być powiązany z użytkownikiem"
-            pesel:
-              invalid: "Podaj prawidłowy numer PESEL"
-              blank: "Podaj prawidłowy numer PESEL"
-            first_name:
-              blank: "Proszę podaj swoje imię"
-            last_name:
-              blank: "Proszę podać swoje nazwisko"
-            contact_number:
-              blank: "Proszę podać swój numer telefonu"
-            gender:
-              blank: "Proszę wybrać swoją płeć"
+    profile:
+      attributes:
+        user:
+          required: "Profil powinien być powiązany z użytkownikiem"
+        pesel:
+          invalid: "Podaj prawidłowy numer PESEL"
+          blank: "Podaj prawidłowy numer PESEL"
+        first_name:
+          blank: "Proszę podaj swoje imię"
+        last_name:
+          blank: "Proszę podać swoje nazwisko"
+        contact_number:
+          blank: "Proszę podać swój numer telefonu"
+        gender:
+          blank: "Proszę wybrać swoją płeć"
