@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_28_061255) do
+ActiveRecord::Schema.define(version: 2021_07_04_090712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -88,6 +88,17 @@ ActiveRecord::Schema.define(version: 2021_06_28_061255) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["participant_id"], name: "index_appointments_on_participant_id"
+  end
+
+  create_table "cycles", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "annual_paid_on"
+    t.datetime "current_study_renews_on"
+    t.integer "monthly_cycle_start_day"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "aasm_state"
+    t.index ["user_id"], name: "index_cycles_on_user_id"
   end
 
   create_table "dispensaries", force: :cascade do |t|
@@ -215,13 +226,16 @@ ActiveRecord::Schema.define(version: 2021_06_28_061255) do
     t.boolean "onboarded", default: false
     t.boolean "verified", default: false
     t.boolean "locked", default: false
-    t.integer "quota_max", default: 0
-    t.integer "quota_left", default: 0
+    t.integer "quota_max_dry", default: 0
+    t.integer "quota_left_dry", default: 0
     t.integer "credits", default: 0
     t.string "aasm_state"
     t.string "old_state"
     t.string "risk"
     t.bigint "doctor_id"
+    t.integer "risk_calculated"
+    t.integer "quota_max_oil", default: 0
+    t.integer "quota_left_oil", default: 0
     t.index ["doctor_id"], name: "index_profiles_on_doctor_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
@@ -265,6 +279,27 @@ ActiveRecord::Schema.define(version: 2021_06_28_061255) do
     t.bigint "user_id", null: false
     t.datetime "time"
     t.index ["user_id"], name: "index_slots_on_user_id"
+  end
+
+  create_table "studies", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.integer "max"
+    t.integer "fee"
+    t.integer "cycle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_studies_on_user_id"
+  end
+
+  create_table "study_participations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "study_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["study_id"], name: "index_study_participations_on_study_id"
+    t.index ["user_id"], name: "index_study_participations_on_user_id"
   end
 
   create_table "surveys", force: :cascade do |t|
@@ -326,6 +361,7 @@ ActiveRecord::Schema.define(version: 2021_06_28_061255) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "filled_surveys"
   add_foreign_key "answers", "questions"
+  add_foreign_key "cycles", "users"
   add_foreign_key "dispensaries", "users", column: "manager_id"
   add_foreign_key "filled_surveys", "surveys"
   add_foreign_key "filled_surveys", "users"
@@ -341,6 +377,9 @@ ActiveRecord::Schema.define(version: 2021_06_28_061255) do
   add_foreign_key "questions", "question_types"
   add_foreign_key "questions", "surveys"
   add_foreign_key "slots", "users"
+  add_foreign_key "studies", "users"
+  add_foreign_key "study_participations", "studies"
+  add_foreign_key "study_participations", "users"
   add_foreign_key "surveys", "users"
   add_foreign_key "transfers", "materials", column: "receiver_material_id"
   add_foreign_key "transfers", "materials", column: "sender_material_id"

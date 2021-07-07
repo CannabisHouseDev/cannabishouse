@@ -1,18 +1,35 @@
 %footer.text-gray-600.body-font.bg-white.mt-8
   .container.py-24.mx-auto
     .flex.flex-wrap.md:text-left.text-left.order-first
+      .w-full.px-4{:class => "lg:w-3/4 md:w-1/2"}
+
+        %nav.list-none.mb-10
+          %h4.text-md.font-extrabold.pb-2.text-black.text-gray-900.leading-relaxed
+            Stowarzyszenie Cannabis House z siedzibą w Łodzi
+          %p
+            ul. Nawrot 114, lok 211
+          %p
+            90-029 Łódź
+          %p.pt-2
+            Tel: 422 784 420
+          %p.pt-2
+            KRS 0000587745
+          %p
+            NIP: 947-198-59-80
+          %p
+            REGON: 363042744
       .w-full.px-4{:class => "lg:w-1/4 md:w-1/2"}
 
         %h4.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.text-left Footer Menu 1
         %nav.list-none.mb-10
-          %li
-            %a.text-gray-600.hover:text-gray-800 First Link
-          %li
-            %a.text-gray-600.hover:text-gray-800 Second Link
-          %li
-            %a.text-gray-600.hover:text-gray-800 Third Link
-          %li
-            %a.text-gray-600.hover:text-gray-800 Fourth Link
+          %li.pb-3
+            = link_to t('navbar.about'), about_path
+          %li.pb-3
+            = link_to t('navbar.media'), media_path
+          %li.pb-3
+            = link_to t('navbar.privacy_policy'), media_path
+          %li.pb-3
+            = link_to t('navbar.carrier'), media_path
   .bg-gray-100
     .container.py-6.mx-auto.flex.items-center.sm:flex-row.flex-col
       %a.flex.title-font.font-medium.items-center.md:justify-start.justify-center.text-gray-900

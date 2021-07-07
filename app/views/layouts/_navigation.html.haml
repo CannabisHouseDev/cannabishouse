@@ -1,9 +1,9 @@
-%nav.nav.w-full.bg-gray-100.shadow-lg.z-50
+%nav.nav.w-full.bg-gray-100.shadow-lg
   .container.mx-auto.flex.flex-wrap.items-center{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
     .flex.flex-no-shrink.items-center.mr-6.py-3.text-grey-darkest
       = link_to main_app.root_path, class: "flex title-font font-medium items-center text-gray-900 md:mb-0" do
-        = image_tag 'logo-icon.png', alt: 'Cannabis House Logo'
-      %span.ml-3.text-xl.font-bold Cannabis House
+        = image_tag 'logo-icon.png', alt: 'Cannabis House Logo', class:"-top-1 relative"
+        %span.ml-3.text-xl.font-bold Cannabis House
     %input#menu-btn.menu-btn.hidden{:type => "checkbox"}/
     %label.menu-icon.block.cursor-pointer.md:hidden.px-2.py-4.relative.select-none.ml-auto.md:ml-none{:for => "menu-btn"}
       %span.navicon.bg-grey-darkest.flex.items-center.relative
@@ -26,6 +26,7 @@
             = link_to t('navbar.stock'), stock_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
           - when 'doctor'
             = link_to t('navbar.appointments'), doctor_portal_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
+            = link_to t('navbar.evaluations'), evaluations_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
             = link_to t('navbar.calendar'), calendar_path, class: "text-base font-medium text-gray-500 hover:text-gray-900 ml-4"
     %nav.flex-grow-0.ml-auto.hidden.md:block
       = render 'layouts/navlinks_for_auth'

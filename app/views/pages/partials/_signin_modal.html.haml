@@ -1,9 +1,9 @@
-.bg-gray-300.rounded.shadow
+.bg-white.rounded-lg.shadow
   .flex.justify-end.items-center.flex-wrap.-mb-10
-    %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"}
+    %button.bg-primary.hover:bg-primary-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"}
       = t('devise.close')
   .py-12.px-20
-    %h1.flex.justify-center.font-medium.text-3xl.mb-2
+    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed.text-center
       = t('devise.welcome_signin')
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .mt-8.max-w-md.mx-auto
@@ -11,19 +11,21 @@
           = render "devise/shared/error_messages", resource: resource
           %label.block.text-center
             %span.text-gray-700.flex.justify-start
-              = f.label :email, t('devise.email'), class: "font-serif mb-2"
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded h-2/3 bg-gray-300"
+              = f.label :email, t('devise.email'), class: "mb-2 font-bold"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded h-2/3 bg-gray-100"
           %label.block.text-center
             %span.text-gray-700.flex.justify-start  
-              = f.label :password, t('devise.password'), class: "font-serif mb-2"
+              = f.label :password, t('devise.password'), class: "mb-2 font-bold"
             - if @minimum_password_length
               %em
-                (#{@minimum_password_length} characters minimum)
-            = f.password_field :password, class: 'w-full rounded h-2/3 bg-gray-300'
-          %label.font-serif.text-gray-700
+                ( #{@minimum_password_length}  
+                = t('devise.users.reg.new.pass_num')
+                )            
+            = f.password_field :password, class: 'w-full rounded h-2/3 bg-gray-100'
+          %label.text-gray-700
             = f.check_box :remember_me, {class: "rounded"}, 'true', 'false'
             = f.label :remember_me, t('devise.remember'), class: ""
-          = f.submit t('devise.login'), class: "Form-submit hover:bg-blue-800 bg-blue-700 w-full font-serif text-base"
-          %h3.flex.justify-center.font-serif.mt-2{"data-action" => "click->tabs#change", "data-index" => "1"}
+          = f.submit t('devise.login'), class: "Form-submit hover:bg-primary-800 bg-primary-700 w-full"
+          %h2.flex.justify-center.mt-2{"data-action" => "click->tabs#change", "data-index" => "1"}
             = t('devise.no_account')
-            = link_to t('devise.signup'), new_user_registration_path, class: "ml-2 text-blue-800"
+            = link_to t('devise.signup'), new_user_registration_path, class: "ml-2 text-primary"

@@ -115,6 +115,12 @@ class Material < ApplicationRecord
     receiver_material.save
     save
 
+    if material_type.name == 'oil'
+      receiver.profile.quota_left_oil -= amount
+    else
+      receiver.profile.quota_left_dry -= amount
+    end
+
     # Deduct credits from receiver Profile
     receiver.profile.credits -= cost * amount
     receiver.profile.save
@@ -192,7 +198,11 @@ class Material < ApplicationRecord
   def has_quota?(receiver, amount)
     return true if %w[dispensary warehouse admin].include? receiver.profile.role
 
-    receiver.profile.quota_left >= amount
+    if MaterialType.find(self.material_type_id).name == 'Oil'
+      receiver.profile.quota_left_oil >= amount
+    else
+      receiver.profile.quota_left_dry >= amount
+    end
   end
 
   # Validates if the receiver has enough credits to receieve the transfer

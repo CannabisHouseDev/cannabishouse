@@ -4,6 +4,11 @@ class ParticipantPortalController < ApplicationController
   before_action :set_required_surveys, only: :steps
   def index; end
 
+  def show
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
+  end
+
   # A mini router just for the new onboarding process
   def steps
     case current_user.profile.aasm_state
@@ -36,6 +41,7 @@ class ParticipantPortalController < ApplicationController
 
   def process_payment
     @current_user.profile.pay!
+    Cycle.create(user: @current_user, annual_paid_on: DateTime.now)
     redirect_to action: :steps
   end
 
