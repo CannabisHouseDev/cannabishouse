@@ -13,13 +13,13 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     :javascript
       window.locale = "#{escape_javascript I18n.locale}"
-  %body.bg-white.md:bg-gray-100.w-full.overflow-x-hidden.static
-    .w-full.mx-auto.flex.flex-col
+  %body.bg-white.md:bg-gray-100.w-full.overflow-x-hidden.static.min-h-screen 
+    .w-full.mx-auto.flex.flex-col.min-h-screen
       = render 'layouts/navigation'
       .w-full.h-full.flex-grow.z-0
         = yield
       = toastr_flash
-    = render 'layouts/footer'
+      = render 'layouts/footer'
 
     -# .w-full.mx-auto.flex.flex-col{:class => ('h-screen' unless action_name == 'landing')}
     -#   = render 'layouts/navigation'

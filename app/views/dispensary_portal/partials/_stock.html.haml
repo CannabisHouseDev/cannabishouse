@@ -3,7 +3,7 @@
     .flex.flex-row.w-full
       .flex.flex-col
         %h1.sm:text-3xl.text-2xl.font-medium.title-font.mb-2.text-gray-900= t('views.dispensary_portal.available_material')
-        .h-1.w-20.bg-green-500.rounded
+        .h-1.w-20.bg-primary-500.rounded
         %p.w-full.leading-relaxed.text-gray-500{:class => "lg:w-1/2"}= t('views.dispensary_portal.warn')
       %button.py-4.rounded.border-purple-400.border-2.flex-grow.m-2.bg-purple-400.bg-opacity-25.text-purple-600{ "data-action" => "click->dispensary#warehouseScreen"}= t('views.dispensary_portal.make_order')
     .flex-grow.overflow-x-scroll.overflow-y-hidden.w-full.pt-4.grid.grid-rows-1.gap-2.grid-flow-col.material_slider

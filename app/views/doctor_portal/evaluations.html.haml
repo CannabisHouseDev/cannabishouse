@@ -52,6 +52,6 @@
       / Action Button Footer
       .grid.grid-cols-2.w-full
         = link_to t('views.doctor_portal.reject'), evaluate_path(id: @selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-gray py-4 mr-1' if @selected
-        = link_to t('views.doctor_portal.finalize'), '#', class: 'flex flex-grow justify-center bg-green-200 rounded-xl text-gray py-4 ml-1', data: { action: 'click->doctor#evaluate' } if @selected
+        = link_to t('views.doctor_portal.finalize'), '#', class: 'flex flex-grow justify-center bg-primary-200 rounded-xl text-gray py-4 ml-1', data: { action: 'click->doctor#evaluate' } if @selected
 
         
