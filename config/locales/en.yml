@@ -329,6 +329,24 @@ en:
       upcoming: "Upcoming appointments"
       no_upcoming: "No upcoming appointments"
       calendar: "My calendar"
+    participant_portal: 
+      consent:
+        content1: "Dear Associate,"
+        content2: "Thank you for choosing to take part in the cannabis effects research. Before going any further it is required that
+        you familiarize yourself with the research regulations and give your informed consent to participating in the research. Please read carefully the content of the attached documents because by clicking the button below you declare that you have read, understood and agreed to the provisions contained therein.
+        In these documents you will find the most necessary information to understand the size of the research."
+        content3: "Then complete all the questionnaires please, to register for a medical appointment, after which you will receive information about the qualification for the examination."
+        regulation1: "Participant regulation"
+        regulation2: "Study regulation"
+        consent_study: "An informed consent to participate in treatment and data processing"
+        consent_dna: "Consent to collect genetic material"
+        button: "I agree to terms and conditions"
+      surveys: 
+        pending_survey: "Pending surveys"
+        medical_survey: "Medical survey"
+        questions: "Questions"
+        fill_survey: "Fill survey"
+        complete_survey: "Complete survey"
     home:
       more: "More"
     materials:
