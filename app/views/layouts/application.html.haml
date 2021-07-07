@@ -13,7 +13,7 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     :javascript
       window.locale = "#{escape_javascript I18n.locale}"
-  %body.bg-white.md:bg-gray-100.w-full.overflow-x-hidden.static.min-h-screen 
+  %body.bg-white.w-full.overflow-x-hidden.static.min-h-screen 
     .w-full.mx-auto.flex.flex-col.min-h-screen
       = render 'layouts/navigation'
       .w-full.h-full.flex-grow.z-0.md

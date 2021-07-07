@@ -1,7 +1,7 @@
-%footer.text-gray-600.body-font.bg-white.mt-8
+%footer.text-gray-600.body-font.bg-gray-100.mt-8
   .container.py-24.mx-auto
     .flex.flex-wrap.md:text-left.text-left.order-first
-      .w-full{:class => "lg:w-3/4 md:w-1/2"}
+      .w-full{:class => "w-full lg:w-3/4 md:w-1/2"}
 
         %nav.list-none.mb-10
           %h4.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.text-left
@@ -30,7 +30,7 @@
             = link_to t('navbar.privacy_policy'), media_path
           %li.pb-3
             = link_to t('navbar.carrier'), media_path
-  .bg-gray-100
+  .bg-white
     .container.py-6.mx-auto.flex.align-center.items-center.sm:flex-row.flex-col
       %a.flex.title-font.font-medium.items-center.md:justify-start.justify-center.text-gray-900
         = image_tag "logo.png"
