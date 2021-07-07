@@ -12,7 +12,11 @@ class ParticipantPortalController < ApplicationController
   end
 
   def studies
-    @studies = Study.all
+    @studies = Study.all.reject { |s| s.title == 'onboarding' }
+  end
+
+  def register
+    StudyParticipation.find_or_create_by(study_id: params[:id], user_id: current_user.id)
   end
 
   # A mini router just for the new onboarding process

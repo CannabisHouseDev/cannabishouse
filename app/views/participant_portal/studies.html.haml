@@ -1,4 +1,8 @@
 .w-full.h-full.flex.flex-col.py-4.md:flex-row{ "data-controller" => "participant", "data-participant-target" => "participant" }
-  .flex.flex-col.justify-center
+  .flex.flex-col.w-full.items-center.mx-auto
+    .text-2xl.w-full.text-center Available Studies
     - @studies.each do |s|
-      s.title
+      .flex.flex-col.justify-center.w-60.bg-gray-300.rounded.p-4
+        .flex.w-full.justify-center.text-xl #{s.title}
+        .flex.w-full.justify-center Study Duration: #{s.cycle} months
+        %button Register
