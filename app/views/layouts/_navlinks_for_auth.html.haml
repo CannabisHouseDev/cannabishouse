@@ -3,7 +3,7 @@
     = link_to t('.navbar.account'), user_profile_path(current_user, current_user.profile), class: "ml-4 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
     = link_to t('.devise.logout'), destroy_user_session_path, method: :delete,  class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-red-600 hover:bg-red-700"
   - else
-    %button.group.inline-flex.items-center.bg-primary.rounded-3xl.text-white.border-0.py-1.px-3.focus:outline-none.hover:bg-primary-700.transition-colors.duration-300.rounded.text-normal.mt-4.md:mt-0{"data-action" => "click->modal#open", :href => "#"}
+    %button.group.inline-flex.items-center.bg-primary.rounded-3xl.text-white.border-0.py-2.px-8.focus:outline-none.hover:bg-primary-700.transition-colors.duration-300.rounded.text-normal.mt-4.md:mt-0{"data-action" => "click->modal#open", :href => "#"}
       Zaloguj się
       %svg.w-4.h-4.ml-1{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2", :viewbox => "0 0 24 24"}
         %path{:d => "M5 12h14M12 5l7 7-7 7"}

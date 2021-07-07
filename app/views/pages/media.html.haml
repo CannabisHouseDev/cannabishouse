@@ -1,68 +1,111 @@
-.container.flex.flex-col.mx-auto.w-full.my-32
+.container.flex.flex-col.mx-auto.w-full.py-16
   %h1.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed
     = t('pages.mesia.title.media')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.subtitle')
-  %p= t('pages.media.intro.content.text')
-  %p= t('pages.media.intro.content.text2')
-  %p= t('pages.media.intro.content.text3')
-  %p= t('pages.media.intro.content.text4')
-  %br
-  %br
-  %p= t('pages.media.intro.content.list.title')
-  %p= t('pages.media.intro.content.list.item1')
-  %p= t('pages.media.intro.content.list.item2')
-  %p= t('pages.media.intro.content.list.item3')
-  %p= t('pages.media.intro.content.list.item4')
-  %p= t('pages.media.intro.content.list.item5')
-  %br
+  %p.py-2= t('pages.media.intro.content.text')
+  %p.py-2= t('pages.media.intro.content.text2')
+  %p.py-2= t('pages.media.intro.content.text3')
+  %p.py-2= t('pages.media.intro.content.text4')
+
+  %p.pb-2.py-8.font-bold= t('pages.media.intro.content.list.title')
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.media.intro.content.list.item1')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.media.intro.content.list.item2')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.media.intro.content.list.item3')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.media.intro.content.list.item4')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.media.intro.content.list.item5')
   
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.intro.y2015.title')
   %p= t('pages.media.intro.y2015.content1')
   %p= t('pages.media.intro.y2015.content2')
   %p= t('pages.media.intro.y2015.content3')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.intro.y2018.title')
   %p= t('pages.media.intro.y2018.content1')
   %p= t('pages.media.intro.y2018.content2')
   
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.intro.y2020.title')
   %p= t('pages.media.intro.y2020.content1')
   %p= t('pages.media.intro.y2020.content2')
   %p= t('pages.media.intro.y2020.content3')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.intro.y2021.title')
   %p= t('pages.media.intro.y2021.content1')
   %p= t('pages.media.intro.y2021.content2')
   %p= t('pages.media.intro.y2021.content3')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
-    = t('pages.media.mentions')
+  -# %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  -#   = t('pages.media.mentions')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.media.q_a.title')
 
-  %p= t('pages.media.q_a.q1')
-  %p= t('pages.media.q_a.a1')
-  %p= t('pages.media.q_a.q2')
-  %p= t('pages.media.q_a.a2')
-  %p= t('pages.media.q_a.q3')
-  %p= t('pages.media.q_a.a3')
-  %p= t('pages.media.q_a.q4')
-  %p= t('pages.media.q_a.a4')
-  %p= t('pages.media.q_a.q5')
-  %p= t('pages.media.q_a.a5')
-  %p= t('pages.media.q_a.q6')
-  %p= t('pages.media.q_a.a6')
-  %p= t('pages.media.q_a.q7')
-  %p= t('pages.media.q_a.a7')
-  %p= t('pages.media.q_a.q8')
-  %p= t('pages.media.q_a.a8')
+  .py-4
+    %p.font-bold.text-primary.pb-2.pb-2= t('pages.media.q_a.q1')
+    %p= t('pages.media.q_a.a1')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q2')
+    %p= t('pages.media.q_a.a2')
+
+  .py-4
+    %p.font-bold.text-primary.pb-2
+      = t('pages.media.q_a.q3')
+    %p
+    = t('pages.media.q_a.a3')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q4')
+    %p= t('pages.media.q_a.a4')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q5')
+    %p= t('pages.media.q_a.a5')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q6')
+    %p= t('pages.media.q_a.a6')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q7')
+    %p= t('pages.media.q_a.a7')
+  .py-4
+    %p.font-bold.text-primary.pb-2= t('pages.media.q_a.q8')
+    %p= t('pages.media.q_a.a8')
 
   %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
     = t('pages.media.social.title')

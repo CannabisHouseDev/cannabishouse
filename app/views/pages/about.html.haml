@@ -1,38 +1,74 @@
-.container.flex.flex-col.mx-auto.w-full.mt-32
+.container.flex.flex-col.mx-auto.w-full.py-16
 
   %h1.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-4xl.leading-relaxed
     = t('pages.about.about_us')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.about.who_we_are.title')
   %p= t('pages.about.who_we_are.content')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.about.mission.title')
   %p= t('pages.about.mission.content')
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     = t('pages.about.goals.title')
 
-  %ul.flex.flex-col
-    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_2')
-    %li.border-gray-400.flex.flex-row.mb-3= t('pages.about.goals.list.item_1')
-    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_3')
-    %li.border-gray-400.flex.flex-row.mb-2= t('pages.about.goals.list.item_4')
-    %li.border-gray-400.flex.flex-row.mb-2
-    = t('pages.about.goals.list.item_5')
-    %ul    
-      %li= t('pages.about.goals.list.subitem_5-a')
-      %li= t('pages.about.goals.list.subitem_5-b')
-      %li= t('pages.about.goals.list.subitem_5-c') 
 
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.about.goals.list.item_1')
+
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.about.goals.list.item_2')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %p
+      = t('pages.about.goals.list.item_3')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.about.goals.list.item_4')
+
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = t('pages.about.goals.list.item_5')
+
+      %ul.w-full.list-disc.list-inside.py-2
+        %li= t('pages.about.goals.list.subitem_5-a')
+        %li= t('pages.about.goals.list.subitem_5-b')
+        %li= t('pages.about.goals.list.subitem_5-c') 
+
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-primary.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-center.text-primary-900
     = t('pages.about.vision.title')     
-  %p= t('pages.about.vision.content_1')
-  %p= t('pages.about.vision.content_2')
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %p.text-center.py-4.text-lg= t('pages.about.vision.content_1')
+  %p.text-center.py-4.text-lg= t('pages.about.vision.content_2')
+
+  %p.text-sm.text-left.tracking-tight.font-extrabold.text-gray-900.leading-relaxed.pb-4.pt-24
     = t('pages.about.how_long')
-  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8
+  %p.text-sm.text-left.tracking-tight.font-extrabold.text-gray-900.leading-relaxed.py-2
     = t('pages.about.register')
 
 
