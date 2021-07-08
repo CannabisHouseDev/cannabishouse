@@ -1,11 +1,17 @@
-.w-full.h-full.flex.flex-col.justify-center.py-16
-  .overflow-y-scroll.flex.justify-center.w-full.py-5.px-48{class: 'h-2/3'}
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tempor, arcu nec suscipit tincidunt, felis massa dignissim nulla, quis iaculis felis ligula quis neque. Mauris varius quam a tincidunt fermentum. Ut non neque tincidunt, mollis nisi non, porttitor nisl. Nulla placerat lorem turpis, in rhoncus purus dapibus ut. Suspendisse eu quam elementum, fringilla justo in, ultrices nisl. Proin sagittis pellentesque elit, at pretium ante convallis et. Pellentesque interdum lorem luctus elementum vulputate. In dolor sem, porttitor vel cursus vel, imperdiet et neque. Nam et tristique justo.
-    %br
-    Cras semper tempus lacus, vitae commodo ipsum faucibus sed. Quisque pretium, eros quis vulputate iaculis, justo dui porttitor odio, eu vestibulum orci quam dignissim nulla. Vestibulum elementum odio dui, non tristique velit bibendum non. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum accumsan, enim eu pretium vestibulum, odio ante gravida mauris, in commodo massa ex in massa. Integer ultricies sem felis, a volutpat lectus aliquam eu. Suspendisse feugiat non libero non fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Etiam venenatis fringilla mi ut sodales. Etiam eleifend, augue ac faucibus fringilla, lacus tortor ultrices dui, vel dapibus nunc ante eu diam. Nullam vitae accumsan eros. Aenean condimentum sollicitudin quam in ultricies. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum interdum odio at lacinia mattis. Cras gravida nulla mi, in molestie elit ornare ut. Mauris et orci eu nisi vehicula ornare.
-    %br
-    Sed nec ante rutrum est tempor feugiat. Donec consectetur ante vitae elit maximus, lobortis lacinia sem accumsan. Quisque sed magna ut libero dignissim ullamcorper id id ligula. Pellentesque sem nulla, dictum sit amet volutpat lobortis, efficitur eget ligula. Integer ipsum neque, feugiat ac nisl vel, pharetra bibendum quam. Morbi ac convallis enim, et sollicitudin arcu. Fusce quis leo dignissim tortor posuere luctus nec quis augue. Praesent accumsan cursus mi ac venenatis. Curabitur at lectus ullamcorper, efficitur augue sed, tempus libero. Nunc felis nisi, facilisis pharetra est ut, consequat commodo nisi.
-    %br
-    Nullam efficitur, tellus sit amet hendrerit posuere, magna lorem hendrerit tortor, ut placerat tellus felis a dolor. Integer convallis ante porttitor, ultricies ligula at, finibus est. Sed porta mi sed dictum aliquet. Sed eget lectus leo. Curabitur sit amet nisi ut lorem egestas dictum commodo id lorem. Phasellus finibus auctor nulla, sollicitudin porta justo ornare non. Quisque lacinia eros nec facilisis accumsan.
+.w-full.h-full.flex.flex-col.justify-center 
+  .overflow-y-scroll.justify-center.w-full.py-5.flex.px-48{class: 'h-2/3'}
+    =t('views.participant_portal.consent.content1')
+    %br 
+    =t('views.participant_portal.consent.content2')
+    %br/
+    =t('views.participant_portal.consent.content3') 
+    %br/
+      
+  = link_to t('views.participant_portal.consent.regulation1'), 'regulations/Regulamin_dla_uczestnika.pdf', target: "_blank" 
+  = link_to t('views.participant_portal.consent.regulation2'), 'regulations/Regulamin_uczestnictwa.pdf', target: "_blank"
+  = link_to t('views.participant_portal.consent.consent_study'), 'Consents/Form_Swiadomej_zgody.pdf', target: "_blank"
+  = link_to t('views.participant_portal.consent.consent_dna'), 'Consents/zgoda_badanie_genetyczne.pdf', target: "_blank"
+    
   = link_to agree_path, class: 'w-1/2 flex justify-center mx-auto' do
-    %button.bg-transparent.px-4.py-3.border-2.rounded.border-primary-500.bg-primary-300.hover:bg-primary-500 Agree
+    %button.bg-transparent.px-4.py-3.border-2.rounded.border-green-500.bg-green-300.hover:bg-green-100 
+      = t('views.participant_portal.consent.button')
