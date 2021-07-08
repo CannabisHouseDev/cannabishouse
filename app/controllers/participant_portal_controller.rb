@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ParticipantPortalController < ApplicationController
+  require "rqrcode"
   before_action :set_required_surveys, only: :steps
+
   def index
     @active = current_user.profile.active_study
+    qr = RQRCode::QRCode.new(current_user.id.to_s, mode: :alphanumeric)
+    @qr = qr.as_png(size: 400)
   end
 
   def show
@@ -38,7 +42,7 @@ class ParticipantPortalController < ApplicationController
     when 'paid'
       redirect_to action: :book
     else
-      render action: :index
+      redirect_to action: :index
     end
   end
 
