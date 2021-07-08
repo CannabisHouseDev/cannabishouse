@@ -1,10 +1,8 @@
 .container.flex.flex-col.mx-auto.w-full.py-16
   %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
-    =t('views.participant_portal.consent.content1')
-  %p.text-primary.w-full= t('views.participant_portal.consent.content2')
-  %br/
-  %p.text-primary.w-full= t('views.participant_portal.consent.content3') 
-  %br/
+    =t('views.participant_portal.consent.title')
+  %p.text-secondary.w-full= t('views.participant_portal.consent.content_paragraph')
+  %p.text-secondary.w-full.pt-8= t('views.participant_portal.consent.content_paragraph2') 
   .p-2.w-full{:class => "sm:w-1/2"}
   .bg-gray-100.rounded.flex.p-4.h-full.items-center
     %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
