@@ -54,7 +54,7 @@ class Profile < ApplicationRecord
   enum role: %i[user participant admin dispensary researcher doctor warehouse],
        _default: 0
 
-  enum gender: %i[male female]
+  enum gender: %i[kobieta mężczyzna]
   enum risk_calculated: %i[green orange red]
 
   validates :first_name, presence: true, on: :update
