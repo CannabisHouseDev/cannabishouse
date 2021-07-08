@@ -1,12 +1,13 @@
 .flex.flex-row.items-center.justify-center.text-green-500
   .span.w-56.text-center 
     = t("views.participant_portal.steps.filled_profile")
-.flex.flex-row.items-center.justify-center.p-2.text-green-500
-  .span.w-66.text-center 
-    = t("views.participant_portal.steps.agreed")
+.flex.flex-row.items-center.justify-center.p-2
+  = link_to consent_path do
+    .span.w-66.text-center 
+      = t("views.participant_portal.steps.agreements")
 .flex.flex-row.items-center.justify-center.p-2
   .span.w-66.text-center 
-      = t("views.participant_portal.steps.fill_1")
+    = t("views.participant_portal.steps.fill_1")
 .flex.flex-row.items-center.justify-center.p-2
   .span.w-66.text-center 
     = t("views.participant_portal.steps.fill_2")
