@@ -33,7 +33,7 @@ pl:
     agree: "Oświadczam, że zapoznałam/zapoznałem się z treścią"
     statute: "Statutu Stowarzyszenia"
     content: "Cannabis House z siedzibą w Łodzi. Składam deklarację przystąpienia do Stowarzyszenia jako członek wspierający.  Oświadczam, że podane informacje są zgodne z prawdą. Zobowiązuję się do przestrzegania ww. statutu, regulaminu i innych uchwał Stowarzyszenia oraz zobowiązuję się do opłacenia składek członkowskich zgodnie z uchwałą ws. składek."
-    agree2: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z art. 7 pkt 5 ustawy z 29.08.1997r o ochronie danych osobowych (Dz. U. Nr 133, poz. 883) przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji."
+    agree2: "Wyrażam zgodę na przetwarzanie moich danych osobowych przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji. Mam świadomość, iż przysłyguje mi dostęp i możliwość sprostowania tych danych, a także wycofanie tej zgody skutkujące usunięciem konta z portalu."
     sessions:
       user:
         already_signed_out: "Jesteś już wylogowany."
