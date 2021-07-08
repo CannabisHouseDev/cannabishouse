@@ -18,14 +18,14 @@ puts 'Creating users...'
   if i == 1
     6.times do |j|
       filename = File.basename(URI.parse(url).path)
-      user = User.create(
+      user = User.new(
         email: "participant_#{j}@cannabishouse.eu",
         password: '1111222233334444',
         password_confirmation: '1111222233334444',
         agreement_1: 'true',
         agreement_2: 'true')
+      user.skip_confirmation!
       user.save
-      user.confirm
       file = URI.open(url)
       user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg")
       user.profile.update(
@@ -57,14 +57,14 @@ puts 'Creating users...'
     end
   else
     filename = File.basename(URI.parse('https://picsum.photos/200').path)
-    user = User.create(
+    user = User.new(
       email: "#{%w[user participant dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
       password: '1111222233334444',
       password_confirmation: '1111222233334444',
       agreement_1: 'true',
       agreement_2: 'true')
+    user.skip_confirmation!
     user.save
-    user.confirm
     file = URI.open(url)
     user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg") if file
     user.profile.update(
