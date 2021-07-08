@@ -300,7 +300,7 @@ pl:
       upcoming: "Najbliższe spoktania"
       no_upcoming: "Brak nadchodzących spotkań"
       calendar: "Mój kalendarz"
-        participant_portal: 
+    participant_portal: 
       consent:
         content1: "Drogi Stowarzyszony"
         content2: "dziękujemy, że zdecydowałeś się wziąć udział w badaniach nad wpływem konopi. Zanim przejdziesz dalej wymagane jest zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia. W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar prowadzonych badań."
