@@ -15,13 +15,17 @@
     = t("views.participant_portal.steps.filled_3")
 .flex.flex-row.items-center.justify-center.p-2
   = link_to fill_survey_path @surveys[3].id, ref: 4 do
-    .span.w-56.text-center Fill Survey #4
+    .span.w-66.text-center 
+      = t("views.participant_portal.steps.fill_4")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Fill Survey #5
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_5")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Fill Survey #6
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_6")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Registration Fee
+  .span.w-86.text-center 
+    = t("views.participant_portal.steps.reg_fee")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Book Appointment
-
+  .span.w-156.text-center 
+    = t("views.participant_portal.steps.book_appointment")
