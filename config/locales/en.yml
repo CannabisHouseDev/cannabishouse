@@ -64,7 +64,7 @@ en:
     agree: "I agree to the terms and conditions"
     statute: "of the statute of the Cannabis House Association"
     content: "based in Łódź. I am submitting a declaration of joining the Association as a supporting member. I certify that the information provided is true. I undertake to comply with the above-mentioned of the statute, regulations and other resolutions of the Association and I undertake to pay membership fees in accordance with the resolution on contributions."
-    agree2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
+    agree2: "I consent to the processing of my personal data by the Cannabis House Association based in Łódź (data controller) for the purposes of the association and recruitment. I am aware that I have access and the possibility of rectifying this data, as well as withdrawing this consent resulting in the removal of the account from the website."
     sessions:
       user:
         already_signed_out: "You are already signed out."
@@ -333,6 +333,43 @@ en:
       upcoming: "Upcoming appointments"
       no_upcoming: "No upcoming appointments"
       calendar: "My calendar"
+    participant_portal: 
+      consent:
+        title: "Dear Associate,"
+        content_paragraph: "Thank you for choosing to take part in the cannabis effects research. Before going any further it is required that you familiarize yourself with the research regulations and give your informed consent to participating in the research. Please read carefully the content of the attached documents because by clicking the button below you declare that you have read, understood and agreed to the provisions contained therein. In these documents you will find the most necessary information to understand the size of the research."
+        content_paragraph2: "Then complete all the questionnaires please, to register for a medical appointment, after which you will receive information about the qualification for the examination."
+        regulation1: "Participant regulation"
+        regulation2: "Study regulation"
+        consent_study: "An informed consent to participate in treatment and data processing"
+        consent_dna: "Consent to collect genetic material"
+        button: "I agree to terms and conditions"
+      surveys: 
+        pending_survey: "Pending surveys"
+        medical_survey: "Medical survey"
+        questions: "Questions"
+        fill_survey: "Fill survey"
+        complete_survey: "Complete survey"
+        no_surveys: "You don't have any more surveys to fill right now"
+        pending_surveys: "Pending surveys"
+      steps: 
+        fill_profile: "Fill the profile info"
+        agreements: "Agree to the regulations"
+        filled_profile: "Your profile has been filled"
+        agreed: "Term & conditions accepted"
+        fill_1: "Fill the survey Nº1"
+        filled_1: "The survey Nº1 has been done"
+        fill_2: "Fill the survey Nº2"
+        filled_2: "The survey Nº2 has been done"
+        fill_3: "Fill the survey Nº3"
+        filled_3: "The survey Nº3 has been done"
+        fill_4: "Fill the survey Nº4"
+        filled_4: "The survey Nº4 has been done"
+        fill_5: "Fill the survey Nº5"
+        filled_5: "The survey Nº5 has been done"
+        fill_6: "Fill the survey Nº6"
+        filled_6: "The survey Nº6 has been done"
+        reg_fee: "Pay the registration fee"
+        book_appointment: "Book an appointment"
     home:
       more: "More"
     materials:

@@ -1,22 +1,31 @@
 .flex.flex-row.items-center.justify-center.text-primary-500
-  .span.w-56.text-center Fill Profile Info
-.flex.flex-row.items-center.justify-center.p-2.text-primary-500
-  .span.w-56.text-center Agree to Regulation
-.flex.flex-row.items-center.justify-center.p-2.text-primary-500
-  .span.w-56.text-center Fill Survey #1
-.flex.flex-row.items-center.justify-center.p-2.text-primary-500
-  .span.w-56.text-center Fill Survey #2
+  .span.w-56.text-center 
+    = t("views.participant_portal.steps.filled_profile")
+.flex.flex-row.items-center.justify-center.p-2.text-primary.flex.flex-row.items-center.justify-center.text-primary-500
+  .span.w-56.text-center 
+    = t("views.participant_portal.steps.agreed")
+.flex.flex-row.items-center.justify-center.p-2.text-primary.flex.flex-row.items-center.justify-center.text-primary-500
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.filled_1")
+.flex.flex-row.items-center.justify-center.p-2.text-primary.flex.flex-row.items-center.justify-center.text-primary-500
+  .span.w-76.text-center 
+    = t("views.participant_portal.steps.filled_2")
 .flex.flex-row.items-center.justify-center.p-2
   = link_to fill_survey_path @surveys[2].id, ref: 3 do
-    .span.w-56.text-center Fill Survey #3
+    .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_3")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Fill Survey #4
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_4")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Fill Survey #5
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_5")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Fill Survey #6
+  .span.w-66.text-center 
+    = t("views.participant_portal.steps.fill_6")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Registration Fee
+  .span.w-86.text-center 
+    = t("views.participant_portal.steps.reg_fee")
 .flex.flex-row.items-center.justify-center.p-2
-  .span.w-56.text-center Book Appointment
-
+  .span.w-156.text-center 
+    = t("views.participant_portal.steps.book_appointment")
