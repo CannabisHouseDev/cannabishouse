@@ -1,27 +1,27 @@
-.max-w-7xl.mx-auto.px-4.sm:px-6
+.max-w-7xl.mx-auto.px-4.sm:px-6.py-32
   .px-20.mt-10.mb-20
     =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .mt-8.max-w-md.mx-auto
         %h3.text-2xl.font-bold.text-center=I18n.t('views.user.session.sign_in')
-        .grid.grid-cols-1.gap-6
+        .grid.grid-cols-1.gap-6.mb-4
           = render "devise/shared/error_messages", resource: resource
           %label.block.text-center
             %span.text-gray-700
               = f.label :email, I18n.t('views.user.session.email')
             %br/
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0", placeholder: "johndoe@example.com"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "mt-1 block w-full rounded-md bg-white border focus:border-primary-500 focus:bg-white focus:ring-0", placeholder: "johndoe@example.com"
           %label.block.text-center
             %span.text-gray-700  
               = f.label :password, 'password'
             %br/
-            = f.password_field :password, class: 'mt-1 block w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0', autocomplete: "current-password"
+            = f.password_field :password, class: 'mt-1 block w-full rounded-md bg-white border focus:border-primary-500 focus:bg-white focus:ring-0', autocomplete: "current-password"
           - if devise_mapping.rememberable?
             .block
               .mt-2
                 %div  
-                  %label{class: 'inline-flex items-centert font-thin'}
-                    -# = f.label :remember_me
-                    = f.check_box :remember_me, {class:"rounded bg-gray-200 border-transparent focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500"}, 'true', 'false'
+                  %label{class: 'inline-flex items-center'}
+                    = f.check_box :remember_me, {class:"rounded bg-white border focus:border-transparent focus:bg-gray-200 text-gray-700 focus:ring-1 focus:ring-offset-2 focus:ring-gray-500 mr-4"}, 'true', 'false'
+                    = f.label :remember_me
           .actions
-            = f.submit 'zaloguj się', :class => 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700'
+            = f.submit 'zaloguj się', :class => 'flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700'
         = render "users/shared/links"

@@ -15,6 +15,8 @@ pl:
     appointments: "Spotkania"
     evaluations: "Oceny"
     calendar: "Kalendarz"
+    privacy_policy: "Polityka prywatności"
+    carrier: "Kariera"
   devise:
     login: "Zaloguj się"
     signup: "Zapisz się"
@@ -67,14 +69,16 @@ pl:
   pages:
     landing:
       hero:
-        title: "Pomóż ratować życie"
+        title: "Pomóż ratować"
+        titleSecondPart: "życie"
         content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie medycyny. Pokaż swoje poparcie dla naszych idei i weź udział w badaniach!"
         cta: "Dołącz do nas!"
       description:
         title: "Jesteśmy inicjatorami badań naukowych"
         content: "Nasza platforma przez następne kilka lat zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
       instructions:
-        title: "Jak to działa?"
+        title: "Jak to"
+        titleSecondPart: "działa?"
         subheading: "Kroki aktywnego uczestnika badania"
         firstStep:
           title: "Wypełnij swój profil"
@@ -125,11 +129,11 @@ pl:
           text4: "Od dnia założenia w roku 2015 Stowarzyszenie organizowało i aktywnie wspierało prace badawczo-naukowe z obszaru szeroko rozumianej profilaktyki i leczenia chorób cywilizacyjnych substancjami pozyskiwanymi z roślin. Ich wpływ na funkcjonowanie i zdrowie człowieka jest znany od wieków. w XIX w. regulacje prawne spowodowały, że przez wiele dekad wiedza na temat kultywowania konopi była znana tylko przez zamknięte środowiska miłośników naturalnego trybu życia. Nie do pominięcia jest też fakt, że aktualne wyniki badań oraz ciągle udoskonalane technologie otwierają przed szeroko rozumianym sektorem konopnym zupełnie nowe perspektywy rozwoju i postępu."
           list: 
             title: "Cannabis House statutowo wspiera wszelkie oddolne i społeczne działania na rzecz:"
-            item1: "• racjonalizacji i humanitaryzacji życia społecznego,"
-            item2: "• społeczeństwa obywatelskiego,"
-            item3: "•	ochrony praw i wolności człowieka i obywatela,"
-            item4: "•	ochrony praw pacjenta, praw konsumenta,"
-            item5: "•	krzewienie i wdrażanie idei sprawiedliwości naprawczej."
+            item1: "racjonalizacji i humanitaryzacji życia społecznego,"
+            item2: "społeczeństwa obywatelskiego,"
+            item3: "ochrony praw i wolności człowieka i obywatela,"
+            item4: "ochrony praw pacjenta, praw konsumenta,"
+            item5: "krzewienie i wdrażanie idei sprawiedliwości naprawczej."
         y2015: 
           title: "Lata 2015 - 2017"
           content1: "Z tego też powodu, w latach 2015 - 2017 roku Stowarzyszenie nawiązało współpracę z lobbystami, reprezentującymi interesy obywateli i wspierającymi idee Stowarzyszenia w polskim parlamencie. Zostaliśmy zaproszeni do  udziału w pracach komisji sejmowych, których bezpośrednim efektem  było rozporządzenie Ministra Zdrowia dopuszczające badania naukowe nad konopiami innymi niż włókniste."
