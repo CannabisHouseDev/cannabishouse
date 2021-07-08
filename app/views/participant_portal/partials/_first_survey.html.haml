@@ -1,7 +1,9 @@
 .flex.flex-row.items-center.justify-center.text-primary-500
-  .span.w-56.text-center Fill Profile Info
+  .span.w-56.text-center 
+    = t("views.participant_portal.steps.filled_profile")
 .flex.flex-row.items-center.justify-center.p-2.text-primary-500
-  .span.w-56.text-center Agree to Regulation
+  .span.w-56.text-center 
+    = t("views.participant_portal.steps.agreed")
 .flex.flex-row.items-center.justify-center.p-2
   = link_to fill_survey_path @surveys[0].id, ref: 1 do
     .span.w-56.text-center Fill Survey #1
