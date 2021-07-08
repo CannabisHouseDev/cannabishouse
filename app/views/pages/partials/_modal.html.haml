@@ -1,7 +1,7 @@
 / Modal Container
 .hidden.animated.fadeIn.fixed.inset-0.overflow-y-auto.flex.items-center.justify-center{"data-action" => "click->modal#closeBackground keyup@window->modal#closeWithKeyboard", "data-modal-target" => "container", "style" => "z-index:9999"}
   / Modal Inner Container
-  .max-h-screen.w-full.max-w-lg.relative
+  .max-h-screen.w-full.max-w-xl.relative
     / Modal Card
     %div{"data-controller" => "tabs", "data-tabs-active-tab" => "bg-gray-300"}
       %ul.flex.justify-center.hidden

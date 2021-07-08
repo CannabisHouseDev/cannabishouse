@@ -1,53 +1,104 @@
-%section.text-gray-600.body-font
-  .container.mx-auto.flex.px-5.py-24.md:flex-row.flex-col.items-center
-    .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "md:w-1/2"}
-      %h1.title-font.sm:text-6xl.text-8xl.mb-4.font-medium.text-gray-900
+
+
+
+
+
+-# HERO
+%section.text-gray-600.body-font.bg-white.z-0
+  .container.mx-auto.flex.py-24.md:flex-row.flex-col.items-center
+    .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center
+      .sm:text-center.lg:text-left
+      %h1.md:tracking-tight.font-extrabold.text-gray-900.text-3xl.md:text-4xl{"data-aos" => "fade-down", "data-aos-delay" => 300}
         = t('.hero.title')
-      %p.mb-8.mt-4.mr-16.leading-tight= t('.hero.content')
-      .flex.justify-center
-        %a{:href => '#description'}
-          %button.inline-flex.text-white.bg-green-500.border-0.py-2.px-6.focus:outline-none.hover:bg-green-600.rounded-3xl.text-lg= t('.hero.cta')
-    .lg:max-w-3xl.lg:w-full{:class => "md:w-1/2 w-5/6"}
-      =image_tag 'landing-page/hero.png', alt: 'hero'
-%section.text-gray-600.body-font.py-12
-  .container.mx-auto.flex.px-5.md:flex-row.flex-col.items-center.bg-pink-200.rounded-3xl
-    .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "md:w-1/2"}
-      =image_tag 'landing-page/description.svg', alt: 'description'
-    .lg:flex-grow.lg:pr-24.md:pr-16.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "md:w-1/2"}
-      %h1.title-font.sm:text-6xl.text-8xl.mb-4.font-medium.text-gray-900
+        %span.text-primary-600.xl:inline{"data-aos" => "fade-down", "data-aos-delay" => 1500}
+          = t('.hero.titleSecondPart')
+      %p.mt-3.text-base.text-gray-600.sm:mt-5.sm:text-lg.sm:max-w-xl.sm:mx-auto.md:mt-5.md:text-xl.lg:mx-0{"data-aos" => "fade-down", "data-aos-delay" => 800}
+        = t('.hero.content')
+      .mt-5.sm:mt-8.sm:flex.sm:justify-center.lg:justify-start{"data-aos" => "fade-left", "data-aos-delay" => 1500}
+        %a.w-full.flex.items-center.transition-colors.justify-center.px-6.py-2.text-base.font-medium.rounded-3xl.text-white.bg-primary-600.hover:bg-primary-700.md:py-2.md:text-lg.md:px-10{:href => "#"}
+          = t('.hero.cta')
+        .mt-3.sm:mt-0.sm:ml-3
+      -# .flex.justify-center
+        -# %a{:href => '#description'}
+        -#   %button.inline-flex.text-white.bg-primary-500.border-0.py-2.px-6.focus:outline-none.hover:bg-primary-600.rounded-3xl.text-lg= t('.hero.cta')
+    .flex.items-center.justify-end{:class => "md:w-1/2 w-5/6","data-aos" => "fade", "data-aos-delay" =>  1000, "data-aos-duration" => 450}
+      =image_tag 'landing-page/landing-hero.png', alt: '1'
+      -# =image_tag 'http://assets.stickpng.com/images/5ea455f1b033640004a14ac4.png', alt: 'hero', class: "rounded-3xl"
+
+
+
+-# SECOND HERO
+%section.text-gray-600.body-font.pt-24.bg-gray-100
+  .container.mx-auto.flex.px-5.py-20.md:flex-row.flex-col.items-center.bg-primary.rounded-3xl.bg-gray-100
+
+    .lg:flex-grow.flex.flex-col.md:text-left.mb-16.md:mb-0.items-center.text-center.justify-center{:class => "w-full md:w-1/2 hidden md:block px-4", }
+      =image_tag 'landing-page/second-hero.png', alt: 'about-hero', class: "rounded-3xl"
+
+    .lg:flex-grow.flex.flex-col.md:items-start.md:text-left.mb-16.md:mb-0.items-center.text-center{:class => "w-full md:w-1/2 md:px-4"}
+      %h2.text-3xl.md:tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed
         = t('.description.title')
-      %p.mb-8.mt-4.mr-16.leading-tight= t('.description.content')
-%section.text-gray-600.body-font
-  .container.px-5.py-24.mx-auto
-    .flex.flex-col.text-center.w-full.mb-20
-      %h1.text-2xl.font-medium.title-font.mb-4.text-gray-900.tracking-widest= t('.instructions.title')
-      %h2.mx-auto.leading-relaxed.text-base{:class => "lg:w-2/3"}= t('.instructions.subheading')
-    .flex.flex-wrap.-m-4
-      .p-4{:class => "lg:w-1/2"}
-        .h-full.flex.sm:flex-row.flex-col.items-center.sm:justify-start.justify-center.text-center.sm:text-left{:class => "instruction_img"}
-          =image_tag 'landing-page/instruction_blob.svg', alt: 'blob', class: "instruction_blob"
-          =image_tag 'landing-page/1.svg', alt: '1'
-          .flex-grow.sm:pl-8
-            %h2.title-font.font-medium.text-lg.text-gray-900= t('.instructions.firstStep.title')
-            %p.text-gray-500.mb-3= t('.instructions.firstStep.content')
-      .p-4{:class => "lg:w-1/2"}
-        .h-full.flex.sm:flex-row.flex-col.items-center.sm:justify-start.justify-center.text-center.sm:text-left{:class => "instruction_img"}
-          =image_tag 'landing-page/instruction_blob.svg', alt: 'blob', class: "instruction_blob"
-          =image_tag 'landing-page/2.svg', alt: '2'
-          .flex-grow.sm:pl-8
-            %h2.title-font.font-medium.text-lg.text-gray-900= t('.instructions.secondStep.title')
-            %p.text-gray-500.mb-3= t('.instructions.secondStep.content')
-      .p-4{:class => "lg:w-1/2"}
-        .h-full.flex.sm:flex-row.flex-col.items-center.sm:justify-start.justify-center.text-center.sm:text-left{:class => "instruction_img"}
-          =image_tag 'landing-page/instruction_blob.svg', alt: 'blob', class: "instruction_blob"
-          =image_tag 'landing-page/3.svg', alt: '3'
-          .flex-grow.sm:pl-8
-            %h2.title-font.font-medium.text-lg.text-gray-900= t('.instructions.thirdStep.title')
-            %p.text-gray-500.mb-3= t('.instructions.thirdStep.content')
-      .p-4{:class => "lg:w-1/2"}
-        .h-full.flex.sm:flex-row.flex-col.items-center.sm:justify-start.justify-center.text-center.sm:text-left{:class => "instruction_img"}
-          =image_tag 'landing-page/instruction_blob.svg', alt: 'blob', class: "instruction_blob"
-          =image_tag 'landing-page/4.svg', alt: '4'
-          .flex-grow.sm:pl-8
-            %h2.title-font.font-medium.text-lg.text-gray-900= t('.instructions.fourthStep.title')
-            %p.text-gray-500.mb-3= t('.instructions.fourthStep.content')
+      %p.mt-3.text-white.text-base.text-00.sm:mt-5.sm:text-lg.sm:max-w-xl.sm:mx-auto.md:mt-5.md:text-xl.lg:mx-0
+        = t('.description.content')
+
+
+-# INSTRUCTION NEW
+%section.py-24.bg-gray-100
+  .container.overflow-hidden.px-8.md:px-24.mx-auto.m-8.text-xl.text-center
+    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed.text-center
+      = t('.instructions.title')
+      %span.text-primary-600
+        = t('.instructions.titleSecondPart')
+    %p.text-gray-600.mt-3= t('.instructions.subheading')
+
+    .w-full.mb-4
+      .h-1.mx-auto.gradient.w-64.opacity-25.my-0.py-0.rounded-t
+
+    -# First step
+    %div{"data-aos" => "fade-right"}
+      .block.lg:flex.flex-wrap.py-8
+        .text-right.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .block.lg:flex-col
+            %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.firstStep.title')
+            %p.text-gray-600= t('.instructions.firstStep.content')
+          .flex-col.pl-4.md:pl-12
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 1
+        .w-full.p-6{:class => "hidden lg:block lg:w-1/2"}
+          =image_tag 'landing-page/1.svg', alt: '1', class: "w-48"
+
+
+    -# Second step
+    %div{"data-aos" => "fade-left"}
+      .flex.flex-wrap.py-8.animate__animated.animate__fadeInRight
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
+          =image_tag 'landing-page/2.svg', alt: '2', class: "w-48 ml-auto"
+        .text-left.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .flex-col.pr-4
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 2
+          .flex-col.pl-4.md:pl-12
+            %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-left= t('.instructions.secondStep.title')
+            %p.text-gray-600= t('.instructions.secondStep.content')
+
+    -# Third step
+    %div{"data-aos" => "fade-right"}
+      .flex.flex-wrap.py-8
+        .text-right.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .block.lg:flex-col
+            %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-right= t('.instructions.thirdStep.title')
+            %p.text-gray-600= t('.instructions.thirdStep.content')
+          .flex-col.pl-4.md:pl-12
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 3
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
+          =image_tag 'landing-page/3.svg', alt: '3', class: "w-48"
+
+    -# Fourth step
+    %div{"data-aos" => "fade-left"}
+      .flex.flex-wrap.py-8.animate__animated.animate__fadeInRight
+        .w-full{:class => "lg:w-1/2  hidden lg:block"}
+          =image_tag 'landing-page/4.svg', alt: '4', class: "w-48 ml-auto"
+        .text-left.flex.justify-center.align-center.items-center{:class => "lg:w-1/2"}
+          .flex-col.pr-4
+            .rounded-full.ring-4.bg-white.ring-primary.w-16.md:w-28.h-16.md:h-28.flex.justify-center.items-center.text-black.font-bold.text-xl.md:text-3xl= 4
+          .flex-col.pl-4.md:pl-12
+            %h3.text-xl.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-2xl.leading-relaxed.text-left= t('.instructions.fourthStep.title')
+            %p.text-gray-600= t('.instructions.fourthStep.content')
+

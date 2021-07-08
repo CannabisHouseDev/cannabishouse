@@ -1,4 +1,4 @@
-.w-full.flex-grow.overflow-y-auto.h-24
+.w-full.flex-grow.overflow-y-auto
   - local_assigns[:s].each do |s|
     .w-full.h-14.rounded-md.opacity-75.flex.items-center.justify-between.mb-2.px-2.relative{class: "#{local_assigns[:selected] == s.id ? 'bg-gray-400' : 'bg-gray-100'}"}
       %div #{s.title}

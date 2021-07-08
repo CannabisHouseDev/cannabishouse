@@ -9,7 +9,7 @@
     tspan { white-space:pre }
     .shp0 { fill: #2f2e41 }
     .shp1 { fill: #e6e6e6 }
-    .shp2 { fill: #6c63ff }
+    .shp2 { fill: #65a30d }
     .shp3 { fill: #ffffff }
     .shp4 { fill: #ffb8b8 }
     .shp5 { opacity: 0.2;fill: #000000 }

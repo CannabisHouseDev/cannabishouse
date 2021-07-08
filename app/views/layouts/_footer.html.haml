@@ -1,34 +1,44 @@
-%footer.text-gray-600.body-font.z-50
-  .container.px-5.py-24.mx-auto.flex.md:items-center.lg:items-start.md:flex-row.md:flex-nowrap.flex-wrap.flex-col
-    
-    .flex-shrink-0.md:mx-0.mx-auto.text-center.md:text-left{class: "lg:w-1/2 md:w-1/2"}
+%footer.text-gray-600.body-font.bg-gray-100.mt-8
+  .container.py-24.mx-auto
+    .flex.flex-wrap.md:text-left.text-left.order-first
+      .w-full{:class => "w-full lg:w-3/4 md:w-1/2"}
+
+        %nav.list-none.mb-10
+          %h4.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.text-left
+            Stowarzyszenie Cannabis House z siedzibą w Łodzi
+          %p
+            ul. Nawrot 114, lok 211
+          %p
+            90-029 Łódź
+          %p.pt-2
+            Tel: 422 784 420
+          %p.pt-2
+            KRS 0000587745
+          %p
+            NIP: 947-198-59-80
+          %p
+            REGON: 363042744
+      .w-full.px-4{:class => "lg:w-1/4 md:w-1/2"}
+
+        %h4.mb-3.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.text-left Menu
+        %nav.list-none.mb-10
+          %li.pb-3
+            = link_to t('navbar.about'), about_path
+          %li.pb-3
+            = link_to t('navbar.media'), media_path
+          %li.pb-3
+            = link_to t('navbar.privacy_policy'), media_path
+          %li.pb-3
+            = link_to t('navbar.carrier'), media_path
+  .bg-white
+    .container.py-6.mx-auto.flex.align-center.items-center.sm:flex-row.flex-col
       %a.flex.title-font.font-medium.items-center.md:justify-start.justify-center.text-gray-900
         = image_tag "logo.png"
-      %br
-        %p.font-medium.mt-2.text-sm.text-gray-500 Warehouse Society, 234
-        %p.font-medium.mt-2.text-sm.text-gray-500 Bahagia Ave Street PRBW 29281
-      %span
-        %p.font-sm.mt-2.text-sm.text-gray-500 info@warehouse.project
-        %p.font-sm.mt-2.text-sm.text-gray-500 1-232-3434 (Main)
-        
-    .flex-grow.flex.flex-wrap.mb-10.mt-10.md:mt-24.lg:mt-0.md:text-left.text-center{class: "lg:w-1/4 md:w-1/2"}
-      .w-full.px-4
-        %h2.title-font.font-medium.text-gray-900.tracking-widest.text-sm.mb-3.mt-3 About
-        %nav.list-none.mb-10.py-7.space-y-3
-          %li
-            %a.text-gray-600.hover:text-gray-800 Profile
-          %li
-            %a.text-gray-600.hover:text-gray-800 Media
-          %li
-            %a.text-gray-600.hover:text-gray-800 How it works
-    
-    .flex-grow.flex.flex-wrap.justify-center.sm:justify-center.pr-10.flex-shrink-0.md:pl-20.mb-28.mt-0.text-left.text-center{class: "lg:w-1/4 md:w-1/2"}
-      = link_to t('.devise.sign up'), new_user_registration_path, class: "font-serif ml-8 whitespace-nowrap inline-flex items-center justify-center px-12 py-3 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-pink-400"
-  
-  .bg-gray-100
-    .container.mx-auto.py-4.px-5.flex.flex-wrap.flex-col.sm:flex-row
-      %p.text-gray-500.text-sm.text-center.sm:text-left= t('footer.copyright')
-      %span.inline-flex.sm:ml-auto.sm:mt-0.mt-2.justify-center.sm:justify-start
+        %span.sr-only.ml-3.text-xl Cannabishouse
+      %p.text-gray-500.sm:ml-6.sm:mt-0
+        © 2021 cannabishouse —
+        %a.text-gray-600.ml-1{:href => "https://twitter.com/#", :rel => "noopener noreferrer", :target => "_blank"} @cannabishouse
+      %span.inline-flex.sm:ml-auto.sm:mt-0justify-center.sm:justify-start
         %a.text-gray-500
           %svg.w-5.h-5{:fill => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2", :viewbox => "0 0 24 24"}
             %path{:d => "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"}

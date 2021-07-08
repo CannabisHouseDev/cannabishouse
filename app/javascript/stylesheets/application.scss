@@ -15,18 +15,18 @@
  *= require_self
  */
 
-@import "app/assets/stylesheets/application.scss";
-@import "./actiontext.scss";
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "toastr";
+@import 'app/assets/stylesheets/application.scss';
+@import './actiontext.scss';
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'toastr';
 
 .Form-submit {
-  @apply flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600;
+  @apply flex mx-auto whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600;
 }
 
 .Form-submit:hover {
-  @apply bg-green-700;
+  @apply bg-primary-700;
 }
 
 .Form-label {
@@ -34,23 +34,22 @@
 }
 
 .Form-input {
-  @apply  mt-1 block w-full rounded-md bg-gray-100 border-transparent;
+  @apply mt-1 block w-full rounded-md bg-gray-100 border-transparent;
 }
 
 .Form-input:focus {
   @apply border-gray-500 bg-white ring-0;
 }
-@import "tailwindcss/utilities";
+@import 'tailwindcss/utilities';
 
 // Monkey Patch to fix the slider on the views/dispensary_portal/partials/meterial_choice partial
-@media screen and (max-width: 640px){
-  .material_slider{
+@media screen and (max-width: 640px) {
+  .material_slider {
     grid-auto-columns: 50%;
   }
 }
-@media screen and (min-width: 768px){
-  .material_slider{
+@media screen and (min-width: 768px) {
+  .material_slider {
     grid-auto-columns: 30%;
   }
 }
-

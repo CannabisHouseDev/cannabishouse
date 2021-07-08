@@ -10,7 +10,7 @@
     .shp0 { fill: #3f3d56 }
     .shp1 { fill: #ffffff }
     .shp2 { fill: #cccccc }
-    .shp3 { fill: #6c63ff }
+    .shp3 { fill: #65a30d }
     .shp4 { fill: #e6e6e6 }
     .shp5 { fill: #feb8b8 }
     .shp6 { opacity: 0.102;fill: #000000 }

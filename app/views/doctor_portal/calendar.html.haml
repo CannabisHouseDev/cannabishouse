@@ -15,7 +15,7 @@
             %div.border-2.h-12.w-12.slot.bg-red-700.bg-opacity-50
           - else
             = link_to remove_slot_path(slots.detect { |s| s[0] == j }[2]), method: :delete do
-              %div.border-2.h-12.w-12.slot.bg-green-700.bg-opacity-50{'data-doctor-target' => 'slot', data: {col: j, row: i}, "data-action" => "mouseover->doctor#highlightColumn mouseout->doctor#unhighlightColumn"}
+              %div.border-2.h-12.w-12.slot.bg-primary-700.bg-opacity-50{'data-doctor-target' => 'slot', data: {col: j, row: i}, "data-action" => "mouseover->doctor#highlightColumn mouseout->doctor#unhighlightColumn"}
         - else
           = link_to add_slot_path({day: i, hours: (j * 0.5 + @start_time).floor, minutes: j.even? ? 0 : 30}), method: :post do
             %div.border-2.h-12.w-12.slot{'data-doctor-target' => 'slot', data: {col: j, row: i}, "data-action" => "mouseover->doctor#highlightColumn mouseout->doctor#unhighlightColumn"}
