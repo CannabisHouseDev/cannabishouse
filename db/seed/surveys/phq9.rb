@@ -14,7 +14,7 @@ title = 'Medical Survey #3'
 description = 'This survey is required to participate in the program.'
 internal_name = 'phq9'
 
-author = Profile.find_by(role: 'admin').user
+author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
 study = Study.find_by(title: 'onboarding')
 s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
