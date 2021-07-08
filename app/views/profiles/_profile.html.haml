@@ -1,3 +1,4 @@
-%p.flex.justify-center.text-3xl.mb-5 Edit this profile:
+%p.flex.justify-center.text-3xl.mb-5 
+  = t('profiles.profile.edit_profile') 
 = render 'profiles/form', profile: profile
 /%p= link_to 'Delete profile', user_profile_path(@user,profile), method: :delete, class: 'Form-submit bg-red-300 hover:text-red-500 hover:bg-red-300'

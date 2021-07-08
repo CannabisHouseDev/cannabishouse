@@ -347,6 +347,8 @@ en:
         questions: "Questions"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
+        no_surveys: "You don't have any more surveys to fill right now"
+        pending_surveys: "Pending surveys"
       steps: 
         fill_profile: "Fill the profile info"
         agreements: "Agree to the regulations"
@@ -463,17 +465,17 @@ en:
       welcome: "Welcome to Canabis House!"
       start: "Get Started"
       placeholder:
-        first_name: "First Name"
-        last_name: "Last Name"
+        first_name: "Your First Name"
+        last_name: "Your Last Name"
         nickname: "Nickname"
         pesel: "PESEL Number"
-        skills: "My Skills"
+        skills: "i.e. mechanic, stylist, activist"
       labels:
         first_name: "First Name"
         last_name: "Last Name"
         nickname: "Nickname"
         pesel: "PESEL"
-        skills: "i.e. mechanic, stylist, activist"
+        skills: "My Skills"
         gender: "Gender"
         number: "Phone Number"
         avatar: "Avatar"
@@ -484,6 +486,8 @@ en:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+    profile:
+      edit_profile: "Edit your profile"
   materials:
     profile_locked: "Your account is locked, please contact an administrator."
     restock: "Not enough material to transfer, please restock."

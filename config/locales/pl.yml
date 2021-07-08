@@ -314,6 +314,8 @@ pl:
         questions: "Pytania"
         fill_survey: "Wypełnij ankietę"
         complete_survey: "Zakończ ankietę"
+        no_survey: "Nie masz aktualnie żadnych ankiet do wypełnienia"
+        pending_surveys: "Oczekujące ankiety"
       steps: 
         fill_profile: "Wypełnij profil"
         filled_profile: "Profil wypełniony"
@@ -455,6 +457,8 @@ pl:
       update:
         success: "Profil zaktualizowany."
         error: "Prosimy o wypełnienie wszystkich informacji."
+    profile:
+      edit_profile: "Edycja profilu"
   materials:
     profile_locked: "Twoje konto jest zablokowane, skontaktuj się z administratorem."
     restock: "Za mało materiału do przeniesienia, proszę uzupełnić zapas."
