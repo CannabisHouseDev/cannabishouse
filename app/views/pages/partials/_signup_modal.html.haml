@@ -1,9 +1,9 @@
-.m-1.bg-gray-300.rounded.shadow
+.bg-white.rounded-lg.shadow
   .flex.justify-end.items-center.flex-wrap.-mb-10
-    %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"}
+    %button.bg-primary.hover:bg-primary-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"}
       = t('devise.close')
-  .py-12.px-20
-    %h1.flex.justify-center.font-medium.text-2xl.mb-2
+  .py-12.px-16
+    %h2.text-4xl.tracking-tight.font-extrabold.text-gray-900.md:text-4xl.leading-relaxed.text-center.mt-8
       = t('devise.welcome_signup')
     =form_for(resource, as: resource_name, url: registration_path(resource_name), html: {id: 'signup_form'}) do |f|
       .mt-8.max-w-md.mx-auto
@@ -11,33 +11,33 @@
           = render "devise/shared/error_messages", resource: resource
           %label.block.text-center
             %span.text-gray-700.flex.justify-start
-              = f.label :email, t('devise.email'), class: "font-serif mb-2"
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded h-2/3 bg-gray-300", id: 'signup_email'
+              = f.label :email, t('devise.email'), class: "mb-2 font-bold"
+            = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded h-2/3 bg-gray-100", id: 'signup_email'
           %label.block.text-center
             %span.text-gray-700.flex.justify-start  
-              = f.label :password, t('devise.password'), class: "font-serif mb-2"
+              = f.label :password, t('devise.password'), class: "mb-2 font-bold"
             - if @minimum_password_length
               %em
                 ( #{@minimum_password_length}  
                 = t('devise.users.reg.new.pass_num')
                 )
-            = f.password_field :password, class: 'w-full rounded h-2/3 bg-gray-300', id: 'signup_password'
-          %label.font-serif.text-gray-700
-            = f.label :password_confirmation, t('devise.confirm'), class: "font-serif mb-2"
-            = f.password_field :password, class: "w-full rounded h-2/3 bg-gray-300", id: 'signup_confirm'
-          %label.font-serif.text-gray-700
+            = f.password_field :password, class: 'w-full rounded  bg-gray-100', id: 'signup_password'
+          %label.text-gray-700
+            = f.label :password_confirmation, t('devise.confirm'), class: "mb-2 font-bold"
+            = f.password_field :password, class: "w-full rounded bg-gray-100", id: 'signup_confirm'
+          %label.text-gray-700.mt-6
             = f.check_box :agreement_1, {class: "rounded"}, 'true', 'false'
             = f.label :agreement_1 do
               =t('devise.agree')
-              = link_to t('devise.statute'), about_path, class: "ml-2 text-blue-800"
+              = link_to t('devise.statute'), about_path, class: "ml-2 text-primary-600"
               = t('devise.content')
-          %label.font-serif.text-gray-700
+          %label.text-gray-700
             = f.check_box :agreement_1, {class: "rounded"}, 'true', 'false'
             = f.label :agreement_1 do
               =t('devise.agree2')
               
-          = f.submit t('devise.signup'), class: "Form-submit hover:bg-blue-800 bg-blue-700 w-full font-serif text-base"
-    %h3.flex.justify-center.font-serif.mt-2{"data-action" => "click->tabs#change", "data-index" => "0"}
+          = f.submit t('devise.signup'), class: "Form-submit hover:bg-primary-800 bg-primary-700 rounded w-full text-base"
+    %h3.flex.justify-center.mt-2{"data-action" => "click->tabs#change", "data-index" => "0"}
       = t('devise.have_account')
-      = link_to t('devise.login'), new_user_registration_path, class: "ml-2 text-blue-800"
+      = link_to t('devise.login'), new_user_registration_path, class: "ml-2 text-primary-600"
 

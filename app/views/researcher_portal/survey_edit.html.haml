@@ -19,5 +19,5 @@
       / Action Button Footer
       .grid.grid-cols-2.w-full
         = link_to t('views.researcher_portal.cancel'), authenticated_root_path, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1'
-        %a.flex.flex-grow.justify-center.bg-green-200.rounded-xl.text-gray-700.py-4.ml-1{ 'data-action' => 'click->researcher#confirmResearchUpdate'}
+        %a.flex.flex-grow.justify-center.bg-primary-500.rounded-xl.text-gray-700.py-4.ml-1{ 'data-action' => 'click->researcher#confirmResearchUpdate'}
           #{t('views.researcher_portal.save')}

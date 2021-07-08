@@ -3,27 +3,32 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-import Rails from "@rails/ujs"
-import Turbolinks from "turbolinks"
-import * as ActiveStorage from "@rails/activestorage"
-import "channels"
-import "stylesheets/application.scss"
+import Rails from '@rails/ujs';
+import Turbolinks from 'turbolinks';
+import * as ActiveStorage from '@rails/activestorage';
+import 'channels';
+import 'stylesheets/application.scss';
 
-Rails.start()
-Turbolinks.start()
-ActiveStorage.start()
+// Animation on scroll
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+// ..
 
-global.toastr = require("toastr")
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();
 
-require("trix")
-require("@rails/actiontext")
+global.toastr = require('toastr');
 
-import "controllers"
+require('trix');
+require('@rails/actiontext');
+
+import 'controllers';
 
 // Google Maps callback
 window.initMap = function (...args) {
-  const event = document.createEvent("Events")
-  event.initEvent("google-maps-callback", true, true)
-  event.args = args
-  window.dispatchEvent(event)
-}
+  const event = document.createEvent('Events');
+  event.initEvent('google-maps-callback', true, true);
+  event.args = args;
+  window.dispatchEvent(event);
+};
