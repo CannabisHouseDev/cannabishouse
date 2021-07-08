@@ -1,16 +1,38 @@
-.w-full.h-full.flex.flex-col.justify-center 
-  .overflow-y-scroll.justify-center.w-full.py-5.flex.px-48{class: 'h-2/3'}
+.container.flex.flex-col.mx-auto.w-full.py-16
+  %h2.text-2xl.text-left.tracking-tight.font-extrabold.text-gray-900.sm:text-xl.md:text-xl.leading-relaxed.pt-16.pb-8.text-primary-900
     =t('views.participant_portal.consent.content1')
-    %br 
-    =t('views.participant_portal.consent.content2')
-    %br/
-    =t('views.participant_portal.consent.content3') 
-    %br/
-      
-  = link_to t('views.participant_portal.consent.regulation1'), 'regulations/Regulamin_dla_uczestnika.pdf', target: "_blank" 
-  = link_to t('views.participant_portal.consent.regulation2'), 'regulations/Regulamin_uczestnictwa.pdf', target: "_blank"
-  = link_to t('views.participant_portal.consent.consent_study'), 'consents/Form_Swiadomej_zgody.pdf', target: "_blank"
-  = link_to t('views.participant_portal.consent.consent_dna'), 'consents/zgoda_badanie_genetyczne.pdf', target: "_blank"
+  %p.text-primary.w-full= t('views.participant_portal.consent.content2')
+  %br/
+  %p.text-primary.w-full= t('views.participant_portal.consent.content3') 
+  %br/
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span    
+      = link_to t('views.participant_portal.consent.regulation1'), 'regulations/Regulamin_dla_uczestnika.pdf', target: "_blank" 
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = link_to t('views.participant_portal.consent.regulation2'), 'regulations/Regulamin_uczestnictwa.pdf', target: "_blank"
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span    
+      = link_to t('views.participant_portal.consent.consent_study'), 'consents/Form_Swiadomej_zgody.pdf', target: "_blank"
+  .p-2.w-full{:class => "sm:w-1/2"}
+  .bg-gray-100.rounded.flex.p-4.h-full.items-center
+    %svg.text-primary.w-6.h-6.flex-shrink-0.mr-4{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "3", :viewbox => "0 0 24 24"}
+      %path{:d => "M22 11.08V12a10 10 0 11-5.93-9.14"}
+      %path{:d => "M22 4L12 14.01l-3-3"}
+    %span
+      = link_to t('views.participant_portal.consent.consent_dna'), 'consents/zgoda_badanie_genetyczne.pdf', target: "_blank"
     
   = link_to agree_path, class: 'w-1/2 flex justify-center mx-auto' do
     %button.bg-transparent.px-4.py-3.border-2.rounded.border-green-500.bg-green-300.hover:bg-green-100 
