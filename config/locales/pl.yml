@@ -311,13 +311,13 @@ pl:
         consent_dna: "Zgoda na pobranie materiału genetycznego"
         button: "Zrozumiałem i wyrażam zgodę"
       surveys: 
-        pending_survey: "Oczekujące ankiety"
+        pending_survey: "Oczekująca ankieta"
         medical_survey: "Ankieta medyczna"
         questions: "Pytania"
         fill_survey: "Wypełnij ankietę"
         complete_survey: "Zakończ ankietę"
         no_survey: "Nie masz aktualnie żadnych ankiet do wypełnienia"
-        pending_surveys: "Oczekujące ankiety"
+        pending_surveys: "Oczekujących ankiet"
       steps: 
         fill_profile: "Wypełnij profil"
         filled_profile: "Profil wypełniony"

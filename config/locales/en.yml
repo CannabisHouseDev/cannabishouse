@@ -344,12 +344,12 @@ en:
         consent_dna: "Consent to collect genetic material"
         button: "I agree to terms and conditions"
       surveys: 
-        pending_survey: "Pending surveys"
+        pending_survey: "Pending survey:"
         medical_survey: "Medical survey"
         questions: "Questions"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
-        no_surveys: "You don't have any more surveys to fill right now"
+        no_survey: "You don't have any more surveys to fill right now"
         pending_surveys: "Pending surveys"
       steps: 
         fill_profile: "Fill the profile info"
