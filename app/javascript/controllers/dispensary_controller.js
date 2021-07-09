@@ -1,6 +1,10 @@
 import { Controller } from "stimulus"
 
 import Rails from "@rails/ujs";
+import QrScanner from 'qr-scanner';
+import QrScannerWorkerPath from '!!file-loader!../../../node_modules/qr-scanner/qr-scanner-worker.min.js';
+
+QrScanner.WORKER_PATH = QrScannerWorkerPath;
 
 export default class extends Controller {
   static targets = ["dispensary", "transfer", "start", "end"]
@@ -14,6 +18,25 @@ export default class extends Controller {
       root.innerHTML = data.body.innerHTML;
      }
     });
+  }
+
+  startScanner () {
+    const videoElm = document.getElementById('videoElm')
+    window.qrScanner = new QrScanner(videoElm, result => {
+      Rails.ajax({
+       type: "get",
+       url: `${window.locale == 'en' ? '/en' : ''}/dispensary_participant?code=${result}`,
+       success: function(data){
+        root.innerHTML = data.body.innerHTML;
+       }
+      });
+      qrScanner.stop();
+    });
+    qrScanner.start();
+  }
+
+  stopScanner () {
+    qrScanner.stop()
   }
 
   participantScreen () {
@@ -92,7 +115,7 @@ export default class extends Controller {
 
   initialize () {
     window.root = this.dispensaryTarget;
-    }
+  }
 
   connect () {}
 

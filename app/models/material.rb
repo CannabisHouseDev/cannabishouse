@@ -186,7 +186,7 @@ class Material < ApplicationRecord
 
   # Validates if the receiver has filled their information, has been verified
   def receiver_valid?(receiver)
-    (%w[dispensary warehouse admin participant].include? receiver.profile.role) && receiver.onboarded? && receiver.verified?
+    (%w[dispensary warehouse admin participant].include? receiver.profile.role) && receiver.onboarded?
   end
 
   # Validates if the receiver has been evaluated by a doctor

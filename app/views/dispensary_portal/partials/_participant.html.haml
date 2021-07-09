@@ -1,7 +1,8 @@
 %section.text-gray-600.body-font.overflow-hidden.px-5.md:py-10
   .mx-auto.flex.flex-col.flex-wrap.md:flex-row.md:flex-nowrap.justify-center{:class => "lg:w-4/5"}
     .lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64.flex.flex-col.justify-center.flex-shrink.relative{:class => "lg:w-1/2"}
-      = image_tag @profile.avatar, alt:  "avatar", class: "object-cover object-center rounded-full p-10"
+      - unless @profile.avatar.url.nil?
+        = image_tag @profile.avatar, alt:  "avatar", class: "object-cover object-center rounded-full p-10"
       - if @profile.user.donated?
         .flex.justify-center.item-center.flex-col.absolute.bottom-0.w-20{class: "right-1/4"}
           = image_tag "dispensary_portal/approved.svg", alt: "approved"
@@ -15,22 +16,8 @@
       .flex.mx-auto.mt-8.justify-around.items-center
         .text-gray-700.font-medium.text-2xl
           = t('views.dispensary_portal.current_study')
-        - if @profile.user.active?
-          .text-gray-800.font-medium.text-2xl TODO
-        - else
-          .text-red-900.font-medium.text-2xl NO STUDY
-      .flex.mx-auto.mt-8.justify-around.items-center
-        .text-gray-700.font-medium.text-2xl
-          = t('views.dispensary_portal.allowed_amount')
-        - if @profile.user.active?
-          .text-gray-800.font-medium.text-2xl TODO
-        - else
-          .text-red-900.font-medium.text-2xl NO STUDY
-      .flex.justify-around.items-center.mt-8.text-xl
-        =t('views.dispensary_portal.next_renewal')
-        - if @profile.user.active?
-          .text-gray-800.font-medium.text-2xl
-            = Time.now + 30.days
+        - if @profile.active_study
+          .text-gray-800.font-medium.text-2xl #{@profile.active_study.study.title}
         - else
           .text-red-900.font-medium.text-2xl NO STUDY
       .flex.flex-row.justify-around.w-full

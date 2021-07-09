@@ -1,4 +1,4 @@
-%container.text-gray-600.body-font.h-full.w-full.px-5.mx-auto.flex.flex-col.items-center
+%container.text-gray-600.body-font.h-full.w-full.px-5.mx-auto.flex.flex-col.items-center{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
   .flex-grow.flex.flex-col.justify-center.items-center.w-full
     .p-16.flex.flex-col.md:flex-row.sm:flex-wrap.w-full.justify-center
       %input#code.bg-gray-100.bg-opacity-50.rounded.focus:bg-transparent.text-base.outline-none.text-gray-700.py-4.px-4.leading-8.transition-colors.duration-200.ease-in-out.text-center.text-2xl.border-0{ placeholder: "#{t('views.dispensary_portal.participant_nr')}" }
@@ -8,8 +8,22 @@
         %span
           = t('views.dispensary_portal.search')
   = link_to 'scan_qr', class: 'w-full overflow-hidden' do
-    .flex.flex-col.justify-start.flex-nowrap.items-center.rounded-full.w-60.h-60.bg-gray-300.p-10.mx-auto.transform.translate-y-20.sm:translate-y-10.md:translate-y-20.hover:translate-y-0.duration-500#qr_bubble
+    .flex.flex-col.justify-start.flex-nowrap.items-center.rounded-full.w-60.h-60.bg-gray-300.p-10.mx-auto.transform.translate-y-20.sm:translate-y-10.md:translate-y-20.hover:translate-y-0.duration-500#qr_bubble{"data-action" => "click->modal#open click->dispensary#startScanner", :href => "#"}
       = t('views.dispensary_portal.scan_qr')
       .h-full.w-full
         %svg{:viewBox => "0 0 24 24", :fill => "none", :stroke => "currentColor", :xmlns => "http://www.w3.org/2000/svg"}
           %path{:d => "M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2"}
+    .hidden.animated.fadeIn.fixed.inset-0.overflow-y-auto.flex.items-center.justify-center{"data-action" => "click->modal#closeBackground keyup@window->modal#closeWithKeyboard click->dispensary#stopScanner", "data-modal-target" => "container", :style => "z-index: 9999;"}
+      / Modal Inner Container
+      .max-h-screen.w-full.max-w-lg.relative
+        / Modal Card
+        .m-1.bg-white.rounded.shadow
+          .p-8
+            %h2.text-xl.mb-4 Scan QR Code
+            %video{id: 'videoElm'}
+            .flex.justify-center.items-center.flex-wrap.mt-6
+              %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"} Close
+:css
+  #modal-background{
+    display: none;
+  }
