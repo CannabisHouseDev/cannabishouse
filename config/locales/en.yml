@@ -356,6 +356,7 @@ en:
         pending_surveys: "Pending surveys"
       steps: 
         fill_profile: "Fill the profile info"
+        register: "Register your first study"
         agreements: "Agree to the regulations"
         filled_profile: "Your profile has been filled"
         agreed: "Term & conditions accepted"

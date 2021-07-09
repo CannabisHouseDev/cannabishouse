@@ -314,6 +314,7 @@ pl:
         pending_surveys: "Oczekujące ankiety"
       steps: 
         fill_profile: "Wypełnij profil"
+        register: "Zarejestruj swoje pierwsze badanie"
         filled_profile: "Profil wypełniony"
         agreements: "Wyraź zgody"
         agreed: "Zgody OK"

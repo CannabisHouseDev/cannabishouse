@@ -10,10 +10,10 @@
         %p.text-gray-600.break-all.p-1 Start Date
         %p.p-1 #{@active.created_at.strftime('%d %B %y')}
     .flex.flex-col.justify-center.p-10
-      = image_tag 'participant_portal/arrow.png', size: "60x60", alt: 'arrow icon'
       %div{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}
-      %a.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-3.px-6.rounded{"data-action" => "click->modal#open", :href => "#"}
-        %span Receive Transfer
+      - if current_user.approved?
+        %a.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-3.px-6.rounded{"data-action" => "click->modal#open", :href => "#"}
+          %span Receive Transfer
       / Modal Container
       .hidden.animated.fadeIn.fixed.inset-0.overflow-y-auto.flex.items-center.justify-center{"data-action" => "click->modal#closeBackground keyup@window->modal#closeWithKeyboard", "data-modal-target" => "container", :style => "z-index: 9999;"}
         / Modal Inner Container
@@ -23,7 +23,7 @@
             .p-8
               %h2.text-xl.mb-4.w-full.text-center Participant ##{current_user.id}
               = image_tag @qr.to_data_url
-              .flex.justify-end.items-center.flex-wrap.mt-6
+              .flex.justify-center.items-center.flex-wrap.mt-6
                 %button.bg-blue-500.hover:bg-blue-700.text-white.font-bold.py-2.px-4.rounded{"data-action" => "click->modal#close"} Close
 :css
   #modal-background { display: none }

@@ -21,7 +21,8 @@ class ParticipantPortalController < ApplicationController
 
   def register
     StudyParticipation.find_or_create_by(study_id: params[:id], user_id: current_user.id)
-    redirect_to action: :index
+    current_user.profile.register!
+    redirect_to action: :steps
   end
 
   # A mini router just for the new onboarding process
@@ -30,6 +31,7 @@ class ParticipantPortalController < ApplicationController
     when 'fresh'
       redirect_to info_path
     when 'filled_info'
+    when 'registered'
     when 'consented'
     when 'filled_first_survey'
     when 'filled_second_survey'
