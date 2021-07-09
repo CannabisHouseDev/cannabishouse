@@ -10,7 +10,7 @@ questions = ['Niewielkie zainteresowanie lub odczuwanie przyjemności z wykonywa
              'Poruszanie się lub mówienie tak wolno, że inni mogliby to zauważyć? Albo wręcz przeciwnie — niemożność usiedzenia w miejscu lub podenerwowanie powodujące ruchliwość znacznie większą niż zwykle',
              'Myśli, że lepiej byłoby umrzeć, albo chęć zrobienia sobie jakiejś krzywdy',]
 
-title = 'Ankieta nr 3'
+title = 'Ankieta medyczna nr 3'
 description = 'Jak często w ciągu ostatnich 2 tygodni dokuczały Panu/Pani następujące problemy?'
 internal_name = 'phq9'
 
