@@ -314,10 +314,15 @@ pl:
         pending_survey: "Oczekująca ankieta"
         medical_survey: "Ankieta medyczna"
         questions: "Pytania"
+        no_questions_yet: "Ta ankieta nie ma jeszcze żadnych pytań"
         fill_survey: "Wypełnij ankietę"
         complete_survey: "Zakończ ankietę"
         no_survey: "Nie masz aktualnie żadnych ankiet do wypełnienia"
         pending_surveys: "Oczekujących ankiet"
+        answers:
+          yes: "Tak"
+          no: "Nie"
+        complete: "Zakończ ankietę"
       steps: 
         fill_profile: "Wypełnij profil"
         filled_profile: "Profil wypełniony"

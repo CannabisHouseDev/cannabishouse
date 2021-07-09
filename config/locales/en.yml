@@ -347,10 +347,15 @@ en:
         pending_survey: "Pending survey:"
         medical_survey: "Medical survey"
         questions: "Questions"
+        no_questions_yet: "This survey doesn't have any questions yet"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
         no_survey: "You don't have any more surveys to fill right now"
         pending_surveys: "Pending surveys"
+        answers:
+          yes: "Yes"
+          no: "No"
+        complete: "Complete survey"
       steps: 
         fill_profile: "Fill the profile info"
         agreements: "Agree to the regulations"
