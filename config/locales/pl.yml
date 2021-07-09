@@ -434,11 +434,11 @@ pl:
       welcome: "Witamy w Cannabis House!"
       start: "Zaczynaj"
       placeholder:
-        first_name: "Imię"
-        last_name: "Nazwisko"
-        nickname: "Przezwisko"
-        pesel: "Numer PESEL"
-        skills: "Moje umiejętności"
+        first_name: "Twoje Imię"
+        last_name: "Twoje Nazwisko"
+        nickname: "Pseudonim"
+        skills: "np. mechanik, stylistka, aktywista"
+        pesel: "11-cyfrowy numer PESEL"
       labels:
         first_name: "Imię"
         last_name: "Nazwisko"
@@ -447,6 +447,7 @@ pl:
         skills: "Umiejętności"
         number: "Numer telefonu"
         avatar: "Zdjęcie profilowe"
+        gender: "Płeć"
         birthday: "Urodziny"
         save: "Zapisać"
       errors:
@@ -456,6 +457,7 @@ pl:
       update:
         success: "Profil zaktualizowany."
         error: "Prosimy o wypełnienie wszystkich informacji."
+    edit: "Edycja profilu"  
   materials:
     profile_locked: "Twoje konto jest zablokowane, skontaktuj się z administratorem."
     restock: "Za mało materiału do przeniesienia, proszę uzupełnić zapas."

@@ -467,11 +467,11 @@ en:
       welcome: "Welcome to Canabis House!"
       start: "Get Started"
       placeholder:
-        first_name: "First Name"
-        last_name: "Last Name"
-        nickname: "Nickname"
-        pesel: "PESEL Number"
-        skills: "My Skills"
+        first_name: "My First Name"
+        last_name: "My Last Name"
+        nickname: "My Nickname"
+        skills: "i.e. mechanic, stylist, activist"
+        pesel: "11-digit PESEL №"
       labels:
         first_name: "First Name"
         last_name: "Last Name"
@@ -481,12 +481,14 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
+        gender: "Gender"
         save: "Save"
   profiles:
     update:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+    edit: "Edit this profile"
   materials:
     profile_locked: "Your account is locked, please contact an administrator."
     restock: "Not enough material to transfer, please restock."
