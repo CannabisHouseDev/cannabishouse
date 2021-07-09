@@ -5,13 +5,13 @@ questions = ['Niewielkie zainteresowanie lub odczuwanie przyjemności z wykonywa
              'Kłopoty z zaśnięciem lub przerywany sen, albo zbyt długi sen',
              'Uczucie zmęczenia lub brak energi',
              'Brak apetytu lub przejadanie się',
-             'Poczucie niezadowolenia z siebie — lub uczucie, że jest się do niczego, albo że zawiódł/zawiodła Pan/Pani siebielub rodzinę',
+             'Poczucie niezadowolenia z siebie — lub uczucie, że jest się do niczego, albo że zawiódł/zawiodła Pan/Pani siebie lub rodzinę',
              'Problemy ze skupieniem się na przykład przy czytaniu gazety lub oglądaniu telewizji',
              'Poruszanie się lub mówienie tak wolno, że inni mogliby to zauważyć? Albo wręcz przeciwnie — niemożność usiedzenia w miejscu lub podenerwowanie powodujące ruchliwość znacznie większą niż zwykle',
              'Myśli, że lepiej byłoby umrzeć, albo chęć zrobienia sobie jakiejś krzywdy',]
 
-title = 'Medical Survey #3'
-description = 'This survey is required to participate in the program.'
+title = 'Ankieta nr 3'
+description = 'Jak często w ciągu ostatnich 2 tygodni dokuczały Panu/Pani następujące problemy?'
 internal_name = 'phq9'
 
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
