@@ -13,7 +13,7 @@ questions = ['Czy uważasz, że używasz konopi w taki sam sposób jak większo�
              'Czy z powodu używania konopi zwracałeś się kiedykolwiek z prośbą o radę',
              'Czy przebywałeś kiedykolwiek w szpitalu z powodu używania konopi?',
              'Czy kiedykolwiek popadłeś w konflikt z prawem z powodu konopi, byłeś zatrzymany za prowadzenie pojazdu po użyciu konopi lub czy kiedykolwiek prowadziłeś pojazd pod wpływem konopi?']
-author = Profile.find_by(role: 'admin').user
+author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
 study = Study.find_by(title: 'onboarding')
 s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
