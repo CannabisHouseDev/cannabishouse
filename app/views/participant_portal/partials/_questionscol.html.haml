@@ -1,16 +1,22 @@
 .h-full.flex.flex-col.px-1.mb-2.md:mb-0{class: 'w-full md:w-3/4'}
-  / Questions Section
   .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
-    %span.w-full.h-full.flex-grow.flex.flex-col.pb-2
+    %span.w-full.h-full.flex-grow.flex.flex-col
+
       / Title
-      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl Questions
+      .span
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{local_assigns[:s].survey.study.title}
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.xs:text-2xl #{local_assigns[:s].survey.study.description}
+        %hr{class: "w-1/2 mx-auto mb-2 border-2"}
+        .text-sm.text-gray-600.mb-3.text-center.capitalize.xs:text-2xl #{local_assigns[:s].survey.description}
+
+      / Body
       - if local_assigns[:s].answers.empty?
         .w-full.text-center.flex.flex-col.justify-center.flex-grow
           This survey doesn't have any questions yet
       - else
-        / Cards
         = render 'participant_portal/partials/questionlist', q: local_assigns[:s], ref: @ref
-        / Action Button Footer
-    .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer
-      = link_to fill_survey_path(ref: @ref) do
-        %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id } Complete Survey
+
+      / Action Button Footer
+      .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer.my-3
+        = link_to fill_survey_path(ref: @ref) do
+          %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id } Complete Survey
