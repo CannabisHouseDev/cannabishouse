@@ -3,14 +3,14 @@
   .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
     %span.w-full.h-full.flex-grow.flex.flex-col.pb-2
       / Title
-      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl Questions
+      .text-sm.text-gray-600.mb-3.text-center.md:text-2xl= t('views.participant_portal.surveys.questions')
+      .text-sm.text-gray-600.mb-3.text-center.md:text-xl Aby wziąć udział w badaniu należy wypełnić wszystkie ankiety
       - if local_assigns[:s].answers.empty?
-        .w-full.text-center.flex.flex-col.justify-center.flex-grow
-          This survey doesn't have any questions yet
+        .w-full.text-center.flex.flex-col.justify-center.flex-grow= t('views.participant_portal.surveys.no_survey')          
       - else
         / Cards
         = render 'participant_portal/partials/questionlist', q: local_assigns[:s], ref: @ref
         / Action Button Footer
     .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer
       = link_to fill_survey_path(ref: @ref) do
-        %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id } Complete Survey
+        %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id }= t('views.participant_portal.surveys.complete')

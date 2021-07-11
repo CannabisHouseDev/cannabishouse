@@ -9,8 +9,8 @@ questions = ['Czy zdarzyło Ci się nie pójść lub spóźnić się do szkoły/
              'Czy często odczuwasz potrzebę użycia marihuany?',
              'Czy zdarzyło Ci się wydać na marihuanę tak dużo pieniędzy, że musiałeś zrezygnować z innych rzeczy, na których Ci zależało?']
 
-title = 'Medical Survey #2'
-description = 'This survey is required to participate in the program.'
+title = 'Ankieta do autoewaluacji'
+description = 'Dzieki tej ankiecie masz możliwosć sprawdzić jak używnaie konopi wpływa na zdolność radzenia sobie. Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Prosimy o odpowiedzi zgodne z prawdą.'
 internal_name = 'pum'
 study = Study.find_by(title: 'onboarding')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
@@ -19,6 +19,6 @@ single = QuestionType.find_by(name: 'single').id
 s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
 questions.each_with_index do |q, i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)
-  QuestionOption.create(display: 'Yes', name: 'yes', question_id: q.id, score: 1)
-  QuestionOption.create(display: 'No', name: 'no', question_id: q.id, score: 0)
+  QuestionOption.create(display: 'Tak', name: 'yes', question_id: q.id, score: 1)
+  QuestionOption.create(display: 'Nie', name: 'no', question_id: q.id, score: 0)
 end

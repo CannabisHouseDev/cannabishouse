@@ -311,13 +311,18 @@ pl:
         consent_dna: "Zgoda na pobranie materiału genetycznego"
         button: "Zrozumiałem i wyrażam zgodę"
       surveys: 
-        pending_survey: "Oczekujące ankiety"
+        pending_survey: "Oczekująca ankieta"
         medical_survey: "Ankieta medyczna"
         questions: "Pytania"
+        no_questions_yet: "Ta ankieta nie ma jeszcze żadnych pytań"
         fill_survey: "Wypełnij ankietę"
         complete_survey: "Zakończ ankietę"
         no_survey: "Nie masz aktualnie żadnych ankiet do wypełnienia"
-        pending_surveys: "Oczekujące ankiety"
+        pending_surveys: "Oczekujących ankiet"
+        answers:
+          yes: "Tak"
+          no: "Nie"
+        complete: "Zakończ ankietę"
       steps: 
         fill_profile: "Wypełnij profil"
         filled_profile: "Profil wypełniony"
@@ -434,11 +439,11 @@ pl:
       welcome: "Witamy w Cannabis House!"
       start: "Zaczynaj"
       placeholder:
-        first_name: "Imię"
-        last_name: "Nazwisko"
-        nickname: "Przezwisko"
-        pesel: "Numer PESEL"
-        skills: "Moje umiejętności"
+        first_name: "Twoje Imię"
+        last_name: "Twoje Nazwisko"
+        nickname: "Pseudonim"
+        skills: "np. mechanik, stylistka, aktywista"
+        pesel: "11-cyfrowy numer PESEL"
       labels:
         first_name: "Imię"
         last_name: "Nazwisko"
@@ -447,6 +452,7 @@ pl:
         skills: "Umiejętności"
         number: "Numer telefonu"
         avatar: "Zdjęcie profilowe"
+        gender: "Płeć"
         birthday: "Urodziny"
         save: "Zapisać"
       errors:
@@ -456,6 +462,7 @@ pl:
       update:
         success: "Profil zaktualizowany."
         error: "Prosimy o wypełnienie wszystkich informacji."
+    edit: "Edycja profilu"  
   materials:
     profile_locked: "Twoje konto jest zablokowane, skontaktuj się z administratorem."
     restock: "Za mało materiału do przeniesienia, proszę uzupełnić zapas."

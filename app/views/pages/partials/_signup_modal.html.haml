@@ -25,7 +25,7 @@
           %label.text-gray-700
             = f.label :password_confirmation, t('devise.confirm'), class: "mb-2 font-bold"
             = f.password_field :password, class: "w-full rounded bg-gray-100", id: 'signup_confirm'
-          %label.text-gray-700.mt-6
+          %label.text-gray-700
             = f.check_box :agreement_1, {class: "rounded"}, 'true', 'false'
             = f.label :agreement_1 do
               =t('devise.agree')

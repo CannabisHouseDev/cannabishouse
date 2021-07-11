@@ -344,13 +344,18 @@ en:
         consent_dna: "Consent to collect genetic material"
         button: "I agree to terms and conditions"
       surveys: 
-        pending_survey: "Pending surveys"
+        pending_survey: "Pending survey:"
         medical_survey: "Medical survey"
         questions: "Questions"
+        no_questions_yet: "This survey doesn't have any questions yet"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
-        no_surveys: "You don't have any more surveys to fill right now"
+        no_survey: "You don't have any more surveys to fill right now"
         pending_surveys: "Pending surveys"
+        answers:
+          yes: "Yes"
+          no: "No"
+        complete: "Complete survey"
       steps: 
         fill_profile: "Fill the profile info"
         agreements: "Agree to the regulations"
@@ -467,11 +472,11 @@ en:
       welcome: "Welcome to Canabis House!"
       start: "Get Started"
       placeholder:
-        first_name: "First Name"
-        last_name: "Last Name"
-        nickname: "Nickname"
-        pesel: "PESEL Number"
-        skills: "My Skills"
+        first_name: "My First Name"
+        last_name: "My Last Name"
+        nickname: "My Nickname"
+        skills: "i.e. mechanic, stylist, activist"
+        pesel: "11-digit PESEL №"
       labels:
         first_name: "First Name"
         last_name: "Last Name"
@@ -481,12 +486,14 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
+        gender: "Gender"
         save: "Save"
   profiles:
     update:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+    edit: "Edit this profile"
   materials:
     profile_locked: "Your account is locked, please contact an administrator."
     restock: "Not enough material to transfer, please restock."
