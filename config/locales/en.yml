@@ -250,6 +250,9 @@ en:
         edit:
           title: "Edit user"
   views:
+    participant_portal:
+      approved: "Approved by Medical Professional"
+      pending_approval: "Pending Approval by Medical Professional"
     addresses:
       save: "Save"
       destroy: "Delete address"
@@ -358,6 +361,7 @@ en:
         complete: "Complete survey"
       steps: 
         fill_profile: "Fill the profile info"
+        register: "Register your first study"
         agreements: "Agree to the regulations"
         filled_profile: "Your profile has been filled"
         agreed: "Term & conditions accepted"

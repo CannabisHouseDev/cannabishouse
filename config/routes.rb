@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       post 'steps/book', to: 'participant_portal#book_appointment', as: 'book_appointment'
       get  'participant/studies', to: 'participant_portal#studies', as: 'available_studies'
       get 'participant/:user_id', to: 'participant_portal#show', as: 'participant'
+      post 'participant/register/:id', to: 'participant_portal#register', as: 'register_study'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'

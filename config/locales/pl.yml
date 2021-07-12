@@ -57,15 +57,6 @@ pl:
     cancel: "Anuluj"
     finish: "Zakończ"
     next: "Dalej"
-  rapidfire:
-    attempts:
-      header: "Proszę odpowiedzieć na te pytania"
-      save: "Zapisać"
-    questions:
-      header: "Pytania"
-      new: "Nowe pytanie"
-      question: "Pytanie"
-      back: "Powrót do ankiet"
   pages:
     landing:
       hero:
@@ -218,6 +209,9 @@ pl:
         edit:
           title: "Edycja użytkownika"
   views:
+    participant_portal:
+      approved: "Zatwierdzony przez lekarza"
+      pending_approval: "Oczekuje na zatwierdzenie przez lekarza"
     addresses:
       save: "Zapisz"
       destroy: "Usuń adresy"
@@ -325,6 +319,7 @@ pl:
         complete: "Zakończ ankietę"
       steps: 
         fill_profile: "Wypełnij profil"
+        register: "Zarejestruj swoje pierwsze badanie"
         filled_profile: "Profil wypełniony"
         agreements: "Wyraź zgody"
         agreed: "Zgody OK"

@@ -51,6 +51,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Healthcheck url
 gem 'rails-healthcheck'
 
+# QR Code
+gem 'rqrcode', '~> 2.0'
+
 # Authorization
 gem "pundit"
 
