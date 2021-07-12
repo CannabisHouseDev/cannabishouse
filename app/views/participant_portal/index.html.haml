@@ -1,4 +1,4 @@
-.w-full.h-full.flex.flex-col.py-4.md:flex-row{ "data-controller" => "participant", "data-participant-target" => "participant" }
+.w-full.flex-grow.flex.flex-col.py-4.md:flex-row{ "data-controller" => "participant", "data-participant-target" => "participant" }
   - if @active
     - if current_user.profile.aasm_state == 'rejected'
       = render 'participant_portal/partials/rejected'
