@@ -66,24 +66,11 @@ class User < ApplicationRecord
   end
 
   def booked?
-    # todo
+    Appointment.find_by(participant_id: id).exists?
   end
 
   def approved?
-    # todo
-    true
-  end
-
-  def donated?
-    # todo
-  end
-
-  def active?
-    # todo
-  end
-
-  def contributed?
-    # todo
+    profile.aasm_state == 'approved'
   end
 
   private
