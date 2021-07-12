@@ -2,7 +2,7 @@ puts 'Creating KSSUK-30 Survey'
 
 
 questions = [['Jakie jest Twoje wykształcenie?',
-              [['Podstawowe', 'podstawowe ', 0],
+              [['podstawowe', 'podstawowe ', 0],
                ['średnie ogólne', 'średnie ogólne', 0],
                ['średnie zawodowe', 'średnie zawodowe', 0],
                ['średnie techniczne', 'średnie techniczne', 0],
@@ -11,7 +11,7 @@ questions = [['Jakie jest Twoje wykształcenie?',
                ['wyższe, co najmniej dr', 'wyższe, co najmniej dr', 0]]],
              ['Jaki obecnie wykonujesz zawód?',
               [['bezrobotny', 'bezrobotny ', 0],
-               ['emeryt, Rencista', 'emeryt, Rencista', 0],
+               ['emeryt, rencista', 'emeryt, rencista', 0],
                ['gospodyni domowa', 'gospodyni domowa', 0],
                ['inżynier', 'inżynier', 0],
                ['kadra zarządzająca, menedżerska', 'kadra zarządzająca, menedżerska', 0],
