@@ -21,6 +21,7 @@ class TransfersController < ApplicationController
 
   # POST /transfers or /transfers.json
   def create
+    authorize @transfer
     @transfer = Transfer.new(transfer_params)
 
     respond_to do |format|
@@ -36,6 +37,7 @@ class TransfersController < ApplicationController
 
   # PATCH/PUT /transfers/1 or /transfers/1.json
   def update
+    authorize @transfer
     respond_to do |format|
       if @transfer.update(transfer_params)
         format.html { redirect_to @transfer, notice: "Transfer was successfully updated." }
@@ -49,6 +51,7 @@ class TransfersController < ApplicationController
 
   # DELETE /transfers/1 or /transfers/1.json
   def destroy
+    authorize @transfer
     @transfer.destroy
     respond_to do |format|
       format.html { redirect_to transfers_url, notice: "Transfer was successfully destroyed." }

@@ -1,5 +1,5 @@
 class MaterialsController < ApplicationController
-  before_action :set_material, only: %i[ show edit update destroy ]
+  before_action :set_material, only: %i[show edit update destroy]
 
   # GET /materials or /materials.json
   def index
@@ -21,6 +21,7 @@ class MaterialsController < ApplicationController
 
   # POST /materials or /materials.json
   def create
+    authorize @material
     @material = Material.new(material_params)
 
     respond_to do |format|
@@ -36,6 +37,7 @@ class MaterialsController < ApplicationController
 
   # PATCH/PUT /materials/1 or /materials/1.json
   def update
+    authorize @material
     respond_to do |format|
       if @material.update(material_params)
         format.html { redirect_to @material, notice: "Material was successfully updated." }
@@ -49,6 +51,7 @@ class MaterialsController < ApplicationController
 
   # DELETE /materials/1 or /materials/1.json
   def destroy
+    authorize @material
     @material.destroy
     respond_to do |format|
       format.html { redirect_to materials_url, notice: "Material was successfully destroyed." }
