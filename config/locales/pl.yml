@@ -285,7 +285,7 @@ pl:
       edit: "Edytuj czas dostępności"
       cancel: "Anuluj"
       mark: "Rozpocznij wizytę"
-      finalize: "Rozpocznij ocenę"
+      finalize: "Zakończ ocenę"
       reject: "Odrzuć"
       pending: "Oczekujące oceny"
       no_pending: "Brak oczekująych ocen"
