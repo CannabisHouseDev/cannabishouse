@@ -182,7 +182,7 @@ questions = [['Jakie jest Twoje wykształcenie?',
                ['Nie zażywam', 'nie zażywam', 2]]]]
 
 title = 'Ankieta medyczna nr 5'
-description = 'Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Pierwsze wypełnienie ma harakter historyczny, nie rzutuje na udział w badaniu i przeprowadzana jest w celach naukowych, oraz utworzenia punktu odniesienia dla kolejnych ankiet. Wymagane są odpowiedzi zgodne z prawdą.'
+description = 'Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Pierwsze wypełnienie ma harakter historyczny, nie rzutuje na udział w badaniu i przeprowadzana jest w celach naukowych, oraz utworzenia punktu odniesienia dla kolejnych ankiet. Wymagane są odpowiedzi, które są prawdziwe lub najlepiej oddają Twoje poglądy.'
 internal_name = 'kssuk30'
 study = Study.find_by(title: 'onboarding')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
