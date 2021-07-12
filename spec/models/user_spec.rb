@@ -5,6 +5,8 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  agreement_1            :boolean
+#  agreement_2            :boolean
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
