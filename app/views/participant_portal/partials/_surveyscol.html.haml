@@ -3,10 +3,12 @@
   .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
     %span.w-full.h-full.flex-grow.flex.flex-col.pb-2
       / Title
-      .text-sm.text-gray-600.mb-3.text-center.capitalize.md:text-2xl #{local_assigns[:s].count} Pending Surveys
+      .text-sm.text-gray-600.mb-3.text-center.md:text-2xl 
+        = t('views.participant_portal.surveys.pending_survey')
+        #{local_assigns[:s].count} 
       - if local_assigns[:s].empty?
         .w-full.text-center.flex.flex-col.justify-center.flex-grow
-          You don't have any surveys yet
+          = t('views.participant_portal.surveys.no_survey')
       - else
         / Cards
         = render 'participant_portal/partials/surveylist', s: @filled || local_assigns[:s], selected: local_assigns[:selected]

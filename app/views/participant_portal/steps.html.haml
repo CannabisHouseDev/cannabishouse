@@ -1,6 +1,8 @@
-.w-full.h-full.flex.flex-col.justify-center.text-2xl.py-16
+.w-full.h-full.flex.flex-col.justify-center.text-2xl.py-4
   - case current_user.profile.aasm_state
   - when 'filled_info'
+    = render partial: 'participant_portal/partials/study'
+  - when 'registered'
     = render partial: 'participant_portal/partials/consent'
   - when 'consented'
     = render partial: 'participant_portal/partials/first_survey'

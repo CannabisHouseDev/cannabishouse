@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 class ParticipantPortalController < ApplicationController
+  require "rqrcode"
   before_action :set_required_surveys, only: :steps
+
   def index
     @active = current_user.profile.active_study
+    qr = RQRCode::QRCode.new(current_user.id.to_s, mode: :alphanumeric)
+    @qr = qr.as_png(size: 400)
   end
 
   def show
@@ -17,6 +21,8 @@ class ParticipantPortalController < ApplicationController
 
   def register
     StudyParticipation.find_or_create_by(study_id: params[:id], user_id: current_user.id)
+    current_user.profile.register!
+    redirect_to action: :steps
   end
 
   # A mini router just for the new onboarding process
@@ -25,6 +31,7 @@ class ParticipantPortalController < ApplicationController
     when 'fresh'
       redirect_to info_path
     when 'filled_info'
+    when 'registered'
     when 'consented'
     when 'filled_first_survey'
     when 'filled_second_survey'
@@ -37,7 +44,7 @@ class ParticipantPortalController < ApplicationController
     when 'paid'
       redirect_to action: :book
     else
-      render action: :index
+      redirect_to action: :index
     end
   end
 

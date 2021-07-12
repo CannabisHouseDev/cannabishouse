@@ -45,8 +45,6 @@ class User < ApplicationRecord
 
   has_many :appointments, class_name: 'Appointment', foreign_key: 'participant_id'
   has_many :appointments, class_name: 'Appointment', foreign_key: 'doctor_id'
-  
-  attr_accessor :agreement_1, :agreement_2
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -66,24 +64,11 @@ class User < ApplicationRecord
   end
 
   def booked?
-    # todo
+    Appointment.find_by(participant_id: id).exists?
   end
 
   def approved?
-    # todo
-    true
-  end
-
-  def donated?
-    # todo
-  end
-
-  def active?
-    # todo
-  end
-
-  def contributed?
-    # todo
+    profile.aasm_state == 'approved'
   end
 
   private

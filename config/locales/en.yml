@@ -250,6 +250,9 @@ en:
         edit:
           title: "Edit user"
   views:
+    participant_portal:
+      approved: "Approved by Medical Professional"
+      pending_approval: "Pending Approval by Medical Professional"
     addresses:
       save: "Save"
       destroy: "Delete address"
@@ -323,7 +326,7 @@ en:
       load: "Load all"
       edit: "Edit Time available"
       cancel: "Cancel"
-      mark: "Mark as done"
+      mark: "Begin the appointment"
       finalize: "Finalize evaluation"
       reject: "Reject"
       pending: "Pending Evaluations"
@@ -333,6 +336,23 @@ en:
       upcoming: "Upcoming appointments"
       no_upcoming: "No upcoming appointments"
       calendar: "My calendar"
+      evaluation: 
+        subjects_evaluated: "All subjects have been evaluated"
+        auto_risk_assesment: "Automated Risk Assesment:"
+        max_dosage: "Recommended Maximum Dosage:"
+        give_scores_error: "Something went wrong fetching the participant's scores please contact support."
+        risk_level: "Risk level"
+        max_amount_drought: "Max amount of drought in grams"
+        max_amount_oil: "Max amount of oil in grams"
+        submit: "Submit"
+        score: "Score of"
+        is: "is: "
+        green: "green"
+        orange: "orange"
+        red: "red"
+        dry_10: "Drought: 10g per month, Oil: 5g per month" 
+        dry_20: "Drought: 20g per month, Oil: 10g per month"
+        dry_30: "Drought: 30g per month, Oil: 15g per month"        
     participant_portal: 
       consent:
         title: "Dear Associate,"
@@ -344,15 +364,21 @@ en:
         consent_dna: "Consent to collect genetic material"
         button: "I agree to terms and conditions"
       surveys: 
-        pending_survey: "Pending surveys"
+        pending_survey: "Pending survey:"
         medical_survey: "Medical survey"
         questions: "Questions"
+        no_questions_yet: "This survey doesn't have any questions yet"
         fill_survey: "Fill survey"
         complete_survey: "Complete survey"
-        no_surveys: "You don't have any more surveys to fill right now"
+        no_survey: "You don't have any more surveys to fill right now"
         pending_surveys: "Pending surveys"
+        answers:
+          yes: "Yes"
+          no: "No"
+        complete: "Complete survey"
       steps: 
         fill_profile: "Fill the profile info"
+        register: "Register your first study"
         agreements: "Agree to the regulations"
         filled_profile: "Your profile has been filled"
         agreed: "Term & conditions accepted"
@@ -467,11 +493,11 @@ en:
       welcome: "Welcome to Canabis House!"
       start: "Get Started"
       placeholder:
-        first_name: "First Name"
-        last_name: "Last Name"
-        nickname: "Nickname"
-        pesel: "PESEL Number"
-        skills: "My Skills"
+        first_name: "My First Name"
+        last_name: "My Last Name"
+        nickname: "My Nickname"
+        skills: "i.e. mechanic, stylist, activist"
+        pesel: "11-digit PESEL №"
       labels:
         first_name: "First Name"
         last_name: "Last Name"
@@ -481,12 +507,14 @@ en:
         number: "Phone Number"
         avatar: "Avatar"
         birthday: "Birthday"
+        gender: "Gender"
         save: "Save"
   profiles:
     update:
       update:
         success: "Profile updated."
         error: "Please fill out all the information."
+    edit: "Edit this profile"
   materials:
     profile_locked: "Your account is locked, please contact an administrator."
     restock: "Not enough material to transfer, please restock."

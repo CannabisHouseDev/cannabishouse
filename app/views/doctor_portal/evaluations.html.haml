@@ -11,7 +11,7 @@
         .flex.flex-col.overflow-y-auto
           / Cards
           - if @evaluations.count.zero?
-            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center All subjects have been evaluated
+            .w-full.h-14.rounded-md.opacity-75.flex.items-center.mb-2.px-2.justify-center= t("views.doctor_portal.evaluation.subjects_evaluated")
           - else
             - @evaluations.each do |a|
               = link_to evaluation_details_path(a.id) do
@@ -28,27 +28,27 @@
         .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.p-2
           - if risk
             .flex.w-full.rounded.justify-center.pa-2.text-xl{style: "background: #{['green', 'orange', 'red'][risk]}"}
-              Automated Risk Assesment:
-              = ['green', 'orange', 'red'][risk]
+              = t("views.doctor_portal.evaluation.auto_risk_assesment") 
+              = [t("views.doctor_portal.evaluation.green"), t("views.doctor_portal.evaluation.orange"), t("views.doctor_portal.evaluation.red")][risk]
             .flex.w-full.rounded.justify-center.pa-2.text-lg
-              Recommended Maximum Dosage:
+              = t("views.doctor_portal.evaluation.max_dosage") 
             .flex.w-full.rounded.justify-center.pa-2.text-md
-              = ['Drought: 10g per month, Oil: 5g per month', 'Drought: 20g per month, Oil: 10g per month', 'Drought: 30g per month, Oil: 15g per month'][risk]
+              = [t("views.doctor_portal.evaluation.dry_10"), t("views.doctor_portal.evaluation.dry_20"), t("views.doctor_portal.evaluation.dry_30")][risk]
             %hr.w-80.border-2.border-grey.mt-2
             - @surveys.each do |s|
-              .flex.w-full.rounded.justify-center.pa-2
-                = "#{s.survey.internal_name} score: #{s.score}"
+              .flex.w-full.rounded.justify-center.pa-2 
+                = "#{t("views.doctor_portal.evaluation.score")} #{s.survey.internal_name} #{t("views.doctor_portal.evaluation.is")} #{s.score}"
             %hr.w-80.border-2.border-grey.mt-2
             = form_with url: evaluate_path(id: @selected), method: :post, class: 'flex flex-col justify-center text-center', id: 'evaluation_form' do |form|
-              = form.label "Risk Level", for: :risk, class: 'text-lg'
-              = form.collection_select :risk, ['green', 'orange', 'red'], :to_s, :to_s, include_blank: false
-              = form.label "Max amount of drought in grams", for: :dry, class: 'text-lg'
+              = form.label t("views.doctor_portal.evaluation.risk_level"), for: :risk, class: 'text-lg'
+              = form.collection_select :risk, [t("views.doctor_portal.evaluation.green"), t("views.doctor_portal.evaluation.orange"), t("views.doctor_portal.evaluation.red")], :to_s, :to_s, include_blank: false
+              = form.label t("views.doctor_portal.evaluation.max_amount_drought"), for: :dry, class: 'text-lg'
               = form.number_field :dry, min: 0, max: 50
-              = form.label "Max amount of oil in grams", for: :oil, class: 'text-lg'
+              = form.label t("views.doctor_portal.evaluation.max_amount_oil"), for: :oil, class: 'text-lg'
               = form.number_field :oil, min: 0, max: 30
-              = form.submit "Submit", class: 'hidden', id: 'approve_submit'
+              = form.submit t("views.doctor_portal.evaluation.submit"), class: 'hidden', id: 'approve_submit'
           - else
-            Something went wrong fetching the participant's scores please contact support
+            = t("views.doctor_portal.evaluation.give_score_error") 
       / Action Button Footer
       .grid.grid-cols-2.w-full
         = link_to t('views.doctor_portal.reject'), evaluate_path(id: @selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-gray py-4 mr-1' if @selected

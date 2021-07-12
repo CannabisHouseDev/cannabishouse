@@ -33,7 +33,8 @@
             = t('views.doctor_portal.select') 
         - else
           .w-full.flex-grow.rounded-md.bg-gray-100.opacity-75.flex.flex-col.items-center.mb-2.px-2.justify-center
-            = image_tag polymorphic_url(appointment.participant.profile.avatar), size: 280, class: 'h-40 w-40 items-center rounded-full border'
+            - if !appointment.participant.profile.avatar.nil?
+              = image_tag polymorphic_url(appointment.participant.profile.avatar), size: 280, class: 'h-40 w-40 items-center rounded-full border'
             %h1 #{appointment.participant.profile.first_name} #{appointment.participant.profile.last_name}
       / Action Button Footer
       .grid.grid-cols-2.w-full
