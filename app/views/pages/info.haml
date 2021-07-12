@@ -19,8 +19,8 @@
     .flex.mb-5
       .field.mr-10{class: "w-1/2"}
         = profile_form.label :pesel, class: 'Form-label'
-        = profile_form.text_field :pesel, placeholder: t('models.onboarding.placeholder.pesel'), class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:pesel].empty?}"
-        .text-red-400.text-opacity-80.text-xs.absolute= @profile.errors[:pesel][0] unless @profile.errors[:pesel].empty?
+        = profile_form.text_field :pesel, placeholder: "12341234123", class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:pesel].empty?}"
+        .text-red-400.text-opacity-80.text-xs.aboslute= @profile.errors[:pesel][0] unless @profile.errors[:pesel].empty?
       .field.ml-10{class: "w-1/2"}
         = profile_form.label :contact_number, class: 'Form-label'
         = profile_form.text_field :contact_number, placeholder: '+48 777888999', class: "Form-input bg-gray-200 border-gray-500 #{'border-red-500 bg-red-200' unless @profile.errors[:contact_number].empty?}"
