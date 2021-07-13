@@ -30,12 +30,12 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   context 'validation tests' do
     it 'ensures email is valid' do
-      user = User.new(email: 'randomString', password: "1234512345123456")
+      user = User.new(email: 'randomString', password: "1234512345123456", agreement_1: true, agreement_2: true)
       expect(user.save).to eq(false)
     end
 
     it 'ensures pasword length greater than 16 chars' do
-      user = User.new(email: 'valid@email.com', password: '12345678910')
+      user = User.new(email: 'valid@email.com', password: '12345678910', agreement_1: true, agreement_2: true)
       expect(user.save).to eq(false)
     end
 

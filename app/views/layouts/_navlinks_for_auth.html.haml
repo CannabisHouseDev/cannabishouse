@@ -4,6 +4,6 @@
     = link_to t('devise.logout'), destroy_user_session_path, method: :delete,  class: "ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-1 border border-transparent rounded-3xl shadow-sm text-base font-medium text-white bg-red-500 hover:bg-red-600"
   - else
     %button.group.inline-flex.items-center.bg-primary.rounded-3xl.text-white.border-0.py-2.px-8.focus:outline-none.hover:bg-primary-700.transition-colors.duration-300.rounded.text-normal.mt-4.md:mt-0.font-medium{"data-action" => "click->modal#open", :href => "#"}
-      Zaloguj się
+      = t('devise.login')
       %svg.w-4.h-4.ml-1{:fill => "none", :stroke => "currentColor", "stroke-linecap" => "round", "stroke-linejoin" => "round", "stroke-width" => "2", :viewbox => "0 0 24 24"}
         %path{:d => "M5 12h14M12 5l7 7-7 7"}

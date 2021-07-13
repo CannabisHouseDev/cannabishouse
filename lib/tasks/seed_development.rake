@@ -5,14 +5,8 @@ if Rails.env.development? || Rails.env.test?
       puts 'Destroying old records...'
       Transfer.destroy_all
       MaterialType.destroy_all
-      User.destroy_all
       Material.destroy_all
-      Profile.destroy_all
       Address.destroy_all
-      QuestionOption.destroy_all
-      QuestionType.destroy_all
-      Question.destroy_all
-      Survey.destroy_all
       puts 'Creating users...'
       7.times do |i|
         participants = []
@@ -24,10 +18,10 @@ if Rails.env.development? || Rails.env.test?
               email: "participant_#{j}@cannabishouse.eu",
               password: '1111222233334444',
               password_confirmation: '1111222233334444',
-              agreement_1: 'true',
-              agreement_2: 'true')
+              agreement_1: true,
+              agreement_2: true)
             user.skip_confirmation!
-            user.save
+            user.save!
             file = URI.open(url)
             user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg")
             user.profile.update(
@@ -63,10 +57,10 @@ if Rails.env.development? || Rails.env.test?
             email: "#{%w[user participant dispensary doctor researcher warehouse admin][i]}@cannabishouse.eu",
             password: '1111222233334444',
             password_confirmation: '1111222233334444',
-            agreement_1: 'true',
-            agreement_2: 'true')
+            agreement_1: true,
+            agreement_2: true)
           user.skip_confirmation!
-          user.save
+          user.save!
           file = URI.open(url)
           user.profile.avatar.attach(io: file, filename: filename, content_type: "image/jpg") if file
           user.profile.update(
@@ -152,24 +146,12 @@ if Rails.env.development? || Rails.env.test?
       end
       
       puts 'Creating Studies'
-      Study.create(title: 'onboarding', description: 'Required surveys during onboarding', cycle: 4, max: 0, user_id: Profile.find_by(role: 'admin').user.id)
       puts 'Creating Dummy Study'
       study = Study.create(title: 'dummy Study', description: 'Just to test out the views', cycle: 4, max: 10, user_id: Profile.find_by(role: 'researcher').user.id)
-      
-      puts 'Creating Question Types'
-      %w[short long number single multiple date].each do |t|
-        QuestionType.create(name: t)
-      end
+
 
       puts 'Creating dummy survey'
       survey = Survey.create(title: 'Dummy Survey', description: 'Trying out the views', internal_name: 'dummy', required: false, user_id: Profile.find_by(role: 'researcher').user.id, study: study)
-
-
-      puts 'Creating Pre-Psychiatrist Surveys'
-
-      Dir[Rails.root.join('db/seed/surveys/*.rb')].sort.each do |file|
-        require file
-      end
     end
   end
 end
