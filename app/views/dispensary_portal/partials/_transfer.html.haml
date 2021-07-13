@@ -1,17 +1,18 @@
 %section.text-gray-600.body-font.overflow-hidden.px-5.md:py-10
   .mx-auto.flex.flex-col.flex-wrap.md:flex-row.md:flex-nowrap.justify-center{:class => "lg:w-4/5"}
     .lg:px-10.lg:py-6.mt-6.lg:mt-0.lg:h-auto.h-64.flex.flex-col.justify-center.relative.sm:hidden.md:block{:class => "lg:w-1/2"}
+    - if @profile.avatar.url.present?
       = image_tag @profile.avatar, alt:  "avatar", class: "object-cover object-center rounded-full p-10"
-      - if @profile.user.donated?
-        .flex.justify-center.item-center.flex-col.absolute.bottom-0.w-20{class: "right-1/4"}
-          = image_tag "dispensary_portal/approved.svg", alt: "approved"
-          .text-2xl.font-bold.align-text-middle= t('views.dispensary_portal.donator')
-    =image_tag 'dispensary_portal/vector.svg', alt: 'equal'
+    - if @profile.user.donated?
+      .flex.justify-center.item-center.flex-col.absolute.bottom-0.w-20{class: "right-1/4"}
+        = image_tag "dispensary_portal/approved.svg", alt: "approved"
+        .text-2xl.font-bold.align-text-middle= t('views.dispensary_portal.donator')
+    = image_tag 'dispensary_portal/vector.svg', alt: 'equal'
     .flex.flex-row.flex-grow.justify-center.items-center
       .flex.flex-col.justify-center.items-center
         .text-gray-900.text-3xl.title-font.font-medium
           = t('views.dispensary_portal.amount')
-        %input{placeholder: 'max allowed 3g', class: "mt-2 border-b-2 border-gray-500 text-center py-4 rounded", "data-dispensary-target" => "transfer"}
+        %input{placeholder: 'amount in grams', class: "mt-2 border-b-2 border-gray-500 text-center py-4 rounded", "data-dispensary-target" => "transfer"}
         .flex.flex-row.justify-around.w-full
           %button.py-4.rounded.border-primary-400.border-2.flex-grow.m-2.bg-primary-400.bg-opacity-25{ "data-action" => "click->dispensary#finalizeTransfer"}
             = t('views.dispensary_portal.send')
