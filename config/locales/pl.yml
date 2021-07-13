@@ -60,13 +60,13 @@ pl:
   pages:
     landing:
       hero:
-        title: "Pomóż ratować"
-        titleSecondPart: "życie"
-        content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie medycyny. Pokaż swoje poparcie dla naszych idei i weź udział w badaniach!"
+        title: "Witamy w "
+        titleSecondPart: "Cannabis House"
+        content: "Cannabis House swoją działalnością przesuwa granicę tego co możliwe w świecie konopi i daje Ci możliwość współtworzenia postępu w dziedzinie nauki. Pokaż swoje poparcie dla naszych idei i przyłącz się do Stowarzyszenia!"
         cta: "Dołącz do nas!"
       description:
         title: "Jesteśmy inicjatorami badań naukowych"
-        content: "Nasza platforma przez następne kilka lat zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
+        content: "Nasza platforma zapewni bezpieczną przestrzeń do wymiany informacji i współpracy nad badaniem skutków i korzyści płynących ze stosowania konopi na różnych płaszczyznach. Jest ona stworzona zarówno dla uczestników badań jak i lekarzy, badaczy i przedsiębiorców."
       instructions:
         title: "Jak to"
         titleSecondPart: "działa?"
@@ -128,7 +128,7 @@ pl:
         y2015: 
           title: "Lata 2015 - 2017"
           content1: "Z tego też powodu, w latach 2015 - 2017 roku Stowarzyszenie nawiązało współpracę z lobbystami, reprezentującymi interesy obywateli i wspierającymi idee Stowarzyszenia w polskim parlamencie. Zostaliśmy zaproszeni do  udziału w pracach komisji sejmowych, których bezpośrednim efektem  było rozporządzenie Ministra Zdrowia dopuszczające badania naukowe nad konopiami innymi niż włókniste."
-          content2: "Od 2017 roku Stowarzyszenie wydaje  czasopismo Index Scientia Cannabis pod redakcją dr. Piotra Grzegorczyka, w którym poruszamy zagadnienia regulacji prawnych dot. posiadania, udzielania, uprawy i przetwarzania konopi i publikujemy nasze wyniki. W zakres tematyki wchodzi też monitorowanie obrotu konopiami, społeczna i psychologiczna ocena uwarunkowań ich spożywania przez użytkowników i wiele więcej. "
+          content2: "Od 2017 roku Stowarzyszenie wydaje  czasopismo Index Scientia Cannabis, w którym poruszamy zagadnienia regulacji prawnych dot. posiadania, udzielania, uprawy i przetwarzania konopi i publikujemy nasze wyniki. W zakres tematyki wchodzi też monitorowanie obrotu konopiami, społeczna i psychologiczna ocena uwarunkowań ich spożywania przez użytkowników i wiele więcej. "
           content3: "Stowarzyszenie zbudowało w tym roku pierwszą wersję platformy internetowej, na której stowarzyszeni mogli uzyskać niezbędne informacje z zakresu aktualnie prowadzonych działań jak również otrzymać profesjonalną poradę prawną."
         y2018:
           title: "Lata 2018 - 2019"
