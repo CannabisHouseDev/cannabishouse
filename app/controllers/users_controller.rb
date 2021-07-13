@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit!(:email, :password, :password_confirmation,
+    params.require(:user).permit!(:email, :password, :password_confirmation, :agreement_1, :agreement_2,
                                   addresses_attributes: %i[id street1 street2 city province zip_code country category])
   end
 end
