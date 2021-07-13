@@ -47,7 +47,7 @@ require 'open-uri'
 
 RSpec.describe Profile, type: :model do
   User.find_by(email: 'valid@gmail.com').destroy if User.find_by(email: 'valid@gmail.com')
-  user = User.create(email: 'valid@gmail.com', password: '123456123456123456')
+  user = User.create(email: 'valid@gmail.com', password: '123456123456123456', agreement_1: true, agreement_2: true)
   image = ActiveStorage::Blob.create_after_upload!(
             io: URI.open('https://picsum.photos/200'),
             filename: 'test_avatar.jpg',

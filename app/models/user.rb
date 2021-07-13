@@ -5,6 +5,8 @@
 # Table name: users
 #
 #  id                     :bigint           not null, primary key
+#  agreement_1            :boolean
+#  agreement_2            :boolean
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -45,6 +47,11 @@ class User < ApplicationRecord
 
   has_many :appointments, class_name: 'Appointment', foreign_key: 'participant_id'
   has_many :appointments, class_name: 'Appointment', foreign_key: 'doctor_id'
+
+  validates_acceptance_of :agreement_1, allow_nil: false, accept: true, on: :create, message: I18n.t('devise.agreement_error')
+  validates_acceptance_of :agreement_2, allow_nil: false, accept: true, on: :create, message: I18n.t('devise.agreement_error')
+
+  attr_accessor :agreement_1, :agreement_2
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
