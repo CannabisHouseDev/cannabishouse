@@ -41,7 +41,7 @@ module Users
 
     # If you have extra params to permit, append them to the sanitizer.
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:user, keys: %i[agreement_1 agreement_2])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:agreement_1, :agreement_2])
     end
 
     # If you have extra params to permit, append them to the sanitizer.
