@@ -2,7 +2,7 @@ puts 'Creating KSSUK-30 Survey'
 
 
 questions = [['Jakie jest Twoje wykształcenie?',
-              [['Podstawowe', 'podstawowe ', 0],
+              [['podstawowe', 'podstawowe ', 0],
                ['średnie ogólne', 'średnie ogólne', 0],
                ['średnie zawodowe', 'średnie zawodowe', 0],
                ['średnie techniczne', 'średnie techniczne', 0],
@@ -11,7 +11,7 @@ questions = [['Jakie jest Twoje wykształcenie?',
                ['wyższe, co najmniej dr', 'wyższe, co najmniej dr', 0]]],
              ['Jaki obecnie wykonujesz zawód?',
               [['bezrobotny', 'bezrobotny ', 0],
-               ['emeryt, Rencista', 'emeryt, Rencista', 0],
+               ['emeryt, rencista', 'emeryt, rencista', 0],
                ['gospodyni domowa', 'gospodyni domowa', 0],
                ['inżynier', 'inżynier', 0],
                ['kadra zarządzająca, menedżerska', 'kadra zarządzająca, menedżerska', 0],
@@ -182,7 +182,7 @@ questions = [['Jakie jest Twoje wykształcenie?',
                ['Nie zażywam', 'nie zażywam', 2]]]]
 
 title = 'Ankieta medyczna nr 5'
-description = 'Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Pierwsze wypełnienie ma harakter historyczny, nie rzutuje na udział w badaniu i przeprowadzana jest w celach naukowych, oraz utworzenia punktu odniesienia dla kolejnych ankiet. Wymagane są odpowiedzi zgodne z prawdą.'
+description = 'Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Pierwsze wypełnienie ma harakter historyczny, nie rzutuje na udział w badaniu i przeprowadzana jest w celach naukowych, oraz utworzenia punktu odniesienia dla kolejnych ankiet. Wymagane są odpowiedzi, które są prawdziwe lub najlepiej oddają Twoje poglądy.'
 internal_name = 'kssuk30'
 study = Study.find_by(title: 'onboarding')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
