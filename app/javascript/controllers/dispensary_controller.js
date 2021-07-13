@@ -13,7 +13,7 @@ export default class extends Controller {
   searchScreen(){
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/dispensary_search`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/dispensary_search`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -21,11 +21,12 @@ export default class extends Controller {
   }
 
   startScanner () {
+    console.log(window.locale)
     const videoElm = document.getElementById('videoElm')
     window.qrScanner = new QrScanner(videoElm, result => {
       Rails.ajax({
        type: "get",
-       url: `${window.locale == 'en' ? '/en' : ''}/dispensary_participant?code=${result}`,
+       url: `${window.locale == 'pl' ? '' : window.locale}/dispensary_participant?code=${result}`,
        success: function(data){
         root.innerHTML = data.body.innerHTML;
        }
@@ -43,7 +44,7 @@ export default class extends Controller {
     const code = document.getElementById("code").value;
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/dispensary_participant?code=${code}`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/dispensary_participant?code=${code}`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -53,7 +54,7 @@ export default class extends Controller {
   materialScreen(){
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/material_choice`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/material_choice`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -63,7 +64,7 @@ export default class extends Controller {
   transferScreen (e) {
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/transfer?material=${e.currentTarget.dataset.material}`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/transfer?material=${e.currentTarget.dataset.material}`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -74,7 +75,7 @@ export default class extends Controller {
     let amount = this.transferTarget.value
     Rails.ajax({
       type: "get",
-      url: `${window.locale == 'en' ? '/en' : ''}/finalize_transfer?amount=${amount}`,
+      url: `${window.locale == 'pl' ? '' : window.locale}/finalize_transfer?amount=${amount}`,
       success: function (data) {
         root.innerHTML = data.body.innerHTML;
         toastr.success(`${amount} transferred`, 'Success')
@@ -88,7 +89,7 @@ export default class extends Controller {
   warehouseScreen() {
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/warehouse_stock`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/warehouse_stock`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -98,7 +99,7 @@ export default class extends Controller {
   orderScreen(e){
     Rails.ajax({
      type: "get",
-     url: `${window.locale == 'en' ? '/en' : ''}/order?material=${e.currentTarget.dataset.material}`,
+     url: `${window.locale == 'pl' ? '' : window.locale}/order?material=${e.currentTarget.dataset.material}`,
      success: function(data){
       root.innerHTML = data.body.innerHTML;
      }
@@ -110,7 +111,7 @@ export default class extends Controller {
     let end = this.endTarget.value
     console.log(start)
     console.log(end)
-    window.location= `${window.locale == 'en' ? '/en' : ''}/dispensary/transfers?${start ? 'start='+start+'&' : ''}${end ? 'end='+end : ''+'&'}`
+    window.location= `${window.locale == 'pl' ? '' : window.locale}/dispensary/transfers?${start ? 'start='+start+'&' : ''}${end ? 'end='+end : ''+'&'}`
   }
 
   initialize () {
