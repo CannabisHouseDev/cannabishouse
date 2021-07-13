@@ -102,6 +102,8 @@ FactoryBot.define do
     email { 'john@example.com' }
     password { '1234123412341234' }
     password_confirmation { '1234123412341234' }
+    agreement_1 { true }
+    agreement_2 { true }
   end
 
   factory :dispensary do
