@@ -251,9 +251,6 @@ en:
         edit:
           title: "Edit user"
   views:
-    participant_portal:
-      approved: "Approved by Medical Professional"
-      pending_approval: "Pending Approval by Medical Professional"
     addresses:
       save: "Save"
       destroy: "Delete address"
@@ -354,7 +351,9 @@ en:
         dry_10: "Drought: 10g per month, Oil: 5g per month" 
         dry_20: "Drought: 20g per month, Oil: 10g per month"
         dry_30: "Drought: 30g per month, Oil: 15g per month"        
-    participant_portal: 
+    participant_portal:
+      approved: "Approved by Medical Professional"
+      pending_approval: "Pending Approval by Medical Professional"
       consent:
         title: "Dear Associate,"
         content_paragraph: "Thank you for choosing to take part in the cannabis effects research. Before going any further it is required that you familiarize yourself with the research regulations and give your informed consent to participating in the research. Please read carefully the content of the attached documents because by clicking the button below you declare that you have read, understood and agreed to the provisions contained therein. In these documents you will find the most necessary information to understand the size of the research."

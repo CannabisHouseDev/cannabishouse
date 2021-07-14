@@ -38,5 +38,5 @@
             %h1 #{appointment.participant.profile.first_name} #{appointment.participant.profile.last_name}
       / Action Button Footer
       .grid.grid-cols-2.w-full
-        = link_to t('views.doctor_portal.cancel'), appointment_cancel_path(@selected), method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1' if @selected
+        = link_to t('views.doctor_portal.cancel'), appointment_cancel_path(@selected), "data-confirm" => "Are you sure you'd like to cancel the appointment, this cannot be undone?", method: :delete, class: 'flex flex-grow justify-center bg-red-300 rounded-xl text-white py-4 mr-1' if @selected
         = link_to t('views.doctor_portal.mark'), appointment_done_path(@selected), method: :post, class: 'flex flex-grow justify-center bg-primary-500 rounded-xl text-white py-4 ml-1' if @selected

@@ -70,8 +70,9 @@ class ParticipantPortalController < ApplicationController
 
   def book_appointment
     slot = Slot.find(params[:id])
-    date = DateTime.parse(params[:d]).change({ hour: slot.hours.to_i, min: slot.minutes.to_i })
+    date = params[:d].to_datetime.utc.change({ hour: slot.time.hour, min: slot.time.min })
     Appointment.find_or_create_by(participant: current_user, doctor: slot.doctor, time: date)
+    slot.booked == true
     current_user.profile.book!
     redirect_to action: :steps
   end

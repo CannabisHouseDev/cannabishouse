@@ -210,9 +210,6 @@ pl:
         edit:
           title: "Edycja użytkownika"
   views:
-    participant_portal:
-      approved: "Zatwierdzony przez lekarza"
-      pending_approval: "Oczekuje na zatwierdzenie przez lekarza"
     addresses:
       save: "Zapisz"
       destroy: "Usuń adresy"
@@ -312,7 +309,9 @@ pl:
         dry_10: "Susz: 10g miesięcznie, Olejek: 5g miesięcznie" 
         dry_20: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
         dry_30: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
-    participant_portal: 
+    participant_portal:
+      approved: "Zatwierdzony przez lekarza"
+      pending_approval: "Oczekuje na zatwierdzenie przez lekarza"
       consent:
         title: "Drogi Stowarzyszony"
         content_paragraph: "Dziękujemy, że zdecydowałeś się wziąć udział w badaniach nad wpływem konopi. Zanim przejdziesz dalej wymagane jest zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia. W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar i specyfikę prowadzonych badań."

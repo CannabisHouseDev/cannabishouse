@@ -2,8 +2,8 @@
 
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
-  before_action :set_profile, only: %i[show edit update destroy]
+  before_action :set_user, except: :update
+  before_action :set_profile, only: %i[show edit destroy]
 
   # GET /profiles
   # GET /profiles.json
@@ -38,6 +38,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    @profile = Profile.find(params[:id])
     respond_to do |format|
       @profile.avatar.attach(params[:avatar]) if params[:avatar].present?
       if @profile.update(profile_params)

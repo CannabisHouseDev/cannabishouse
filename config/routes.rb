@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       get  'participant/studies', to: 'participant_portal#studies', as: 'available_studies'
       get 'participant/:user_id', to: 'participant_portal#show', as: 'participant'
       post 'participant/register/:id', to: 'participant_portal#register', as: 'register_study'
+      patch ':id/account', to: 'profiles#update', as: 'edit_profile'
 
       # Doctor Related Routes
       get 'doctor', to: 'doctor_portal#index', as: 'doctor_portal'
@@ -81,20 +82,15 @@ Rails.application.routes.draw do
       get 'transfer', to: 'dispensary_portal#transfer'
       get 'finalize_transfer', to: 'dispensary_portal#finalize'
       get 'dispensary/report', to: 'dispensary_portal#report', as: 'report'
+
+      # Common
+      get '/account', to: 'pages#info', as: 'user_profile'
     end
 
     root 'pages#landing'
 
     get 'about', to: 'pages#about', as: 'about'
     get 'media', to: 'pages#media', as: 'media'
-
-    resources :posts
-    resource :user, only: [:update]
-    resources :users, only: %i[show index edit update destroy] do
-      resources :addresses
-      resources :profiles
-    end
-
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
