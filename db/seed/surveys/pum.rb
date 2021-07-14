@@ -12,7 +12,7 @@ questions = ['Czy zdarzyło Ci się nie pójść lub spóźnić się do szkoły/
 title = 'Ankieta do autoewaluacji'
 description = 'Dzieki tej ankiecie masz możliwosć sprawdzić jak używnaie konopi wpływa na zdolność radzenia sobie. Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Prosimy o odpowiedzi zgodne z prawdą.'
 internal_name = 'pum'
-study = Study.find_by(title: 'onboarding')
+study = Study.find_by(title: 'Badanie Biologiczne')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
 

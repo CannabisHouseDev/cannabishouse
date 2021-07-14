@@ -16,7 +16,7 @@ class ParticipantPortalController < ApplicationController
   end
 
   def studies
-    @studies = Study.all.reject { |s| s.title == 'onboarding' }
+    @studies = Study.all
   end
 
   def register
