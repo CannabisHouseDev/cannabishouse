@@ -309,7 +309,7 @@ pl:
         red: "czerwony"
         dry_10: "Susz: 10g miesięcznie, Olejek: 5g miesięcznie" 
         dry_20: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
-        dry_30: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
+        dry_30: "Susz: 30g miesięcznie, Olejek: 15g miesięcznie"
     participant_portal:  
       active_study:
         approved: "Zatwierdzony przez lekarza"
