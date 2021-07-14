@@ -311,7 +311,7 @@ ActiveRecord::Schema.define(version: 2021_07_12_190346) do
     t.boolean "hidden", default: false
     t.boolean "required", default: false
     t.string "internal_name"
-    t.bigint "study_id", default: 1, null: false
+    t.bigint "study_id", null: false
     t.index ["study_id"], name: "index_surveys_on_study_id"
     t.index ["user_id"], name: "index_surveys_on_user_id"
   end
