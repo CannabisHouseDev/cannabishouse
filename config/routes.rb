@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     authenticated :user do
       root 'portals#role_router', as: :authenticated_root
       get 'info', to: 'pages#info', as: 'info'
+      
+      get 'admin_dashboard', to: 'admin_portal#index'
+      patch ':id/order', to: 'admin_portal#update', as: 'admin_portal_update_order'
 
       # Participant Related Routes
       get 'steps', to: 'participant_portal#steps', as: 'steps'

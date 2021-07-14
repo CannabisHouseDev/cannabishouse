@@ -30,6 +30,8 @@
 #  fk_rails_...  (owner_id => users.id)
 #
 class Material < ApplicationRecord
+  DISPENSARY_LOW_AMOUNT = 50
+  DISPENSARY_REFILL_AMOUNT = 2000
   include AASM
 
   # No direct assignment ensures that the state of the model can only be modified
@@ -97,6 +99,9 @@ class Material < ApplicationRecord
   def split(receiver, amount)
     # Run validations
     validate_transfer(receiver, amount)
+
+    # Check if Dispensary has more than 50 grams of Material
+    create_order_for_dispensary
 
     # Duplicate Material being sent
     receiver_material = dup
@@ -212,5 +217,14 @@ class Material < ApplicationRecord
     return true if %w[dispensary warehouse admin].include? receiver.profile.role
 
     receiver.profile.credits >= (amount * cost)
+  end
+
+  def create_order_for_dispensary
+    return unless self.owner.profile.dispensary?
+    return if self.amount > DISPENSARY_LOW_AMOUNT
+    warehouse_material = Material.includes(owner: :profile).includes(:material_type).where(owner: {profiles: {role: :warehouse}}, material_type: {id: self.material_type_id}).first
+    return unless warehouse_material.present?
+    order = Order.create!(user_id: self.owner_id, status: :requested)
+    OrderMaterial.create!(amount: DISPENSARY_REFILL_AMOUNT, material_id: warehouse_material.id, order_id: order.id)
   end
 end

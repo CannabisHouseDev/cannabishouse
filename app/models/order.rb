@@ -3,7 +3,7 @@
 # Table name: orders
 #
 #  id         :bigint           not null, primary key
-#  status     :integer          default("cart"), not null
+#  status     :integer          default("requested"), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  user_id    :bigint           not null
@@ -21,7 +21,7 @@ class Order < ApplicationRecord
   has_many :order_materials
   has_many :materials, through: :order_materials
   
-  enum status: [:cart, :pending, :approved, :rejected, :done]
+  enum status: [:requested, :approved, :rejected, :dispatched, :done]
 
   validates :status, presence: true
 
