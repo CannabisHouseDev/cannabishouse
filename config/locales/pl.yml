@@ -361,8 +361,8 @@ pl:
         book_appointment: "Umów się na wizytę"
       studies:
         available_studies: "Dostępne Badania"
-        study_duration: "Okres "
-        months: " miesięcy"
+        study_duration: "Okres"
+        months: "miesięcy"
         register: "Zapisz się"            
     home:
       more: "Więcej"

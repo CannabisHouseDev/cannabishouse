@@ -4,7 +4,7 @@
     - @studies.each do |s|
       .flex.flex-col.justify-center.w-60.bg-gray-200.rounded-md.p-4.border-gray-500.border-2
         .flex.w-full.justify-center.text-xl #{s.title}
-        .flex.w-full.justify-center #{t('views.participant_portal.studies.study_duration')} #{s.cycle} #{t('views.participant_portal.studies.months')}
+        .flex.w-full.justify-center #{t('views.participant_portal.studies.study_duration')} #{' '} #{s.cycle} #{' '} #{t('views.participant_portal.studies.months')}
         .flex.justify-center.items-center
           = link_to register_study_path(s.id), method: :post do
             %button.mt-2.rounded.bg-white.bg-opacity-30.border-2.border-gray-500.px-4.py-3= t('views.participant_portal.studies.register') 

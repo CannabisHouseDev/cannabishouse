@@ -403,8 +403,8 @@ en:
         book_appointment: "Book an appointment"
       studies:
         available_studies: "Available Studies"
-        study_duration: "Study duration "
-        months: " months"
+        study_duration: "Study duration"
+        months: "months"
         register: "Register"  
     home:
       more: "More"
