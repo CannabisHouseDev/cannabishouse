@@ -14,11 +14,11 @@
               = f.label :email, t('devise.email'), class: "mb-2 font-bold"
             = f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full rounded h-2/3 bg-gray-100", id: 'signup_email'
           %label.block.text-center
-            %span.text-gray-700.flex.justify-start  
+            %span.text-gray-700.flex.justify-start
               = f.label :password, t('devise.password'), class: "mb-2 font-bold"
             - if @minimum_password_length
               %em
-                ( #{@minimum_password_length}  
+                ( #{@minimum_password_length}
                 = t('devise.users.reg.new.pass_num')
                 )
             = f.password_field :password, class: 'w-full rounded  bg-gray-100', id: 'signup_password'
@@ -26,16 +26,16 @@
             = f.label :password_confirmation, t('devise.confirm'), class: "mb-2 font-bold"
             = f.password_field :password, class: "w-full rounded bg-gray-100", id: 'signup_confirm'
           %label.text-gray-700
-            = f.check_box :agreement_1, {class: "rounded"}, 'true', 'false'
+            = f.check_box :agreement_1, {class: "rounded"}
             = f.label :agreement_1 do
               =t('devise.agree')
               = link_to t('devise.statute'), 'STATUT_jednolity.pdf', target: '_blank', class: "ml-2 text-primary-600"
               = t('devise.content')
           %label.text-gray-700
-            = f.check_box :agreement_2, {class: "rounded"}, 'true', 'false'
+            = f.check_box :agreement_2, {class: "rounded"}
             = f.label :agreement_2 do
               =t('devise.agree2')
-              
+
           = f.submit t('devise.signup'), class: "Form-submit hover:bg-primary-800 bg-primary-700 rounded w-full text-base"
     %h3.flex.justify-center.mt-2{"data-action" => "click->tabs#change", "data-index" => "0"}
       = t('devise.have_account')
