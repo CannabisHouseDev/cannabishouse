@@ -4,10 +4,10 @@
       %h2.flex.justify-end.mt-10.text-sm.sm:text-xl.md:text-2xl.lg:text-3xl.xl:text-5xl.2xl:text-7xl #{@active.study.title}
       .flex.justify-center.pt-4
         = image_tag 'participant_portal/check.png', size: "30x30", alt: 'checked icon' if current_user.approved?
-      %p.text-center.text-blue-600.sm:text-base #{current_user.approved? ? t('views.participant_portal.approved') : t('views.participant_portal.pending_approval')}
+      %p.text-center.text-blue-600.sm:text-base #{current_user.approved? ? t('views.participant_portal.active_study.approved') : t('views.participant_portal.active_study.pending_approval')}
     .flex.flex-col.items-center.justify-around.p-4.text-sm.sm:text-base.md:text-xl.lg:text-2xl.xl:text-3xl.2xl:text-4xl
       .flex.justify-between.w-full
-        %p.text-gray-600.break-all.p-1 Start Date
+        %p.text-gray-600.break-all.p-1= t('views.participant_portal.active_study.start_date')
         %p.p-1 #{@active.created_at.strftime('%d %B %y')}
     .flex.flex-col.justify-center.p-10
       %div{"data-controller" => "modal", "data-modal-allow-background-close" => "false"}

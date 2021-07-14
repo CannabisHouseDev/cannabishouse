@@ -1,3 +1,5 @@
 .container.py-16.w-full.h-full.flex.flex-col.md:flex-row{ "data-controller" => "participant", "data-participant-target" => "participant" }
-  %section.flex.flex-col.justify-center.items-center.w-full.h-sull
+  %section.flex.flex-col.justify-center.items-center.w-full.h-sull= t('pages.payment.skip')
+.container
+  %section.flex.flex-col.justify-center.items-center.w-full.h-2.hover:text-primary-500
     = link_to "Pay", process_payment_path, class: 'text-center border-2 border-blue-500 px-3 py-2'

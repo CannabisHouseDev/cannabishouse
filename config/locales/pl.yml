@@ -48,7 +48,6 @@ pl:
           sign_up: "Zarejestruj się"
           pass_num: "znaków minimum"
           pass: "Hasło"          
-          terms2: "Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z art. 7 pkt 5 ustawy z 29.08.1997r o ochronie danych osobowych (Dz. U. Nr 133, poz. 883) przez Stowarzyszenie Cannabis House z siedzibą w Łodzi (administrator danych) na potrzeby zrzeszenia i rekrutacji."
   footer:
     copyright: "© CannabisHouse™, 2021. Wszelkie prawa zastrzeżone."
     devise:
@@ -182,6 +181,8 @@ pl:
         title: "Kontakt: "
         contact1: "Nr tel.:    "
         contact2: "Adres email:"
+    payment:
+      skip: "Pomiń ten krok klikając przycisk \"Pay\". Płatności dokonasz w innym terminie."
   controllers:
     addresses:
       create:
@@ -209,10 +210,7 @@ pl:
     registrations:
         edit:
           title: "Edycja użytkownika"
-  views:
-    participant_portal:
-      approved: "Zatwierdzony przez lekarza"
-      pending_approval: "Oczekuje na zatwierdzenie przez lekarza"
+  views:      
     addresses:
       save: "Zapisz"
       destroy: "Usuń adresy"
@@ -311,8 +309,14 @@ pl:
         red: "czerwony"
         dry_10: "Susz: 10g miesięcznie, Olejek: 5g miesięcznie" 
         dry_20: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
-        dry_30: "Susz: 20g miesięcznie, Olejek: 10g miesięcznie"
-    participant_portal: 
+        dry_30: "Susz: 30g miesięcznie, Olejek: 15g miesięcznie"
+    participant_portal:  
+      active_study:
+        approved: "Zatwierdzony przez lekarza"
+        pending_approval: "Oczekuje na zatwierdzenie przez lekarza"
+        start_date: "Data rozpoczęcia:" 
+      booking: 
+        choose_appointment: "Wybierz datę i godzinę wizyty"
       consent:
         title: "Drogi Stowarzyszony"
         content_paragraph: "Dziękujemy, że zdecydowałeś się wziąć udział w badaniach nad wpływem konopi. Zanim przejdziesz dalej wymagane jest zapoznanie się przez Ciebie z regulaminami badań, oraz wyrażenie świadomej zgody na udział w badaniu. Przeczytaj proszę uważnie treść załączonych dokumentów ponieważ klikając przycisk poniżej oświadczasz, że przeczytałeś, zrozumiałeś i wyrażasz zgodę na zawarte tam postanowienia. W tych dokumenatach znajdziesz najpotrzebniejsze informacje, dzięki którym zrozumiesz rozmiar i specyfikę prowadzonych badań."
@@ -337,7 +341,7 @@ pl:
         complete: "Zakończ ankietę"
       steps: 
         fill_profile: "Wypełnij profil"
-        register: "Zarejestruj swoje pierwsze badanie"
+        register: "Zarejestruj się do pierwszego badania"
         filled_profile: "Profil wypełniony"
         agreements: "Wyraź zgody"
         agreed: "Zgody OK"
@@ -355,6 +359,11 @@ pl:
         filled_6: "Ankieta nr 6 wypełniona"
         reg_fee: "Wnieś opłatę wstępną"
         book_appointment: "Umów się na wizytę"
+      studies:
+        available_studies: "Dostępne Badania"
+        study_duration: "Okres"
+        months: "miesięcy"
+        register: "Zapisz się"            
     home:
       more: "Więcej"
     materials:

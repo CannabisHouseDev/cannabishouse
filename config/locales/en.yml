@@ -79,7 +79,6 @@ en:
           sign_up: "Sign Up"
           pass_num: "characters minimum"
           pass: "Password"          
-          terms2: "I consent to the processing of my personal data in accordance with art. 7 point 5 of the Act of August 29, 1997 on the protection of personal data (Journal of Laws No. 133, item 883) by the Cannabis House Association based in Łódź (data controller) for the purposes of association and recruitment."
   footer:
     copyright: "© CannabisHouse™, 2021. All rights reserved."
     devise:
@@ -223,6 +222,8 @@ en:
         title: "Contact us: "
         contact1: "Phone: "
         contact2: "E-mail: "
+    payment:
+      skip: "Skip this step by clicking the \"Pay\" button. You will make the payment at a different date."
   controllers:
       addresses:
         create:
@@ -250,10 +251,7 @@ en:
       registrations:
         edit:
           title: "Edit user"
-  views:
-    participant_portal:
-      approved: "Approved by Medical Professional"
-      pending_approval: "Pending Approval by Medical Professional"
+  views:      
     addresses:
       save: "Save"
       destroy: "Delete address"
@@ -354,7 +352,13 @@ en:
         dry_10: "Drought: 10g per month, Oil: 5g per month" 
         dry_20: "Drought: 20g per month, Oil: 10g per month"
         dry_30: "Drought: 30g per month, Oil: 15g per month"        
-    participant_portal: 
+    participant_portal:       
+      active_study: 
+        approved: "Approved by Medical Professional"
+        pending_approval: "Pending Approval by Medical Professional"
+        start_date: "Start Date:"
+      booking: 
+        choose_appointment: "Choose the date and time for your visit "          
       consent:
         title: "Dear Associate,"
         content_paragraph: "Thank you for choosing to take part in the cannabis effects research. Before going any further it is required that you familiarize yourself with the research regulations and give your informed consent to participating in the research. Please read carefully the content of the attached documents because by clicking the button below you declare that you have read, understood and agreed to the provisions contained therein. In these documents you will find the most necessary information to understand the size of the research."
@@ -379,7 +383,7 @@ en:
         complete: "Complete survey"
       steps: 
         fill_profile: "Fill the profile info"
-        register: "Register your first study"
+        register: "Register to your first study"
         agreements: "Agree to the regulations"
         filled_profile: "Your profile has been filled"
         agreed: "Term & conditions accepted"
@@ -397,6 +401,11 @@ en:
         filled_6: "The survey Nº6 has been done"
         reg_fee: "Pay the registration fee"
         book_appointment: "Book an appointment"
+      studies:
+        available_studies: "Available Studies"
+        study_duration: "Study duration"
+        months: "months"
+        register: "Register"  
     home:
       more: "More"
     materials:

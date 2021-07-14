@@ -1,5 +1,5 @@
 .w-full.h-full.flex.flex-col{ "data-controller" => "participant", "data-participant-target" => "participant" }
-  %h1.text-2xl.w-full.text-center Choose Appointment Time
+  %h1.text-2xl.w-full.text-center= t("views.participant_portal.booking.choose_appointment")
   .w-full.h-full.flex.flex-col.overflow-y-auto
     - (@start_date..@end_date).each_with_index do |d,i|
       - if @slots[d.wday]

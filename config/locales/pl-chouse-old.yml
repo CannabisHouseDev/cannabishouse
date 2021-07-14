@@ -316,7 +316,7 @@ pl:
     invitations:
       send_instructions: "Email z zaproszeniem został wysłany do %{email}."
       invitation_token_invalid: "Token zaproszenia nie jest poprawny!"
-      updated: "Twoje hasło zostało ustawione poprawnie. Zostałeś zalogowany."
+      updated: "Twoje hasło zostało ustawione poprawnie."
       updated_not_active: "Twoje hasło zostało ustawione poprawnie."
       no_invitations_remaining: "Brak zaproszeń"
       invitation_removed: "Twoje zaproszenie zostało usunięte."
