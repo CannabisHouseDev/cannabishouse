@@ -66,6 +66,8 @@ en:
     content: "based in Łódź. I am submitting a declaration of joining the Association as a supporting member. I certify that the information provided is true. I undertake to comply with the above-mentioned of the statute, regulations and other resolutions of the Association and I undertake to pay membership fees in accordance with the resolution on contributions."
     agree2: "I consent to the processing of my personal data by the Cannabis House Association based in Łódź (data controller) for the purposes of the association and recruitment. I am aware that I have access and the possibility of rectifying this data, as well as withdrawing this consent resulting in the removal of the account from the website."
     agreement_error: "Please agree to our terms and conditions"
+    mailer:
+      hello: "Hello"
     sessions:
       user:
         already_signed_out: "You are already signed out."
