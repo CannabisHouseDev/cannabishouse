@@ -24,4 +24,5 @@ class Study < ApplicationRecord
   belongs_to :user
   has_many :study_participations, class_name: 'StudyParticipation'
   has_many :surveys
+  has_many :filled, through: :surveys
 end

@@ -38,6 +38,7 @@ class FilledSurveysController < ApplicationController
   def update
     respond_to do |format|
       if @filled_survey.update(filled_survey_params)
+        update_answers
         update_state
         format.html { redirect_to authenticated_root_path, notice: "Survey Filled" }
         format.json { render :show, status: :ok, location: @filled_survey }
@@ -69,7 +70,15 @@ class FilledSurveysController < ApplicationController
     end
 
     def update_state
-      ScoreSurveyJob.perform_later(@filled_survey.id)
-      current_user.profile.fill_surveys!(params[:ref]) if params[:ref]
+      @filled_survey.update_score
+      @filled_survey.update!(state: 'done')
+      current_user.profile.fill_surveys(@filled_survey.user_id, @filled_survey.survey.study)
+    end
+
+    def update_answers
+      answers = params.keys.filter { |k| k.ends_with? '_answer' }.map { |k| [Answer.find(k.split('_')[0]), params[k]] }
+      answers.each do |answer|
+        answer[0].update!(option_id: answer[1], content: QuestionOption.find(answer[1]).name)
+      end
     end
 end

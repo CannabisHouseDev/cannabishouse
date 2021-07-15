@@ -26,9 +26,10 @@ class FilledSurvey < ApplicationRecord
   has_many :answers, class_name: 'Answer'
   accepts_nested_attributes_for :answers
   validates :state, inclusion: { in: %w[pending done redo] }
+  has_one :study, through: :survey
 
   def update_score
-    self.score = answers.sum {|a| QuestionOption.find(a.option_id).score}
+    self.score = answers.sum { |a| QuestionOption.find(a.option_id).score }
     save!
   end
 end

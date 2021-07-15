@@ -71,12 +71,10 @@ class Profile < ApplicationRecord
     ActiveStorage::Blob.service.path_for(avatar.key)
   end
 
-  aasm do
+  aasm whiny_transitions: false do
     state :fresh, initial: true
     state :filled_info, :registered, :consented, :locked_profile,
-          :filled_first_survey, :filled_second_survey, :filled_third_survey,
-          :filled_fourth_survey, :filled_fifth_survey, :filled_all_surveys,
-          :paid, :booked, :approved, :rejected
+          :filled_all_surveys, :paid, :booked, :approved, :rejected
 
     event :fill_info, before: :update_role do
       transitions from: :fresh, to: :filled_info
@@ -90,28 +88,8 @@ class Profile < ApplicationRecord
       transitions to: :consented
     end
 
-    event :fill_first do
-      transitions to: :filled_first_survey
-    end
-
-    event :fill_second do
-      transitions to: :filled_second_survey
-    end
-
-    event :fill_third do
-      transitions to: :filled_third_survey
-    end
-
-    event :fill_fourth do
-      transitions to: :filled_fourth_survey
-    end
-
-    event :fill_fifth do
-      transitions to: :filled_fifth_survey
-    end
-
-    event :fill_sixth, after: :calculate_risk do
-      transitions to: :filled_all_surveys
+    event :fill_all, after: :calculate_risk do
+      transitions to: :filled_all_surveys, guard: :surveys_done?
     end
 
     event :pay do
@@ -135,21 +113,8 @@ class Profile < ApplicationRecord
     end
   end
 
-  def fill_surveys!(ref)
-    case ref.to_i
-    when 1
-      fill_first!
-    when 2
-      fill_second!
-    when 3
-      fill_third!
-    when 4
-      fill_fourth!
-    when 5
-      fill_fifth!
-    when 6
-      fill_sixth!
-    end
+  def fill_surveys(user_id, study)
+    fill_all!(user_id, study)
   end
 
   def set_quota(dry, oil, risk, approval)
@@ -166,6 +131,10 @@ class Profile < ApplicationRecord
   end
 
   private
+
+  def surveys_done?(user_id, study)
+     study.filled.where(user_id: user_id, state: 'done').count == study.surveys.count
+  end
 
   def save_old_state
     self.old_state = aasm.current_state

@@ -16,7 +16,7 @@ internal_name = 'phq9'
 
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
-study = Study.find_by(title: 'onboarding')
+study = Study.find_by(title: 'Badanie Biologiczne')
 s = Survey.create(title: title, description: description, internal_name: internal_name, author: author, required: true, study_id: study.id)
 questions.each_with_index do |q,i|
   q = Question.create(title: q, order: i, survey_id: s.id, question_type_id: single)

@@ -33,7 +33,7 @@ questions = ['Jestem w stanie skupić się nad tym co robię.',
 title = 'Ogólny Kwestionariusz Zdrowia Badanego'
 description = 'Ankieta ma określić stan Twojego zdrowia oraz dolegliwości medyczne w ciągu ostatnich kilku tygodni, jeżeli występowały. Proszę zaznacz te odpowiedzi, które według Twojej opinii są najbardziej zgodne z rzeczywistością. Proszę pamiętaj, że pragniemy poznać ostatnie i obecne dolegliwości, a nie te, które występowały w przeszłości.'
 internal_name = 'ghq30'
-study = Study.find_by(title: 'onboarding')
+study = Study.find_by(title: 'Badanie Biologiczne')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
 

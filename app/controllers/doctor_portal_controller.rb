@@ -24,6 +24,9 @@ class DoctorPortalController < ApplicationController
 
   def remove_slot
     slot = Slot.find(params[:id])
+    slot.appointment_slots.each do |as|
+      as.destroy
+    end
     slot.destroy
     redirect_to action: :calendar
   end

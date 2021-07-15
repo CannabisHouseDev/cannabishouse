@@ -1,4 +1,4 @@
-.h-full.flex.flex-col.px-1.mb-2.md:mb-0{class: 'w-full md:w-3/4'}
+.h-full.flex.flex-col.px-1.mb-2.md:mb-0{class: 'w-full md:w-3/5'}
   .h-full.flex.flex-col.bg-gray-300.rounded-xl.justify-space-between.items-center.p-2
     %span.w-full.h-full.flex-grow.flex.flex-col
 
@@ -13,9 +13,8 @@
       - if local_assigns[:s].answers.empty?
         .w-full.text-center.flex.flex-col.justify-center.flex-grow= t('views.participant_portal.surveys.no_survey')
       - else
-        = render 'participant_portal/partials/questionlist', q: local_assigns[:s], ref: @ref
+        = render 'participant_portal/partials/questionlist', survey: local_assigns[:s]
 
       / Action Button Footer
       .flex.justify-center.px-6.py-2.bg-gray-100.rounded-md.cursor-pointer.my-3.hover:bg-gray-200
-        = link_to fill_survey_path(ref: @ref) do
-          %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id } #{t('views.participant_portal.surveys.complete')}
+        %button{'data-action' => 'click->participant#updateSurvey', 'data-filled' => s.id } #{t('views.participant_portal.surveys.complete')}

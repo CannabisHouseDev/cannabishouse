@@ -62,7 +62,7 @@ title = 'Ankieta relacji konopi i życia w społeczeństwie'
 description = 'Ankieta jest anonimowa, a odpowiedzi ujmowane zbiorczo m.in. w celach statystycznych. Pierwsze wypełnienie ma harakter historyczny, nie rzutuje na udział w badaniu i przeprowadzana jest w celach naukowych, oraz utworzenia punktu odniesienia dla kolejnych ankiet. Prosimy o odpowiedzi zgodne z prawdą.'
 internal_name = 'pum'
 internal_name = 'index'
-study = Study.find_by(title: 'onboarding')
+study = Study.find_by(title: 'Badanie Biologiczne')
 author = User.where(email: 'konrad.rycerz@cannabishouse.eu').first
 single = QuestionType.find_by(name: 'single').id
 

@@ -2,7 +2,7 @@
 
 class ParticipantPortalController < ApplicationController
   require "rqrcode"
-  before_action :set_required_surveys, only: :steps
+  before_action :set_filled, only: %i[fill_survey steps]
 
   def index
     @active = current_user.profile.active_study
@@ -16,7 +16,7 @@ class ParticipantPortalController < ApplicationController
   end
 
   def studies
-    @studies = Study.all.reject { |s| s.title == 'onboarding' }
+    @studies = Study.all
   end
 
   def register
@@ -31,17 +31,14 @@ class ParticipantPortalController < ApplicationController
     when 'fresh'
       redirect_to info_path
     when 'filled_info'
-    when 'registered'
-    when 'consented'
-    when 'filled_first_survey'
-    when 'filled_second_survey'
-    when 'filled_third_survey'
-    when 'filled_fourth_survey'
-    when 'filled_fifth_survey'
-      render 'steps'
-    when 'filled_all_surveys'
-      render action: :pay
+      redirect_to action: :pay
     when 'paid'
+      redirect_to action: :studies
+    when 'registered'
+      redirect_to action: :agree
+    when 'consented'
+      redirect_to action: :fill_survey
+    when 'filled_all_surveys'
       redirect_to action: :book
     else
       redirect_to action: :index
@@ -63,47 +60,36 @@ class ParticipantPortalController < ApplicationController
   end
 
   def book
-    @slots = Slot.unscoped.group_by(&:day)
-    @start_date = DateTime.now
-    @end_date = DateTime.now + 30.days
+    @start_date = Date.today
+    @end_date = Date.today.next_month
+    (@start_date..@end_date).each do |d|
+      Slot.where(day: d.wday).each do |s|
+        AppointmentSlot.find_or_create_by(slot: s, time: d.to_datetime.change({hour: s.time.hour, min: s.time.min}))
+      end
+    end
+    @slots = AppointmentSlot.where(booked: false).group_by { |as| as.time.wday }
   end
 
   def book_appointment
-    slot = Slot.find(params[:id])
-    date = DateTime.parse(params[:d]).change({ hour: slot.hours.to_i, min: slot.minutes.to_i })
-    Appointment.find_or_create_by(participant: current_user, doctor: slot.doctor, time: date)
+    appointment_slot = AppointmentSlot.find(params[:id])
+    date = appointment_slot.time
+    Appointment.find_or_create_by(participant: current_user, doctor: appointment_slot.slot.doctor, time: date)
     current_user.profile.book!
+    appointment_slot.update!(booked: true)
     redirect_to action: :steps
   end
 
-  # If the caller of this action sends a ref, it means we're in the onboarding process not filling out normal surveys
   def fill_survey
-    if params[:ref]
-      set_required_surveys
-      @ref = params[:ref] # To choose which required survey's turn to answer is now out of the required_surveys array
-    else
-      set_filled
-    end
-    @fill = FilledSurvey.find(params[:id])
-    @answers = @fill.survey.questions.map { |q| Answer.find_or_create_by(question_id: q.id, filled_survey_id: @fill.id) }.sort_by { |q| q.question.order }
-    @answers.each do |a|
-      a.update(option_id: a.question.options.first.id, content: a.question.options.first.name) unless a.option_id
-    end
+    @selected = params[:id] ? FilledSurvey.find(params[:id]) : @surveys.first
+    @answers = @selected.survey.questions.map { |q| Answer.find_or_create_by(question_id: q.id, filled_survey_id: @selected.id) }
+    @answers.sort_by { |q| q.question.order }
   end
 
   private
 
   def set_filled
-    @surveys = Survey.where(hidden: false).map { |survey| FilledSurvey.find_or_create_by(survey_id: survey.id, user_id: current_user.id)}
-  end
-
-  def set_required_surveys
-    id = current_user.id
-    @surveys = [FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'bMAST')),
-                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'pum')),
-                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'phq9')),
-                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'index')),
-                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'kssuk30')),
-                FilledSurvey.find_or_create_by(user_id: id, survey: Survey.find_by(internal_name: 'ghq30'))]
+    if current_user.profile.active_study
+      @surveys = current_user.profile.active_study.study.surveys.map { |survey| FilledSurvey.find_or_create_by(survey: survey, user_id: current_user.id) }.select { |f| f.state != 'done' }
+    end
   end
 end
