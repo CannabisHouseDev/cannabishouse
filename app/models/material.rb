@@ -40,12 +40,12 @@ class Material < ApplicationRecord
 
   aasm no_direct_assignment: true, whiny_persistence: true do
     state :ready, initial: true
-    state :validating_dispensary
-    state :validating_stock
-    state :validating_profile
-    state :validating_evaluation
-    state :validating_amount
-    state :validating_credits
+    state :validating_dispensary,
+          :validating_stock,
+          :validating_profile,
+          :validating_evaluation,
+          :validating_amount,
+          :validating_credits
 
     event :reset do
       transitions to: :ready

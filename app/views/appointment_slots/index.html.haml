@@ -1,0 +1,23 @@
+%h1 Listing appointment_slots
+
+%table
+  %thead
+    %tr
+      %th Time
+      %th Slot
+      %th
+      %th
+      %th
+
+  %tbody
+    - @appointment_slots.each do |appointment_slot|
+      %tr
+        %td= appointment_slot.time
+        %td= appointment_slot.slot
+        %td= link_to 'Show', appointment_slot
+        %td= link_to 'Edit', edit_appointment_slot_path(appointment_slot)
+        %td= link_to 'Destroy', appointment_slot, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Appointment slot', new_appointment_slot_path

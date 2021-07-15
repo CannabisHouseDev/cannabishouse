@@ -22,12 +22,12 @@ Rails.application.routes.draw do
       get 'info', to: 'pages#info', as: 'info'
 
       # Participant Related Routes
+      get 'signup_fees', to: 'participant_portal#pay'
       get 'steps', to: 'participant_portal#steps', as: 'steps'
       get 'consent', to: 'participant_portal#consent', as: 'consent'
       get 'agree', to: 'participant_portal#agree', as: 'agree'
       get 'participant', to: 'participant_portal#index', as: 'participant_portal'
-      get 'participant/surveys', to: 'participant_portal#surveys', as: 'participant_surveys'
-      get 'participant/surveys/:id', to: 'participant_portal#fill_survey', as: 'fill_survey'
+      get 'participant/surveys', to: 'participant_portal#fill_survey', as: 'fill_surveys'
       patch 'survey/:id', to: 'filled_surveys#update', as: 'update_filled_survey'
       get 'steps/pay/process', to: 'participant_portal#process_payment', as: 'process_payment'
       get 'steps/book', to: 'participant_portal#book'

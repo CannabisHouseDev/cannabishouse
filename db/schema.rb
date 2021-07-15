@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_190346) do
+ActiveRecord::Schema.define(version: 2021_07_14_232815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +79,15 @@ ActiveRecord::Schema.define(version: 2021_07_12_190346) do
     t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
+  create_table "appointment_slots", force: :cascade do |t|
+    t.datetime "time"
+    t.boolean "booked", default: false
+    t.bigint "slot_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slot_id"], name: "index_appointment_slots_on_slot_id"
+  end
+
   create_table "appointments", force: :cascade do |t|
     t.datetime "time"
     t.bigint "doctor_id", null: false
@@ -86,6 +95,8 @@ ActiveRecord::Schema.define(version: 2021_07_12_190346) do
     t.integer "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "appointment_slot_id", null: false
+    t.index ["appointment_slot_id"], name: "index_appointments_on_appointment_slot_id"
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
     t.index ["participant_id"], name: "index_appointments_on_participant_id"
   end
@@ -365,6 +376,8 @@ ActiveRecord::Schema.define(version: 2021_07_12_190346) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "answers", "filled_surveys"
   add_foreign_key "answers", "questions"
+  add_foreign_key "appointment_slots", "slots"
+  add_foreign_key "appointments", "appointment_slots"
   add_foreign_key "cycles", "users"
   add_foreign_key "dispensaries", "users", column: "manager_id"
   add_foreign_key "filled_surveys", "surveys"

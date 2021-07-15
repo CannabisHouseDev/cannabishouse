@@ -1,0 +1,2 @@
+module AppointmentSlotsHelper
+end

@@ -210,7 +210,10 @@ pl:
     registrations:
         edit:
           title: "Edycja użytkownika"
-  views:      
+  views:
+    pages:
+      info:
+        prompt: "Proszę podać swoje prawdziwe dane, podanie prawidłowych informacji jest obowiązkowe, aby wziąć udział w naszych badaniach."
     addresses:
       save: "Zapisz"
       destroy: "Usuń adresy"

@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :appointment_slot do
+    time { "2021-07-15 02:15:45" }
+    slot { nil }
+  end
+
   factory :study_participation do
     user { nil }
     study { nil }

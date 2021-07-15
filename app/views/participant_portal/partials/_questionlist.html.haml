@@ -1,7 +1,7 @@
 .w-full.flex-grow.overflow-y-auto
-  = form_for local_assigns[:q], url: update_filled_survey_path(local_assigns[:q].id, ref: @ref ? @ref : nil), html: { data: { 'participant-target' => "#{q.id}_form" } } do |form|
+  = form_for local_assigns[:survey], url: update_filled_survey_path(local_assigns[:survey].id), html: { data: { 'participant-target' => "#{local_assigns[:survey].id}_form" } } do |form|
     = form.hidden_field :survey_id
-    - local_assigns[:q].answers.each do |q|
+    - local_assigns[:survey].answers.each do |q|
       .rounded-md.bg-gray-100.opacity-75.flex.items-center.justify-between.mb-2.p-2.relative
         %span.flex-grow
           = render "components/inputs/#{q.question.question_type.name}", q: q, form: form

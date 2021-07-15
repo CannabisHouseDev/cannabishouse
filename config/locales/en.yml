@@ -251,7 +251,10 @@ en:
       registrations:
         edit:
           title: "Edit user"
-  views:      
+  views:
+    pages:
+      info:
+        prompt: "Please use your real information, entering the correct information is mandatory to participate in our studies."
     addresses:
       save: "Save"
       destroy: "Delete address"
@@ -387,18 +390,8 @@ en:
         agreements: "Agree to the regulations"
         filled_profile: "Your profile has been filled"
         agreed: "Term & conditions accepted"
-        fill_1: "Fill the survey Nº1"
-        filled_1: "The survey Nº1 has been done"
-        fill_2: "Fill the survey Nº2"
-        filled_2: "The survey Nº2 has been done"
-        fill_3: "Fill the survey Nº3"
-        filled_3: "The survey Nº3 has been done"
-        fill_4: "Fill the survey Nº4"
-        filled_4: "The survey Nº4 has been done"
-        fill_5: "Fill the survey Nº5"
-        filled_5: "The survey Nº5 has been done"
-        fill_6: "Fill the survey Nº6"
-        filled_6: "The survey Nº6 has been done"
+        fill_surveys: "Fill the survey Nº1"
+        filled_surveys: "The survey Nº1 has been done"
         reg_fee: "Pay the registration fee"
         book_appointment: "Book an appointment"
       studies:
